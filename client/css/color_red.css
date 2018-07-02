@@ -1,0 +1,228 @@
+*::selection {
+ background: #000; /* WebKit/Blink Browsers */
+  color:#fff;
+}
+*::-moz-selection {
+  background: #000; /* WebKit/Blink Browsers */
+  color:#fff;
+}
+
+/* Global anchor link color style */
+.bg-primary {
+    background: #e81863 !Important;
+    background-color: #e81863 !Important;
+    color: #fff;
+}
+.bg-primary a, .bg-primary a:visited, .bg-primary a:hover {
+     color: #fff;     
+}
+.bg-secondary {
+    background: #e8407f !Important;
+    background-color: #e8407f !Important;
+    color: #fff;
+}
+.bg-alternate {
+    background: #666!Important;
+    background-color: #666 !Important;
+    color: #fff;
+}
+.color-primary {
+    color: #e81863;
+}
+.color-secondary {
+   color: #e8407f; 
+}
+.color-alternate {
+    color:#666;  
+}
+a {
+  color:#e81863;
+}
+a:hover, a:active {
+  color:#e81863;
+  text-decoration:underline;
+}
+a.highlight:link, a.highlight:visited {
+  color:#666;
+}
+a.highlight:hover, a.highlight:active {
+  color:#e81863;
+  text-decoration:none;
+}
+
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+*, *::after, *::before {
+    box-sizing: inherit;
+}
+a.active:link, a.active:visited {
+  color:#e81863;
+  cursor:default;
+}
+.list-group-item {
+    border-left:  none;
+    border-right:  none;
+}
+a.list-group-item:focus, a.list-group-item:hover, button.list-group-item:focus, button.list-group-item:hover {
+    background-color: #f5f5f5;
+    color: #555;
+    text-decoration: none;
+}
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover, .list-group-item.active:visited {
+   background: linear-gradient(to bottom, #e8407f 0%,#e81863 100%);
+   background-image: linear-gradient(to bottom, #e8407f, #e81863);
+    border: none;
+    color: #fff;
+    font-weight: bold;
+}
+.list-group-item.section, .list-group-item.section:focus, .list-group-item.section:hover, .list-group-item.section:visited {
+    font-weight: bold;
+}
+/* Pagination */
+.pagination .page-link {
+    color: #e81863;
+}
+.pagination .page-item.active .page-link, .pagination .page-item.active .page-link:focus, .pagination .page-item.active .page-link:hover {
+    background-color: #e81863;
+    background-image: linear-gradient(to bottom, #e8407f 0%,#e81863 100%);
+    border-color: #e81863;
+    color: #fff;
+}
+#main-container > header {
+    background: #fff;
+    border-top: 3px solid #e81863; 
+}
+/* navigation */
+#mainnav a:hover, #mainnav a:active, #mainnav a:focus {
+   color:#fff;
+   background:#e81863;
+   background-image: linear-gradient(to bottom, #e8407f 0%,#e81863 100%);
+}
+/* dropdown menu */
+.dropdown-menu li > a:hover,
+.dropdown-menu li > a:focus,
+.dropdown-submenu:hover > a {
+  background:#e81863;
+  background-color:#e81863;
+  filter:#e81863;
+}
+.dropdown-menu .active > a,
+.dropdown-menu .active > a:hover {
+  background:#e81863;
+  background-color:#e81863;
+  filter: #e81863;
+}
+
+/* navbar */
+.navbar .nav > li:hover {
+  /* background:#e81863; */
+}
+/* active link */
+.navbar .nav .active a,
+.navbar .nav .active a:hover,
+.navbar .nav .active a:focus
+.navbar .nav > .active > a,
+.navbar .nav > .active > a:hover,
+.navbar .nav > .active > a:focus,
+.navbar .nav > .active > a i,
+.navbar .nav > .active > a:focus i,
+.navbar .nav > .active > a:hover i,
+.navbar .nav > .active > a span,
+.navbar .nav > .active > a:focus span,
+.navbar .nav > .active > a:hover span {
+  background: #e81863;
+  background-color: #e81863;
+  filter:#e81863;
+}
+/* nested ul */
+.navbar .nav div {
+  /* background: #e81863; */
+}
+.navbar a.heading.active, .navbar a.heading.active:focus, .navbar a.heading.active:hover, .navbar a.heading.active:visited {
+    background-color: #e81863;
+    background-image: linear-gradient(to bottom, #e81863, #e8407f);
+    color: #fff;
+}
+
+/* btn-primary (red-btn) */
+.btn-primary {
+  border:1px solid #e81863;
+  background: #e81863;
+background: -moz-linear-gradient(top, #e8407f 0%, #e81863 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e8407f), color-stop(100%,#e81863));
+background: -webkit-linear-gradient(top, #e8407f 0%,#e81863 100%);
+background: -o-linear-gradient(top, #e8407f 0%,#e81863 100%);
+background: -ms-linear-gradient(top, #e8407f 0%,#e81863 100%);
+background: linear-gradient(to bottom, #e8407f 0%,#e81863 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e8407f', endColorstr='#e81863',GradientType=0 );
+}
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary.active,
+.btn-primary.disabled,
+.btn-primary[disabled] {
+  background: #e81863;
+  border:1px solid #e81863;
+}
+.btn-primary:active,
+.btn-primary.active {
+  background-color: #e8407f;
+}
+.btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.active:hover, .btn-primary.focus:active, .btn-primary:active:focus, .btn-primary:active:hover, .open > .btn-primary.dropdown-toggle.focus, .open > .btn-primary.dropdown-toggle:focus, .open > .btn-primary.dropdown-toggle:hover {
+    background-color: #e8407f;
+    border-color: #fff;
+    color: #fff;
+}
+.breadcrumb {
+    background-color: #f5f5f5;
+}
+/* forms */
+.form-control:focus {
+    background-color: #fff;
+    border-color: #e8407f;
+    color: #55595c;
+}
+select.form-control {
+    background-color: #fff;
+    border: 1px solid #999;
+    color: #666;
+    outline-color: #000 !important; 
+}
+select.form-control:enabled {
+    border: 1px solid #e8407f;
+    outline-color: red !important;
+}
+select.form-control:hover {
+    background-color: #fff;
+    border: 1px solid #e8407f;
+    box-shadow: 45px 45px #e8407f; inset;
+    color: #fff;
+    outline-color: red !important;
+}
+select.form-control option {
+    background: #fff none repeat scroll 0 0 !important;
+    color: #999 !important;
+}
+select.form-control option:hover, select.form-control option:focus, select.form-control option:active, select.form-control option:checked {
+    background: #fff none repeat scroll 0 0 !important;
+    border: 0 solid #e8407f;
+    box-shadow: 30px 30px #e8407f; inset;
+    cursor: pointer;
+    outline-color: #999 !important;
+}
+.sc-product-price-info a {
+     color: #e8407f;
+     font-weight: bold;
+}
+#socialicons .icon {
+    background: #fff;
+    color: #e8407f;
+}
+#socialicons .icon:hover {
+    background: #fff;
+    color: #e8407f;
+}
+.tag-default {
+    /* background-color: #ed6e13; */
+}

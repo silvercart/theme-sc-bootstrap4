@@ -1,0 +1,11 @@
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    
+ .sc-products .thumbnail a {
+    display: block !important;
+     margin: 0 auto;
+}
+.vertical {
+    display: block !important;
+    
+}
+}
