@@ -1,11 +1,12 @@
 <div class="row">
-    <div id="content-main" class="span9 col-lg-9 col-md-9 col-sm-12 col-xs-12">
-        <div class="section-header clearfix">
-            <h1>{$OptInPageTitle}</h1>
-        </div>
-        {$OptInMessage}
-    </div>
-    <aside class="span3 col-lg-3 col-md-3 col-sm-12 col-xs-12">
+    <section id="content-main" class="col-12 col-md-9">
+        <% include SilverCart/Model/Pages/BreadCrumbs %>
+        <article>
+            <header><h1>{$OptInPageTitle}</h1></header>
+            <div class="alert alert-info">{$OptInMessage}</div>
+        </article>
+    </section>
+    <aside class="col-12 col-md-3">
         {$SubNavigation}
         {$InsertWidgetArea(Sidebar)}
     </aside>

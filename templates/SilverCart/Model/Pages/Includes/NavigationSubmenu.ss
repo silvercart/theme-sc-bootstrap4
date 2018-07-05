@@ -1,34 +1,57 @@
+<ul class="dropdown-menu" data-dropdown-in="lightSpeedIn" data-dropdown-out="lightSpeedOut" id="navbarToggleExternalContent{$ID}">
+    <li class="col nav-item">
+        <a href="{$Link}" title="<%t SilverCart\Model\Pages\Page.GOTO 'Go to {title} page' title=$Title.XML %>" class="heading nav-link <% if $isCurrent %>active<% else_if $isSection %>section<% end_if %>">{$MenuTitle.XML}</a>
+        <% if $ActiveProducts.exists %><span class="badge badge-pill badge-primary">{$ActiveProducts.Count}</span><% end_if %>
+    </li>
+    <ul class="dropdown-content row nav">
 <% loop $Children %>
     <% if $hasProductsOrChildren %>
-    <div class="col-lg-{$Parent.MegaMenuColumnClass.part} col-xs-6 {$Parent.MegaMenuColumnClass.colBreak} {$Parent.MegaMenuColumnClass.childCount}">
+        <li class="col-6 col-xs-2 col-md-3 {$Parent.MegaMenuColumnClass.colBreak} {$Parent.MegaMenuColumnClass.childCount} mt-3 nav-item">
         <% if $Children %>
-        <ul class="nav list-group subsubmenu">
-            <li class="heading">
-                <a href="{$Link}" title="<%t SilverCart\Model\Pages\Page.GOTO 'Go to {title} page' title=$Title.XML %>" class="nav-link <% if $isCurrent %>active<% else_if $isSection %>section<% end_if %>">{$MenuTitle.XML}</a><% if $ActiveProducts.Count > 0 %><span class="tag tag-pill tag-default">{$ActiveProducts.Count}</span><% end_if %>
-            </li>
+            <a href="{$Link}" title="<%t SilverCart\Model\Pages\Page.GOTO 'Go to {title} page' title=$Title.XML %>" class="nav-link <% if $isCurrent %>active<% else_if $isSection %>section<% end_if %>">{$MenuTitle.XML}</a>
+            <% if $ActiveProducts.exists %><span class="badge badge-pill badge-primary">{$ActiveProducts.Count}</span><% end_if %>
             <% loop $Children %>
                 <% if $hasProductsAndChildren %>
-            <li <% if $Children %>class="dropdown"<% end_if %>>
-                <a <% if $Children %>data-target="#subvlist{$ID}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"<% end_if %> href="{$Link}" id="subnavlist{$ID}" title="<%t SilverCart\Model\Pages\Page.GOTO 'Go to {title} page' title=$Title.XML %>" class="list-group-item <% if $isCurrent %>active<% else_if $isSection %>section<% end_if %><% if $Children %> dropdown-toogle<% end_if %>">
-                    <% if $groupPicture %>
-                    <i class="ico">
-                        <% with $groupPicture %>
-                        <img src="{$CroppedImage(30,30).Url}" alt="{$MenuTitle.XML}" class="img-responsive" />
-                        <% end_with %>
-                    </i>
-                    <% else %>
-                    <span class="fa fa-chevron-right"></span>
+                    <% if $First %>
+                        <%-- todo 3 level menu not needed yet for standard --%>
+            <div class="collapse nav list-group" id="navbarToggleExternalContent{$Up.ID}">
+                <ul class="navbar-nav submenu">
                     <% end_if %>
-                    <% if $ActiveProducts.Count > 0 %><span class="tag tag-pill tag-default"> {$ActiveProducts.Coun}</span><% end_if %>
-                </a>
-            </li>
+                    <% if $Children %>
+                    <li class="nav-item  dropdown">
+                        <a data-target="#subvlist{$ID}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="{$Link}" id="subnavlist{$ID}" title="<%t SilverCart\Model\Pages\Page.GOTO 'Go to {title} page' title=$Title.XML %>" class="list-group-item dropdown-toogle <% if $isCurrent %>active<% else_if $isSection %>section<% end_if %>">
+                        <% if $groupPicture %>
+                            <span class="ico"><img src="{$groupPicture.Pad(30,30).Url}" alt="{$MenuTitle.XML}" class="img-responsive" /></span>
+                        <% else %>
+                            <span class="fa fa-chevron-right"></span>
+                        <% end_if %>
+                        </a>
+                        <% if $ActiveProducts.exists %><span class="badge badge-pill badge-primary">{$ActiveProducts.Count}</span><% end_if %>
+                    </li>
+                    <% else %>
+                    <li>
+                        <a href="{$Link}" id="subnavlist{$ID}" title="<%t SilverCart\Model\Pages\Page.GOTO 'Go to {title} page' title=$Title.XML %>" class="list-group-item <% if $isCurrent %>active<% else_if $isSection %>section<% end_if %>">
+                        <% if $groupPicture %>
+                            <span class="ico"><img src="{$groupPicture.Pad(30,30).Url}" alt="{$MenuTitle.XML}" class="img-responsive" /></span>
+                        <% else %>
+                            <span class="fa fa-chevron-right"></span>
+                        <% end_if %>
+                        </a>
+                        <% if $ActiveProducts.exists %><span class="badge badge-pill badge-primary">{$ActiveProducts.Count}</span><% end_if %>
+                    </li>
+                    <% end_if %>
+                    <% if $Last %>
+                </ul>
+            </div>
+                    <% end_if %>
                 <% end_if %>
             <% end_loop %>
-        </ul>
         <% else %>
-        <a href="{$Link}" title="<%t SilverCart\Model\Pages\Page.GOTO 'Go to {title} page' title=$Title.XML %>" class="heading nav-link <% if $isCurrent %>active<% else_if $isSection %>section<% end_if %>">{$MenuTitle.XML}<% end_if %></a><% if $ActiveProducts.Count > 0 %><span class="tag tag-pill tag-default">{$ActiveProducts.Count}</span>
+            <a href="{$Link}" title="<%t SilverCart\Model\Pages\Page.GOTO 'Go to {title} page' title=$Title.XML %>" class="nav-link <% if $isCurrent %>active<% else_if $isSection %>section<% end_if %>">{$MenuTitle.XML}</a>
+            <% if $ActiveProducts.exists %><span class="badge badge-pill badge-primary">{$ActiveProducts.Count}</span><% end_if %>
         <% end_if %>
-    </div>
+        </li>
     <% end_if %>
 <% end_loop %>
-
+    </ul>
+</ul>

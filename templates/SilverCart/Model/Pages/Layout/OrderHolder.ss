@@ -1,41 +1,43 @@
 <div class="row">
-    <div id="content-main" class="span9 col-lg-9 col-md-9 col-sm-12 col-xs-12">
+    <section id="content-main" class="col-12 col-md-9">
         <% include SilverCart/Model/Pages/BreadCrumbs %>
     <% if $CurrentRegisteredCustomer %>
-        <div class="section-header clearfix">
-            <h1>{$Title}</h1>
-        </div>
-        {$Content}
+        <article>
+            <header><h1>{$Title}</h1></header>
+            {$Content}
         <% if $CurrentMembersOrders %>
-        <table id="silvercart-order-holder-table-id" class="table full silvercart-order-holder-table">
-            <thead>
-                <tr class="mobile-hide-sm">
-                    <th class="text-left"><%t SilverCart\Model\Pages\Page.ORDER_DATE 'order date' %> /<br />{$CurrentMembersOrders.first.fieldLabel('OrderNumber')}</th>
-                    <th class="text-left"><%t SilverCart\Model\Pages\Page.ORDERED_PRODUCTS 'ordered products' %></th>
-                    <th class="text-left"><%t SilverCart\Model\Order\OrderStatus.SINGULARNAME 'Order status' %></th>
-                    <th class="text-left">{$CurrentMembersOrders.first.fieldLabel('AmountTotal')}</th>
-                    <th>&nbsp;</th>
-                </tr>
-                <tr class="mobile-show-sm">
-                     <th class="text-left" colspan="5"><%t SilverCart\Model\Pages\Page.ORDERED_PRODUCTS 'ordered products' %></th>
-                </tr>
-            </thead>
-            <tbody>
-            <% loop $CurrentMembersOrders %>
-                <% include SilverCart/Model/Pages/OrderHolderOrderListEntry %>
-            <% end_loop %>
-            </tbody>
-        </table>
+            <table id="silvercart-order-holder-table-id" class="table responsive-table">
+                <thead>
+                    <tr>
+                        <th scope="col" class="text-left"><%t SilverCart\Model\Pages\Page.ORDER_DATE 'order date' %> /<br />{$CurrentMembersOrders.first.fieldLabel('OrderNumber')}</th>
+                        <th scope="col" class="text-left"><%t SilverCart\Model\Pages\Page.ORDERED_PRODUCTS 'ordered products' %></th>
+                        <th scope="col" class="text-left"><%t SilverCart\Model\Order\OrderStatus.SINGULARNAME 'Order status' %></th>
+                        <th scope="col" class="text-left">{$CurrentMembersOrders.first.fieldLabel('AmountTotal')}</th>
+                        <th scope="col">&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <% loop $CurrentMembersOrders %>
+                    <% include SilverCart/Model/Pages/OrderHolderOrderListEntry %>
+                <% end_loop %>
+                </tbody>
+            </table>
+        <% else %>
+            <div class="alert alert-danger">
+                <p><%t SilverCart\Model\Pages\Page.NO_ORDERS 'You do not have any orders yet' %></p>
+            </div>
+        <% end_if %>
+        </article>
     <% else %>
-        <div class="alert alert-danger">
-            <p><%t SilverCart\Model\Pages\Page.NO_ORDERS 'You do not have any orders yet' %></p>
-        </div>
+        <% include SilverCart/Model/Pages/MyAccountLoginOrRegister %>
     <% end_if %>
-<% else %>
-    <% include SilverCart/Model/Pages/MyAccountLoginOrRegister %>
-<% end_if %>
-    </div>
-    <aside class="span3 col-lg-3 col-md-3 col-sm-12 col-xs-12">
+        <% if $WidgetSetContent.exists %>
+        <section class="sc-widget-holder">
+            {$InsertWidgetArea(Content)}
+        </section>
+        <% end_if %>
+    </section>
+    <aside class="col-12 col-md-3">
     <% if $CurrentRegisteredCustomer %>
         {$SubNavigation}
     <% end_if %>

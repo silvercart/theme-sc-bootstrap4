@@ -1,14 +1,14 @@
-<div class="card-block">
+<div class="card-body portrait-orientation row">
     <div class="product-img-box col-lg-6">
-        <div class="product-img thumbnail">
+        <div class="product-img thumbnail text-right">
         <% if $ListImage %>
             <% with $ListImage %>
-            <a class="fancybox" href="{$Link}" data-fancybox-group="silvercart-standard-product-image-group" title="{$Up.Title}"><img class="img-fluid img-responsive" src="{$Pad(500,350).URL}" alt="{$Up.Title}" /></a>
+            <a class="fancybox" href="{$Link}" data-fancybox-group="silvercart-standard-product-image-group" title="{$Up.Title}"><img class="img-fluid" src="{$Pad(500,350).URL}" alt="{$Up.Title}" /></a>
             <% end_with %>
         <% end_if %>
         </div>
         <% if $getImages.count > 1 %>
-        <div class="product-img-thumb">
+        <div class="product-img thumbnail">
             <% loop $getImages %>
                 <% if not $First %>
             <a class="fancybox" href="{$Image.Link}" data-fancybox-group="silvercart-standard-product-image-group" title="{$Product.Title}"><img class="img-thumbnail" src="{$Image.Pad(100,80).URL}" alt="{$Product.Title}" /></a>
@@ -17,57 +17,55 @@
         </div>
         <% end_if %>
         <% if $HtmlEncodedShortDescription %>
-        <div class="product-info card-block">
+        <div class="product-info card-body">
             <p class="card-text">{$HtmlEncodedShortDescription}</p>
         </div>
         <% end_if %>
     </div>
-    <div class="col-lg-6">
-        <div class="padding">
-            <div class="product-info">
-                <% if $PluggedInProductMetaData %>
-                    <% loop $PluggedInProductMetaData %>
-                        {$MetaData}
-                    <% end_loop %>
-                <% end_if %>
-                <dl class="dl-horizontal">
-                <% if $AvailabilityStatus %>
-                    <dt><%t SilverCart\Model\Product\AvailabilityStatus.SINGULARNAME 'Availability' %>:</dt>
-                    <dd>{$Availability('tag', 'tag-availability')}</dd>
-                <% end_if %>
-                    <dt><%t SilverCart\Model\Product\Product.PRODUCTNUMBER_SHORT 'Item no.' %>:</dt>
-                    <dd><span>{$ProductNumberShop}</span></dd>
-                <%-- if $Top.SiteConfig.enableStockManagement %>
-                    <dt>{$fieldLabel(StockQuantity)}:</dt>
-                    <dd><span>{$StockQuantity} {$QuantityUnit.Title}</span></dd>
-                <% end_if --%>
-                <% if $PackagingQuantity %>
-                    <dt><%t SilverCart\Model\Pages\ProductPage.PACKAGING_CONTENT 'Content' %>:</dt>
-                    <dd>{$PackagingQuantity} {$QuantityUnit.Title}</dd>
-                <% end_if %>
-                <% if $Manufacturer %>
-                    <% with $Manufacturer %>
-                    <dt>{$singular_name}:</dt>
-                    <dd><% if $Title %>{$Title}<% end_if %>
-                        <% if $logo %><br/><img src="{$logo.Pad(100,50).URL}" alt="{$Title}" /><% end_if %>
-                    </dd>
-                    <% end_with %>
-                <% end_if %>
-                </dl>
-            </div>
+    <div class="col-lg-6 pr-4">
+        <div class="product-info">
+            <% if $PluggedInProductMetaData %>
+                <% loop $PluggedInProductMetaData %>
+                    {$MetaData}
+                <% end_loop %>
+            <% end_if %>
+            <dl class="row">
+            <% if $AvailabilityStatus %>
+                <dt class="col-5 col-sm-4 col-lg-5 col-xl-4 col-xxl-3"><%t SilverCart\Model\Product\AvailabilityStatus.SINGULARNAME 'Availability' %>:</dt>
+                <dd class="col-7 col-sm-8 col-lg-7 col-xl-8 col-xxl-9">{$Availability('tag', 'tag-availability')}</dd>
+            <% end_if %>
+                <dt class="col-5 col-sm-4 col-lg-5 col-xl-4 col-xxl-3"><%t SilverCart\Model\Product\Product.PRODUCTNUMBER_SHORT 'Item no.' %>:</dt>
+                <dd class="col-7 col-sm-8 col-lg-7 col-xl-8 col-xxl-9"><span>{$ProductNumberShop}</span></dd>
+            <%-- if $Top.SiteConfig.enableStockManagement %>
+                <dt class="col-5 col-sm-4 col-lg-5 col-xl-4 col-xxl-3">{$fieldLabel(StockQuantity)}:</dt>
+                <dd class="col-7 col-sm-8 col-lg-7 col-xl-8 col-xxl-9"><span>{$StockQuantity} {$QuantityUnit.Title}</span></dd>
+            <% end_if --%>
+            <% if $PackagingQuantity %>
+                <dt class="col-5 col-sm-4 col-lg-5 col-xl-4 col-xxl-3"><%t SilverCart\Model\Pages\ProductPage.PACKAGING_CONTENT 'Content' %>:</dt>
+                <dd class="col-7 col-sm-8 col-lg-7 col-xl-8 col-xxl-9">{$PackagingQuantity} {$QuantityUnit.Title}</dd>
+            <% end_if %>
+            <% if $Manufacturer %>
+                <% with $Manufacturer %>
+                <dt class="col-5 col-sm-4 col-lg-5 col-xl-4 col-xxl-3">{$singular_name}:</dt>
+                <dd class="col-7 col-sm-8 col-lg-7 col-xl-8 col-xxl-9"><% if $Title %>{$Title}<% end_if %>
+                    <% if $logo %><br/><img src="{$logo.Pad(100,50).URL}" alt="{$Title}" /><% end_if %>
+                </dd>
+                <% end_with %>
+            <% end_if %>
+            </dl>
         </div>
 
-        <div class="span4 bordered padding">
+        <div class="bordered padding">
             <% if $PriceIsLowerThanMsr %>
-            <span class="tag absolute top-right" title="<%t SilverCart\Model\Product\Product.Sale 'Sale' %>"><i class="tag-sale"><%t SilverCart\Model\Product\Product.Sale 'Sale' %>!</i></span>
+            <span class="badge badge-primary position-absolute top-right" title="<%t SilverCart\Model\Product\Product.Sale 'Sale' %>"><i><%t SilverCart\Model\Product\Product.Sale 'Sale' %>!</i></span>
             <% end_if %>
             <% if $isNewProduct %>
-            <span class="tag absolute top-right" title="<%t SilverCart\Model\Product\Product.New 'New' %>"><i class="tag-new"><%t SilverCart\Model\Product\Product.New 'New' %>!</i></span>
+            <span class="badge badge-primary position-absolute top-right" title="<%t SilverCart\Model\Product\Product.New 'New' %>"><i><%t SilverCart\Model\Product\Product.New 'New' %>!</i></span>
             <% end_if %>
             <div class="product-price text-right">
                 <span>
                 <% if $PriceIsLowerThanMsr %>
-                    <span class="strike-through">{$MSRPrice.Nice}</span>
+                    <span class="text-line-through">{$MSRPrice.Nice}</span>
                     <strong class="price price-offer" id="product-price-{$ID}">{$PriceNice}</strong>
                 <% else %>
                     <strong class="price" id="product-price-{$ID}">{$PriceNice}</strong>
@@ -86,7 +84,7 @@
                 <% end_with %>
                 </small>
             </div>
-            <div class="product-inputs  btn-group-justified">
+            <div class="product-inputs btn-group d-flex">
             <% if $isBuyableDueToStockManagementSettings %>
                 {$AddToCartForm(Detail)}
             <% else %>

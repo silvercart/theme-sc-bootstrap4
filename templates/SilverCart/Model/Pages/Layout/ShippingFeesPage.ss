@@ -1,27 +1,24 @@
 <div class="row">
-    <div id="content-main" class="span9 col-lg-9 col-md-9 col-sm-12 col-xs-12">
+    <section id="content-main" class="col-12 col-md-9">
         <% include SilverCart/Model/Pages/BreadCrumbs %>
-        <div class="section-header clearfix">
-            <h1>{$Title}</h1>
-        </div>
-        {$Content}
+        <article>
+            <header><h1>{$Title}</h1></header>
+            {$Content}
         <% if $Form %>
-        <div class="form">
             {$Form}
-        </div>
         <% end_if %>
 <% if $Carriers %>
     <% loop $Carriers %>
         <% if $AllowedShippingMethods %>
-        <div class="section-header clearfix special">
+        <section>
             <h2>{$Title}</h2>
-        </div>
+            <hr/>
             <% loop $AllowedShippingMethods %>
                 <% if $isActive %>
                     <% if $ShowOnShippingFeesPage %>
+            <h3>{$Carrier.Title} - {$Title}</h3>
             <table class="silvercart-default-table table table-striped table-bordered table-padded">
                 <caption>
-                    <h3>{$Title}</h3>
                     <% if $DescriptionForShippingFeesPage %>
                         {$DescriptionForShippingFeesPage}
                     <% else_if $Description %>
@@ -37,7 +34,7 @@
                 </thead>
                 <tbody>
                 <% loop $ShippingFees %>
-                    <tr class="{$EvenOdd}">
+                    <tr>
                         <td class="text-right text-top"><% if $UnlimitedWeight %><%t SilverCart\Model\Shipment\ShippingFee.UNLIMITED_WEIGHT 'unlimited' %><% else %>{$MaximumWeightNice}<% end_if %></td>
                         <td class="text-left">
                             <div class="country-list">
@@ -68,14 +65,18 @@
                     <% end_if %>
                 <% end_if %>
             <% end_loop %>
+        </section>
         <% end_if %>
     <% end_loop %>
 <% end_if %>
-        <div class="silvercartWidgetHolder">
+        </article>
+    <% if $WidgetSetContent.exists %>
+        <section class="sc-widget-holder">
             {$InsertWidgetArea(Content)}
-        </div>
-    </div>
-    <aside class="span3 col-lg-3 col-md-3 col-sm-12 col-xs-12">
+        </section>
+    <% end_if %>
+    </section>
+    <aside class="col-12 col-md-3">
         {$SubNavigation}
         {$InsertWidgetArea(Sidebar)}
     </aside>

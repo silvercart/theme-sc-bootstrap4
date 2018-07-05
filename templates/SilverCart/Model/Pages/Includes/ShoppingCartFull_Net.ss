@@ -1,8 +1,8 @@
 <% if $CurrentPage.EditableShoppingCart %>
 <div class="clearfix">
-    <h1 class="pull-xs-left margin-bottom">{$CurrentPage.Title}</h1>
+    <h1 class="float-left mb-3">{$CurrentPage.Title}</h1>
     <% if $CurrentMember.ShoppingCart.isFilled %>
-    <div class="btn-toolbar pull-xs-right silvercart-shopping-cart-toolbar-top margin-bottom">
+    <div class="float-right silvercart-shopping-cart-toolbar-top mb-3">
         <a class="btn btn-secondary" title="<%t SilverCart\Model\Pages\Page.CONTINUESHOPPING 'Continue shopping' %>" href="{$CurrentPage.PageByIdentifierCode('SilvercartFrontPage').Link}#1"><span class="fa fa-caret-left"></span> <%t SilverCart\Model\Pages\Page.CONTINUESHOPPING 'Continue shopping' %></a>
         <% if $CurrentMember.ShoppingCart.IsMinimumOrderValueReached %>
             <% with $CurrentPage.PageByIdentifierCode('SilvercartCheckoutStep') %>
@@ -24,8 +24,8 @@
 </div>
     <% end_if %> 
 <% end_if %>
-<div class="silvercart-shopping-cart-full margin-top">
-    <table class="table table-sm">
+<div class="silvercart-shopping-cart-full mt-3">
+    <table class="table responsive-table">
         <% include SilverCart/Model/Pages/ShoppingCartFull_TableHead %>
         <tbody>
     <% loop $ShoppingCartPositions %>
@@ -40,9 +40,9 @@
 <div class="row">
     <div class="col-lg-8 offset-lg-4 col-md-9 offset-md-3 col-sm-12 col-xs-12">
         <div class="cart-receipt">
-            <table class="table table-sm">
-                <% include ShoppingCartFull_RegisteredModulesNet %>
-                <% include ShoppingCartFull_FeesOrChargesOrModulesNet %>
+            <table class="table responsive-table">
+                <% include SilverCart/Model/Pages/ShoppingCartFull_RegisteredModulesNet %>
+                <% include SilverCart/Model/Pages/ShoppingCartFull_FeesOrChargesOrModulesNet %>
 <% if $TaxTotal %>
     <% loop $TaxTotal %>
                 <tr>
@@ -83,12 +83,14 @@
     </div>
 </div>
 <% if $CurrentPage.EditableShoppingCart && $CurrentMember.ShoppingCart.isFilled %>
-<div class="btn-toolbar pull-xs-right silvercart-shopping-cart-toolbar-bottom last">
-    <a class="btn btn-secondary" title="<%t SilverCart\Model\Pages\Page.CONTINUESHOPPING 'Continue shopping' %>" href="{$CurrentPage.PageByIdentifierCode('SilvercartFrontPage').Link}#1"><span class="fa fa-caret-left"></span> <%t SilverCart\Model\Pages\Page.CONTINUESHOPPING 'Continue shopping' %></a>
+<div class="clearfix">
+    <div class="float-right mb-3 silvercart-shopping-cart-toolbar-bottom">
+        <a class="btn btn-secondary" title="<%t SilverCart\Model\Pages\Page.CONTINUESHOPPING 'Continue shopping' %>" href="{$CurrentPage.PageByIdentifierCode('SilvercartFrontPage').Link}#1"><span class="fa fa-caret-left"></span> <%t SilverCart\Model\Pages\Page.CONTINUESHOPPING 'Continue shopping' %></a>
     <% if $CurrentMember.ShoppingCart.IsMinimumOrderValueReached %>
         <% with $CurrentPage.PageByIdentifierCode('SilvercartCheckoutStep') %>
-    <a href="{$Link}" title="<%t SilverCart\Model\Pages\Page.GOTO 'go to {title}' title=$Title.XML %>" class="btn btn-primary"><%t SilverCart\Model\Pages\Page.CHECKOUT 'Checkout' %> <span class="fa fa-caret-right"></span></a>
+        <a href="{$Link}" title="<%t SilverCart\Model\Pages\Page.GOTO 'go to {title}' title=$Title.XML %>" class="btn btn-primary"><%t SilverCart\Model\Pages\Page.CHECKOUT 'Checkout' %> <span class="fa fa-caret-right"></span></a>
         <% end_with %>
     <% end_if %> 
+    </div>
 </div>
 <% end_if %>

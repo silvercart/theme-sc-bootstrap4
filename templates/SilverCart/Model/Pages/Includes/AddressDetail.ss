@@ -2,8 +2,8 @@
 <h2>{$CurrentPage.Title}</h2><br/>
 <div class="row address-list">
     <% loop $Addresses %>
-    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
-        <div class="card">
+    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 d-flex">
+        <div class="card w-100">
         <% if $isInvoiceAddress || $isShippingAddress %>
             <div class="card-header">
             <% if $isInvoiceAddress %>
@@ -14,7 +14,7 @@
             <% end_if %>
             </div>
         <% end_if %>
-            <div class="card-block">
+            <div class="card-body">
                 <p class="card-text">
                 <% if $IsPackstation %>
                     <em>{$fieldLabel('PackstationLabel')}</em><br/>
@@ -44,8 +44,8 @@
                 <% end_if %>
                 </p>
             </div>
-            <div class="card-btn-bar">
-                <div class="btn-group">
+            <div class="clearfix">
+                <div class="btn-group btn-group-justified float-right">
                 <% if not $isInvoiceAddress && $Member.InvoiceAddress.canEdit %>
                     <a class="btn btn-sm" data-toggle="tooltip" data-placement="top" title="<%t SilverCart\Model\Pages\AddressHolder.SET_AS 'Set as' %> <%t SilverCart\Model\Pages\AddressHolder.INVOICEADDRESS 'invoice address' %>" href="{$CurrentPage.Link}setInvoiceAddress/{$ID}"><span class="fa fa-credit-card"></span> Standard</a>
                 <% end_if %>

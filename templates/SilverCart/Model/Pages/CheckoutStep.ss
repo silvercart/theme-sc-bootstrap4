@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="ie ie6" lang="{$ContentLocale}"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="{$ContentLocale}"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="{$ContentLocale}"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="{$ContentLocale}"> <!--<![endif]-->
+<html lang="{$ContentLocale}">
     <head>
         <% include SilverCart/Model/Pages/Head %>
     </head>
@@ -10,9 +7,7 @@
         <% include SilverCart/Model/Pages/HeaderCustomHtml %>
         <div id="main-container" class="clearfix">
             <% include SilverCart/Model/Pages/HeaderFunnel %>
-            <div class="main" id="main"><div class="content container">
-                {$Layout}
-            </div></div>
+            <main id="main" class="main container-fluid clearfix">{$Layout}</main>
             <% include SilverCart/Model/Pages/Footer %>
         </div>
         {$ModuleHtmlInjections}

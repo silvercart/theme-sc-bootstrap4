@@ -1,52 +1,57 @@
 <div class="row">
-    <div id="content-main" class="span9 col-lg-9 col-md-9 col-sm-12 col-xs-12">
+    <section id="content-main" class="col-12 col-md-9">
         <% include SilverCart/Model/Pages/BreadCrumbs %>
-
     <% if $ErrorMessage %>
         <div class="alert alert-danger" role="alert">{$ErrorMessage}</div>
     <% end_if %>
     <% if SuccessMessage %>
         <div class="alert alert-success" role="alert">{$SuccessMessage}</div>
     <% end_if %>
-
     <% if $CurrentRegisteredCustomer %>
-        <div class="section-header clearfix">
-            <h1><%t SilverCart\Model\Pages\AddressHolder.CURRENT_DEFAULT_ADDRESSES 'Your default invoice and shipping addresses' %></h1>
-        </div>
-        {$Content}
+        <article>
+            <header><h1><%t SilverCart\Model\Pages\AddressHolder.CURRENT_DEFAULT_ADDRESSES 'Your default invoice and shipping addresses' %></h1></header>
+            {$Content}
         <% with $CurrentRegisteredCustomer %>
             <% if $hasOnlyOneStandardAddress %>
                 <% with $InvoiceAddress %>
                     <% include SilverCart/Model/Pages/AddressDetailReadOnly %>
                 <% end_with %>
             <% else %>
-        <div class="row address-list">
-            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
+            <section class="row address-list">
+                <div class="col-12 col-sm-6 col-xl-4">
                 <% with $InvoiceAddress %>
                     <% include SilverCart/Model/Pages/AddressDetailReadOnly %>
                 <% end_with %>
-            </div>
-            <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
+                </div>
+                <div class="col-12 col-sm-6 col-xl-4">
                 <% with $ShippingAddress %>
                     <% include SilverCart/Model/Pages/AddressDetailReadOnly %>
                 <% end_with %>
-            </div>
-        </div>
+                </div>
+            </section>
             <% end_if %>
-        <div class="silvercart-address-equalize">
-            <% include SilverCart/Model/Pages/AddressDetail %>
-        </div>
+            <section class="mt-3">
+                <% include SilverCart/Model/Pages/AddressDetail %>
+            </section>
         <% end_with %>
+        </article>
         <hr />
-        <a class="btn btn-primary" href="{$Link(addNewAddress)}" data-target="#silvercart-add-address-form" id="silvercart-add-address-link"><%t SilverCart\Model\Pages\AddressHolder.ADD 'Add new address' %></a>
-        <div class="hidden-form collapse" id="silvercart-add-address-form">
-            {$AddAddressForm}
-        </div>
+        <section>
+            <a class="btn btn-primary" href="{$Link(addNewAddress)}" data-target="#silvercart-add-address-form" id="silvercart-add-address-link"><%t SilverCart\Model\Pages\AddressHolder.ADD 'Add new address' %></a>
+            <div class="hidden-form collapse" id="silvercart-add-address-form">
+                {$AddAddressForm}
+            </div>
+        </section>
     <% else %>
         <% include SilverCart/Model/Pages/MyAccountLoginOrRegister %>
     <% end_if %>
-    </div>
-    <aside class="span3 col-lg-3 col-md-3 col-sm-12 col-xs-12">
+    <% if $WidgetSetContent.exists %>
+        <section class="sc-widget-holder">
+            {$InsertWidgetArea(Content)}
+        </section>
+    <% end_if %>
+    </section>
+    <aside class="col-12 col-md-3">
         <% if $CurrentRegisteredCustomer %>
             {$SubNavigation}
         <% end_if %>

@@ -19,8 +19,8 @@
     <% if $TaxRatesWithoutFees %>
         <% loop $TaxRatesWithoutFees %>
 <tr>
-    <td colspan="6" class="text-right"><%t SilverCart\Model\Pages\Page.INCLUDED_VAT 'included VAT' %> ({$Rate}%)</td>
-    <td class="text-right">{$Amount.Nice}</td>
+    <td colspan="6" class="text-right text-black-50"><%t SilverCart\Model\Pages\Page.INCLUDED_VAT 'included VAT' %> ({$Rate}%)</td>
+    <td class="text-right text-black-50">{$Amount.Nice}</td>
 </tr>
         <% end_loop %>
     <% end_if %>
@@ -31,7 +31,7 @@
     <td class="text-right">{$HandlingCostShipment.Nice}</td>
 </tr>
 <tr>
-    <td colspan="2">{$payment.singular_name}:</td>
+    <td colspan="2"><%t SilverCart\Model\Payment\PaymentMethod.SINGULARNAME 'Payment method' %>:</td>
     <td colspan="4" class="text-right"><strong>{$payment.Name}</strong></td>
     <td class="text-right">{$HandlingCostPayment.Nice}</td>
 </tr>
@@ -74,18 +74,18 @@
             <% end_loop %>
         <% end_if %>
     <% end_loop %>
+<% end_if %>
 <tr>
     <td colspan="6" class="text-right"><h2><%t SilverCart\Model\Pages\Page.TOTAL 'total' %></h2></td>
     <td class="text-right"><h2>{$AmountTotal.Nice}<% if $ShippingMethod.ShippingFee.PostPricing %>*<% end_if %></h2></td>
 </tr>
-    <% if $TaxTotal %>
-        <% loop $TaxTotal %>
+<% if $TaxTotal %>
+    <% loop $TaxTotal %>
 <tr>
-    <td colspan="6" class="text-right"><%t SilverCart\Model\Pages\Page.INCLUDED_VAT 'included VAT' %> ({$Rate}%)</td>
-    <td class="text-right">{$Amount.Nice}</td>
+    <td colspan="6" class="text-right text-black-50"><%t SilverCart\Model\Pages\Page.INCLUDED_VAT 'included VAT' %> ({$Rate}%)</td>
+    <td class="text-right text-black-50">{$Amount.Nice}</td>
 </tr>
-        <% end_loop %>
-    <% end_if %>
+    <% end_loop %>
 <% end_if %>
 <% if not $HasChargesAndDiscountsForTotal && $registeredModules %>
     <% loop $registeredModules %>

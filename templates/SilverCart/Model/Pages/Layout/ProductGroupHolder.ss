@@ -1,18 +1,26 @@
 <div class="row">
-    <div id="content-main" class="col-9 col-lg-9 col-md-9 col-sm-12 col-xs-12">
+    <section id="content-main" class="col-12 col-md-9">
         <% include SilverCart/Model/Pages/BreadCrumbs %>
 <% cached $CacheKey %>
-        <h1>{$Title}</h1>
-        {$Content}
-    <% if $ViewableChildren %>
-        <div class="silvercart-product-group-page-control-top clearfix">
-            <% include SilverCart/Model/Pages/ProductGroupHolderControls %>
-        </div>
-        {$RenderProductGroupHolderGroupView}
-    <% end_if %>
+        <article>
+            <header><h1>{$Title}</h1></header>
+            {$Content}
+            {$RevocationForm}
+        <% if $ViewableChildren %>
+            <div class="silvercart-product-group-page-control-top clearfix">
+                <% include SilverCart/Model/Pages/ProductGroupHolderControls %>
+            </div>
+            {$RenderProductGroupHolderGroupView}
+        <% end_if %>
+        </article>
 <% end_cached %>
-    </div>
-    <aside class="span3 col-lg-3 col-md-3 col-sm-12 col-xs-12 scrollspy">
+        <% if $WidgetSetContent.exists %>
+        <section class="sc-widget-holder">
+            {$InsertWidgetArea(Content)}
+        </section>
+        <% end_if %>
+    </section>
+    <aside class="col-12 col-md-3">
         {$InsertWidgetArea(Sidebar)}
     </aside>
 </div>

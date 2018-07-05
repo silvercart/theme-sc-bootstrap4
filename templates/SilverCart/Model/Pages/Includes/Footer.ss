@@ -1,72 +1,65 @@
 <% cached 'Footer',$CurrentPage.MemberGroupCacheKey %>
-<footer class="bg-primary">
+<footer class="footer mt-5 pt-4">
+    <h3 class="sr-only">Footer Navigation</h3>
+    <section class="container-fluid">
+        <div class="card-deck justify-content-between">
 <% if $FooterColumns %>
-    <div class="footerOuter">
-        <div class="container">
-            <div class="row row-eq-height">
     <% loop $FooterColumns %>
-                <div class="span3 col-md-3 col-xs-6">
-                    <div class="section-header clearfix">
-                        <p><a href="{$Link}" title="<%t SilverCart\Model\Pages\Page.GOTO 'go to {title} page' title=$Title.XML %>">{$MenuTitle.XML}</a></p>
-                    </div>
+            <section class="card bg-light border-0 p-3">
+                <h3><a href="{$Link}" title="<%t SilverCart\Model\Pages\Page.GOTO 'go to {title} page' title=$Title.XML %>">{$MenuTitle.XML}</a></h3>
         <% if $Children %>
-                    <div class="footer-links">
-                        <ul class="list-unstyled">
+                <nav class="footer-links">
+                    <ul class="list-unstyled">
             <% loop $Children %>
-                            <li><a class="highlight" href="{$Link}" title="<%t SilverCart\Model\Pages\Page.GOTO 'go to {title} page' title=$Title.XML %>"><i class="fa fa-caret-right"></i> {$MenuTitle.XML}</a></li>
+                        <li><a class="highlight" href="{$Link}" title="<%t SilverCart\Model\Pages\Page.GOTO 'go to {title} page' title=$Title.XML %>"><span class="fa fa-caret-right"></span> {$MenuTitle.XML}</a></li>
             <% end_loop %>
-                        </ul>
-                    </div>
+                    </ul>
+                </nav>
         <% end_if %>
-                </div>
+            </section>
     <% end_loop %>
+<% end_if %>
 <% with $SiteConfig %>
     <% if $FacebookLink || $TwitterLink || $XingLink || $GoogleplusLink || $InstagramLink || $BloglovinLink || $PinterestLink || $YouTubeLink || $TumblrLink || $RSSLink || $EmailLink %>
-                <div class="span3 col-md-3 col-xs-6">
-                    <div class="section-header clearfix">
-                        <p><%t SilverCart\Admin\Model\Config.SOCIALMEDIA 'Social Media' %></p>
-                    </div>
-                    <div id="socialicons" itemscope itemtype="http://schema.org/Organization">
-                        <link itemprop="url" href="{$BaseHref}" />
-        <% if $FacebookLink   %><a itemprop="sameAs" class="icon" href="{$FacebookLink}" title="Follow with Facebook" target="_blank"><i class="fa fa-facebook"></i></a><% end_if %>
-        <% if $TwitterLink    %><a itemprop="sameAs" class="icon" href="{$TwitterLink}" title="Follow with Twitter" target="_blank"><i class="fa fa-twitter"></i></a><% end_if %>
-        <% if $XingLink       %><a itemprop="sameAs" class="icon" href="{$XingLink}" title="Follow with Xing" target="_blank"><i class="fa fa-xing"></i></a><% end_if %>
-        <% if $GoogleplusLink %><a itemprop="sameAs" class="icon" href="{$GoogleplusLink}" title="Follow with Google Plus" target="_blank"><i class="fa fa-google-plus"></i></a> <% end_if %>
-        <% if $InstagramLink  %><a itemprop="sameAs" class="icon" href="{$InstagramLink}" title="Follow with Instagram" target="_blank"><i class="fa fa-instagram"></i></a><% end_if %>
-        <% if $BloglovinLink  %><a itemprop="sameAs" class="icon" href="{$BloglovinLink}" title="Follow with Bloglovin" target="_blank"><i class="fa fa-heart"></i></a><% end_if %>
-        <% if $PinterestLink  %><a itemprop="sameAs" class="icon" href="{$PinterestLink}" title="Follow with Pinterest" target="_blank"><i class="fa fa-pinterest"></i></a><% end_if %>
-        <% if $YouTubeLink    %><a itemprop="sameAs" class="icon" href="{$YouTubeLink}" title="Follow with YouTube" target="_blank"><i class="fa fa-youtube"></i></a><% end_if %>
-        <% if $TumblrLink     %><a itemprop="sameAs" class="icon" href="{$TumblrLink}" title="Follow with Tumblr" target="_blank"><i class="fa fa-tumblr"></i></a><% end_if %>
-        <% if $RSSLink        %><a itemprop="sameAs" class="icon" href="{$RSSLink}" title="Follow with RSS" target="_blank"><i class="fa fa-rss"></i></a><% end_if %>
-        <% if $EmailLink      %><a itemprop="sameAs" class="icon" href="mailto:{$EmailLink}" title="Email Me" target="_blank"><i class="fa fa-envelope"></i></a><% end_if %>
-                    </div>
+            <section class="card bg-light border-0 p-3">
+                <h3><%t SilverCart\Admin\Model\Config.SOCIALMEDIA 'Social Media' %></h3>
+                <div id="socialicons" itemscope itemtype="http://schema.org/Organization">
+                    <link itemprop="url" href="{$BaseHref}" />
+        <% if $FacebookLink   %><a itemprop="sameAs" class="icon btn mb-1" href="{$FacebookLink}" title="Follow with Facebook" target="_blank"><span class="fa fa-2x fa-facebook"></span></a><% end_if %>
+        <% if $TwitterLink    %><a itemprop="sameAs" class="icon btn mb-1" href="{$TwitterLink}" title="Follow with Twitter" target="_blank"><span class="fa fa-2x fa-twitter"></span></a><% end_if %>
+        <% if $XingLink       %><a itemprop="sameAs" class="icon btn mb-1" href="{$XingLink}" title="Follow with Xing" target="_blank"><span class="fa fa-2x fa-xing"></span></a><% end_if %>
+        <% if $GoogleplusLink %><a itemprop="sameAs" class="icon btn mb-1" href="{$GoogleplusLink}" title="Follow with Google Plus" target="_blank"><span class="fa fa-2x fa-google-plus"></span></a> <% end_if %>
+        <% if $InstagramLink  %><a itemprop="sameAs" class="icon btn mb-1" href="{$InstagramLink}" title="Follow with Instagram" target="_blank"><span class="fa fa-2x fa-instagram"></span></a><% end_if %>
+        <% if $BloglovinLink  %><a itemprop="sameAs" class="icon btn mb-1" href="{$BloglovinLink}" title="Follow with Bloglovin" target="_blank"><span class="fa fa-2x fa-heart"></span></a><% end_if %>
+        <% if $PinterestLink  %><a itemprop="sameAs" class="icon btn mb-1" href="{$PinterestLink}" title="Follow with Pinterest" target="_blank"><span class="fa fa-2x fa-pinterest"></span></a><% end_if %>
+        <% if $YouTubeLink    %><a itemprop="sameAs" class="icon btn mb-1" href="{$YouTubeLink}" title="Follow with YouTube" target="_blank"><span class="fa fa-2x fa-youtube"></span></a><% end_if %>
+        <% if $TumblrLink     %><a itemprop="sameAs" class="icon btn mb-1" href="{$TumblrLink}" title="Follow with Tumblr" target="_blank"><span class="fa fa-2x fa-tumblr"></span></a><% end_if %>
+        <% if $RSSLink        %><a itemprop="sameAs" class="icon btn mb-1" href="{$RSSLink}" title="Follow with RSS" target="_blank"><span class="fa fa-2x fa-rss"></span></a><% end_if %>
+        <% if $EmailLink      %><a itemprop="sameAs" class="icon btn mb-1" href="mailto:{$EmailLink}" title="Email Me" target="_blank"><span class="fa fa-2x fa-envelope"></span></a><% end_if %>
                 </div>
+            </section>
     <% end_if %>
 <% end_with %>
-            </div>
         </div>
-    </div>
-<% end_if %>
-    <div class="container footer">
-        <div class="row">
-            <div class="span12 col-md-12">
-            <% if $PaymentMethods %>
-                <ul class="payment-methods list-inline pull-md-right">
-                <% loop $PaymentMethods %>
-                    <% if $showPaymentLogos && $PaymentLogos %>
-                        <% loop $PaymentLogos %>
-                            <% if $Image.Size %>
-                    <li class="list-inline-item"><a href="{$CurrentPage.PageByIdentifierCodeLink('SilvercartPaymentMethodsPage')}#{$Top.String2urlSegment($Up.Name)}" title="{$Up.Title.HTML}"><img src="{$Image.SetHeight(35).URL}" alt="{$Up.Title.HTML}" /></a></li>
-                            <% end_if %>
-                        <% end_loop %>
+    </section>
+    <section class="bg-primary mt-3 py-3">
+        <div class="container-fluid">
+    <% if $PaymentMethods %>
+            <ul class="payment-methods list-inline pull-md-right">
+        <% loop $PaymentMethods %>
+            <% if $showPaymentLogos && $PaymentLogos %>
+                <% loop $PaymentLogos %>
+                    <% if $Image.Size %>
+                <li class="list-inline-item"><a href="{$CurrentPage.PageByIdentifierCodeLink('SilvercartPaymentMethodsPage')}#{$Top.String2urlSegment($Up.Name)}" title="{$Up.Title.HTML}"><img src="{$Image.SetHeight(35).URL}" alt="{$Up.Title.HTML}" /></a></li>
                     <% end_if %>
                 <% end_loop %>
-                </ul>
             <% end_if %>
-                <p>{$SiteConfig.Title} | {$SiteConfig.Tagline} | <a href="http://www.silvercart.org" target="_blank" title="SilverCart. eCommerce software. Open-source. You'll love it.">by SilverCart eCommerce</a></p>
-            </div>
+        <% end_loop %>
+            </ul>
+    <% end_if %>
+            <p>{$SiteConfig.Title} | {$SiteConfig.Tagline} | <a href="http://www.silvercart.org" target="_blank" title="SilverCart. eCommerce software. Open-source. You'll love it.">by SilverCart eCommerce</a></p>
         </div>
-    </div>
+    </section>
 </footer>
 <% end_cached %>
 <% if $CurrentPage.isProductDetailView %>

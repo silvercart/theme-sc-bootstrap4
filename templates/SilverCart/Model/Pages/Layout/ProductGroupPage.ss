@@ -1,17 +1,17 @@
 <div class="row row-offcanvas row-offcanvas-right">
 <% cached $CacheKey %>
-    <div id="content-main" class="span9 col-lg-9 col-md-9 col-sm-12 col-xs-12">
+    <section id="content-main" class="col-12 col-md-9">
         <% include SilverCart/Model/Pages/BreadCrumbs %>
-        <div class="section-header clearfix">
-            <h1>{$Title}</h1>
-        </div>
+        <article aria-label="{$Title.XML}">
+            <header><h1 id="maintitle">{$Title}</h1></header>
     <% if $ViewableChildren %>
-        <div class="silvercart-product-group-page-control-top clearfix">
+        <nav class="silvercart-product-group-page-control-top navbar pb-3 clearfix">
             <% include SilverCart/Model/Pages/ProductGroupHolderControls %>
-        </div>
-        <div class="silvercart-product-group-page sc-products margin-bottom clearfix">
+        </nav>
+        <section class="silvercart-product-group-page sc-products mb-3 clearfix">
+            <h2 class="sr-only">{$Title}</h2>
             {$RenderProductGroupHolderGroupView}
-        </div>
+        </section>
     <% end_if %>
         {$InsertWidgetArea(Content)}
     <% if $HasMoreProductsThan(0) %>
@@ -19,20 +19,22 @@
             <% include SilverCart/Model/Pages/ProductGroupPageControlsTop %>
         </div>
     <% end_if %>
-        <div class="silvercart-product-group-page sc-products clearfix">
+        <section class="silvercart-product-group-page sc-products clearfix">
+            <h2 class="sr-only">{$Title}</h2>
             {$RenderProductGroupPageGroupView}
-        </div>
+        </section>
     <% if $HasMoreProductsThan(0) %>
-        <div class="silvercart-product-group-page-control-bottom clearfix">
+        <nav class="silvercart-product-group-page-control-bottom navbar clearfix">
             <% include SilverCart/Model/Pages/ProductGroupPageControlsBottom %>
-        </div>
+        </nav>
     <% end_if %>
     <% if $isFirstPage %>
         {$PageContent}
     <% end_if %>
-    </div>
+        </article>
+    </section>
 <% end_cached %>
-    <aside id="sidebar" class="span3 col-lg-3 col-md-3 col-sm-12 col-xs-12 sidebar-offcanvas">
+    <aside id="sidebar" class="col-12 col-md-3 sidebar-offcanvas">
         {$InsertWidgetArea(Sidebar)}
     </aside>
 </div>

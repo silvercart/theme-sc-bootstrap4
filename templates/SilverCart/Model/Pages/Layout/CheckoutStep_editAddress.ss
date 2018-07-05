@@ -1,9 +1,13 @@
 <% include SilverCart/Model/Pages/CheckoutStepNavigation %>
 <div class="row">
-    <div class="span12 col-md-12 clearfix">
-        {$EditAddressForm}
-        <div class="silvercartWidgetHolder">
+    <section id="content-main" class="col-12">
+        <article>
+            {$EditAddressForm}
+        </article>
+        <% if $WidgetSetContent.exists %>
+        <section class="sc-widget-holder">
             {$InsertWidgetArea(Content)}
-        </div>
-    </div>
+        </section>
+        <% end_if %>
+    </section>
 </div>

@@ -6,25 +6,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<% require themedCSS("client/css/bootstrap.min") %>
+<% require themedCSS("client/css/main") %>
 <% require themedCSS("client/css/animate.min") %>
 <% require themedCSS("client/css/ie-hacks") %>
 <% require themedCSS("client/css/font-awesome.min") %>
-<% require themedCSS("client/css/style") %>
-<% require themedCSS("client/css/silvercart") %>
 <% require themedCSS("client/css/jquery.fancybox") %>
+<% require themedCSS("client/css/tmp") %>
 <% require themedJavascript("client/js/jquery-3.2.1.min") %>
 {$RequireAdditionalJavaScript}
 <% require themedJavascript("client/js/tether.min") %>
-<% require themedJavascript("client/js/bootstrap.min") %>
+<% require themedJavascript("client/js/bootstrap.bundle.min") %>
 <% require themedJavascript("client/js/jquery.fancybox.min") %>
 <% require themedJavascript("client/js/stickyfill.js") %>
 <% require themedJavascript("client/js/lazyload.js") %>
-<% require themedJavascript("client/js/silvercart.js") %>
+<% require themedJavascript("client/js/custom.js") %>
 <% require themedJavascript("client/javascript/jquery.pixeltricks.tools") %>
 <% require themedJavascript("client/javascript/jquery.cookie") %>
 <% require themedJavascript("client/javascript/silvercart.js") %>
-{$RequireColorSchemeCSS}
+<%--{$RequireColorSchemeCSS}--%>
 <% if $SiteConfig.MobileTouchIcon %>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">

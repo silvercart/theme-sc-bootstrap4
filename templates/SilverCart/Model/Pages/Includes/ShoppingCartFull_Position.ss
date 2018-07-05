@@ -19,18 +19,18 @@
         <p class="hidden-xs-down"><small>{$Product.TaxRate}% <%t SilverCart\Model\Product\Product.VAT 'VAT' %></small></p>
     </td>
 <% if $CurrentPage.EditableShoppingCart %>
-    <td class="quantity text-center" data-title="<%t SilverCart\Model\Pages\ProductPage.QUANTITY 'Quantity' %>">
-        <div class="inline-block">
-            <div class="input-group">
-                <div class="input-group-btn">{$DecrementPositionQuantityForm}</div>
+    <td class="quantity" data-title="<%t SilverCart\Model\Pages\ProductPage.QUANTITY 'Quantity' %>">
+        <div class="d-flex">
+            <div class="col-3 p-0 justify-content-end text-right">{$DecrementPositionQuantityForm}</div>
+            <div class="col-6 p-0 justify-content-center">
                 <form action="/sc-action/addToCart" method="post">
                     <input type="hidden" name="productID" value="{$ProductID}">
                     <input type="text" class="form-control form-control-sm text-center input-nano" name="productQuantity" value="{$TypeSafeQuantity}" id="productQuantity-{$ID}">
                 </form>
-            <% if $isQuantityIncrementableBy %>
-                <div class="input-group-btn">{$IncrementPositionQuantityForm}</div>
-            <% end_if %>
             </div>
+        <% if $isQuantityIncrementableBy %>
+            <div class="col-3 p-0 justify-content-start">{$IncrementPositionQuantityForm}</div>
+        <% end_if %>
         </div>
     </td>
 <% else %>

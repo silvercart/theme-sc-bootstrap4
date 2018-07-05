@@ -1,22 +1,19 @@
 <div class="row">
-    <div id="content-main" class="span9 col-lg-9 col-md-9 col-sm-12 col-xs-12">
-        <div id="silvercart-breadcrumbs-id" class="silvercart-breadcrumbs clearfix">
-            <p>{$Breadcrumbs}</p>
-        </div>
-
+    <section id="content-main" class="col-12 col-md-9">
+        <% include SilverCart/Model/Pages/BreadCrumbs %>
         <% if $CurrentRegisteredCustomer %>
-        <div class="section-header clearfix">
-            <h1><%t SilverCart\Model\Customer\Address.EDITADDRESS 'Edit address' %></h1>
-        </div>
+        <article>
+            <header><h1><%t SilverCart\Model\Customer\Address.EDITADDRESS 'Edit address' %></h1></header>
             {$EditAddressForm}
+        </article>
         <% else %>
             <% include SilverCart/Model/Pages/MyAccountLoginOrRegister %>
         <% end_if %>
-    </div>
-    <aside class="span3 col-lg-3 col-md-3 col-sm-12 col-xs-12">
-        <% if $CurrentRegisteredCustomer %>
-            {$SubNavigation}
-        <% end_if %>
+    </section>
+    <aside class="col-12 col-md-3">
+    <% if $CurrentRegisteredCustomer %>
+        {$SubNavigation}
+    <% end_if %>
         {$InsertWidgetArea(Sidebar)}
     </aside>
 </div>

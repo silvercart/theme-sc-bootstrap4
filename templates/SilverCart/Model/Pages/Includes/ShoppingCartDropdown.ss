@@ -9,5 +9,5 @@
         <% include SilverCart/Model/Pages/ShoppingCartDropdownPosition %>
     <% end_with %>
 <% else %>
-<div class="alert alert-info"><span class="fa fa-info-sign"></span> <%t SilverCart\Model\Pages\CartPage.CART_EMPTY 'Your cart is empty' %></div>
+<div class="alert alert-light"><span class="fa fa-info-sign"></span> <%t SilverCart\Model\Pages\CartPage.CART_EMPTY 'Your cart is empty' %></div>
 <% end_if %>

@@ -1,14 +1,18 @@
 <% include SilverCart/Model/Pages/CheckoutStepNavigation %>
 <div class="row">
-    <div class="span12 col-md-12 clearfix">
+    <section id="content-main" class="col-12">
     <% if $canCheckout %>
-        {$Content}
-        {$Checkout.CurrentStep}
-        <div class="silvercartWidgetHolder">
+        <article>
+            {$Content}
+            {$Checkout.CurrentStep}
+        </article>
+        <% if $WidgetSetContent.exists %>
+        <section class="sc-widget-holder">
             {$InsertWidgetArea(Content)}
-        </div>
+        </section>
+        <% end_if %>
     <% else %>
         <div class="alert alert-danger">{$CheckoutErrorMessage}</div>
     <% end_if %>
-    </div>
+    </section>
 </div>

@@ -6,8 +6,9 @@
     <body lang="{$ContentLocale}" class="{$ClassNameCSS}">
         <% include SilverCart/Model/Pages/HeaderCustomHtml %>
         <div id="main-container" class="clearfix">
-            <% include SilverCart/Model/Pages/HeaderFunnel %>
-            <main id="main" class="main container-fluid clearfix">{$Layout}</main>
+            <% include SilverCart/Model/Pages/HeaderFull %>
+            <% include SilverCart/Model/Pages/Navigation %>
+            {$Layout}
             <% include SilverCart/Model/Pages/Footer %>
         </div>
         {$ModuleHtmlInjections}
@@ -18,5 +19,6 @@
             <% end_with %>
         <% end_if %>
         <% include SilverCart/Model/Pages/FooterCustomHtml %>
+        <% include SilverCart/Model/Pages/NavigationScroll %>
     </body>
 </html>

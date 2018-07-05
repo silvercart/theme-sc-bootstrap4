@@ -1,16 +1,21 @@
 <div class="row">
-    <div id="content-main" class="span9 col-lg-9 col-md-9 col-sm-12 col-xs-12">
+    <section id="content-main" class="col-12 col-md-9">
         <% include SilverCart/Model/Pages/BreadCrumbs %>
-        <div class="section-header clearfix">
-            <h1>{$Title}</h1>
-        </div>
-        {$Content}
-        {$DownloadSearchForm}
-        <%t SilverCart\Model\Pages\DownloadPageHolder\ResultsText 'Your search for <strong>&quot;{term}&quot;</strong> resulted in <strong>{count} results</strong>.' term=$SearchQuery count=$SearchResultsCount %>
-        <hr>
-        <% include SilverCart/Model/Pages/DownloadPage_Table %>
-    </div>
-    <aside class="span3 col-lg-3 col-md-3 col-sm-12 col-xs-12">
+        <article>
+            <header><h1>{$Title}</h1></header>
+            {$Content}
+            {$DownloadSearchForm}
+            <p><%t SilverCart\Model\Pages\DownloadPageHolder\ResultsText 'Your search for <strong>&quot;{term}&quot;</strong> resulted in <strong>{count} results</strong>.' term=$SearchQuery count=$SearchResultsCount %></p>
+            <hr>
+            <% include SilverCart/Model/Pages/DownloadPage_Table %>
+        </article>
+        <% if $WidgetSetContent.exists %>
+        <section class="sc-widget-holder">
+            {$InsertWidgetArea(Content)}
+        </section>
+        <% end_if %>
+    </section>
+    <aside class="col-12 col-md-3">
         {$InsertWidgetArea(Sidebar)}
     </aside>
 </div>

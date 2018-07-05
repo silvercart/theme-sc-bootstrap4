@@ -1,16 +1,18 @@
 <div class="row">
-    <div id="content-main" class="span9 col-lg-9 col-md-9 col-sm-12 col-xs-12">
-        {$Content}
+    <section id="content-main" class="col-12 col-md-9">
+        <article>
+            {$Content}
         <% if $Form %>
-        <div class="form">
             {$Form}
-        </div>
         <% end_if %>
-        <div class="silvercartWidgetHolder">
+        </article>
+        <% if $WidgetSetContent.exists %>
+        <section class="sc-widget-holder">
             {$InsertWidgetArea(Content)}
-        </div>
-    </div>
-    <aside class="span3 col-lg-3 col-md-3 col-sm-12 col-xs-12">
+        </section>
+        <% end_if %>
+    </section>
+    <aside class="col-12 col-md-3">
         {$InsertWidgetArea(Sidebar)}
     </aside>
 </div>

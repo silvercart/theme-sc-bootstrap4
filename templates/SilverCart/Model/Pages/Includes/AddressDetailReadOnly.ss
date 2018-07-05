@@ -1,4 +1,4 @@
-<div class="silvercart-address card">
+<div class="silvercart-address card w-100">
 <% if $isInvoiceAddress || $isShippingAddress %>
     <div class="card-header">
     <% if $isInvoiceAndShippingAddress %>
@@ -10,7 +10,7 @@
     <% end_if %>
     </div>
 <% end_if %>
-    <div class="card-block">
+    <div class="card-body">
         <p class="card-text">
         <% if $IsPackstation %>
             <em>{$fieldLabel('PackstationLabel')}</em><br/>
@@ -40,7 +40,7 @@
             {$fieldLabel('PhoneShort')}: {$Phone}
         <% end_if %>
     <% else %>
-            <span class="alert alert-danger"><%t SilverCart\Model\Pages\AddressHolder.NOT_DEFINED 'Not defined yet' %></span>
+            <div class="alert alert-danger"><%t SilverCart\Model\Pages\AddressHolder.NOT_DEFINED 'Not defined yet' %></div>
     <% end_if %>
         </p>
     </div>
