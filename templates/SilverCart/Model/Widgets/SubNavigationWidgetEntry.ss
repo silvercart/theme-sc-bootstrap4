@@ -2,14 +2,32 @@
     <% if $IsRootPage %>
         {$ChildPages}
     <% else %>
-<a href="{$Link}" title="{$ProductGroup.Title.XML}" class="list-group-item <% if $IsActivePage %>active<% end_if %> <% if $IsRootPage %>section<% end_if %>">{$MenuTitle.XML}<% if $ProductGroup.ActiveProducts.exists %> <span class="tag tag-pill tag-default pull-right">{$ProductGroup.ActiveProducts.count}</span><% end_if %></a>
+<li class="{$LinkingMode}">
+    <div class="nav-item">
+        <% if $IsActivePage %>
+        <span class="nav-link active">{$MenuTitle.XML}</span>
+        <% else %> 
+        <a href="{$Link}" title="{$Title.XML}" class="nav-link <% if $IsRootPage %>section<% end_if %>">{$MenuTitle.XML}</a>
+        <% end_if%>
+        <% if $ProductGroup.ActiveProducts.exists %><span class="badge badge-pill badge-primary float-right">{$ProductGroup.ActiveProducts.count}</span><% end_if %>
+    </div>
         <% if $ShowChildPages && $ChildPages %>
-<div class="nav list-group">{$ChildPages}</div>
+    <ul class="nav flex-column level-{$Level}">{$ChildPages}</ul>
         <% end_if %>
+</li>
     <% end_if %>
 <% else %>
-<a href="{$Link}" title="{$ProductGroup.Title.XML}" class="list-group-item <% if $IsActivePage %>active<% end_if %> <% if $IsSectionPage %>section<% end_if %>">{$MenuTitle.XML}<% if $ProductGroup.ActiveProducts.exists %> <span class="tag tag-pill tag-default pull-right">{$ProductGroup.ActiveProducts.count}</span><% end_if %></a>
+<li class="{$LinkingMode}">
+    <div class="nav-item">
+    <% if $IsActivePage %>
+        <span class="nav-link active">{$MenuTitle.XML}</span>
+    <% else %> 
+        <a href="{$Link}" title="{$Title.XML}" class="nav-link <% if $IsSectionPage %>section<% end_if %>">{$MenuTitle.XML}</a>
+    <% end_if%>
+    <% if $ProductGroup.ActiveProducts.exists %><span class="badge badge-pill badge-primary float-right">{$ProductGroup.ActiveProducts.count}</span><% end_if %>
+    </div>
     <% if $ShowChildPages && $ChildPages %>
-<div class="nav list-group <% if $IsSectionPage %>active-section<% end_if %>">{$ChildPages}</div>
+    <ul class="nav flex-column level-{$Level}">{$ChildPages}</ul>
     <% end_if %>
+</li>
 <% end_if %>

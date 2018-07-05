@@ -1,4 +1,13 @@
-<a href="{$Link}" title="{$Title.XML}" class="list-group-item <% if $IsActivePage %>active<% end_if %> <% if $IsSectionPage %>section<% end_if %> level-{$Level}">{$MenuTitle.XML}<% if $ActiveProducts.exists %> <span class="tag tag-pill tag-default pull-right">{$ActiveProducts.count}</span><% end_if %></a>
-<% if $ChildPages %>
-<div class="nav list-group <% if $IsSectionPage %>active-section<% end_if %>">{$ChildPages}</div>
-<% end_if %>
+<li class="{$LinkingMode}">
+    <div class="nav-item">
+    <% if $IsActivePage %>
+        <span class="nav-link active">{$MenuTitle.XML}</span>
+    <% else %>
+        <a href="{$Link}" title="{$Title.XML}" class="nav-link <% if $IsSectionPage %>section<% end_if %>">{$MenuTitle.XML}</a>
+    <% end_if%>
+    <% if $ProductGroup.ActiveProducts.exists %><span class="badge badge-pill badge-primary float-right">{$ProductGroup.ActiveProducts.count}</span><% end_if %>
+    </div>
+    <% if $ChildPages %>
+    <ul class="nav flex-column level-{$Level}">{$ChildPages}</ul>
+    <% end_if %>
+</li>
