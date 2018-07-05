@@ -74,12 +74,6 @@ a.highlight:hover, a.highlight:active {
   color:#644331;
   text-decoration:none;
 }
-*, *::after, *::before {
-    box-sizing: inherit;
-}
-*, *::after, *::before {
-    box-sizing: inherit;
-}
 a.active:link, a.active:visited {
   color:#644331;
   cursor:default;

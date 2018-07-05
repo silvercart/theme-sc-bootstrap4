@@ -27,7 +27,7 @@
             <div class="sc-product-price product-price">
                 <span class="price">
                 <% if $PriceIsLowerThanMsr %>
-                    <span class="strike-through">{$MSRPrice.Nice}</span>
+                    <span class="text-line-through">{$MSRPrice.Nice}</span>
                     <strong class="text-danger" id="product-price-{$ID}">{$PriceNice}</strong>
                 <% else %>
                     <strong id="product-price-{$ID}">{$PriceNice}</strong>
