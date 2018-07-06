@@ -21,6 +21,7 @@
 <% require themedJavascript("client/js/stickyfill.js") %>
 <% require themedJavascript("client/js/lazyload.js") %>
 <% require themedJavascript("client/js/custom.js") %>
+<% require themedJavascript("client/js/tmp.js") %>
 <% require themedJavascript("client/js/jquery.slidorion.min") %>
 <% require themedJavascript("client/javascript/jquery.pixeltricks.tools") %>
 <% require themedJavascript("client/javascript/jquery.cookie") %>
