@@ -12,6 +12,7 @@
 <% require themedCSS("client/css/font-awesome.min") %>
 <% require themedCSS("client/css/jquery.fancybox") %>
 <% require themedCSS("client/css/tmp") %>
+<% require themedCSS("client/css/slidorion") %>
 <% require themedJavascript("client/js/jquery-3.2.1.min") %>
 {$RequireAdditionalJavaScript}
 <% require themedJavascript("client/js/tether.min") %>
@@ -20,6 +21,7 @@
 <% require themedJavascript("client/js/stickyfill.js") %>
 <% require themedJavascript("client/js/lazyload.js") %>
 <% require themedJavascript("client/js/custom.js") %>
+<% require themedJavascript("client/js/jquery.slidorion.min") %>
 <% require themedJavascript("client/javascript/jquery.pixeltricks.tools") %>
 <% require themedJavascript("client/javascript/jquery.cookie") %>
 <% require themedJavascript("client/javascript/silvercart.js") %>
