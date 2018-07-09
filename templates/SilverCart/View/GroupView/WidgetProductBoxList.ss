@@ -1,17 +1,13 @@
 <% if $Elements %>
     <% if not $Top.useSlider %>
-<div class="sc-products sc-products-vertical clearfix">
+<div class="sc-products sc-products-vertical clearfix no-slider">
     <% end_if %>
-        <% loop $Elements %>
-<div class="silvercart-product-group-page-list-item {$EvenOdd}">
-    <div class="card card-product {$EvenOdd} {$FirstLast}">
+    <% loop $Elements %>
         <% if $hasPortraitOrientationImage %>
             <% include SilverCart/View/GroupView/ProductGroupPageList_PortraitOrientation %>
         <% else %>
             <% include SilverCart/View/GroupView/ProductGroupPageList_LandscapeOrientation %>
         <% end_if %>
-    </div>
-</div>
     <% end_loop %>
     <% if not $Top.useSlider %>
 </div>

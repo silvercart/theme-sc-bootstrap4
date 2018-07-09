@@ -1,7 +1,7 @@
 <% if $Elements %>
 <div class="row ProductGroupHolderTile clearfix">
     <% loop $Elements %>
-    <div class="col-6 col-xxl-3 col-xl-4 col-lg-6 col-md-6 col-sm-6 col-xs-12 clearfix">
+    <div class="d-flex col-6 col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-sm-4 col-12 clearfix">
         <figure class="effect-overlay" onclick="document.location.href='{$Link}';">
             <a href="{$Link}" title="{$Title}">
             <% if $GroupPicture %>
@@ -12,22 +12,22 @@
             </a>
             <figcaption>
                 <h2 id="{$ID}">
-                    <a href="{$Link}" class="highlight btn btn-secondary" title="{$Title}" data-title="{$Title}" data-placement="top" data-toggle="tooltip"><span>{$MenuTitle.HTML}</span></a>
+                    <a href="{$Link}" class="highlight btn btn-sm btn-secondary" title="{$Title}" data-title="{$Title}" data-placement="top" data-toggle="tooltip"><span>{$MenuTitle.HTML}</span></a>
                 </h2>
             <% if $Content %>
-                <p>{$Content.NoHTML.LimitWordCount(15)}</p>
+                <p class="">{$Content.Plain.LimitWordCount(9)}</p>
             <% end_if %>
             </figcaption>
+            <div class="text-center w-100 position-absolute bottom-5 btn-footer">
+            <% if $hasProductCount(1) %> 
+                <a href="{$Link}" class="btn btn-primary btn-sm" title="{$MenuTitle.HTML} - <%t SilverCart\Model\Pages\ProductGroupHolder.SHOW_PRODUCTS_WITH_COUNT_SINGULAR 'Show {count} product' count=$ActiveProducts.Count %>" data-placement="top" data-toggle="tooltip"><%t SilverCart\Model\Pages\ProductGroupHolder.SHOW_PRODUCTS_WITH_COUNT_SINGULAR 'Show {count} product' count=$ActiveProducts.Count %> <span class="fa fa-caret-right"></span></a>
+            <% else_if not $hasProductCount(0) %>
+                <a href="{$Link}" class="btn btn-primary btn-sm" title="{$MenuTitle.HTML} - <%t SilverCart\Model\Pages\ProductGroupHolder.SHOW_PRODUCTS_WITH_COUNT_PLURAL 'Show {count} products' count=$ActiveProducts.Count %>" data-placement="top" data-toggle="tooltip"><%t SilverCart\Model\Pages\ProductGroupHolder.SHOW_PRODUCTS_WITH_COUNT_PLURAL 'Show {count} products' count=$ActiveProducts.Count %> <span class="fa fa-caret-right"></span></a>
+            <% else %>
+                <a href="{$Link}" class="btn btn-primary btn-sm" title="{$MenuTitle.HTML} - <%t SilverCart\Model\Pages\Page.SHOW_DETAILS 'show details' %>" data-placement="top" data-toggle="tooltip"><%t SilverCart\Model\Pages\Page.SHOW_DETAILS 'show details' %> <span class="fa fa-caret-right"></span></a>
+            <% end_if %>
+            </div>
         </figure>
-        <div class="text-center">
-        <% if $hasProductCount(1) %> 
-            <a href="{$Link}" class="btn btn-primary btn-sm" title="{$MenuTitle.HTML} - <%t SilverCart\Model\Pages\ProductGroupHolder.SHOW_PRODUCTS_WITH_COUNT_SINGLUAR 'Show {count} product' count=$ActiveProducts.Count %>" data-placement="top" data-toggle="tooltip"><%t SilverCart\Model\Pages\ProductGroupHolder.SHOW_PRODUCTS_WITH_COUNT_SINGLUAR 'Show {count} product' count=$ActiveProducts.Count %> <span class="fa fa-caret-right"></span></a>
-        <% else_if not $hasProductCount(0) %>
-            <a href="{$Link}" class="btn btn-primary btn-sm" title="{$MenuTitle.HTML} - <%t SilverCart\Model\Pages\ProductGroupHolder.SHOW_PRODUCTS_WITH_COUNT_PLURAL 'Show {count} products' count=$ActiveProducts.Count %>" data-placement="top" data-toggle="tooltip"><%t SilverCart\Model\Pages\ProductGroupHolder.SHOW_PRODUCTS_WITH_COUNT_PLURAL 'Show {count} products' count=$ActiveProducts.Count %> <span class="fa fa-caret-right"></span></a>
-        <% else %>
-            <a href="{$Link}" class="btn btn-primary btn-sm" title="{$MenuTitle.HTML} - <%t SilverCart\Model\Pages\Page.SHOW_DETAILS 'show details' %>" data-placement="top" data-toggle="tooltip"><%t SilverCart\Model\Pages\Page.SHOW_DETAILS 'show details' %> <span class="fa fa-caret-right"></span></a>
-        <% end_if %>
-        </div>
     </div>
     <% end_loop %>
 </div>
