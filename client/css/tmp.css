@@ -109,6 +109,29 @@ ul.level-8 .nav-link { margin-left: 4.5rem; }
 
 .left-icon-bar { position: fixed; right: 0.5rem; left: auto; top: 60px; z-index: 1000; display: none; }
 
+/* shopping cart table dimensions */
+th.img         { width: 80px; }
+th.desc        { width: auto; }
+th.sub-price   { width: 95px; }
+th.quantity    { width: 120px; }
+th.total-price { width: 95px; }
+@media (min-width: 768px) {
+    /* lg+ size */
+    th.img         { width: 110px; }
+    th.desc        { width: auto; }
+    th.sub-price   { width: 95px; }
+    th.quantity    { width: 120px; }
+    th.total-price { width: 95px; }
+}
+@media (min-width: 1200px) {
+    /* xl+ size */
+    th.img         { width: 200px; }
+    th.desc        { width: auto; }
+    th.sub-price   { width: 105px; }
+    th.quantity    { width: 140px; }
+    th.total-price { width: 105px; }
+}
+
 /* Animated product group holder [tile] */
 figure.effect-overlay {
     position: relative;

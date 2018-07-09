@@ -1,7 +1,7 @@
 <tr>
-    <td class="img" data-title="<%t SilverCart\Model\Product\Product.IMAGE 'Image' %>">
+    <td class="img text-center" data-title="<%t SilverCart\Model\Product\Product.IMAGE 'Image' %>">
     <% if $Product.ListImage %>
-        <a class="img-fluid" href="{$Product.Link}" title="<%t SilverCart\Model\Pages\Page.SHOW_DETAILS_FOR 'Show details for {title}' title=$Product.ListImage.Title %>"><img class="img-fluid" src="{$Product.ListImage.Pad(92,92).URL}" alt="{$Product.Title}" /></a>
+        <a class="d-inline-block" href="{$Product.Link}" title="<%t SilverCart\Model\Pages\Page.SHOW_DETAILS_FOR 'Show details for {title}' title=$Product.ListImage.Title %>"><img class="img-fluid" src="{$Product.ListImage.Pad(110,110).URL}" alt="{$Product.Title}" /></a>
     <% end_if %>
     </td>
     <td class="desc" data-title="<%t SilverCart\Model\Product\Product.TITLE 'Product' %>">
@@ -19,19 +19,21 @@
         <p class="hidden-xs-down"><small>{$Product.TaxRate}% <%t SilverCart\Model\Product\Product.VAT 'VAT' %></small></p>
     </td>
 <% if $CurrentPage.EditableShoppingCart %>
-    <td class="quantity" data-title="<%t SilverCart\Model\Pages\ProductPage.QUANTITY 'Quantity' %>">
-        <div class="d-flex">
-            <div class="col-3 p-0 justify-content-end text-right">{$DecrementPositionQuantityForm}</div>
-            <div class="col-6 p-0 justify-content-center">
-                <form action="/sc-action/addToCart" method="post">
-                    <input type="hidden" name="productID" value="{$ProductID}">
-                    <input type="text" class="form-control form-control-sm text-center input-nano" name="productQuantity" value="{$TypeSafeQuantity}" id="productQuantity-{$ID}">
-                </form>
+    <td class="quantity text-center" data-title="<%t SilverCart\Model\Pages\ProductPage.QUANTITY 'Quantity' %>">
+        <form class="form-inline d-inline-block" action="/sc-action/addToCart" method="post">
+            <input type="hidden" name="productID" value="{$ProductID}">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <a href="{$baseHref}sc-action/decrementPositionQuantity/{$ID}/{$CurrentPage.ID}" class="btn btn-outline-secondary" role="button"><span class="fa fa-minus"></span></a>
+                </div>
+                <input type="text" class="form-control form-control-sm text-center" name="productQuantity" value="{$TypeSafeQuantity}" id="productQuantity-{$ID}">
+            <% if $isQuantityIncrementableBy %>
+                <div class="input-group-append">
+                    <a href="{$baseHref}sc-action/incrementPositionQuantity/{$ID}/{$CurrentPage.ID}" class="btn btn-outline-secondary" role="button"><span class="fa fa-plus"></span></a>
+                </div>
+            <% end_if %>
             </div>
-        <% if $isQuantityIncrementableBy %>
-            <div class="col-3 p-0 justify-content-start">{$IncrementPositionQuantityForm}</div>
-        <% end_if %>
-        </div>
+        </form>
     </td>
 <% else %>
     <td class="quantity" data-title="<%t SilverCart\Model\Pages\ProductPage.QUANTITY 'Quantity' %>">
