@@ -1,6 +1,6 @@
 <% if $ViewableChildren && $ViewableChildren.MoreThanOnePage %>
 <nav class="text-center">
-    <ul class="pagination">
+    <ul class="pagination justify-content-center">
     <% if $ViewableChildren.MoreThanOnePage %>
         <% if $ViewableChildren.NotFirstPage %>
         <li class="page-item"><a href="{$ViewableChildren.PrevLink}" rel="prev" aria-label="<%t SilverCart\Model\Pages\Page.PREV 'Prev' %>" class="page-link" title="<%t SilverCart\Model\Pages\Page.PREV 'Prev' %>">

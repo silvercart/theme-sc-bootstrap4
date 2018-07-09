@@ -24,9 +24,7 @@
             {$RenderProductGroupPageGroupView}
         </section>
     <% if $HasMoreProductsThan(0) %>
-        <nav class="silvercart-product-group-page-control-bottom navbar clearfix">
-            <% include SilverCart/Model/Pages/ProductGroupPageControlsBottom %>
-        </nav>
+        <% include SilverCart/Model/Pages/ProductGroupPageControlsBottom %>
     <% end_if %>
     <% if $isFirstPage %>
         {$PageContent}

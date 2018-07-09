@@ -1,5 +1,5 @@
 <div id="{$HolderID}" class="form-group form-check <% if $extraClass %>{$extraClass}<% end_if %>">
-    {$Field}
+    {$addErrorClass('is-invalid').Field}
     <label class="form-check-label" for="{$ID}">{$Title}
         <% if $isRequiredField %><span class="required-field-marker">{$RequiredFieldMarker}</span><% end_if %>
     </label>

@@ -1,5 +1,5 @@
 <% if $IncludeFormTag %>
-<form {$addExtraClass('form form-inline').AttributesHTML}>
+<form {$addExtraClass('form').AttributesHTML}>
 <% end_if %>
 <% include SilverCart/Forms/CustomFormMessages %>
 <% loop $HiddenFields %>

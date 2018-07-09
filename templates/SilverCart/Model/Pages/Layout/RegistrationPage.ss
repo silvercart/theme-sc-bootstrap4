@@ -1,5 +1,9 @@
 <div class="row">
+    <% if $WidgetSetSidebar.exists %>
     <section id="content-main" class="col-12 col-md-9">
+    <% else %>
+    <section id="content-main" class="col-12 col-xxl-9">
+    <% end_if %>
         <article>
             <header><h1>{$Title}</h1></header>
             {$Content}
@@ -14,8 +18,12 @@
             {$InsertWidgetArea(Content)}
         </section>
         <% end_if %>
+    <% if $WidgetSetSidebar.exists %>
     </section>
     <aside class="col-12 col-md-3">
         {$InsertWidgetArea(Sidebar)}
     </aside>
+    <% else %>
+    </section>
+    <% end_if %>
 </div>

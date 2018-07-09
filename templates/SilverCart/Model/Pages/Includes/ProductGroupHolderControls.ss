@@ -1,6 +1,6 @@
 <% if $ViewableChildren %>
     <% if $ViewableChildren.MoreThanOnePage || $hasMoreGroupHolderViewsThan(1) %>
-<div class="productFilters clearfix mb-3">
+<div class="clearfix mb-3">
         <% if $hasMoreGroupHolderViewsThan(1) %>
             <% if $ViewableChildren.MoreThanOnePage %>
     <div class="float-left">

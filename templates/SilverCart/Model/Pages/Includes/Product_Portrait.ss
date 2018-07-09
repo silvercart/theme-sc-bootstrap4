@@ -88,12 +88,14 @@
                 <% end_with %>
                 </small>
             </div>
-            <div class="product-inputs btn-group d-flex">
+            <div class="clearfix mt-3">
+                <div class="float-right">
             <% if $isBuyableDueToStockManagementSettings %>
-                {$AddToCartForm(Detail)}
+                    {$AddToCartForm(Detail)}
             <% else %>
-                <%t SilverCart\Model\Pages\ProductPage.OUT_OF_STOCK 'This product is out of stock.' %>
+                    <div class="alert alert-warning"><%t SilverCart\Model\Pages\ProductPage.OUT_OF_STOCK 'This product is out of stock.' %></div>
             <% end_if %>
+                </div>
             </div>
         </div>
     </div>

@@ -6,8 +6,9 @@
             {$Content}
             {$DownloadSearchForm}
         <% if $Children %>
+            <hr/>
             <% loop $Children %>
-            <section>
+            <section class="mt-2">
                 <h2>{$Title}</h2>
                 <% if $Content %>
                     {$Content}

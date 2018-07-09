@@ -5,8 +5,7 @@
             <header><h1>{$Title}</h1></header>
             {$Content}
             {$DownloadSearchForm}
-            <p><%t SilverCart\Model\Pages\DownloadPageHolder\ResultsText 'Your search for <strong>&quot;{term}&quot;</strong> resulted in <strong>{count} results</strong>.' term=$SearchQuery count=$SearchResultsCount %></p>
-            <hr>
+            <div class="alert alert-info mt-2"><%t SilverCart\Model\Pages\DownloadPageHolder.ResultsText 'Your search for <strong>&quot;{term}&quot;</strong> resulted in <strong>{count} results</strong>.' term=$SearchQuery count=$SearchResultsCount %></div>
             <% include SilverCart/Model/Pages/DownloadPage_Table %>
         </article>
         <% if $WidgetSetContent.exists %>

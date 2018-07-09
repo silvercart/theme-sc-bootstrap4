@@ -13,12 +13,12 @@
             <% end_if %>
             </div>
         <% end_if %>
-            <div class="card-block">
-                <div class="pull-xs-left silvercart-address-radiofield">
+            <div class="card-body">
+                <div class="float-left silvercart-address-radiofield">
                     <input class="margin-top2x" type="radio" name="{$name}" value="{$value}" id="{$htmlId}" <% if $checked %>checked="checked"<% end_if %> />
                 </div>
-                <p class="card-text margin-left2x">
-                <% if $IsPackstation %>
+                <p class="card-text ml-4">
+                <% if $IsPackstation != 0 %>
                     <em>{$address.fieldLabel('PackstationLabel')}</em><br />
                 <% else_if $TaxIdNumber || $Company %>
                     <span class="silvercart-address-company-section">
@@ -33,7 +33,7 @@
                 <% if $Addition %>
                     {$Addition}<br/>
                 <% end_if %>
-                <% if $IsPackstation %>
+                <% if $IsPackstation != 0 %>
                     {$PostNumber}<br/>
                     {$Packstation}<br/>
                 <% else %>

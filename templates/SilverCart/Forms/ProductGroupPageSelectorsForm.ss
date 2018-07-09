@@ -1,19 +1,25 @@
 <% if $IncludeFormTag %>
-<form {$addExtraClass('form-inline pull-sm-right').AttributesHTML}>
+<form {$addExtraClass('form-inline pull-sm-right').addErrorClass('was-validated').AttributesHTML}>
 <% end_if %>
 <% include SilverCart/Forms/CustomFormMessages %>
 <% loop $HiddenFields %>
     {$Field}
 <% end_loop %>
-    <div class="sortBy inline-block input-group-sm">
+    <div class="input-group input-group-sm mt-1 mt-sm-0">
     <% with $Fields.dataFieldByName('SortOrder') %>
-        {$Title} {$RequiredFieldMarker} {$Field}
+        <div class="input-group-prepend">
+            <span class="input-group-text">{$Title}</span>
+        </div>
+        {$addExtraClass('custom-select').Field}
     <% end_with %>
     </div>
 <% if $hasProductsPerPageOptions %>
-    <div class="showItem inline-block input-group-sm">
+    <div class="input-group input-group-sm mt-1 mt-sm-0">
     <% with $Fields.dataFieldByName('productsPerPage') %>
-        {$Title} {$RequiredFieldMarker} {$Field}
+        <div class="input-group-prepend">
+            <span class="input-group-text">{$Title}</span>
+        </div>
+        {$Field}
     <% end_with %>
     </div>
 <% end_if %>

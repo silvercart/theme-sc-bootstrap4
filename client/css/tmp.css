@@ -132,6 +132,21 @@ th.total-price { width: 95px; }
     th.total-price { width: 105px; }
 }
 
+/* download page table dimensions */
+th.file-icon { width: 70px; }
+th.file-text { width: auto; }
+th.file-type { width: 120px; }
+th.file-size { width: 80px; }
+th.file-link { width: 130px; }
+@media (min-width: 992px) {
+    /* xl+ size */
+    th.file-icon { width: 70px; }
+    th.file-text { width: auto; }
+    th.file-type { width: 180px; }
+    th.file-size { width: 80px; }
+    th.file-link { width: 130px; }
+}
+
 /* Animated product group holder [tile] */
 figure.effect-overlay {
     position: relative;

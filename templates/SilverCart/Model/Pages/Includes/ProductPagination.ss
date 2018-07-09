@@ -1,6 +1,6 @@
 <% if $getProducts && $getProducts.MoreThanOnePage %>
 <nav class="text-center">
-    <ul class="pagination">
+    <ul class="pagination justify-content-center">
     <% with $getProducts %>
         <% if $NotFirstPage %>
         <li class="page-item"><a href="{$PrevLink}#scpgpct" rel="prev" aria-label="<%t SilverCart\Model\Pages\Page.PREV 'Prev' %>" class="page-link" title="<%t SilverCart\Model\Pages\Page.PREV 'Prev' %>">
