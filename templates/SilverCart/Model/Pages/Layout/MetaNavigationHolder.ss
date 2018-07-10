@@ -15,13 +15,13 @@
     <% loop $Children %>
             <div class="card card-product mb-3">
                 <h2 class="card-header">
-                    <a href="#section{$ID}" data-target="#section{$ID}" data-toggle="collapse" class="accordion-toggle btn btn-default btn-sm" title="{$Title}" aria-expanded="<% if first %>true<% else %>false<% end_if %>" aria-controls="section{$ID}"><i class="fa fa-caret-right"></i> {$Title}</a>
+                    <a href="#section{$ID}" data-target="#section{$ID}" data-toggle="collapse" class="accordion-toggle btn btn-link btn-sm btn-wrap text-left" title="{$Title}" aria-expanded="<% if first %>true<% else %>false<% end_if %>" aria-controls="section{$ID}"><span class="fa fa-caret-right"></span> {$Title}</a>
                 </h2>
                 <div class="card-body">
                     {$MetaDescription}
                 </div>
                 <div class="card-footer">
-                    <a class="btn btn-sm btn-secondary wrap float-right" href="{$Link}" title="<%t SilverCart\Model\Pages\Page.GOTO 'go to {title} page' title=$Title.XML %>">{$Title} <span class="fa fa-caret-right"></span></a>
+                    <a class="btn btn-sm btn-secondary btn-wrap float-right" href="{$Link}" title="<%t SilverCart\Model\Pages\Page.GOTO 'go to {title} page' title=$Title.XML %>">{$Title} <span class="fa fa-caret-right"></span></a>
                 </div>
             </div>
     <% end_loop %>
