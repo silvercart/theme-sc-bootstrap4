@@ -15,6 +15,7 @@
 <% require themedCSS("client/css/slidorion") %>
 <% require themedJavascript("client/js/jquery-3.2.1.min") %>
 {$RequireI18nJavaScript}
+{$RequireExtendedJavaScript}
 {$RequireCookieBannerJavaScript}
 <% require themedJavascript("client/js/tether.min") %>
 <% require themedJavascript("client/js/bootstrap.bundle.min") %>
