@@ -4,9 +4,9 @@
         <article>
             <header><h1>{$Title}</h1></header>
             {$Content}
-            <section class="silvercart-sitemap">
+            <nav class="silvercart-sitemap">
                 {$SiteMap}
-            </section>
+            </nav>
         </article>
         <% if $WidgetSetContent.exists %>
         <section class="sc-widget-holder">
