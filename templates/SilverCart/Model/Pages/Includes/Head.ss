@@ -14,7 +14,8 @@
 <% require themedCSS("client/css/tmp") %>
 <% require themedCSS("client/css/slidorion") %>
 <% require themedJavascript("client/js/jquery-3.2.1.min") %>
-{$RequireAdditionalJavaScript}
+{$RequireI18nJavaScript}
+{$RequireCookieBannerJavaScript}
 <% require themedJavascript("client/js/tether.min") %>
 <% require themedJavascript("client/js/bootstrap.bundle.min") %>
 <% require themedJavascript("client/js/jquery.fancybox.min") %>
