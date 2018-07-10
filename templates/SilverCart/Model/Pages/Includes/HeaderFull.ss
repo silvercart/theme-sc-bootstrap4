@@ -38,7 +38,7 @@
                 <% end_if %>
             <% end_with %>
                 <div class="row no-gutters justify-content-sm-end" role="group" aria-label="First group">
-                    <nav id="actionItems" class="clearfix btn-toolbar pb-2">
+                    <nav class="clearfix btn-toolbar pb-2">
                         <% if $SiteConfig.ShopOpeningHours || $SiteConfig.ShopPhone %>
                         <a href="#" class="btn d-md-none" data-toggle="collapse" data-target="#collapseHeaderWidgets" aria-expanded="true" aria-controls="collapseHeaderWidgets" title="Kontaktinfo"><span class="fa fa-2x fa-info" aria-hidden="true"></span>
                             <span class="d-none d-sm-inline-block">Kontaktinfo</span></a>

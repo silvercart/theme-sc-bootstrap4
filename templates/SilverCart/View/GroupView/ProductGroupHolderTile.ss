@@ -1,5 +1,5 @@
 <% if $Elements %>
-<div class="row ProductGroupHolderTile clearfix">
+<div class="row clearfix">
     <% loop $Elements %>
     <div class="d-flex col-6 col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-sm-4 col-12 clearfix">
         <figure class="effect-overlay" onclick="document.location.href='{$Link}';">
@@ -12,10 +12,10 @@
             </a>
             <figcaption>
                 <h2 id="{$ID}">
-                    <a href="{$Link}" class="highlight btn btn-sm btn-secondary" title="{$Title}" data-title="{$Title}" data-placement="top" data-toggle="tooltip"><span>{$MenuTitle.HTML}</span></a>
+                    <a href="{$Link}" class="btn btn-sm btn-secondary" title="{$Title}" data-title="{$Title}" data-placement="top" data-toggle="tooltip"><span>{$MenuTitle.HTML}</span></a>
                 </h2>
             <% if $Content %>
-                <p class="">{$Content.Plain.LimitWordCount(9)}</p>
+                <p>{$Content.Plain.LimitWordCount(9)}</p>
             <% end_if %>
             </figcaption>
             <div class="text-center w-100 position-absolute bottom-5 btn-footer">

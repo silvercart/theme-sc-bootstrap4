@@ -61,7 +61,7 @@
                         <% end_with %>
                         <%t SilverCart\Model\Product\Product.PRODUCTNUMBER_SHORT 'Item no.' %>: <strong>{$ProductNumberShop}</strong>
                         <% if $PackagingQuantity %> | <%t SilverCart\Model\Pages\ProductPage.PACKAGING_CONTENT 'Content' %>: <strong>{$PackagingQuantity} {$QuantityUnit.Title}</strong><% end_if %>
-                        <% if $Availability %> | <span class="nowrap">{$AvailabilityStatus.singular_name}: {$Availability('tag', 'tag-availability')}</span><% end_if %>
+                        <% if $Availability %> | <span class="text-nowrap">{$AvailabilityStatus.singular_name}: {$Availability('tag', 'tag-availability')}</span><% end_if %>
                         </small>
                     </div>
                 <% if $PluggedInProductMetaData %>

@@ -14,12 +14,12 @@
                 <% if $hasProductsAndChildren %>
                     <% if $First %>
                         <%-- todo 3 level menu not needed yet for standard --%>
-            <div class="collapse nav list-group" id="navbarToggleExternalContent{$Up.ID}">
-                <ul class="navbar-nav submenu">
+            <div class="collapse nav" id="navbarToggleExternalContent{$Up.ID}">
+                <ul class="navbar-nav ">
                     <% end_if %>
                     <% if $Children %>
                     <li class="nav-item  dropdown">
-                        <a data-target="#subvlist{$ID}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="{$Link}" id="subnavlist{$ID}" title="<%t SilverCart\Model\Pages\Page.GOTO 'Go to {title} page' title=$Title.XML %>" class="list-group-item dropdown-toogle <% if $isCurrent %>active<% else_if $isSection %>section<% end_if %>">
+                        <a data-target="#subvlist{$ID}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="{$Link}" id="subnavlist{$ID}" title="<%t SilverCart\Model\Pages\Page.GOTO 'Go to {title} page' title=$Title.XML %>" class="dropdown-toogle <% if $isCurrent %>active<% else_if $isSection %>section<% end_if %>">
                         <% if $groupPicture %>
                             <span class="ico"><img src="{$groupPicture.Pad(30,30).Url}" alt="{$MenuTitle.XML}" class="img-responsive" /></span>
                         <% else %>
@@ -30,7 +30,7 @@
                     </li>
                     <% else %>
                     <li>
-                        <a href="{$Link}" id="subnavlist{$ID}" title="<%t SilverCart\Model\Pages\Page.GOTO 'Go to {title} page' title=$Title.XML %>" class="list-group-item <% if $isCurrent %>active<% else_if $isSection %>section<% end_if %>">
+                        <a href="{$Link}" id="subnavlist{$ID}" title="<%t SilverCart\Model\Pages\Page.GOTO 'Go to {title} page' title=$Title.XML %>" class="<% if $isCurrent %>active<% else_if $isSection %>section<% end_if %>">
                         <% if $groupPicture %>
                             <span class="ico"><img src="{$groupPicture.Pad(30,30).Url}" alt="{$MenuTitle.XML}" class="img-responsive" /></span>
                         <% else %>

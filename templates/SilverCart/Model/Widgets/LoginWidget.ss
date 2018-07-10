@@ -2,7 +2,7 @@
     <% cached $WidgetCacheKey %>
 <header><h3><%t SilverCart\Model\Widgets\LoginWidget.TITLE_LOGGED_IN 'My account' %></h3></header>
         <% if $MyAccountPage.Children %>
-<nav class="categories widget-login logged-in">
+<nav class="widget-login logged-in">
     <ul class="nav flex-column nav-fill">
         <% loop $MyAccountPage.Children %>
         <li class="nav-item {$LinkingMode}">
