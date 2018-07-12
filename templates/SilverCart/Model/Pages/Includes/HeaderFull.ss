@@ -11,7 +11,7 @@
             <div class="smtb col-12 col-md-8 clearfix justify-content-sm-end p-0">
             <% with $SiteConfig %>
                 <% if $ShopOpeningHours || $ShopPhone || $ShopAdditionalInfo || $ShopAdditionalInfo2 %>
-                <div id="collapseHeaderWidgets" class="collapse in d-md-block">
+                <div id="header-shop-info" class="collapse in d-md-block">
                     <div class="headerWidgets row">
                         <% if $ShopOpeningHours || $ShopPhone %>
                         <div class="col-sm-auto">
@@ -40,7 +40,7 @@
                 <div class="row no-gutters justify-content-sm-end" role="group" aria-label="First group">
                     <nav class="clearfix btn-toolbar pb-2">
                         <% if $SiteConfig.ShopOpeningHours || $SiteConfig.ShopPhone %>
-                        <a href="#" class="btn d-md-none" data-toggle="collapse" data-target="#collapseHeaderWidgets" aria-expanded="true" aria-controls="collapseHeaderWidgets" title="Kontaktinfo"><span class="fa fa-2x fa-info" aria-hidden="true"></span>
+                        <a href="#" class="btn d-md-none" data-toggle="collapse" data-target="#header-shop-info" aria-expanded="true" aria-controls="header-shop-info" title="Kontaktinfo"><span class="fa fa-2x fa-info" aria-hidden="true"></span>
                             <span class="d-none d-sm-inline-block">Kontaktinfo</span></a>
                         <% end_if %>
                         <% if $ShoppingCart.isFilled %>
