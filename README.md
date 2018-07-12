@@ -18,15 +18,17 @@
 1. Use the gulp settings template file (gulp.settings.tpl.js) to for your local configuration,
     * ``> copy gulp.settings.tpl.js gulp.settings.js``
 2. Enter your local settings
-    * ```javascript
+    * *PROXY_URL* should be enough in most cases and is only necesary if you want to use browser based watch support.
+    * 
+```javascript
 module.exports = {
    SASS_SRC:  "client/scss",
    CSS_DIR:   "client/css",
    JS_DIR:    "client/js",
-   PROXY_URL: "http://my.dev.domain.tld"
+   APP_URL:   "http://my.dev.domain.tld",
+   SYNC_PATH: "/path/to/my/project/themes/sc-bootstrap4",
 };
 ```
-    * *PROXY_URL* should be enough in most cases and is only necesary if you want to use browser based watch support.
 
 ## Executing the Sass Build Tools using Gulp on a Mac
 
