@@ -1,4 +1,5 @@
 /client/css/*.map
+/client/scss/_gulp.*.scss
 /node_modules/
 gulp.settings.js
 package-lock.json

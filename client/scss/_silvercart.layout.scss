@@ -1,0 +1,57 @@
+html { font-size: $font-size-base; }
+@include media-breakpoint-up(sm) {
+  html { font-size: $font-size-md; }
+}
+@include media-breakpoint-up(md) {
+  html { font-size: $font-size-lg; }
+}
+@include media-breakpoint-up(lg) {
+  html { font-size: $font-size-lg; }
+}
+@include media-breakpoint-up(xl) {
+  html { font-size: $font-size-xl; }
+}
+body {
+    font-family: $font-family-base;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+#main { padding-top: 30px; }
+@include media-breakpoint-up(lg) {
+    .container-fluid {
+        max-width: 85%;
+    }
+}
+@include media-breakpoint-down(lg) {
+   .container-fluid {
+       max-width: 99%;
+       padding-right: auto;
+       padding-left: auto;
+    }
+}
+table { table-layout: fixed; }
+
+@media only screen and (min-width : 768px) {
+    .sticky {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 65px;
+    }
+    .sticky:before,
+    .sticky:after {
+        content: '';
+        display: table;
+    }
+}
+
+#main-container {
+    border-top: 3px solid $primaryLight;
+}
+#main-container > header {
+    background: $header-bg-color;
+}
+.footer {
+    background: $footer-bg;
+    background-color: $footer-bg-color;
+    border-top: $footer-border-top;
+}

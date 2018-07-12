@@ -1,0 +1,7 @@
+.pagination .page-link {
+    color: $pagination-color;
+}
+.pagination .page-item.active .page-link, .pagination .page-item.active .page-link:focus, .pagination .page-item.active .page-link:hover {
+    @include pagination-bg-color();
+    border-color: $pagination-border-color;
+}

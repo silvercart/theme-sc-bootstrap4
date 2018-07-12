@@ -1,0 +1,139 @@
+@charset "utf-8";
+
+@import "bootstrap/functions";
+
+/* unquote !important Bug */
+$imp: unquote("!important");
+
+@import url(https://fonts.googleapis.com/css?family=Nunito:200,300,400,700);
+$font-family-base:Nunito;
+@import url(https://fonts.googleapis.com/css?family=Crete+Round:200,300,400,700);
+$headings-font-family:Crete Round;
+
+$white:    #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black:    #000;
+
+$grays: ();
+$grays: map-merge((
+  "100": $gray-100,
+  "200": $gray-200,
+  "300": $gray-300,
+  "400": $gray-400,
+  "500": $gray-500,
+  "600": $gray-600,
+  "700": $gray-700,
+  "800": $gray-800,
+  "900": $gray-900
+), $grays);
+
+$blue:    #007bff;
+$red:     #dc3545;
+$orange:  #fd7e14;
+$yellow:  #ffc107;
+$green:   #28a745;
+$cyan:    #17a2b8;
+
+$primary:   #083358;
+$secondary: #FC3C3C;
+$success:   $green;
+$danger:    #FF4057;
+$info:      #74DBEF;
+$warning:   #fd7e14;
+$light:     #f0f0f0;
+$dark:      #072247;
+
+$colors: ();
+$colors: map-merge((
+  "blue":       $blue,
+  "red":        $red,
+  "orange":     $orange,
+  "yellow":     $yellow,
+  "green":      $green,
+  "white":      $white,
+  "gray":       $gray-600,
+  "gray-dark":  $gray-800
+), $colors);
+
+$primaryLight: lighten( $primary, 5% );
+$primaryLighter: lighten( $primary, 10% );
+$primaryLightest: lighten( $primary, 15% );
+$primaryDark: darken( $primary, 5% );
+$primaryDarker: darken( $primary, 10% );
+$primaryDarkest: darken( $primary, 15% );
+
+$theme-colors: ();
+$theme-colors: map-merge((
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark,
+  "primary-light":    $primaryLight,
+  "primary-lighter":  $primaryLighter,
+  "primary-lightest": $primaryLightest,
+  "primary-dark":     $primaryDark,
+  "primary-darker":   $primaryDarker,
+  "primary-darkest":  $primaryDarkest,
+  "inverse":          $dark
+), $theme-colors);
+
+$body-bg:                   $white;
+$body-color:                $gray-700;
+
+$link-color:                $gray-700;
+$link-hover-color:          darken($link-color, 3%);
+
+$component-active-color:    $white;
+$component-active-bg:       theme-color("primary");
+
+$footer-bg: $light $imp;
+$footer-bg-color: $light $imp;
+$footer-border-top: 1px solid $gray-400;
+
+@mixin primary-gradient() {
+    color: $component-active-color;
+    background-color: $primaryLight;
+    background: linear-gradient(to bottom, $primaryLightest 0%,$primaryLight 100%);
+    background-image: linear-gradient(to bottom, $primaryLightest, $primaryLight);
+}
+
+$pagination-color: $primaryLight;
+$pagination-border-color: $primaryLight;
+@mixin pagination-bg-color() {
+    @include primary-gradient();
+}
+
+$header-bg-color: $white;
+
+$bg-primary-color: $white;
+
+$section-link-color: $component-active-color;
+@mixin section-link-bg-color() {
+    background-color: $primaryLighter;
+    background: linear-gradient(to bottom, rgba($primaryLighter, 0.2) 0%,rgba($primaryLightest, 0.2) 100%);
+    background-image: linear-gradient(to bottom, rgba($primaryLighter, 0.2) 0%,rgba($primaryLightest, 0.2) 100%);
+}
+@mixin active-link-bg-color() {
+    @include primary-gradient();
+}
+$sidebar-link-border-bottom-color: #ddd;
+$sidebar-link-badge-bg-color: grey;
+
+$price-info-link-color: $primaryLighter;
+
+$socialicon-bg-color: $white;
+$socialicon-color: $primaryLight;
+$socialicon-hover-bg-color: $primaryLight;
+$socialicon-hover-color: $white;

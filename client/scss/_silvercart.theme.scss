@@ -1,0 +1,230 @@
+.widget { margin-bottom: ($spacer * 1.25) !important; }
+.card-product .card-header,
+.card-product .card-footer { border: $card-cap-bg !important; }
+.price { font-size: $h3-font-size; }
+.left-icon-bar { position: fixed; right: 0.5rem; left: auto; top: 60px; z-index: 1000; display: none; }
+.left-icon-bar .table-cart { width: 300px; max-width: 97vw!important; }
+.sc-product-price-info a {
+    color: $price-info-link-color;
+    font-weight: bold;
+}
+#socialicons .icon {
+    background: $socialicon-bg-color;
+    color: $socialicon-color;
+}
+#socialicons .icon:hover {
+    background: $socialicon-hover-bg-color;
+    color: $socialicon-hover-color;
+}
+
+/* shopping cart table dimensions */
+th.img         { width: 80px; }
+th.desc        { width: auto; }
+th.sub-price   { width: 95px; }
+th.quantity    { width: 120px; }
+th.total-price { width: 95px; }
+.SilverCart-Model-Pages-CheckoutStep th.img      { width: 80px; }
+.SilverCart-Model-Pages-CheckoutStep th.quantity { width: 80px; }
+@media (min-width: 768px) {
+    /* lg+ size */
+    th.img         { width: 110px; }
+    th.desc        { width: auto; }
+    th.sub-price   { width: 95px; }
+    th.quantity    { width: 120px; }
+    th.total-price { width: 95px; }
+    .SilverCart-Model-Pages-CheckoutStep th.img      { width: 80px; }
+    .SilverCart-Model-Pages-CheckoutStep th.quantity { width: 80px; }
+}
+@media (min-width: 1200px) {
+    /* xl+ size */
+    th.img         { width: 200px; }
+    th.desc        { width: auto; }
+    th.sub-price   { width: 105px; }
+    th.quantity    { width: 140px; }
+    th.total-price { width: 105px; }
+    .SilverCart-Model-Pages-CheckoutStep th.img      { width: 80px; }
+    .SilverCart-Model-Pages-CheckoutStep th.quantity { width: 80px; }
+}
+
+/* download page table dimensions */
+th.file-icon { width: 70px; }
+th.file-text { width: auto; }
+th.file-type { width: 120px; }
+th.file-size { width: 80px; }
+th.file-link { width: 130px; }
+@media (min-width: 992px) {
+    /* xl+ size */
+    th.file-icon { width: 70px; }
+    th.file-text { width: auto; }
+    th.file-type { width: 180px; }
+    th.file-size { width: 80px; }
+    th.file-link { width: 130px; }
+}
+
+/* Animated product group holder [tile] */
+figure.effect-overlay {
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    text-align: center;
+    cursor: pointer;
+}
+figure.effect-overlay img.img-fluid {
+    position: relative;
+    display: block;
+    min-height: 100%;
+    max-width: 100%;
+}
+figure.effect-overlay figcaption {
+    padding: 3% 2% 10% 2%;
+    font-size: 1.25em;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+figure.effect-overlay figcaption::before,
+figure.effect-overlay figcaption::after {
+    pointer-events: none;
+}
+figure.effect-overlay figcaption .btn {
+    white-space: normal;
+}
+figure.effect-overlay h2 , figure.effect-overlay p {
+    text-transform: uppercase;
+}
+figure.effect-overlay p {
+    letter-spacing: 1px;
+    font-size: 68.5%;
+}
+figure.effect-overlay {
+    background: #f5f5f5;
+}
+figure.effect-overlay img.img-fluid {
+    -webkit-transition: opacity 0.35s;
+    transition: opacity 0.35s;
+    display: inline-table;
+    width: 100%;
+    padding: 2%;
+}
+figure.effect-overlay .manufacturerlogo {
+    position:absolute;
+    bottom: 10%;
+    right: 10%;
+}
+figure.effect-overlay:hover img {
+    opacity: 0.15;
+}
+figure.effect-overlay figcaption::before,
+figure.effect-overlay figcaption::after {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    bottom: 5%;
+    left: 5%;
+    content: '';
+    opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+}
+figure.effect-overlay figcaption::before {
+    border-top: 1px solid #B0000A;
+    border-bottom: 1px solid #B0000A;
+    -webkit-transform: scale(0,1);
+    transform: scale(0,1);
+}
+figure.effect-overlay figcaption::after {
+    border-right: 1px solid #B0000A;
+    border-left: 1px solid #B0000A;
+    -webkit-transform: scale(1,0);
+    transform: scale(1,0);
+}
+figure.effect-overlay h2 {
+    padding-top: 5%;
+    margin-bottom: 0.25rem;
+    -webkit-transition: -webkit-transform 0.35s;
+    transition: transform 0.35s;
+    -webkit-transform: translate3d(0,-20%,0);
+    transform: translate3d(0,-20%,0);
+}
+figure.effect-overlay p {
+    max-height: 60%;
+    overflow: hidden;
+    opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: translate3d(0,-20%,0);
+    transform: translate3d(0,-20%,0);
+}
+figure.effect-overlay .btn-footer {
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+figure.effect-overlay:hover figcaption::before,
+figure.effect-overlay:hover figcaption::after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+figure.effect-overlay:hover h2,
+figure.effect-overlay:hover p {
+    opacity: 1;
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+figure.effect-overlay:hover .btn-footer {
+    -webkit-transform: translate3d(0,-30%,0);
+    transform: translate3d(0,-30%,0);
+}
+@media (min-width: 1140px) and (max-width: 1480px) {
+    figure.effect-overlay {
+        min-height: 130px;
+    }
+    figure.effect-overlay h2, figure.effect-overlay .btn {
+        font-weight: 400;
+        font-size: 9px;
+        white-space: initial;
+        max-width: 100%;
+    }
+    figure.effect-overlay p {
+        letter-spacing: 1px;
+        font-size: 50.5%;
+        padding: 0 5%;
+    }
+}
+@media (min-width: 544px) and (max-width: 1140px) {
+    figure.effect-overlay {
+        min-height: 130px;
+    }
+    figure.effect-overlay h2, figure.effect-overlay .btn {
+        font-weight: 300;
+        font-size: 8px;
+        white-space: initial;
+    }
+    figure.effect-overlay p {
+        letter-spacing: 0.5px;
+        font-size: 50.5%;
+        padding: 0 5%;
+    }
+}
+@media screen and (max-width: 544px) {
+    figure.effect-overlay {
+        min-height: 130px;
+    }
+    figure.effect-overlay h2,figure.effect-overlay span, figure.effect-overlay btn {
+        letter-spacing: 0.5px;
+        font-size: 11px;
+    }
+    figure.effect-overlay p {
+        letter-spacing: 1px;
+        font-size: 50.5%;
+    }
+    figure.effect-overlay h2 span {
+        font-weight: 400;
+    }
+}

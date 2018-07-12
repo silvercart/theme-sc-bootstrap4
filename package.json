@@ -1,0 +1,22 @@
+{
+  "name": "silvercart-theme-bootstrap4",
+  "version": "1.0.0",
+  "description": "Gulp build starter for the SilverCart Bootstrap 4.1.x theme",
+  "main": "gulpfile.js",
+  "scripts": {
+    "setup": "npm install",
+    "postinstall": "find node_modules/ -name '*.info' -type f -delete",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "homepage": "https://www.silvercart.org",
+  "author": "The SilverCart Authors",
+  "license": "LGPL-3.0",
+  "devDependencies": {
+    "browser-sync": "^2.23.6",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.4"
+  }
+}
