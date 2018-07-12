@@ -5,21 +5,21 @@
 <% loop $HiddenFields %>
     {$Field}
 <% end_loop %>
-    <div class="widget-login-fields">
+    <div class="widget-login-fields row">
     <% with $Fields.dataFieldByName(emailaddress) %>
-        <div id="{$Up.FormName}_{$Name}_Box" class="control-group">
-            <div class="input-prepend row-fluid">
-                <span class="add-on"><label class="control-label" for="{$ID}"><i class="icon-envelope"></i></label></span>
-                <input class="span10" type="text" placeholder="{$Title}" name="{$Name}" id="{$ID}">
+        <div id="{$HolderID}" class="input-group col-12 col-sm-6 col-md-12 col-lg-6">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="{$ID}"><span class="fa fa-envelope"></span></label>
             </div>
+            <input class="form-control" type="text" placeholder="{$Title}" name="{$Name}" id="{$ID}">
         </div>
     <% end_with %>
     <% with $Fields.dataFieldByName(password) %>
-        <div id="{$Up.FormName}_{$Name}_Box" class="control-group">
-            <div class="input-prepend row-fluid">
-                <span class="add-on"><label class="control-label" for="{$ID}"><i class="icon-lock"></i></label></span>
-                <input class="span6" type="password" placeholder="{$Title}" name="{$Name}" id="{$ID}">
+        <div id="{$HolderID}" class="input-group col-12 col-sm-6 col-md-12 col-lg-6 mt-2 mt-sm-0  mt-md-2  mt-lg-0">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="{$ID}"><span class="fa fa-lock"></span></label>
             </div>
+            <input class="form-control" type="password" placeholder="{$Title}" name="{$Name}" id="{$ID}">
         </div>
     <% end_with %>
     </div>
