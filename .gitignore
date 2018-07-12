@@ -1,0 +1,4 @@
+/client/css/*.map
+/node_modules/
+gulp.settings.js
+package-lock.json
