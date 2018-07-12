@@ -5,7 +5,7 @@
 <% loop $HiddenFields %>
     {$Field}
 <% end_loop %>
-    <div class="input-group input-group-sm mt-1 mt-sm-0">
+    <div class="input-group mt-1 mt-sm-0">
     <% with $Fields.dataFieldByName('SortOrder') %>
         <div class="input-group-prepend">
             <span class="input-group-text">{$Title}</span>
@@ -14,12 +14,12 @@
     <% end_with %>
     </div>
 <% if $hasProductsPerPageOptions %>
-    <div class="input-group input-group-sm mt-1 mt-sm-0">
+    <div class="input-group mt-1 mt-sm-0 ml-0 ml-sm-1">
     <% with $Fields.dataFieldByName('productsPerPage') %>
         <div class="input-group-prepend">
             <span class="input-group-text">{$Title}</span>
         </div>
-        {$Field}
+        {$addExtraClass('custom-select').Field}
     <% end_with %>
     </div>
 <% end_if %>
