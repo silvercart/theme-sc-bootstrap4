@@ -6,7 +6,7 @@
                 <% if $ListImage.Responsive %>
                     {$ListImage.Responsive.Theme('ImageResponsiveLazyLoad').Ratio(1.8).Method('Pad').SrcSet('200w','300w','550w').Sizes('(max-width: 544px) 80vw', '(min-width: 544.1px) and (max-width: 992px) 25vw','(min-width: 992.1px) 20vw')}
                 <% else_if $ListImage %>
-                    <img class="img-fluid lazyload" src="{$BaseHref}resources/vendor/silvercart/silvercart/client/img/loader-circle.gif" data-src="{$ListImage.Pad(400,400).URL}" alt="{$Title}" />
+                    <img class="img-fluid lazyload" src="{$BaseHref}resources/vendor/silvercart/silvercart/client/img/loader-circle.gif" data-src="{$ListImage.Pad(400,300).URL}" alt="{$Title}" />
                 <% end_if %>
                 </a>
             </div>
@@ -23,7 +23,7 @@
         </div>
         <div class="col-12 col-md-8">
             <header class="card-header no-gutters">
-                <h2 id="product{$ID}" class="card-title">
+                <h2 id="product{$ID}" class="card-title h4">
                     <a href="{$Link}" class="highlight" title="<%t SilverCart\Model\Pages\Page.SHOW_DETAILS_FOR 'Show details for {title}' title=$Title %>">{$Title.HTML}</a>
                 </h2>
             </header>
@@ -38,7 +38,7 @@
                 <% end_if %>
                 </div>
             <% end_if %>
-                <div class="sc-product-shortinfo col-12 <% if $getHtmlEncodedShortDescription || $PluggedInProductListAdditionalData %>col-md-6<% end_if %> text-right">
+                <div class="sc-product-shortinfo mb-5 col-12 <% if $getHtmlEncodedShortDescription || $PluggedInProductListAdditionalData %>col-md-6<% end_if %> text-right">
                     <div class="sc-product-price product-price">
                         <span class="price">
                         <% if $PriceIsLowerThanMsr %>
@@ -61,7 +61,7 @@
                         <% end_with %>
                         <%t SilverCart\Model\Product\Product.PRODUCTNUMBER_SHORT 'Item no.' %>: <strong>{$ProductNumberShop}</strong>
                         <% if $PackagingQuantity %> | <%t SilverCart\Model\Pages\ProductPage.PACKAGING_CONTENT 'Content' %>: <strong>{$PackagingQuantity} {$QuantityUnit.Title}</strong><% end_if %>
-                        <% if $Availability %> | <span class="text-nowrap">{$AvailabilityStatus.singular_name}: {$Availability('tag', 'tag-availability')}</span><% end_if %>
+                        <% if $Availability %> | <span class="text-nowrap">{$AvailabilityStatus.singular_name}: <strong class="h6">{$Availability('badge', 'badge-availability')}</strong></span><% end_if %>
                         </small>
                     </div>
                 <% if $PluggedInProductMetaData %>
@@ -71,7 +71,7 @@
             </div>
         </div>
     </div>
-    <div class="card-footer clearfix text-right position-absolute bottom-right">
-        <a class="btn btn-sm btn-secondary" data-title="<%t SilverCart\Model\Pages\Page.SHOW_DETAILS 'show details' %>" data-placement="top" data-toggle="tooltip" href="{$Link}" title="<%t SilverCart\Model\Pages\Page.SHOW_DETAILS_FOR 'Show details for {title}' title=$Title %>"><span class="fa fa-info-circle"></span> <%t SilverCart\Model\Pages\Page.SHOW_DETAILS 'show details' %></a>
+    <div class="card-footer clearfix text-right position-absolute bottom-right pt-0">
+        <a class="btn btn-secondary" data-title="<%t SilverCart\Model\Pages\Page.SHOW_DETAILS 'show details' %>" data-placement="top" data-toggle="tooltip" href="{$Link}" title="<%t SilverCart\Model\Pages\Page.SHOW_DETAILS_FOR 'Show details for {title}' title=$Title %>"><span class="fa fa-info-circle"></span> <%t SilverCart\Model\Pages\Page.SHOW_DETAILS 'show details' %></a>
     </div>
 </article>

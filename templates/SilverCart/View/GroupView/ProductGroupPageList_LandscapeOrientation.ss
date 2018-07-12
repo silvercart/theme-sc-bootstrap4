@@ -1,6 +1,6 @@
 <div class="landscape-orientation list-item card card-product text-center text-md-left mb-3 {$EvenOdd} {$FirstLast}">
     <header class="card-header row no-gutters">
-        <h2 id="product{$ID}" class="col-lg-10 card-title">
+        <h2 id="product{$ID}" class="col-lg-10 card-title h3">
             <a href="{$Link}" class="highlight" title="<%t SilverCart\Model\Pages\Page.SHOW_DETAILS_FOR 'Show details for {title}' title=$Title %>">{$Title.HTML}</a>
         </h2>
         <span class="col-lg-2 card-subtitle text-right"> <%t SilverCart\Model\Product\Product.PRODUCTNUMBER_SHORT 'Item no.' %>: {$ProductNumberShop}</span>
@@ -13,7 +13,7 @@
             </a>
             <% else_if $ListImage %>
             <a class="d-inline-block" href="{$Link}" title="<%t SilverCart\Model\Pages\Page.SHOW_DETAILS_FOR 'Show details for {title}' title=$Title %>">
-                <img class="img-fluid lazyload" src="{$BaseHref}resources/vendor/silvercart/silvercart/client/img/loader-circle.gif" data-src="{$ListImage.Pad(400,400).URL}" alt="{$Title}" />
+                <img class="img-fluid lazyload" src="{$BaseHref}resources/vendor/silvercart/silvercart/client/img/loader-circle.gif" data-src="{$ListImage.Pad(600,300).URL}" alt="{$Title}" />
             </a>
             <% end_if %>
         <% if $PriceIsLowerThanMsr || $isNewProduct %>
@@ -58,7 +58,7 @@
                     <a href="{$Link}" title="<%t SilverCart\Model\Pages\Page.GOTO 'go to {title} page' title=$Title.XML %>"><%t SilverCart\Model\Pages\Page.PLUS_SHIPPING 'plus shipping' %></a>
                 <% end_with %>
                 <% if $PackagingQuantity %> | <%t SilverCart\Model\Pages\ProductPage.PACKAGING_CONTENT 'Content' %>: <strong>{$PackagingQuantity} {$QuantityUnit.Title}</strong><% end_if %>
-                <% if $Availability %> | {$AvailabilityStatus.singular_name}: {$Availability('tag', 'tag-availability')}<% end_if %>
+                <% if $Availability %> | {$AvailabilityStatus.singular_name}: <strong class="h6">{$Availability('badge', 'badge-availability')}</strong><% end_if %>
                 </small>
             </div>
             <% if $PluggedInProductMetaData %>
@@ -72,6 +72,6 @@
         <% end_if %>
     </div>
     <div class="card-footer clearfix text-right">
-        <a class="btn btn-sm btn-secondary" data-title="<%t SilverCart\Model\Pages\Page.SHOW_DETAILS 'show details' %>" data-placement="top" data-toggle="tooltip" href="{$Link}" title="<%t SilverCart\Model\Pages\Page.SHOW_DETAILS_FOR 'Show details for {title}' title=$Title %>"><span class="fa fa-info-circle"></span> <%t SilverCart\Model\Pages\Page.SHOW_DETAILS 'show details' %></a>
+        <a class="btn btn-secondary" data-title="<%t SilverCart\Model\Pages\Page.SHOW_DETAILS 'show details' %>" data-placement="top" data-toggle="tooltip" href="{$Link}" title="<%t SilverCart\Model\Pages\Page.SHOW_DETAILS_FOR 'Show details for {title}' title=$Title %>"><span class="fa fa-info-circle"></span> <%t SilverCart\Model\Pages\Page.SHOW_DETAILS 'show details' %></a>
     </div>
 </div>
