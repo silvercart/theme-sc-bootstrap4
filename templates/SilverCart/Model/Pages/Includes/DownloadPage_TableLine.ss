@@ -2,7 +2,7 @@
     <td class="text-left" data-title=""><a href="{$File.Link}"><img class="img-fluid" src="{$FileIconURL}" alt="{$File.FileType}" title="{$File.Title}" /></a></td>
     <td class="text-left" data-title="<%t SilverCart\Model\Product\File.DESCRIPTION 'Description' %>">
     <% if $Thumbnail %>
-        <a href="{$File.Link}"><img src="{$Thumbnail.SetWidth(100).URL}" class="float-left thumbnail" alt="{$Title}" /></a>
+        <a href="{$File.Link}"><img src="{$Thumbnail.ScaleWidth(100).URL}" class="float-left thumbnail img-fluid" alt="{$Title}" /></a>
     <% end_if %>
         <h3><a href="{$File.Link}">{$Title}</a></h3>{$Description}
     </td>

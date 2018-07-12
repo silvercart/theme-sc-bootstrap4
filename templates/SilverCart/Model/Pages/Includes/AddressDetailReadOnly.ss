@@ -1,6 +1,6 @@
 <div class="silvercart-address card w-100">
 <% if $isInvoiceAddress || $isShippingAddress %>
-    <div class="card-header">
+    <div class="card-header border-0 pb-0">
     <% if $isInvoiceAndShippingAddress %>
         <strong><span class="fa fa-credit-card"></span> <%t SilverCart\Model\Pages\AddressHolder.INVOICEANDSHIPPINGADDRESS 'invoice and shipping address' %></strong>
     <% else_if $isInvoiceAddress %>

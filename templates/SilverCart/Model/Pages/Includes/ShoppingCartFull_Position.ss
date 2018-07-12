@@ -16,7 +16,7 @@
     </td>
     <td class="sub-price text-right" data-title="<%t SilverCart\Model\Product\Product.PRICE_SINGLE 'price single' %>">
         {$getPrice(true).Nice}
-        <p class="hidden-xs-down"><small>{$Product.TaxRate}% <%t SilverCart\Model\Product\Product.VAT 'VAT' %></small></p>
+        <small class="d-block">{$Product.TaxRate}% <%t SilverCart\Model\Product\Product.VAT 'VAT' %></small>
     </td>
 <% if $CurrentPage.EditableShoppingCart %>
     <td class="quantity text-center" data-title="<%t SilverCart\Model\Pages\ProductPage.QUANTITY 'Quantity' %>">
@@ -36,7 +36,7 @@
         </form>
     </td>
 <% else %>
-    <td class="quantity" data-title="<%t SilverCart\Model\Pages\ProductPage.QUANTITY 'Quantity' %>">
+    <td class="quantity text-right text-sm-center" data-title="<%t SilverCart\Model\Pages\ProductPage.QUANTITY 'Quantity' %>">
         <span class="silvercart-quantity-label">{$getTypeSafeQuantity}x</span>
     </td>
 <% end_if %>

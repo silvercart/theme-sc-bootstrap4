@@ -46,9 +46,9 @@
 <% if $addToEditableShoppingCartTable %>
     <% loop $addToEditableShoppingCartTable %>
                 <tr>
-                    <td colspan="3">{$TitleField}&nbsp;</td>
-                    <td colspan="3" class="text-right">{$RightTitleField}&nbsp;</td>
-                    <td class="text-right">{$PriceField.Nice}</td>
+                    <td colspan="1" class="d-none d-sm-table-cell">{$TitleField}&nbsp;</td>
+                    <td colspan="2" class="text-right d-none d-sm-table-cell">{$RightTitleField}&nbsp;</td>
+                    <td class="text-right" data-title="{$TitleField}">{$PriceField.Nice}</td>
                 </tr>
     <% end_loop %>
 <% end_if %>

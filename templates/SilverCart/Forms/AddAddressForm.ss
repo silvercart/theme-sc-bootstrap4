@@ -63,7 +63,7 @@
     <% loop $Actions %>
         <button class="btn btn-primary float-right" id="{$ID}" title="{$Title}" name="{$Name}" type="submit"><span class="fa fa-arrow-right"></span> {$Title}</button>
     <% end_loop %>
-        <a class="btn btn-sm btn-secondary float-left js-link" id="silvercart-add-address-form-cancel-id" href="{$CurrentPage.Link}" title="<%t SilverCart\Model\Pages\Page.CANCEL 'Cancel' %>"><%t SilverCart\Model\Pages\Page.CANCEL 'Cancel' %></a>
+        <a class="btn btn-secondary float-left js-link" id="silvercart-add-address-form-cancel-id" href="{$CurrentPage.Link}" title="<%t SilverCart\Model\Pages\Page.CANCEL 'Cancel' %>"><%t SilverCart\Model\Pages\Page.CANCEL 'Cancel' %></a>
     </div>
 <% if $IncludeFormTag %>
 </form>

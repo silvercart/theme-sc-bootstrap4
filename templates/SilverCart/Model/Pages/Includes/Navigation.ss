@@ -22,7 +22,7 @@
                 <li class="nav-item d-none d-lg-block">
                     <a class="nav-link navlink-home <% if $isCurrent %>active<% end_if %>" href="{$Link}" title="{$SiteConfig.Title} - {$SiteConfig.Tagline}">
                     <% if $SiteConfig.ShopNavigationLogo %>
-                        <img class="img-fluid" src="{$SiteConfig.ShopNavigationLogo.SetHeight(48).URL}" alt="{$SiteConfig.Title}" />
+                        <img class="img-fluid" src="{$SiteConfig.ShopNavigationLogo.ScaleHeight(48).URL}" alt="{$SiteConfig.Title}" />
                     <% else %>
                         <span class="fa fa-2x fa-home"></span>
                     <% end_if %>

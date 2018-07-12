@@ -2,8 +2,9 @@
     <% if $items %>
     <ul class="list-unstyled">
         <% loop $items %>
-        <li>
-            <label class="radio" for="{$htmlId}"><input type="radio" name="{$name}" value="{$value}" id="{$htmlId}"<% if checked %> checked="checked"<% end_if %> /> {$label}</label>        
+        <li class="form-check">
+            <input class="form-check-input" type="radio" name="{$name}" value="{$value}" id="{$htmlId}"<% if checked %> checked="checked"<% end_if %> />
+            <label class="form-check-label h3" for="{$htmlId}">{$label}</label>        
             <% if $description || $CurrentUser.Cart.getDeliveryTime($ShippingMethod.ID) %>
                 <div class="alert alert-info silvercart-checkout-shipping-additionalInfo-description">
                 <% if $description %>

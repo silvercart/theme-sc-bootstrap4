@@ -45,19 +45,21 @@
     <section class="bg-primary mt-3 py-3">
         <div class="container-fluid">
     <% if $PaymentMethods %>
-            <ul class="payment-methods list-inline pull-md-right">
+            <ul class="payment-methods list-inline float-right">
         <% loop $PaymentMethods %>
             <% if $showPaymentLogos && $PaymentLogos %>
                 <% loop $PaymentLogos %>
                     <% if $Image.Size %>
-                <li class="list-inline-item"><a href="{$CurrentPage.PageByIdentifierCodeLink('SilvercartPaymentMethodsPage')}#{$Top.String2urlSegment($Up.Name)}" title="{$Up.Title.HTML}"><img src="{$Image.SetHeight(35).URL}" alt="{$Up.Title.HTML}" /></a></li>
+                <li class="list-inline-item"><a href="{$CurrentPage.PageByIdentifierCodeLink('SilvercartPaymentMethodsPage')}#{$Top.String2urlSegment($Up.Name)}" title="{$Up.Title.HTML}"><img src="{$Image.ScaleHeight(35).URL}" alt="{$Up.Title.HTML}" /></a></li>
                     <% end_if %>
                 <% end_loop %>
             <% end_if %>
         <% end_loop %>
             </ul>
     <% end_if %>
-            <p>{$SiteConfig.Title} | {$SiteConfig.Tagline} | <a href="http://www.silvercart.org" target="_blank" title="SilverCart. eCommerce software. Open-source. You'll love it.">by SilverCart eCommerce</a></p>
+            <p class="clearfix mb-0 align-middle">
+                <img class="img-fluid mr-2" src="<% if $SiteConfig.ShopLogo %>{$SiteConfig.ShopLogo.ScaleWidth(150).Link}<% else %>{$BaseHref}resources/vendor/silvercart/silvercart/client/img/logo.png<% end_if %>" alt="{$SiteConfig.Title}">
+                {$SiteConfig.Title} | {$SiteConfig.Tagline} | <a href="http://www.silvercart.org" target="_blank" title="SilverCart. eCommerce software. Open-source. You'll love it.">by SilverCart eCommerce</a></p>
         </div>
     </section>
 </footer>

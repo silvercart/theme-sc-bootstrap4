@@ -13,7 +13,7 @@
     <div class="row">
         <div class="span6 col-md-6">
             <% loop $Actions %>
-                <button class="btn btn-sm btn-primary" type="submit" id="{$ID}" title="{$Title}" value="{$Value}" name="{$Name}">{$Title} <span class="fa fa-caret-right"></span></button>
+                <button class="btn btn-primary" type="submit" id="{$ID}" title="{$Title}" value="{$Value}" name="{$Name}">{$Title} <span class="fa fa-caret-right"></span></button>
             <% end_loop %>
         </div>
         <div class="span6 col-md-6">

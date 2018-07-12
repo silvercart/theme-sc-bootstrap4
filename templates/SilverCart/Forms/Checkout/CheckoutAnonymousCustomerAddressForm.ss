@@ -99,7 +99,7 @@
     <hr>
     <div class="clearfix">
 <% loop $Actions %>
-        <button class="btn btn-sm btn-primary float-right pull-right" type="submit" id="{$ID}" title="{$Title}" value="{$Value}" name="{$Name}">{$Title} <span class="fa fa-caret-right"></span></button>
+        <button class="btn btn-primary float-right pull-right" type="submit" id="{$ID}" title="{$Title}" value="{$Value}" name="{$Name}">{$Title} <span class="fa fa-caret-right"></span></button>
 <% end_loop %>
     </div>
 <% if $IncludeFormTag %>

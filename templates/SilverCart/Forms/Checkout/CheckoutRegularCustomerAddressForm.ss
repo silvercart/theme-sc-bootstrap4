@@ -25,7 +25,7 @@
     <div class="clearfix">
         <a id="silvercart-add-address-link" data-toggle="collapse" data-target="#silvercart-add-address-form" aria-expanded="false" aria-controls="silvercart-add-address-form" href="{$CurrentPage.Link}addNewAddress" class="btn btn-secondary btn-sm silvercart-trigger-add-address-link js-link"><span class="fa fa-plus"></span> <%t SilverCart\Model\Pages\AddressHolder.ADD 'Add new address' %></a>
     <% loop $Actions %>
-        <button class="btn btn-sm btn-primary float-right pull-right" type="submit" id="{$ID}" title="{$Title}" value="{$Value}" name="{$Name}">{$Title} <span class="fa fa-caret-right"></span></button>
+        <button class="btn btn-primary float-right" type="submit" id="{$ID}" title="{$Title}" value="{$Value}" name="{$Name}">{$Title} <span class="fa fa-caret-right"></span></button>
     <% end_loop %>
     </div>
 <% if $IncludeFormTag %>
