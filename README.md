@@ -15,11 +15,10 @@
 
 ## Setting Up the Gulp Settings
 
-1. Use the gulp settings template file (gulp.settings.tpl.js) to for your local configuration,´
+1. Use the gulp settings template file (gulp.settings.tpl.js) to for your local configuration,
     * ``> copy gulp.settings.tpl.js gulp.settings.js``
 2. Enter your local settings
-    * 
-```javascript
+    * ```javascript
 module.exports = {
    SASS_SRC:  "client/scss",
    CSS_DIR:   "client/css",
