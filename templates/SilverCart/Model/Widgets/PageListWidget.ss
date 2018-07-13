@@ -18,13 +18,13 @@
                         <a href="{$Link}" title="{$Title}">{$MenuTitle}</a>
                     <% end_if %>
                     </h4>
-                    <div class="card-text">
+                    <div class="card-text clearfix">
                         <% if $widgetImage %>
-                            <a href="{$Link}" title="{$Title}" class="d-inline-block float-right mr-1 mb-1"><img class="img-fluid" alt="{$Title}" src="{$widgetImage.ScaleWidth(60).URL}" /></a>
+                            <a href="{$Link}" title="{$Title}" class="d-inline-block float-right ml-1 mb-1"><img class="img-fluid" alt="{$Title}" src="{$widgetImage.ScaleWidth(60).URL}" /></a>
                         <% else_if $GroupPicture %>
-                            <a href="{$Link}" title="{$Title}" class="d-inline-block float-right mr-1 mb-1"><img class="img-fluid" alt="{$Title}" src="{$GroupPicture.ScaleWidth(60).URL}" /></a>
+                            <a href="{$Link}" title="{$Title}" class="d-inline-block float-right ml-1 mb-1"><img class="img-fluid" alt="{$Title}" src="{$GroupPicture.ScaleWidth(60).URL}" /></a>
                         <% else_if $getProductsToDisplay.first.ListImage %>
-                            <a href="{$Link}" title="{$Title}" class="d-inline-block float-right mr-1 mb-1"><img class="img-fluid" alt="{$Title}" src="{$getProductsToDisplay.first.ListImage.ScaleWidth(60).URL}" /></a>
+                            <a href="{$Link}" title="{$Title}" class="d-inline-block float-right ml-1 mb-1"><img class="img-fluid" alt="{$Title}" src="{$getProductsToDisplay.first.ListImage.ScaleWidth(60).URL}" /></a>
                         <% end_if %>
                         <% if $widgetText %>
                             {$widgetText}
