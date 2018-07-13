@@ -11,32 +11,28 @@
         <% loop $getPages %>
             <div class="card">
                 <div class="card-body">
-                    <div class="row">
-                        <div class="col-8 col-md-9">
-                            <h4 class="card-title">
-                            <% if $widgetTitle %>
-                                <a href="{$Link}" title="{$widgetTitle}">{$widgetTitle}</a>
-                            <% else_if $Title %>
-                                <a href="{$Link}" title="{$Title}">{$MenuTitle}</a>
-                            <% end_if %>
-                            </h4>
-                            <% if $widgetText %>
-                                <p class="card-text">{$widgetText}</p>
-                            <% else_if $MetaDescription %>
-                                <p class="card-text">{$MetaDescription}</p>
-                            <% else_if $Content %>
-                                <p class="card-text">{$Content.Plain.LimitWordAndLineBreakCount(30,5)}</p>
-                            <% end_if %>
-                        </div>
-                        <div class="col-4 col-md-3 widget-image">
+                    <h4 class="card-title">
+                    <% if $widgetTitle %>
+                        <a href="{$Link}" title="{$widgetTitle}">{$widgetTitle}</a>
+                    <% else_if $Title %>
+                        <a href="{$Link}" title="{$Title}">{$MenuTitle}</a>
+                    <% end_if %>
+                    </h4>
+                    <div class="card-text">
                         <% if $widgetImage %>
-                            <a href="{$Link}" title="{$Title}" class="silvercart-pagelist-widget-image"><img class="img-fluid" alt="{$Title}" src="{$widgetImage.URL}" /></a>
+                            <a href="{$Link}" title="{$Title}" class="d-inline-block float-right mr-1 mb-1"><img class="img-fluid" alt="{$Title}" src="{$widgetImage.ScaleWidth(60).URL}" /></a>
                         <% else_if $GroupPicture %>
-                            <a href="{$Link}" title="{$Title}" class="silvercart-pagelist-widget-image"><img class="img-fluid" alt="{$Title}" src="{$GroupPicture.URL}" /></a>
+                            <a href="{$Link}" title="{$Title}" class="d-inline-block float-right mr-1 mb-1"><img class="img-fluid" alt="{$Title}" src="{$GroupPicture.ScaleWidth(60).URL}" /></a>
                         <% else_if $getProductsToDisplay.first.ListImage %>
-                            <a href="{$Link}" title="{$Title}" class="silvercart-pagelist-widget-image"><img class="img-fluid" alt="{$Title}" src="{$getProductsToDisplay.first.ListImage.URL}" /></a>
+                            <a href="{$Link}" title="{$Title}" class="d-inline-block float-right mr-1 mb-1"><img class="img-fluid" alt="{$Title}" src="{$getProductsToDisplay.first.ListImage.ScaleWidth(60).URL}" /></a>
                         <% end_if %>
-                        </div>
+                        <% if $widgetText %>
+                            {$widgetText}
+                        <% else_if $MetaDescription %>
+                            {$MetaDescription}
+                        <% else_if $Content %>
+                            {$Content.Plain.LimitWordAndLineBreakCount(30,5)}
+                        <% end_if %>
                     </div>
                 </div>
                 <div class="card-footer clearfix">
