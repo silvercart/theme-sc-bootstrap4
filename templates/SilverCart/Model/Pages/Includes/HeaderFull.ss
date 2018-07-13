@@ -4,7 +4,7 @@
         <div class="row">
             <div class="siteLogo col-12 col-md-4 d-none d-md-block">
                 <a class="logo-link" href="{$PageByIdentifierCode('SilvercartFrontPage').Link}" title="{$SiteConfig.Title} - {$SiteConfig.Tagline}">
-                    <img src="<% if $SiteConfig.ShopLogo %>{$SiteConfig.ShopLogo.Link}<% else %>{$BaseHref}resources/vendor/silvercart/silvercart/client/img/logo.png<% end_if %>" class="img-fluid w-50" alt="{$SiteConfig.Title}">
+                    <img src="<% if $SiteConfig.ShopLogo %>{$SiteConfig.ShopLogo.Link}<% else %>{$BaseHref}resources/vendor/silvercart/silvercart/client/img/logo.png<% end_if %>" class="img-fluid" alt="{$SiteConfig.Title}">
                     <span class="d-none d-md-block small">{$SiteConfig.Title} - {$SiteConfig.Tagline}</span>
                 </a>
             </div>
@@ -24,7 +24,7 @@
                         </div>
                         <% end_if %>
                         <% if $ShopAdditionalInfo %>
-                        <div class="col-sm-2">
+                        <div class="col-sm-2 pl-0 pr-0">
                             {$ShopAdditionalInfo.RAW}
                         </div>
                         <% end_if %>
