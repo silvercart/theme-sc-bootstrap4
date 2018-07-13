@@ -4,10 +4,10 @@
     <% end_if %>
     <div class="row">
     <% loop $Elements %>
-        <div class="d-flex <% if $Up.IsInContentArea %>col-12 col-sm-6 col-lg-4 col-xxl-3<% else %>col-12 col-xxl-6<% end_if %>">
+        <div class="d-flex <% if $Up.IsInContentArea %>col-12 col-sm-4 col-md-6 col-lg-3 col-xxl-2<% else %>col-12 col-xxl-6<% end_if %>">
             <article class="card card-product my-2 silvercart-product-group-page-tile-item {$EvenOdd} clearfix text-center w-100">
-                <header class="sc-product-title card-header">
-                    <h2 id="product{$ID}" class="card-title h5 mb-0 <% if $PriceIsLowerThanMsr || $isNewProduct %>pt-2<% end_if %>">
+                <header class="sc-product-title card-header pl-1 pr-1 pb-1">
+                    <h2 id="product{$ID}" class="card-title h6 mb-0 <% if $PriceIsLowerThanMsr || $isNewProduct %>pt-2<% end_if %>">
                         <a href="{$Link}" class="highlight" title="<%t SilverCart\Model\Pages\Page.SHOW_DETAILS_FOR 'Show details for {title}' title=$Title %>">{$Title.HTML}</a>
                     </h2>
                 </header>
@@ -30,33 +30,16 @@
                 <% end_if %>
                     </a>
                 </div>
-                <div class="card-body pb-0">
+                <div class="card-body pb-0 pl-0 pr-0 pt-1">
                     <div class="sc-product-price product-price">
                         <span class="price">
                         <% if $PriceIsLowerThanMsr %>
-                            <span class="text-line-through">{$MSRPrice.Nice}</span>
+                            <small class="text-line-through">{$MSRPrice.Nice}</small>
                             <strong class="text-danger">{$PriceNice}</strong>
                         <% else %>
                             <strong>{$PriceNice}</strong>
                         <% end_if %>
-                        </span><br>
-                        <div id="toogle{$ID}" class="sc-product-price-info">
-                            <small class="d-block">
-                            <% if $CurrentPage.showPricesGross %>
-                                <%t SilverCart\Model\Pages\Page.INCLUDING_TAX 'incl. {amount}% VAT' amount=$TaxRate %>, 
-                            <% else_if $CurrentPage.showPricesNet %>
-                                <%t SilverCart\Model\Pages\Page.EXCLUDING_TAX 'plus VAT' %>,
-                            <% end_if %>
-                            <% with $CurrentPage.PageByIdentifierCode('SilvercartShippingFeesPage') %>
-                                <a href="{$Link}" title="<%t SilverCart\Model\Pages\Page.GOTO 'go to {title} page' title=$Title.XML %>"><%t SilverCart\Model\Pages\Page.PLUS_SHIPPING 'plus shipping' %></a>
-                            <% end_with %>
-                            </small>
-                            <small>
-                                <%t SilverCart\Model\Product\Product.PRODUCTNUMBER_SHORT 'Item no.' %>: <strong>{$ProductNumberShop}</strong>
-                                <% if $PackagingQuantity %> | <%t SilverCart\Model\Pages\ProductPage.PACKAGING_CONTENT 'Content' %>: <strong>{$PackagingQuantity} {$QuantityUnit.Title}</strong><% end_if %>
-                                <% if $Availability %> | {$AvailabilityStatus.singular_name}: <strong class="h6">{$Availability('badge', 'badge-availability')}</strong><% end_if %>
-                            </small>
-                        </div>
+                        </span>
                     </div>
                 </div>
                 <div class="card-footer">
