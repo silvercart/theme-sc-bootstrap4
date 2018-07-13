@@ -48,6 +48,8 @@
                 <div class="btn-group btn-group-justified float-right">
                 <% if not $isInvoiceAddress && $Member.InvoiceAddress.canEdit %>
                     <a class="btn btn-sm btn-link" data-toggle="tooltip" data-placement="top" title="<%t SilverCart\Model\Pages\AddressHolder.SET_AS 'Set as' %> <%t SilverCart\Model\Pages\AddressHolder.INVOICEADDRESS 'invoice address' %>" href="{$CurrentPage.Link}setInvoiceAddress/{$ID}"><span class="fa fa-credit-card"></span> Standard</a>
+                <% else_if not $isInvoiceAddress && not $Member.InvoiceAddress.exists %>
+                    <a class="btn btn-sm btn-link" data-toggle="tooltip" data-placement="top" title="<%t SilverCart\Model\Pages\AddressHolder.SET_AS 'Set as' %> <%t SilverCart\Model\Pages\AddressHolder.INVOICEADDRESS 'invoice address' %>" href="{$CurrentPage.Link}setInvoiceAddress/{$ID}"><span class="fa fa-credit-card"></span> Standard</a>
                 <% end_if %>
                 <% if not $isShippingAddress %>
                     <a class="btn btn-sm btn-link" data-toggle="tooltip" data-placement="top" title="<%t SilverCart\Model\Pages\AddressHolder.SET_AS 'Set as' %> <%t SilverCart\Model\Pages\AddressHolder.SHIPPINGADDRESS 'shipping address' %>" href="{$CurrentPage.Link}setShippingAddress/{$ID}"><span class="fa fa-truck"></span> Standard</a>
