@@ -1,3 +1,4 @@
+<% cached 'FrontPage',$LastEdited,$CurrentPage.MemberGroupCacheKey %>
 <main id="main" class="main container-fluid">
     <% if $WidgetSetSidebar.exists %>
     <div class="row">
@@ -24,3 +25,4 @@
         <% end_if %>
     <% end_if %>
 </main>
+<% end_cached %>
