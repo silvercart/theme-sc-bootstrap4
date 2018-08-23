@@ -17,10 +17,13 @@
 {$RequireExtendedJavaScript}
 {$RequireCookieBannerJavaScript}
 <% require themedJavascript("client/js/bootstrap.bundle.min") %>
+<% require themedJavascript("client/js/jquery-ui.min") %>
 <% require themedJavascript("client/js/jquery.fancybox.min") %>
-<% require themedJavascript("client/js/lazyload.js") %>
+<% require themedJavascript("client/js/lazyload") %>
+<% require themedJavascript("client/js/sly.min") %>
 <% require themedJavascript("client/js/silvercart.theme") %>
 <% require themedJavascript("client/js/silvercart.attributes") %>
+<% require themedJavascript("client/js/silvercart.sly") %>
 <% require themedJavascript("client/js/jquery.slidorion.min") %>
 <% require themedJavascript("client/javascript/jquery.pixeltricks.tools") %>
 <% require themedJavascript("client/javascript/jquery.cookie") %>

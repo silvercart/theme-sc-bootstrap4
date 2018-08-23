@@ -8769,6 +8769,107 @@ figure.effect-overlay:hover .btn-footer {
   background-image: linear-gradient(to bottom, #0e5c9e, #0a416f);
   border-color: #0a416f; }
 
+.widget .sly-container {
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 6px; }
+
+.widget .sly-container .slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 500px;
+          flex: 1 1 500px;
+  list-style: none;
+  padding: 0;
+  margin: 0 10px; }
+
+.widget .sly-container .slider-item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 180px;
+          flex: 0 0 180px;
+  margin-left: 10px;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  .widget .sly-container .slider-item a.full {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1; }
+  .widget .sly-container .slider-item a.btn {
+    white-space: normal;
+    padding-left: 0;
+    padding-right: 0; }
+
+.widget .sly-container .next,
+.widget .sly-container .prev {
+  width: 31px;
+  height: 77px;
+  position: absolute;
+  top: calc(50% - 38px);
+  background-color: #fff;
+  border: 0px solid #cdcdcd;
+  color: #8d8d8d;
+  -webkit-transition: background 200ms linear, opacity 200ms linear, color 200ms linear;
+  transition: background 200ms linear, opacity 200ms linear, color 200ms linear;
+  -webkit-box-shadow: 0 1px 3px #888;
+          box-shadow: 0 1px 3px #888;
+  opacity: 0.95; }
+
+.widget .sly-container .next {
+  border-right-width: 0px;
+  right: 0px;
+  border-radius: 2px 0px 0px 2px; }
+
+.widget .sly-container .prev {
+  border-left-width: 0px;
+  left: 0px;
+  border-radius: 0px 2px 2px 0px; }
+
+.widget .sly-container .next.disabled,
+.widget .sly-container .prev.disabled {
+  opacity: 0.2; }
+
+.widget .sly-container .next.disabled:hover,
+.widget .sly-container .prev.disabled:hover {
+  opacity: 1; }
+
+.widget .sly-container .scrollbar {
+  margin: 0 0 1em 0;
+  height: 6px;
+  background: #ccc;
+  background: #ced4da;
+  line-height: 0;
+  position: absolute;
+  bottom: -12px;
+  left: 5px;
+  width: calc(100% - 10px);
+  display: none;
+  border-radius: 3px;
+  overflow: hidden; }
+
+.widget .sly-container:hover .scrollbar {
+  display: block; }
+
+.widget .sly-container .scrollbar .handle {
+  width: 100px;
+  height: 100%;
+  background: #fd8787;
+  cursor: pointer; }
+
+.widget .sly-container .scrollbar .handle .mousearea {
+  position: absolute;
+  top: -9px;
+  left: 0;
+  width: 100%;
+  height: 20px; }
+
 /*********************************************/
 /*********************************************/
 /**                                         **/
