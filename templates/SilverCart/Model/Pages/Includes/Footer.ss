@@ -57,6 +57,22 @@
         <% end_loop %>
             </ul>
     <% end_if %>
+    <% with $PageByIdentifierCode('SilvercartShippingFeesPage') %>
+            <ul class="shipping-methods list-inline float-right mr-4">
+        <% loop $Carriers %>
+            <% if $Logo %>
+                <li class="list-inline-item"><a href="{$Up.Link}#{$Top.String2urlSegment($Title)}" title="{$Title.HTML}"><img src="{$Logo.ScaleHeight(35).URL}" alt="{$Title.HTML}" /></a></li>
+                <% if $AllowedSilvercartShippingMethods %>
+                    <% loop $AllowedSilvercartShippingMethods %>
+                        <% if $Logo %>
+                <li class="list-inline-item"><a href="{$Up.Up.Link}#{$Top.String2urlSegment($TitleWithCarrier)}" title="{$TitleWithCarrier.HTML}"><img src="{$Logo.ScaleHeight(35).URL}" alt="{$TitleWithCarrier.HTML}" /></a></li>
+                        <% end_if %>
+                    <% end_loop %>
+                <% end_if %>
+            <% end_if %>
+        <% end_loop %>
+            </ul>
+    <% end_with %>
             <p class="clearfix mb-0 align-middle">
                 <img class="img-fluid mr-2" src="<% if $SiteConfig.ShopLogo %>{$SiteConfig.ShopLogo.ScaleWidth(150).Link}<% else %>{$BaseHref}resources/vendor/silvercart/silvercart/client/img/logo.png<% end_if %>" alt="{$SiteConfig.Title}">
                 {$SiteConfig.Title} | {$SiteConfig.Tagline} | <a href="http://www.silvercart.org" target="_blank" title="SilverCart. eCommerce software. Open-source. You'll love it.">by SilverCart eCommerce</a></p>
