@@ -1,3 +1,8 @@
+<% if $InfoMessages %>
+<div class="alert alert-info">
+    <span class="fa fa-info-circle"></span> <% loop $InfoMessages %>{$Text}<br/><% end_loop %>
+</div>
+<% end_if %>
 <div class="form-vertical grouped">
     <h4><%t SilverCart\Model\Pages\MyAccountHolder.ALREADY_HAVE_AN_ACCOUNT 'Do you already have an account?' %></h4>
     <div class="ml-3 mr-3 mb-3">
