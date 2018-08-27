@@ -78,7 +78,7 @@
             <dl class="row">
             <% if $AvailabilityStatus %>
                 <dt class="col-5 col-sm-6 col-lg-5 col-xl-4 col-xxl-3"><%t SilverCart\Model\Product\AvailabilityStatus.SINGULARNAME 'Availability' %>:</dt>
-                <dd class="col-7 col-sm-6 col-lg-7 col-xl-8 col-xxl-9">{$Availability('tag', 'tag-availability')}</dd>
+                <dd class="col-7 col-sm-6 col-lg-7 col-xl-8 col-xxl-9">{$Availability('badge', 'badge-availability')}</dd>
             <% end_if %>
                 <dt class="col-5 col-sm-6 col-lg-5 col-xl-4 col-xxl-3"><%t SilverCart\Model\Product\Product.PRODUCTNUMBER_SHORT 'Item no.' %>:</dt>
                 <dd class="col-7 col-sm-6 col-lg-7 col-xl-8 col-xxl-9"><span>{$ProductNumberShop}</span></dd>
