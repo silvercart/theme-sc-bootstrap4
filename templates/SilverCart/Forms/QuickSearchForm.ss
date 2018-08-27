@@ -5,6 +5,7 @@
 <% loop $HiddenFields %>
     {$Field}
 <% end_loop %>
+    {$BeforeFormContent}
     <div class="input-group">
     <% with $Fields.dataFieldByName(quickSearchQuery) %>
         <label class="sr-only" for="{$ID}">{$Title}</label>
@@ -17,6 +18,7 @@
         </div>
     <% end_loop %>
     </div>
+    {$AfterFormContent}
 <% if $IncludeFormTag %>
 </form>
 <% end_if %>

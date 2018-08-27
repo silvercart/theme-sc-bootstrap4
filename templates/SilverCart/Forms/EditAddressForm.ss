@@ -12,6 +12,7 @@
 <% loop $HiddenFields %>
     {$Field}
 <% end_loop %>
+    {$BeforeFormContent}
 <% if $EnablePackstation %>
     <div class="row">
         <div class="col-sm-8">{$Fields.dataFieldByName(IsPackstation).FieldHolder}</div>
@@ -64,6 +65,7 @@
     <% end_loop %>
         <a class="btn btn-sm btn-secondary float-left" id="silvercart-edit-address-form-cancel-id" href="{$Controller.Link}" title="<%t SilverCart\Model\Pages\Page.CANCEL 'Cancel' %>"><span class="fa fa-arrow-left"></span> <%t SilverCart\Model\Pages\Page.CANCEL 'Cancel' %></a>
     </div>
+    {$AfterFormContent}
 <% if $IncludeFormTag %>
 </form>
 <% end_if %>

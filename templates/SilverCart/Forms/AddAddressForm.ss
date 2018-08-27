@@ -13,6 +13,7 @@
     {$Field}
 <% end_loop %>
     <h3><%t SilverCart\Model\Pages\AddressHolder.ADD 'Add new address' %></h3>
+    {$BeforeFormContent}
 <% if $EnablePackstation %>
     <div class="row">
         <div class="col-md-8">{$Fields.dataFieldByName(IsPackstation).FieldHolder}</div>
@@ -65,6 +66,7 @@
     <% end_loop %>
         <a class="btn btn-secondary float-left js-link" id="silvercart-add-address-form-cancel-id" href="{$CurrentPage.Link}" title="<%t SilverCart\Model\Pages\Page.CANCEL 'Cancel' %>"><%t SilverCart\Model\Pages\Page.CANCEL 'Cancel' %></a>
     </div>
+    {$AfterFormContent}
 <% if $IncludeFormTag %>
 </form>
 <% end_if %>

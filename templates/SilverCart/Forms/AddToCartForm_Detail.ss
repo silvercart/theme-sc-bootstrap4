@@ -5,6 +5,7 @@
 <% loop $HiddenFields %>
     {$Field}
 <% end_loop %>
+    {$BeforeFormContent}
     {$CustomFormSpecialFields}
     <div id="{$HolderID}" class="input-group quantity">
     <% with $Fields.dataFieldByName(productQuantity) %>
@@ -21,6 +22,7 @@
 <% if $Product.isInCart %>
     <div class="alert alert-info mt-1 silvercart-add-cart-form-hint"><span class="fa fa-info-circle"></span> {$Product.QuantityInCartString}</div>
 <% end_if %>
+    {$AfterFormContent}
 <% if $IncludeFormTag %>
 </form>
 <% end_if %>

@@ -5,6 +5,7 @@
 <% loop $HiddenFields %>
     {$Field}
 <% end_loop %>
+    {$BeforeFormContent}
     <div class="row">
         <div class="col-12 col-sm-6 col-lg-4">{$Fields.dataFieldByName('emailaddress').FieldHolder}</div>
         <div class="col-12 col-sm-6 col-lg-4">{$Fields.dataFieldByName('password').FieldHolder}</div>
@@ -18,6 +19,7 @@
             <a href="{$BaseHref}Security/lostpassword" class="btn btn-sm btn-link forgot-password-plain"><%t SilverStripe\Security\Member.BUTTONLOSTPASSWORD 'I\'ve lost my password' %></a>
         </div>
     </div>
+    {$AfterFormContent}
 <% if $IncludeFormTag %>
 </form>
 <% end_if %>

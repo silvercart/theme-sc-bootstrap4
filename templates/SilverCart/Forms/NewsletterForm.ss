@@ -6,6 +6,7 @@
     {$Field}
 <% end_loop %>
     <h3 class="mt-4"><%t SilverCart\Model\Pages\Page.NEWSLETTER_FORM 'Newsletter settings' %></h4>
+    {$BeforeFormContent}
     <div class="clearfix">
         {$Fields.dataFieldByName(Salutation).setFieldHolderTemplate('SilverCart/Forms/FormField_holder_horizontal').FieldHolder}
         {$Fields.dataFieldByName(FirstName).setFieldHolderTemplate('SilverCart/Forms/FormField_holder_horizontal').FieldHolder}
@@ -21,6 +22,7 @@
         <button class="btn btn-primary pull-right" type="submit" id="{$ID}" title="{$Title}"><span class="fa fa-arrow-right"></span> {$Title}</button> 
     <% end_loop %> 
     </div>
+    {$AfterFormContent}
 <% if $IncludeFormTag %>
 </form>
 <% end_if %>

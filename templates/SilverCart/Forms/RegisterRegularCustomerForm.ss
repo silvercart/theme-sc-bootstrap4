@@ -6,7 +6,7 @@
 <% loop $HiddenFields %>
     {$Field}
 <% end_loop %>
-
+    {$BeforeFormContent}
 <% if $EnableBusinessCustomers %>
     <h4><%t SilverCart\Model\Customer\Customer.BUSINESSCUSTOMER 'Business customer' %></h4>
     <div class="row">
@@ -67,6 +67,7 @@
         <button class="btn btn-primary float-right" type="submit" id="{$ID}" title="{$Title}" value="{$Value}" name="{$Name}">{$Title} <span class="fa fa-caret-right"></span></button>
     <% end_loop %>
     </div>
+    {$AfterFormContent}
 <% if $IncludeFormTag %>
 </form>
 <% end_if %>

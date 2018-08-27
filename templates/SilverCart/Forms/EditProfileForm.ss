@@ -5,7 +5,7 @@
 <% loop $HiddenFields %>
     {$Field}
 <% end_loop %>
-
+    {$BeforeFormContent}
     <h3 class="mt-4"><%t SilverCart\Model\Pages\Page.ADDRESS_DATA 'Address data' %></h4>
     <div class="form-group row">
         <label class="col-sm-2 col-form-label" for=""><%t SilverCart\Model\Pages\MyAccountHolder.YOUR_CUSTOMERNUMBER 'Your customer number' %></label>
@@ -51,6 +51,7 @@
         <button class="btn btn-primary float-right" id="{$ID}" title="{$Title}" value="{$Title}" name="{$Name}" type="submit">{$Title}</button>
     <% end_loop %>
     </div>
+    {$AfterFormContent}
 <% if $IncludeFormTag %>
 </form>
 <% end_if %>

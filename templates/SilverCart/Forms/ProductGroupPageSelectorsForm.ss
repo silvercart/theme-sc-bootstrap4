@@ -5,6 +5,7 @@
 <% loop $HiddenFields %>
     {$Field}
 <% end_loop %>
+    {$BeforeFormContent}
     <div class="input-group mt-1 mt-sm-0">
     <% with $Fields.dataFieldByName('SortOrder') %>
         <div class="input-group-prepend">
@@ -27,6 +28,7 @@
     <% loop $Actions %>
         <button class="btn btn-sm btn-primary" name="{$name}"><span class="fa fa-filter"></span> {$Title}</button>
     <% end_loop %>
+    {$AfterFormContent}
 <% if $IncludeFormTag %>
 </form>
 <% end_if %>

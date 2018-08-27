@@ -5,6 +5,7 @@
 <% loop $HiddenFields %>
     {$Field}
 <% end_loop %>
+    {$BeforeFormContent}
     {$CustomFormSpecialFields}
     <% with $Fields.dataFieldByName(SearchQuery) %>
     <div id="{$HolderID}" class="input-group <% if $extraClass %>{$extraClass}<% end_if %>">
@@ -16,6 +17,7 @@
         </div>
     <% end_loop %>
     </div>
+    {$AfterFormContent}
 <% if $IncludeFormTag %>
 </form>
 <% end_if %>

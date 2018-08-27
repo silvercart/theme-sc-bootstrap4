@@ -18,6 +18,7 @@ $(document).ready(function() {
 <% loop $HiddenFields %>
     {$Field}
 <% end_loop %>
+    {$BeforeFormContent}
 <% if $Customer %>
     <h3 class="mt-3"><%t SilverCart\Forms\RevocationForm.Order 'Order' %></h3>
     {$Fields.dataFieldByName(ExistingOrder).FieldHolder}
@@ -56,6 +57,7 @@ $(document).ready(function() {
         <button class="btn btn-primary float-right" type="submit" id="{$ID}" title="{$Title}" value="{$Title}"><span class="fa fa-arrow-right"></span> {$Title}</button> 
     <% end_loop %> 
     </div>
+    {$AfterFormContent}
 <% if $IncludeFormTag %>
 </form>
 <% end_if %>
