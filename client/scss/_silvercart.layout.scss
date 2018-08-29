@@ -42,6 +42,9 @@ table { table-layout: fixed; }
         content: '';
         display: table;
     }
+    .sticky.main-inner {
+        z-index: 1;
+    }
 }
 
 #main-container {

@@ -8291,7 +8291,9 @@ table {
   .sticky:before,
   .sticky:after {
     content: '';
-    display: table; } }
+    display: table; }
+  .sticky.main-inner {
+    z-index: 1; } }
 
 #main-container {
   border-top: 3px solid #0a416f; }
