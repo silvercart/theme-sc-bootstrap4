@@ -2,19 +2,19 @@
 <nav id="navbar" class="navbar navbar-expand-md static-top">
     <div class="container-fluid">
         <div class="icon-bar row w-100 mx-0 d-md-none" role="group">
-            <div class="col-4 px-0 justify-content-sm-start">
-                <a class="navbar-brand d-block" href="{$PageByIdentifierCode('SilvercartFrontPage').Link}" title="{$SiteConfig.Title} - {$SiteConfig.Tagline}">
+            <div class="col-auto px-0 justify-content-sm-start d-sm-none">
+                <a class="navbar-brands d-block" href="{$PageByIdentifierCode('SilvercartFrontPage').Link}" title="{$SiteConfig.Title} - {$SiteConfig.Tagline}">
                 <% if $SiteConfig.ShopNavigationLogo %>
-                    <img class="logo-icon img-fluid" alt="{$SiteConfig.Title}" src="{$SiteConfig.ShopNavigationLogo.Pad(100,35,f0f0f0).URL}" />
+                    <img class="logo-icon img-fluid" alt="{$SiteConfig.Title}" src="{$SiteConfig.ShopNavigationLogo.ScaleHeight(40).URL}" />
                 <% else %>
-                    <img class="logo-icon img-fluid" alt="{$SiteConfig.Title}" src="{$SiteConfig.ShopLogo.Pad(100,35,f0f0f0).URL}" />
+                    <img class="logo-icon img-fluid" alt="{$SiteConfig.Title}" src="{$SiteConfig.ShopLogo.ScaleHeight(40).URL}" />
                 <% end_if %>
                 </a>
             </div>
-            <div class="col-3 px-0 justify-content-sm-end">
+            <div class="col px-0 justify-content-sm-end">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainnav" aria-controls="mainnav" aria-expanded="false" aria-label="Navigation"><span class="navbar-toggler-icon">&#9776;</span></button>
             </div>
-            <div class="mobile-quicksearch col-5 p-1 justify-content-sm-end"></div>
+            <div class="col p-1 justify-content-sm-end mobile-quicksearch"></div>
         </div>
         <div id="mainnav" class="collapse navbar-collapse position-relative">
             <ul class="navbar-nav nav-fill w-100">

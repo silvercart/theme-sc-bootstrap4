@@ -42,6 +42,35 @@
 <% end_with %>
         </div>
     </section>
+<% with $SiteConfig %>
+    <% if $ShopOpeningHours || $ShopPhone || $ShopAdditionalInfo || $ShopAdditionalInfo2 %>
+    <hr/>
+    <section class="container-fluid mt-0 py-3">
+        <div class="row justify-content-sm-center">
+        <% if $ShopOpeningHours || $ShopPhone %>
+        <div class="col-6 col-sm-4 col-md-4 col-lg-2 col-xl-3 col-xxl-2">
+            <% if $ShopPhone %>
+            <span class="fa fa-phone"></span> {$ShopPhone.RAW}<br/>
+            <% end_if %>
+            <% if $ShopPhone %>
+            <span class="fa fa-clock-o"></span> {$ShopOpeningHours.RAW}
+            <% end_if %>
+        </div>
+        <% end_if %>
+        <% if $ShopAdditionalInfo %>
+        <div class="col-6 col-sm-4 col-md-4 col-lg-2 col-xl-3 col-xxl-2">
+            {$ShopAdditionalInfo.RAW}
+        </div>
+        <% end_if %>
+        <% if $ShopAdditionalInfo2 %>
+        <div class="col-sm-8 col-md-6 col-xxl-4 mt-3 mt-sm-3 mt-lg-0">
+            {$ShopAdditionalInfo2.RAW}
+        </div>
+        <% end_if %>
+        </div>
+    </section>
+    <% end_if %>
+<% end_with %>
     <section class="bg-primary mt-3 py-3">
         <div class="container-fluid">
     <% if $PaymentMethods %>
@@ -74,8 +103,13 @@
             </ul>
     <% end_with %>
             <p class="clearfix mb-0 align-middle">
-                <img class="img-fluid mr-2" src="<% if $SiteConfig.ShopLogo %>{$SiteConfig.ShopLogo.ScaleWidth(150).Link}<% else %>{$BaseHref}resources/vendor/silvercart/silvercart/client/img/logo.png<% end_if %>" alt="{$SiteConfig.Title}">
+                <img class="img-fluid mr-2 bg-light" src="<% if $SiteConfig.ShopLogo %>{$SiteConfig.ShopLogo.ScaleWidth(150).Link}<% else %>{$BaseHref}resources/vendor/silvercart/silvercart/client/img/logo.png<% end_if %>" alt="{$SiteConfig.Title}">
                 {$SiteConfig.Title} | {$SiteConfig.Tagline} | <a href="http://www.silvercart.org" target="_blank" title="SilverCart. eCommerce software. Open-source. You'll love it.">by SilverCart eCommerce</a></p>
+    <% if $CurrentRegisteredCustomer.isAdmin %>
+            <div class="border-top text-center pt-2">
+                <a class="btn btn-light text-dark" href="{$baseHref}admin"  title="<%t SilverCart\Model\Pages\Page.ADMIN_AREA 'Admin Access' %>"><span class="fa fa-lock"></span> <%t SilverCart\Model\Pages\Page.ADMIN_AREA 'Admin Access' %></a>
+            </div>
+    <% end_if %>
         </div>
     </section>
 </footer>

@@ -2,7 +2,7 @@
     <% with $Checkout %>
         <% if $CurrentStep.IsVisible %>
             <% with $CurrentStep %>
-<div class="text-center text-sm-left"><h1><span class="fa fa-checkoutstep{$StepNumber}"></span> {$VisibleStepNumber}. {$StepTitle}</h1></div>
+<div class="text-left text-sm-center"><h1><span class="fa fa-checkoutstep{$StepNumber}"></span> {$VisibleStepNumber}. {$StepTitle}</h1></div>
 <div class="progress"><div class="progress-bar bg-success" role="progressbar" style="width: {$Up.StepProgressPercentage}%" aria-valuenow="{$VisibleStepNumber}" aria-valuemin="0" aria-valuemax="{$Up.VisibleCheckoutStepWithCartCount}"></div></div>
             <% end_with %>
         <% else_if $CurrentPageIsCartPage %>

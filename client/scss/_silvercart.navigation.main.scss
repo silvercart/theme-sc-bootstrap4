@@ -77,6 +77,9 @@
 #navbar.fixed-top .logo-icon {
     display: block;
 }
+body.nav-is-fixed-top {
+    padding-top: 40px;
+}
 @include media-breakpoint-between(md, lg) { 
     #navbar .nav-link {
         font-size: 10px;

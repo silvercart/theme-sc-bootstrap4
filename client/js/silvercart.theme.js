@@ -67,14 +67,6 @@ silvercart.theme.initFancybox = function() {
         }
     });
 };
-silvercart.theme.toggleHeaderShopInfo = function() {
-    if ($(window).width() <= 992) {
-        $('#header-shop-info').removeClass('in');
-    } else {
-        $('#header-shop-info').addClass('in');
-        $('#header-shop-info').css('height', 'auto');
-    }
-};
 silvercart.theme.toggleBackToTop = function(scrollPos) {
     var totop = $('#totop');
     totop.click(function () {
@@ -100,8 +92,10 @@ silvercart.theme.toggleFixMainNavbar = function(scrollPos) {
     var scrollTop = scrollPos;
     if (scrollTop >= $('header').height()) {
         $('#navbar').removeClass('static-top').addClass('fixed-top');
+        $('body').addClass('nav-is-fixed-top');
     } else {
         $('#navbar').removeClass('fixed-top').addClass('static-top');
+        $('body').removeClass('nav-is-fixed-top');
     }
 };
 silvercart.theme.getCurrentBreakpoint = function() {
@@ -241,7 +235,6 @@ $(document).ready(function(){
     silvercart.theme.initCarousels();
     silvercart.theme.initFancybox();
     silvercart.theme.initLazyloadImages();
-    silvercart.theme.toggleHeaderShopInfo();
 
     var lastScrollYPosition = 0,
         tick                = false,
@@ -267,7 +260,6 @@ $(document).ready(function(){
     $(window).on('resize', function (e) {
         clearTimeout(resizeTimer);
         resizeTimer = setTimeout(function () {
-            silvercart.theme.toggleHeaderShopInfo();
             silvercart.theme.elementsToMove.moveElementsByBreakpoint(elementsToMove);
         }, 100);
     });
