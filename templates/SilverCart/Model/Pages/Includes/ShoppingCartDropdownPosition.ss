@@ -18,7 +18,7 @@
                 </div>
             </td>
             <td class="cart-product-setting text-right pl-2 pr-2">
-                <p><strong>{$Price.Nice}</strong><br/><small>({$getTypeSafeQuantity}x {$getPrice(true).Nice})</small></p>
+                <p><strong>{$Price.Nice}</strong><br/><small class="text-nowrap">({$getTypeSafeQuantity}x {$getPrice(true).Nice})</small></p>
             </td>
         </tr>
     <% end_loop %>
