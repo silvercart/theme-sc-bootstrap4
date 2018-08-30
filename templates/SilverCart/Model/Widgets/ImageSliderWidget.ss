@@ -2,7 +2,7 @@
     <% if $FrontTitle %>
 <header><h3>{$FrontTitle}</h3></header>
     <% else %>
-<h4 class="sr-only"></h4>
+<h4 class="sr-only"><%t SilverCart\Model\Widgets\ImageSliderWidget.TITLE 'Images' %></h4>
     <% end_if %>
     <% if $FrontContent %>
         {$FrontContent}
