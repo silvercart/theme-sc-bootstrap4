@@ -1,6 +1,8 @@
 <% if $slideImages %>
     <% if $FrontTitle %>
-<div><strong class="h2">{$FrontTitle}</strong></div>
+<header><h3>{$FrontTitle}</h3></header>
+    <% else %>
+<h4 class="sr-only"></h4>
     <% end_if %>
     <% if $FrontContent %>
         {$FrontContent}
@@ -9,7 +11,7 @@
     <div id="carousel-widget-{$ID}" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
         <% loop $slideImages %>
-            <li class="border border-light" data-target="#carousel-widget-{$Up.ID}" data-slide-to="{$Pos(0)}" <% if $First %>class="active"<% end_if %> ></li>
+            <li class="border border-light <% if $First %>active<% end_if %>" data-target="#carousel-widget-{$Up.ID}" data-slide-to="{$Pos(0)}"></li>
         <% end_loop %>
         </ol>
         <div class="carousel-inner">
