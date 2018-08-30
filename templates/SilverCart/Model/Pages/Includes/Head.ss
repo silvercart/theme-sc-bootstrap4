@@ -1,6 +1,5 @@
 <% base_tag %>
 {$SiteConfig.GoogleWebmasterCode.Raw}
-<meta charset="utf-8">
 <title><% if $ClassName == "FrontPage" %>{$SiteConfig.Title} - {$SiteConfig.Tagline}<% else %><% if $MetaTitle %>{$MetaTitle}<% else %>{$Title}<% end_if %> | {$SiteConfig.Title}<% end_if %></title>
 {$MetaTags(false)}
 <meta name="viewport" content="width=device-width, initial-scale=1.0">

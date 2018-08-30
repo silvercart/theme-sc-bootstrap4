@@ -8,13 +8,13 @@
     {$BeforeFormContent}
     <div class="form-group">
         {$CustomFormSpecialFields}
-        <div id="{$FormName}_productQuantity_Box" class="input-group quantity">
     <% with $Fields.dataFieldByName('productQuantity') %>
-            <input id="{$ID}" class="form-control input-nano" type="text" placeholder="{$Value}" value="{$Value}" name="{$Name}">
+        <div id="{$HolderID}" class="input-group quantity">
+            <input type="text" id="{$ID}" class="form-control form-control-sm text-right" value="{$Value}" name="{$Name}" />
     <% end_with %>
     <% loop $Actions %>
             <span class="input-group-btn">
-                <button title="{$Up.Product.Title} <%t SilverCart\Model\Product\Product.ADD_TO_CART 'add Cart' %>" class="btn btn-primary" data-placement="left" data-toggle="tooltip"><i class="fa fa-shopping-cart"></i></button>
+                <button title="{$Up.Product.Title} <%t SilverCart\Model\Product\Product.ADD_TO_CART 'add Cart' %>" class="btn btn-primary" data-placement="left" data-toggle="tooltip"><span class="fa fa-shopping-cart"></span></button>
             </span>
     <% end_loop %>
         </div>

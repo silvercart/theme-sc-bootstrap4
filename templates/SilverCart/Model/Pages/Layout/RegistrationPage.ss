@@ -4,6 +4,7 @@
     <% else %>
     <section id="content-main" class="col-12 col-xxl-9">
     <% end_if %>
+        <h2 class="sr-only">{$Title}</h2>
         <article>
             <header><h1>{$Title}</h1></header>
             {$Content}
@@ -13,11 +14,7 @@
             {$RegisterRegularCustomerForm}
         <% end_if %>
         </article>
-        <% if $WidgetSetContent.exists %>
-        <section class="sc-widget-holder">
-            {$InsertWidgetArea(Content)}
-        </section>
-        <% end_if %>
+        <% include SilverCart/Model/Pages/WidgetSetContent %>
     <% if $WidgetSetSidebar.exists %>
     </section>
     <aside class="col-12 col-md-3">

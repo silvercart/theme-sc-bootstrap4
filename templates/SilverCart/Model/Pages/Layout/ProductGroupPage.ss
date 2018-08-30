@@ -1,6 +1,7 @@
 <div class="row row-offcanvas row-offcanvas-right">
 <% cached $CacheKey %>
     <section id="content-main" class="col-12 col-md-9">
+        <h2 class="sr-only">{$Title}</h2>
         <% include SilverCart/Model/Pages/BreadCrumbs %>
         <article aria-label="{$Title.XML}">
             <header><h1 id="maintitle">{$Title}</h1></header>

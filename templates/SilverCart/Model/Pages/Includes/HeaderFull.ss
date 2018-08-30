@@ -81,6 +81,7 @@
                                 <span class="caret"></span>
                             </a>
                             <section class="dropdown-menu cart-content" aria-labelledby="cart-dropdown">
+                                <h3 class="sr-only"><%t SilverCart\Model\Pages\Page.CART 'Cart' %></h3>
                                 <% include SilverCart/Model/Pages/ShoppingCartDropdown %>
                             </section>
                         </div>

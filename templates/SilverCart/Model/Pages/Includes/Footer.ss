@@ -2,6 +2,7 @@
 <footer class="footer mt-5 pt-4">
     <h3 class="sr-only">Footer Navigation</h3>
     <section class="container-fluid">
+        <h4 class="sr-only"><%t SilverCart\Admin\Model\Config.ShopAdditionalInfo 'Additional Information' %></h4>
         <div class="card-deck justify-content-between">
 <% if $FooterColumns %>
     <% loop $FooterColumns %>
@@ -46,6 +47,7 @@
     <% if $ShopOpeningHours || $ShopPhone || $ShopAdditionalInfo || $ShopAdditionalInfo2 %>
     <hr/>
     <section class="container-fluid mt-0 py-3">
+        <h4 class="sr-only"><%t SilverCart\Admin\Model\Config.ShopAdditionalInfo 'Additional Information' %></h4>
         <div class="row justify-content-sm-center">
         <% if $ShopOpeningHours || $ShopPhone %>
         <div class="col-6 col-sm-4 col-md-4 col-lg-2 col-xl-3 col-xxl-2">
@@ -72,6 +74,7 @@
     <% end_if %>
 <% end_with %>
     <section class="bg-primary mt-3 py-3">
+        <h4 class="sr-only"><%t SilverCart\Admin\Model\Config.ShopAdditionalInfo 'Additional Information' %></h4>
         <div class="container-fluid">
     <% if $PaymentMethods %>
             <ul class="payment-methods list-inline float-right">

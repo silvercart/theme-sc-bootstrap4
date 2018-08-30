@@ -6,11 +6,7 @@
             {$Content}
             {$Checkout.CurrentStep}
         </article>
-        <% if $WidgetSetContent.exists %>
-        <section class="sc-widget-holder">
-            {$InsertWidgetArea(Content)}
-        </section>
-        <% end_if %>
+        <% include SilverCart/Model/Pages/WidgetSetContent %>
     <% else %>
         <div class="alert alert-danger">{$CheckoutErrorMessage}</div>
     <% end_if %>

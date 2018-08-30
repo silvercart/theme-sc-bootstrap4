@@ -18,12 +18,7 @@
         <h1><%t SilverCart\Model\Pages\OrderHolder.OrderDetails 'Order Details' %></h1>
         <% include SilverCart/Model/Pages/OrderDetails %>
     <% end_if %>
-
-    <% if $WidgetSetContent.exists %>
-        <section class="sc-widget-holder">
-            {$InsertWidgetArea(Content)}
-        </section>
-    <% end_if %>
+        <% include SilverCart/Model/Pages/WidgetSetContent %>
     </section>
 </div>
 {$SiteConfig.GoogleConversionTrackingCode.RAW}

@@ -4,10 +4,6 @@
         <article>
             {$AddAddressForm}
         </article>
-        <% if $WidgetSetContent.exists %>
-        <section class="sc-widget-holder">
-            {$InsertWidgetArea(Content)}
-        </section>
-        <% end_if %>
+        <% include SilverCart/Model/Pages/WidgetSetContent %>
     </section>
 </div>

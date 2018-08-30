@@ -10,11 +10,7 @@
     <% else %>
         <% include SilverCart/Model/Pages/MyAccountLoginOrRegister %>
     <% end_if %>
-        <% if $WidgetSetContent.exists %>
-        <section class="sc-widget-holder">
-            {$InsertWidgetArea(Content)}
-        </section>
-        <% end_if %>
+        <% include SilverCart/Model/Pages/WidgetSetContent %>
     </section>
     <aside class="col-12 col-md-3">
     <% if $CurrentRegisteredCustomer %>

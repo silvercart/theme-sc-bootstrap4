@@ -6,6 +6,7 @@
             <span class="fa fa-2x fa-shopping-cart"></span> <span class="badge badge-light position-absolute bottom-right-5 border border-primary rounded-circle"><% if $CurrentMember %>{$CurrentMember.ShoppingCart.getQuantity}<% else %>0<% end_if %></span>
         </a>
         <section class="dropdown-menu dropdown-menu-left cart-content animated slideInRight-" data-dropdown-in="slideInRight" data-dropdown-out="slideOutLeft" aria-labelledby="cart-dropdown-left">
+            <h4 class="sr-only"><%t SilverCart\Model\Pages\Page.CART 'Cart' %></h4>
             <% include SilverCart/Model/Pages/ShoppingCartDropdown %>
         </section>
     </nav>

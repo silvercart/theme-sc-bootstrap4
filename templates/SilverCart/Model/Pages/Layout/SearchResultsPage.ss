@@ -1,5 +1,6 @@
 <div class="row">
     <section id="content-main" class="col-12 col-md-9">
+        <h2 class="sr-only"><%t SilverCart\Model\Pages\SearchResultsPage.TITLE 'Search Results' %></h2>
         <article>
             <header><h1><%t SilverCart\Model\Pages\SearchResultsPage.TITLE 'Search Results' %></h1></header>
         <% if $EncodedSearchQuery %>
@@ -18,11 +19,7 @@
             </div>
         <% end_if %>
         </article>
-        <% if $WidgetSetContent.exists %>
-        <section class="sc-widget-holder">
-            {$InsertWidgetArea(Content)}
-        </section>
-        <% end_if %>
+        <% include SilverCart/Model/Pages/WidgetSetContent %>
     </section>
     <aside class="col-12 col-md-3">
         {$InsertWidgetArea(Sidebar)}

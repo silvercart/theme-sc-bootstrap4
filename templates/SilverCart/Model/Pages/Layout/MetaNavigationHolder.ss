@@ -1,15 +1,12 @@
 <div class="row">
     <section id="content-main" class="col-12 col-md-9">
+        <h2 class="sr-only">{$Title}</h2>
         <% include SilverCart/Model/Pages/BreadCrumbs %>
         <article>
             <header><h1>{$Title}</h1></header>
             {$Content}
         </article>
-        <% if $WidgetSetContent.exists %>
-        <section class="sc-widget-holder">
-            {$InsertWidgetArea(Content)}
-        </section>
-        <% end_if %>
+        <% include SilverCart/Model/Pages/WidgetSetContent %>
 <% if $Children %>
         <div class="card-deck">
     <% loop $Children %>
