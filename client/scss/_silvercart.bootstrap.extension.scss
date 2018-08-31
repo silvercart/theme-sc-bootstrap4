@@ -33,6 +33,11 @@
     .z#{$i} { z-index: #{$i}; }
 }
 
+.overflow-hidden { overflow: hidden; }
+.overflow-auto { overflow: auto; }
+.overflow-scroll { overflow: scroll; }
+.overflow-visible { overflow: visible; }
+
 .fa-checkoutstep1:before       { content: "\f023"; }
 .fa-checkoutstep2:before       { content: "\f007"; }
 .fa-checkoutstep3:before       { content: "\f0ac"; }

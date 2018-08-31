@@ -5,7 +5,7 @@
         <% loop $Elements %>
             <li class="slider-item">
                 <article class="my-2 clearfix text-center h-100">
-                    <div class="thumbnail card">
+                    <div class="thumbnail card overflow-hidden">
                         <a class="d-inline-block" href="{$Link}" title="<%t SilverCart\Model\Pages\Page.SHOW_DETAILS_FOR 'Show details for {title}' title=$Title %>">
                     <% if $GroupPicture %>
                             <img class="img-fluid lazyload" src="{$BaseHref}resources/vendor/silvercart/silvercart/client/img/loader-circle.gif" data-src="{$GroupPicture.Pad(275,165).URL}" alt="{$MenuTitle.HTML}" />
