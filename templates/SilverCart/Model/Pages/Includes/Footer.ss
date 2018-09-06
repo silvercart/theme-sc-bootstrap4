@@ -1,6 +1,7 @@
+{$BeforeFooterContent}
 <% cached 'Footer',$CurrentPage.MemberGroupCacheKey %>
 <footer class="footer mt-5 pt-4">
-    <h3 class="sr-only">Footer Navigation</h3>
+    <h3 class="sr-only">Footer</h3>
     <section class="container-fluid">
         <h4 class="sr-only"><%t SilverCart\Admin\Model\Config.ShopAdditionalInfo 'Additional Information' %></h4>
         <div class="card-deck justify-content-between">
