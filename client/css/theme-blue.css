@@ -8591,6 +8591,18 @@ a.text-inverse:hover, a.text-inverse:focus {
 .z50 {
   z-index: 50; }
 
+.overflow-hidden {
+  overflow: hidden; }
+
+.overflow-auto {
+  overflow: auto; }
+
+.overflow-scroll {
+  overflow: scroll; }
+
+.overflow-visible {
+  overflow: visible; }
+
 .fa-checkoutstep1:before {
   content: "\f023"; }
 
@@ -9313,6 +9325,11 @@ body[lang^="en-"] header #account-dropdown {
     white-space: normal;
     padding-left: 0;
     padding-right: 0; }
+
+.widget .sly-container .slider-item.small {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 70px;
+          flex: 0 0 70px; }
 
 .widget .sly-container .next,
 .widget .sly-container .prev {
