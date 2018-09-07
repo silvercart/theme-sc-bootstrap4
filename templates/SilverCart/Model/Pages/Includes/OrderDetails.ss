@@ -16,6 +16,10 @@
                     <td class="text-left">{$OrderStatus.Title}</td>
                 </tr>
                 <tr>
+                    <td class="text-left text-nowrap">{$fieldLabel('PaymentStatus')}</td>
+                    <td class="text-left">{$PaymentStatus.Title}</td>
+                </tr>
+                <tr>
                     <td class="text-left text-nowrap">{$fieldLabel('ShippingFee')}</td>
                     <td class="text-left">{$HandlingCostShipment.Nice}</td>
                 </tr>

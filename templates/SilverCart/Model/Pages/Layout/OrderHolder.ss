@@ -11,7 +11,8 @@
                     <tr>
                         <th scope="col" class="text-left"><%t SilverCart\Model\Pages\Page.ORDER_DATE 'order date' %> /<br />{$CurrentMembersOrders.first.fieldLabel('OrderNumber')}</th>
                         <th scope="col" class="text-left"><%t SilverCart\Model\Pages\Page.ORDERED_PRODUCTS 'ordered products' %></th>
-                        <th scope="col" class="text-left"><%t SilverCart\Model\Order\OrderStatus.SINGULARNAME 'Order status' %></th>
+                        <th scope="col" class="text-left"><%t SilverCart\Model\Order\OrderStatus.SINGULARNAME 'Order Status' %></th>
+                        <th scope="col" class="text-left"><%t SilverCart\Model\Payment\PaymentStatus.SINGULARNAME 'Payment Status' %></th>
                         <th scope="col" class="text-left">{$CurrentMembersOrders.first.fieldLabel('AmountTotal')}</th>
                         <th scope="col">&nbsp;</th>
                     </tr>

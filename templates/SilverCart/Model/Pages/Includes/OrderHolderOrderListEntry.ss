@@ -16,6 +16,9 @@
     <td class="orderstatus" data-title="{$fieldLabel('OrderStatus')}">
         <a class="highlight" href="{$CurrentPage.OrderDetailLink}{$ID}">{$OrderStatus.Title}</a>
     </td>
+    <td class="orderstatus" data-title="{$fieldLabel('PaymentStatus')}">
+        <a class="highlight" href="{$CurrentPage.OrderDetailLink}{$ID}">{$PaymentStatus.Title}</a>
+    </td>
     <td class="total-price" data-title="{$fieldLabel('AmountTotal')}">
         <a class="highlight" href="{$CurrentPage.OrderDetailLink}{$ID}">{$AmountTotal.Nice}</a>
     </td>
