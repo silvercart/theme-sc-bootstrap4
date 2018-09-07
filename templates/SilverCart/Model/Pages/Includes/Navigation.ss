@@ -14,7 +14,7 @@
             <div class="col px-0 justify-content-sm-end">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainnav" aria-controls="mainnav" aria-expanded="false" aria-label="Navigation"><span class="navbar-toggler-icon">&#9776;</span></button>
             </div>
-            <div class="col p-1 justify-content-sm-end mobile-quicksearch"></div>
+            <div class="col p-1 justify-content-sm-end mobile-quicksearch">{$QuickSearchForm("QuickSearchFormMobile")}</div>
         </div>
         <div id="mainnav" class="collapse navbar-collapse position-relative">
             <ul class="navbar-nav nav-fill w-100">

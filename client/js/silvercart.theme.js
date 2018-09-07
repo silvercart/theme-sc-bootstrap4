@@ -133,21 +133,36 @@ silvercart.theme.elementsToMove = (function () {
     var elementsToMove = $('.replace-element');
     var elementsData   = [];
 
-    var getElementsToMove = function () {
-        $.each(elementsToMove, function (index, item) {
-            var item   = $(item);
-            var data   = {};
-            var moveTo = $('.' + item.data('moveto')).prop('class');
-
-            data.index      = index;
-            data.breakpoint = item.data('breakpoint');
-            data.moveFrom   = combineClassNames(item.parent().prop('class'));
-            data.moveTo     = combineClassNames(moveTo);
-            data.selector   = combineClassNames(item.prop('class'));
-            data.extraClass = item.data('extraclass');
-
-            elementsData.push(data);
+    var init = function() {
+        moveElementsByBreakpoint();
+        var resizeTimer = 0;
+        $(window).on('resize', function (e) {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function () {
+                moveElementsByBreakpoint();
+            }, 100);
         });
+    };
+    var initElementsData = function () {
+        if (elementsData.length === 0) {
+            if (elementsToMove.length === 0) {
+                elementsToMove = $('.replace-element');
+            }
+            $.each(elementsToMove, function (index, item) {
+                var item   = $(item);
+                var data   = {};
+                var moveTo = $('.' + item.data('moveto')).prop('class');
+
+                data.index      = index;
+                data.breakpoint = item.data('breakpoint');
+                data.moveFrom   = combineClassNames(item.parent().prop('class'));
+                data.moveTo     = combineClassNames(moveTo);
+                data.selector   = combineClassNames(item.prop('class'));
+                data.extraClass = item.data('extraclass');
+
+                elementsData.push(data);
+            });
+        }
         return elementsData;
     };
     var combineClassNames = function(elClasses) {
@@ -157,13 +172,16 @@ silvercart.theme.elementsToMove = (function () {
         }
         return  '.' + elClasses.replace(/\s+/g, '.').replace(/\.+$/, '');
     };
-    var moveElementsByBreakpoint = function(elements) {
-        if (elements.length < 1){
+    var moveElementsByBreakpoint = function() {
+        if (elementsData.length === 0) {
+            initElementsData();
+        }
+        if (elementsData.length < 1){
             return;
         }
         var breakPoint     = silvercart.theme.getCurrentBreakpoint();
         var breakpointSort = { 'xs':  1, 'sm':  2, 'md':  3, 'lg':  4, 'xl':  5, 'xxl': 6};
-        $.each(elements, function (index, item) {
+        $.each(elementsData, function (index, item) {
             var item           = $(item);
             var itemObj        = item.get(0);
             var itemMoveFrom   = itemObj.moveFrom;
@@ -213,7 +231,7 @@ silvercart.theme.elementsToMove = (function () {
         });
     };
     return {
-        getElementsToMove: getElementsToMove,
+        init: init,
         moveElementsByBreakpoint: moveElementsByBreakpoint
     };
 })();
@@ -252,18 +270,6 @@ $(document).ready(function(){
             tick = true;
         }
     });
-
-    var elementsToMove = silvercart.theme.elementsToMove.getElementsToMove();
-    silvercart.theme.elementsToMove.moveElementsByBreakpoint(elementsToMove);
-
-    var resizeTimer = 0;
-    $(window).on('resize', function (e) {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(function () {
-            silvercart.theme.elementsToMove.moveElementsByBreakpoint(elementsToMove);
-        }, 100);
-    });
-
 
     if ($('input[name="InvoiceAddressAsShippingAddress"]').is(':checked')) {
         $('#ShippingAddressFields').hide();

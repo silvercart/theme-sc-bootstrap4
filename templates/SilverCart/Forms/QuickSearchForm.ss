@@ -1,5 +1,5 @@
 <% if $IncludeFormTag %>
-<form {$addExtraClass('quickSearch replace-element').addErrorClass('was-validated').AttributesHTML} data-moveto="mobile-quicksearch" data-breakpoint="md-down" data-extraclass="absolute-right">
+<form {$addExtraClass('quickSearch').addErrorClass('was-validated').AttributesHTML} data-moveto="mobile-quicksearch" data-breakpoint="md-down" data-extraclass="absolute-right">
 <% end_if %>
 <% include SilverCart/Forms/CustomFormMessages %>
 <% loop $HiddenFields %>
