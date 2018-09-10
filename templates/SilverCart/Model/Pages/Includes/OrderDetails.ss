@@ -29,29 +29,36 @@
                 </tr>
                 <tr>
                     <td class="text-left text-nowrap">{$fieldLabel('OrderNumber')}</td>
-                    <td class="text-left">{$OrderNumber}</td>
+                    <td class="text-left font-weight-bold font-italic">{$OrderNumber}</td>
                 </tr>
+                {$OrderDetailInformationAfterOrderNumber}
                 <% if Note %>
                 <tr>
                     <td class="text-left text-nowrap">{$fieldLabel('YourNote')}</td>
-                    <td class="text-left">{$getFormattedNote}</td>
+                    <td class="text-left font-italic">{$getFormattedNote}</td>
                 </tr>
                 <% end_if %>
                 <% if $ExpectedDelivery %>
                  <tr>
-                    <td class="text-left text-nowrap"><strong>{$fieldLabel('ExpectedDelivery')}</strong></td>
-                    <td class="text-left">{$ExpectedDeliveryNice}</td>
+                    <td class="text-left text-nowrap">{$fieldLabel('ExpectedDelivery')}</td>
+                    <td class="text-left font-weight-bold font-italic">{$ExpectedDeliveryNice}</td>
                 </tr>
                 <% end_if %>
                 <% if $TrackingCode %>
                 <tr>
-                    <td class="text-left text-nowrap"><strong>{$fieldLabel('Tracking')}</strong></td>
-                    <td class="text-left"><a href="{$TrackingLink}" target="blank" title="{$fieldLabel('TrackingLinkLabel')}">{$fieldLabel('TrackingLinkLabel')}</a></td>
+                    <td class="text-left text-nowrap">{$fieldLabel('TrackingCode')}</td>
+                    <td class="text-left font-weight-bold font-italic">{$TrackingCode}</td>
+                </tr>
+                <% end_if %>
+                <% if $TrackingLink %>
+                <tr>
+                    <td class="text-left text-nowrap">{$fieldLabel('Tracking')}</td>
+                    <td class="text-left"><a class="btn btn-sm btn-info" href="{$TrackingLink}" target="blank" title="{$fieldLabel('TrackingLinkLabel')}">{$fieldLabel('TrackingLinkLabel')} <span class="fa fa-external-link"></span></a></td>
                 </tr>
                 <% end_if %>
                 <tr>
                     <td class="text-left text-nowrap"><%t SilverCart\Model\Pages\RevocationFormPage.TITLE 'Revocation' %></td>
-                    <td class="text-left"><a class="btn btn-sm btn-warning" href="{$CurrentPage.PageByIdentifierCodeLink('SilvercartRevocationFormPage')}?o={$ID}"><%t SilverCart\Forms\RevocationForm.GoTo 'Go to revocation form' %> <i class="fa fa-caret-right"></i></a></td>
+                    <td class="text-left"><a class="btn btn-sm btn-warning" href="{$CurrentPage.PageByIdentifierCodeLink('SilvercartRevocationFormPage')}?o={$ID}"><%t SilverCart\Forms\RevocationForm.GoTo 'Go to revocation form' %> <span class="fa fa-caret-right"></span></a></td>
                 </tr>
                 {$OrderDetailInformation}
             </tbody>
