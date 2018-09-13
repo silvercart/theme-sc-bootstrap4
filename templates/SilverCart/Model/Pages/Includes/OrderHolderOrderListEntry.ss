@@ -1,7 +1,12 @@
 <tr>
     <td class="creationdate-and-ordernumber" data-title="{$fieldLabel('OrderNumber')}">
         <a class="highlight creationdate" href="{$CurrentPage.OrderDetailLink}{$ID}">{$Created.Nice}</a><br />
-        <a class="highlight ordernumber" href="{$CurrentPage.OrderDetailLink}{$ID}">{$OrderNumber}</a>
+        <a class="highlight ordernumber" href="{$CurrentPage.OrderDetailLink}{$ID}">{$OrderNumber}</a><br />
+    <% if $OrderDetailInformationAfterOrderNumber %>
+        <% loop $OrderDetailInformationAfterOrderNumber %>
+        <a class="highlight ordernumber" href="{$CurrentPage.OrderDetailLink}{$Up.ID}">{$Value}</a><br />
+        <% end_loop %>
+    <% end_if %>
     </td>
     <td class="positions" data-title="<%t SilverCart\Model\Pages\Page.ORDERED_PRODUCTS 'ordered products' %>">
         <ul class="unstyled list-unstyled">
