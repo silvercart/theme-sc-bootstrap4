@@ -8672,6 +8672,21 @@ a.text-inverse:hover, a.text-inverse:focus {
 .text-big-10 {
   font-size: 3.4em; }
 
+.text-wrap-initial {
+  white-space: initial !important; }
+
+.text-wrap-normal {
+  white-space: normal !important; }
+
+.text-wrap-pre {
+  white-space: pre !important; }
+
+.text-wrap-pre-line {
+  white-space: pre-line !important; }
+
+.text-wrap-pre-wrap {
+  white-space: pre-wrap !important; }
+
 ul.level-1 .nav-link {
   margin-left: 1rem; }
 
