@@ -39,12 +39,12 @@
         <% end_if %>
 
         <!-- sub total without fees with product charges -->
-        <% loop $getTaxableAmountNetWithoutFees(true,false) %>
+        <% with $getTaxableAmountNetWithoutFees(true,false) %>
             <tr>
                 <td class="text-right d-none d-sm-table-cell" colspan="5"><strong><%t SilverCart\Model\Pages\Page.SUBTOTAL 'Subtotal' %></strong></td>
                 <td class="text-right" data-title="<%t SilverCart\Model\Pages\Page.SUBTOTAL 'Subtotal' %>">{$Amount.Nice}</td>
             </tr>
-        <% end_loop %>
+        <% end_with %>
 
         <!-- fees -->
         <tr>
@@ -57,12 +57,12 @@
         </tr>
 
         <!-- sub total -->
-        <% loop $getTaxableAmountNetWithFees(true,false) %>
+        <% with $getTaxableAmountNetWithFees(true,false) %>
             <tr>
                 <td class="text-right d-none d-sm-table-cell" colspan="5"><strong><%t SilverCart\Model\Pages\Page.SUBTOTAL 'Subtotal' %></strong></td>
                 <td class="text-right" data-title="<%t SilverCart\Model\Pages\Page.SUBTOTAL 'Subtotal' %>">{$Amount.Nice}</td>
             </tr>
-        <% end_loop %>
+        <% end_with %>
 
         <!-- charges and discounts for the shopping cart value -->
         <% loop $OrderChargePositionsTotal %>

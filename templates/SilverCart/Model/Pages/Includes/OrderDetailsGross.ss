@@ -25,16 +25,16 @@
             </tr>
         <% end_loop %>
 
-        <!-- sub total without fees and charges -->
-        <% loop $getTaxableAmountGrossWithoutFees(false,false) %>
+        <%-- sub total without fees and charges --%>
+        <% with $getTaxableAmountGrossWithoutFees(false,false) %>
         <tr>
             <td class="text-right d-none d-sm-table-cell" colspan="5"><strong><%t SilverCart\Model\Pages\Page.VALUE_OF_GOODS 'Value of goods' %></strong></td>
             <td class="text-right" data-title="<%t SilverCart\Model\Pages\Page.VALUE_OF_GOODS 'Value of goods' %>">{$Amount.Nice}</td>
         </tr>
-        <% end_loop %>
+        <% end_with %>
 
         <% if $HasChargePositionsForProduct %>
-            <!-- charges and discounts for product value -->
+            <%-- charges and discounts for product value --%>
             <% loop $OrderChargePositionsProduct %>
             <tr>
                 <td colspan="2" data-title="<%t SilverCart\Model\Product\Product.COLUMN_TITLE 'Title' %>">{$Title.RAW}</td>
@@ -44,22 +44,22 @@
                 <td class="text-right" data-title="<%t SilverCart\Model\Product\Product.PRICE 'Price' %>">{$PriceTotal.Nice}</td>
             </tr>
             <% end_loop %>
-            <!-- sub total without fees with product charges -->
-            <% loop getTaxableAmountGrossWithoutFees(true,false) %>
+            <%-- sub total without fees with product charges --%>
+            <% with $getTaxableAmountGrossWithoutFees(true,false) %>
                 <tr>
                     <td class="text-right d-none d-sm-table-cell" colspan="5"><strong><%t SilverCart\Model\Pages\Page.SUBTOTAL 'Subtotal' %></strong></td>
                     <td class="text-right" data-title="<%t SilverCart\Model\Pages\Page.SUBTOTAL 'Subtotal' %>"><strong>{$Amount.Nice}</strong></td>
                 </tr>
-            <% end_loop %>
-            <!-- tax rates for sub total without fees -->
-            <% loop getTaxRatesWithoutFees(true,false) %>
+            <% end_with %>
+            <%-- tax rates for sub total without fees --%>
+            <% loop $getTaxRatesWithoutFees(true,false) %>
                 <tr>
                     <td class="text-right d-none d-sm-table-cell" colspan="5"><%t SilverCart\Model\Pages\Page.INCLUDED_VAT 'included VAT' %> ({$Rate}%)</td>
                     <td class="text-right" data-title="<%t SilverCart\Model\Pages\Page.INCLUDED_VAT 'included VAT' %> ({$Rate}%)">{$Amount.Nice}</td>
                 </tr>
             <% end_loop %>
         <% end_if %>
-        <!-- fees -->
+        <%-- fees --%>
         <tr>
             <td class="text-right d-none d-sm-table-cell" colspan="5">{$fieldLabel('ShippingMethod')}: {$ShippingMethod.TitleWithCarrier} <% if $ShippingMethod.ShippingFee.PostPricing %>*<% end_if %></td>
             <td class="text-right" data-title="{$fieldLabel('ShippingMethod')}: {$ShippingMethod.TitleWithCarrier} <% if $ShippingMethod.ShippingFee.PostPricing %>*<% end_if %>">{$HandlingCostShipment.Nice}</td>
@@ -70,23 +70,23 @@
         </tr>
 
         <% if $OrderChargePositionsTotal %>
-            <!-- sub total -->
-            <% loop getTaxableAmountGrossWithFees(true,false) %>
+            <%-- sub total --%>
+            <% with $getTaxableAmountGrossWithFees(true,false) %>
                 <tr>
                     <td class="text-right d-none d-sm-table-cell" colspan="5"><strong><%t SilverCart\Model\Pages\Page.SUBTOTAL 'Subtotal' %></strong></td>
                     <td class="text-right" data-title="<%t SilverCart\Model\Pages\Page.SUBTOTAL 'Subtotal' %>"><strong>{$Amount.Nice}</strong></td>
                 </tr>
-            <% end_loop %>
+            <% end_with %>
 
-            <!-- tax rates for sub total -->
-            <% loop getTaxRatesWithFees(true,false) %>
+            <%-- tax rates for sub total --%>
+            <% loop $getTaxRatesWithFees(true,false) %>
                 <tr>
                     <td class="text-right d-none d-sm-table-cell" colspan="5"><%t SilverCart\Model\Pages\Page.INCLUDED_VAT 'included VAT' %> ({$Rate}%)</td>
                     <td class="text-right" data-title="<%t SilverCart\Model\Pages\Page.INCLUDED_VAT 'included VAT' %> ({$Rate}%)">{$Amount.Nice}</td>
                 </tr>
             <% end_loop %>
 
-            <!-- charges and discounts for the shopping cart value -->
+            <%-- charges and discounts for the shopping cart value --%>
             <% loop $OrderChargePositionsTotal %>
             <tr>
                 <td colspan="2" data-title="<%t SilverCart\Model\Product\Product.COLUMN_TITLE 'Title' %>">{$Title.RAW}</td>
