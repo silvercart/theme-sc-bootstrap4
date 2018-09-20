@@ -25,3 +25,8 @@ silvercart.sly.init = function($frame) {
         nextPage: $wrap.find('.next')
     });
 };
+$(document).ready(function() {
+    $('.sly-container > div:first-child').each(function() {
+        silvercart.sly.init($(this));
+    });
+});
