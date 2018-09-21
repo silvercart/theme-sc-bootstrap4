@@ -21,6 +21,7 @@
 <% require themedJavascript("client/js/lazyload") %>
 <% require themedJavascript("client/js/sly.min") %>
 <% require themedJavascript("client/js/silvercart.theme") %>
+<% require themedJavascript("client/js/silvercart.forms") %>
 <% require themedJavascript("client/js/silvercart.attributes") %>
 <% require themedJavascript("client/js/silvercart.sly") %>
 <% require themedJavascript("client/js/jquery.slidorion.min") %>

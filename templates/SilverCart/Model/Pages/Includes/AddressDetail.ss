@@ -3,7 +3,7 @@
 <div class="row address-list">
     <% loop $Addresses %>
     <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6 d-flex">
-        <div class="card w-100">
+        <div class="card w-100 mb-3">
         <% if $isInvoiceAddress || $isShippingAddress %>
             <div class="card-header border-0 pb-0">
             <% if $isInvoiceAddress %>
@@ -44,23 +44,21 @@
                 <% end_if %>
                 </p>
             </div>
-            <div class="clearfix">
-                <div class="btn-group btn-group-justified float-right">
-                <% if not $isInvoiceAddress && $Member.InvoiceAddress.canEdit %>
-                    <a class="btn btn-sm btn-link" data-toggle="tooltip" data-placement="top" title="<%t SilverCart\Model\Pages\AddressHolder.SET_AS 'Set as' %> <%t SilverCart\Model\Pages\AddressHolder.INVOICEADDRESS 'invoice address' %>" href="{$CurrentPage.Link}setInvoiceAddress/{$ID}"><span class="fa fa-credit-card"></span> Standard</a>
-                <% else_if not $isInvoiceAddress && not $Member.InvoiceAddress.exists %>
-                    <a class="btn btn-sm btn-link" data-toggle="tooltip" data-placement="top" title="<%t SilverCart\Model\Pages\AddressHolder.SET_AS 'Set as' %> <%t SilverCart\Model\Pages\AddressHolder.INVOICEADDRESS 'invoice address' %>" href="{$CurrentPage.Link}setInvoiceAddress/{$ID}"><span class="fa fa-credit-card"></span> Standard</a>
-                <% end_if %>
-                <% if not $isShippingAddress %>
-                    <a class="btn btn-sm btn-link" data-toggle="tooltip" data-placement="top" title="<%t SilverCart\Model\Pages\AddressHolder.SET_AS 'Set as' %> <%t SilverCart\Model\Pages\AddressHolder.SHIPPINGADDRESS 'shipping address' %>" href="{$CurrentPage.Link}setShippingAddress/{$ID}"><span class="fa fa-truck"></span> Standard</a>
-                <% end_if %>
-                <% if $canEdit %>
-                    <a class="btn btn-sm btn-link" data-toggle="tooltip" data-placement="top" title="<%t SilverCart\Model\Pages\AddressHolder.EDIT 'edit' %>" id="silvercart-edit-shipping-address-id" href="{$CurrentPage.PageByIdentifierCodeLink('SilvercartAddressHolder')}edit/{$ID}"><span class="fa fa-pencil"></span> <%t SilverCart\Model\Pages\AddressHolder.EDIT 'edit' %></a>
-                <% end_if %>
-                <% if not $isLastAddress && $canDelete %>
-                    <a class="btn btn-sm btn-link" data-toggle="tooltip" data-placement="top" title="<%t SilverCart\Model\Pages\AddressHolder.DELETE 'Delete' %>" id="silvercart-delete-shipping-address-id" href="{$CurrentPage.Link}deleteAddress/{$ID}"><span class="fa fa-trash"></span> <%t SilverCart\Model\Pages\AddressHolder.DELETE 'Delete' %></a>
-                <% end_if %>
-                </div>
+            <div class="text-right">
+            <% if not $isInvoiceAddress && $Member.InvoiceAddress.canEdit %>
+                <a class="btn btn-sm btn-link" data-toggle="tooltip" data-placement="top" title="<%t SilverCart\Model\Pages\AddressHolder.SET_AS 'Set as' %> <%t SilverCart\Model\Pages\AddressHolder.INVOICEADDRESS 'invoice address' %>" href="{$CurrentPage.Link}setInvoiceAddress/{$ID}"><span class="fa fa-credit-card"></span> Standard</a>
+            <% else_if not $isInvoiceAddress && not $Member.InvoiceAddress.exists %>
+                <a class="btn btn-sm btn-link" data-toggle="tooltip" data-placement="top" title="<%t SilverCart\Model\Pages\AddressHolder.SET_AS 'Set as' %> <%t SilverCart\Model\Pages\AddressHolder.INVOICEADDRESS 'invoice address' %>" href="{$CurrentPage.Link}setInvoiceAddress/{$ID}"><span class="fa fa-credit-card"></span> Standard</a>
+            <% end_if %>
+            <% if not $isShippingAddress %>
+                <a class="btn btn-sm btn-link" data-toggle="tooltip" data-placement="top" title="<%t SilverCart\Model\Pages\AddressHolder.SET_AS 'Set as' %> <%t SilverCart\Model\Pages\AddressHolder.SHIPPINGADDRESS 'shipping address' %>" href="{$CurrentPage.Link}setShippingAddress/{$ID}"><span class="fa fa-truck"></span> Standard</a>
+            <% end_if %>
+            <% if $canEdit %>
+                <a class="btn btn-sm btn-link" data-toggle="tooltip" data-placement="top" title="<%t SilverCart\Model\Pages\AddressHolder.EDIT 'edit' %>" id="silvercart-edit-shipping-address-id" href="{$CurrentPage.PageByIdentifierCodeLink('SilvercartAddressHolder')}edit/{$ID}"><span class="fa fa-pencil"></span> <%t SilverCart\Model\Pages\AddressHolder.EDIT 'edit' %></a>
+            <% end_if %>
+            <% if not $isLastAddress && $canDelete %>
+                <a class="btn btn-sm btn-link" data-toggle="tooltip" data-placement="top" title="<%t SilverCart\Model\Pages\AddressHolder.DELETE 'Delete' %>" id="silvercart-delete-shipping-address-id" href="{$CurrentPage.Link}deleteAddress/{$ID}"><span class="fa fa-trash"></span> <%t SilverCart\Model\Pages\AddressHolder.DELETE 'Delete' %></a>
+            <% end_if %>
             </div>
         </div>
     </div>

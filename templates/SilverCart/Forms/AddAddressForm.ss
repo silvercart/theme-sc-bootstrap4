@@ -1,10 +1,3 @@
-<% if $EnablePackstation %>
-<script>
-    $(document).ready(function(){
-        initAddressForm({$FormName});
-    });
-</script>
-<% end_if %>
 <% if $IncludeFormTag %>
 <form {$addErrorClass('was-validated').AttributesHTML}>
 <% end_if %>
