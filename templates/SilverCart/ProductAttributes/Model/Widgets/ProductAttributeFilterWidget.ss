@@ -19,18 +19,12 @@
             <% end_if %>
     </div>
         <% end_loop %>
-<form name="silvercart-product-attribute-filter-form" method="post" action="{$FormAction}" class="invisible">
+<form name="silvercart-product-attribute-filter-form" method="post" action="{$FormAction}" class="invisible"
+      data-main-selector="{$getJsMainSelector}"
+      data-filter-list="<% if $CurrentPage.FilterValueArrayList %><% loop $CurrentPage.FilterValueArrayList %>{$ID}<% if not $Last %>,<% end_if %><% end_loop %><% end_if %>">
     <input type="hidden" name="silvercart-product-attribute-selected-values" value="{$CurrentPage.FilterValueList}" />
     <input type="hidden" name="silvercart-product-attribute-widget" value="{$ID}" />
     <input type="hidden" name="ajax" value="1" />
 </form>
-<script>
-    silvercart.attributes.filter.setMainSelector('{$getJsMainSelector}');
-<% if $CurrentPage.FilterValueArrayList %>
-    <% loop $CurrentPage.FilterValueArrayList %>
-    silvercart.attributes.filter.Push($ID);
-    <% end_loop %>
-<% end_if %>
-</script>
     <% end_if %>
 <% end_cached %>
