@@ -3,14 +3,6 @@
 <form name="SupportRevocationForm" id="SupportRevocationForm" method="post">
     <input type="hidden" name="ExistingOrder" value="" id="SupportExistingOrder">
 </form>
-<script>
-$(document).ready(function() {
-    $('select[name="ExistingOrder"]').on('change', function() {
-        $('#SupportExistingOrder').val($(this).val());
-        $('#SupportRevocationForm').submit();
-    });
-});
-</script>
     <% end_if %>
 <form {$addErrorClass('was-validated').AttributesHTML}>
 <% end_if %>

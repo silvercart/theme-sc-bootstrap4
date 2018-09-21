@@ -42,9 +42,20 @@ silvercart.forms.initAddressForm = function(form)
         $(packstationSelector).on('change', initPackstation);
     }
 };
+silvercart.forms.initRevocationForm = function()
+{
+    if ($('select[name="ExistingOrder"]').length === 0) {
+        return;
+    }
+    $('select[name="ExistingOrder"]').on('change', function() {
+        $('#SupportExistingOrder').val($(this).val());
+        $('#SupportRevocationForm').submit();
+    });
+}
 
 $(document).ready(function() {
     $('.sc-address-form-with-packstation').each(function() {
         silvercart.forms.initAddressForm($(this));
     });
+    silvercart.forms.initRevocationForm();
 });
