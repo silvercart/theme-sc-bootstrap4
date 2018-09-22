@@ -12,36 +12,51 @@
     <% loop $Carriers %>
         <% if $AllowedShippingMethods %>
         <section>
-            <h2>{$Title}</h2>
-            <hr/>
+            <h2 class="sr-only">{$Title}</h2>
             <% loop $AllowedShippingMethods %>
-                <% if $isActive %>
-                    <% if $ShowOnShippingFeesPage %>
-            <h3>{$Carrier.Title} - {$Title}</h3>
-            <table class="silvercart-default-table table table-striped table-bordered table-padded">
-                <caption>
+                <% if $isActive && $ShowOnShippingFeesPage %>
+            <h3 class="border-top mt-4 pt-3">{$Carrier.Title} - {$Title}</h3>
+                    <% if $isPickup %>
+            <div class="mb-3">
                     <% if $DescriptionForShippingFeesPage %>
-                        {$DescriptionForShippingFeesPage}
+            <p>{$DescriptionForShippingFeesPage}</p>
                     <% else_if $Description %>
-                        {$Description}
+            <p>{$Description}</p>
                     <% end_if %>
-                </caption>
+                <% loop $ShippingFees %>
+            <p>
+                    <% if $Up.setShippingFeeByID($ID).getDeliveryTime(true) %>
+                        {$Up.fieldLabel('ReadyForPickup')}: {$Up.getDeliveryTime(true)}
+                    <% end_if %>
+                    <% if $Price.Amount == 0 %>
+                    <span class="text-success font-weight-bold ml-3"><span class="fa fa-check"></span> {$Up.Title} ist für Sie kostenfrei.</span>
+                    <% else %>
+                    {$Up.fieldLabel('Price')}: {$PriceFormatted}
+                    <% end_if %>
+            </p>
+                <% end_loop %>
+            </div>
+                        <% else %>
+                            <% if $DescriptionForShippingFeesPage %>
+            <p>{$DescriptionForShippingFeesPage}</p>
+                            <% else_if $Description %>
+            <p>{$Description}</p>
+                            <% end_if %>
+            <table class="silvercart-default-table table table-striped table-bordered table-padded">
                 <thead>
                     <tr>
-                        <th class="text-left col-20"><%t SilverCart\Model\Product\Product.WEIGHT 'Weight' %> ({$ShippingFees.first.MaximumWeightUnitAbreviation})</th>
-                        <th class="text-left col-65"><%t SilverCart\Model\Shipment\Zone.SINGULARNAME 'Zone' %></th>
+                        <th class="text-left">{$fieldLabel('SuppliedCountries')}</th>
+                        <th class="text-left">{$fieldLabel('ExpectedDeliveryTime')}</th>
                         <th class="text-right"><%t SilverCart\Model\Product\Product.PRICE 'Price' %></th>
                     </tr>
                 </thead>
                 <tbody>
                 <% loop $ShippingFees %>
                     <tr>
-                        <td class="text-right text-top"><% if $UnlimitedWeight %><%t SilverCart\Model\Shipment\ShippingFee.UNLIMITED_WEIGHT 'unlimited' %><% else %>{$MaximumWeightNice}<% end_if %></td>
                         <td class="text-left">
                             <div class="country-list">
                             <% with $Zone %>
-                                <b>{$Title}:</b><br/>
-                                <% if $hasAllCountries %>
+                                <% if $Countries.count > 10 && $hasAllCountries %>
                                     <strong><%t SilverCart\Model\Shipment\Zone.VALID_FOR_ALL_AVAILABLE 'Valid for all selectable countries' %></strong>
                                 <% else %>
                                     <% loop $Countries %>
@@ -53,15 +68,22 @@
                             <% end_with %>
                             </div>
                         </td>
-                        <td class="text-right text-top">{$PriceFormatted} <% if $PostPricing %>*<% end_if %></td>
+                        <td class="text-left text-top">{$Up.setShippingFeeByID($ID).getDeliveryTime(true)}</td>
+                        <td class="text-right text-top">
+                            {$PriceFormatted} <% if $PostPricing %>*<% end_if %>
+                        <% if not $UnlimitedWeight %>
+                            <div class="font-italic">{$fieldLabel('MaximumWeight')}: {$MaximumWeightNice}</div>
+                        <% end_if %>
+                        <% if $Price.Amount > 0 && $FreeOfShippingCostsFrom.Amount > 0 %>
+                            <div class="alert alert-success text-left text-hyphens-auto font-weight-bold"><span class="fa fa-check"></span> <%t SilverCart\Model\Shipment\ShippingMethod.NoShippingCostFrom 'No shipping cost for orders with a minimum order value of {amount}.' amount=$FreeOfShippingCostsFrom.Nice %></div>
+                        <% end_if %>
+                        </td>
                     </tr>
                 <% end_loop %>
-                <% if $hasFeeWithPostPricing %>
-                    <tr class="info">
-                        <td class="text-left" colspan="3">* <%t SilverCart\Model\Shipment\ShippingFee.POST_PRICING_INFO 'Pricing after order' %></td>
-                    </tr>
-                <% end_if %>
                 </tbody>
+                <% if $hasFeeWithPostPricing %>
+                <caption class="text-left font-italic">* <%t SilverCart\Model\Shipment\ShippingFee.POST_PRICING_INFO 'Pricing after order' %></caption>
+                <% end_if %>
             </table>
                     <% end_if %>
                 <% end_if %>
