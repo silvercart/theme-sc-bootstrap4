@@ -8687,6 +8687,11 @@ a.text-inverse:hover, a.text-inverse:focus {
 .text-wrap-pre-wrap {
   white-space: pre-wrap !important; }
 
+.text-hyphens-auto {
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto; }
+
 ul.level-1 .nav-link {
   margin-left: 1rem; }
 
