@@ -1,5 +1,5 @@
 <div class="row">
-    <div id="content-main" class="col-12 col-md-9 sc-product-details">
+    <div id="content-main" class="col-12 <% if $InsertWidgetArea('Sidebar') %>col-md-9<% else %>col-md-12<% end_if %> sc-product-details">
         <% include SilverCart/Model/Pages/BreadCrumbs %>
         <div id="sc-product-backlink" class="clearfix mb-3">
             <% if $BackLink %>
@@ -47,7 +47,9 @@
         </div>
     <% end_if %>
     </div>
+<% if $InsertWidgetArea('Sidebar') %>
     <aside class="col-12 col-md-3">
-        {$InsertWidgetArea(Sidebar)}
+        {$InsertWidgetArea('Sidebar')}
     </aside>
+<% end_if %>
 </div>
