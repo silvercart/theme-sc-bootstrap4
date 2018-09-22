@@ -94,6 +94,7 @@
                     {$AddToCartForm(Detail)}
             <% else %>
                     <div class="alert alert-warning"><%t SilverCart\Model\Pages\ProductPage.OUT_OF_STOCK 'This product is out of stock.' %></div>
+                    {$AfterOutOfStockNotificationContent}
             <% end_if %>
                 </div>
             </div>
