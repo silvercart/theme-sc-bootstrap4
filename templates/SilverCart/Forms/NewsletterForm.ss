@@ -5,7 +5,7 @@
 <% loop $HiddenFields %>
     {$Field}
 <% end_loop %>
-    <h3 class="mt-4"><%t SilverCart\Model\Pages\Page.NEWSLETTER_FORM 'Newsletter settings' %></h4>
+    <h3 class="mt-4"><%t SilverCart\Model\Pages\Page.NEWSLETTER_FORM 'Newsletter settings' %></h3>
     {$BeforeFormContent}
     <div class="clearfix">
         {$Fields.dataFieldByName(Salutation).setFieldHolderTemplate('SilverCart/Forms/FormField_holder_horizontal').FieldHolder}
