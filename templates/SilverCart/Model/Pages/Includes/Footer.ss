@@ -112,6 +112,7 @@
     <% if $CurrentRegisteredCustomer.isAdmin %>
             <div class="border-top text-center pt-2">
                 <a class="btn btn-light text-dark" href="{$baseHref}admin"  title="<%t SilverCart\Model\Pages\Page.ADMIN_AREA 'Admin Access' %>"><span class="fa fa-lock"></span> <%t SilverCart\Model\Pages\Page.ADMIN_AREA 'Admin Access' %></a>
+                <a class="btn btn-light text-dark" href="{$Link}?flushi18n=1"  title="<%t SilverCart\Model\Pages\Page.FlushI18n 'Flush I18N' %>"><span class="fa fa-refresh"></span> <%t SilverCart\Model\Pages\Page.FlushI18n 'Flush I18N' %></a>
                 <a class="btn btn-light text-dark" href="{$Link}?flushrequirements=1"  title="<%t SilverCart\Model\Pages\Page.FlushRequirements 'Flush CSS / JS cache' %>"><span class="fa fa-refresh"></span> <%t SilverCart\Model\Pages\Page.FlushRequirements 'Flush CSS / JS cache' %></a>
             </div>
     <% end_if %>
