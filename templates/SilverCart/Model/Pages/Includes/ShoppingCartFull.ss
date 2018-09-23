@@ -11,7 +11,7 @@
         <% else %>
             <% include SilverCart/Model/Pages/ShoppingCartFull_Net %>
         <% end_if %>
-        <% if $CheapestShippingMethod %>
+        <% if $CurrentPage.EditableShoppingCart && $CheapestShippingMethod %>
             <% with $CheapestShippingMethod %>
         <div class="alert alert-info float-right">
             <p><span class="fa fa-info-circle"></span> <%t SilverCart\Model\Order\ShoppingCart.ShippingTo 'Shipping to {country} for <strong>{price}</strong> by {shippingmethod}.' country=$ShippingCountry.Title price=$ShippingFee.PriceFormatted shippingmethod=$TitleWithCarrier %></p>
