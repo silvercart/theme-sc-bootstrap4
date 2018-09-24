@@ -1,11 +1,11 @@
 <li class="slider-item">
     <article class="card card-product my-2 silvercart-product-group-page-tile-item {$EvenOdd} clearfix text-center w-100 h-100 d-flex">
-        <header class="sc-product-title card-header pl-1 pr-1 pb-1">
+        <header class="sc-product-title card-header pl-1 pr-1 pb-1 sr-only">
             <h2 class="card-title h6 mb-0 <% if $PriceIsLowerThanMsr || $isNewProduct %>pt-2<% end_if %>">
                 <a href="{$Link}" class="highlight" title="<%t SilverCart\Model\Pages\Page.SHOW_DETAILS_FOR 'Show details for {title}' title=$Title %>">{$Title.HTML}</a>
             </h2>
         </header>
-        <div class="thumbnail">
+        <div class="thumbnail pt-2">
         <% if $PriceIsLowerThanMsr || $isNewProduct %>
             <span class="position-absolute top-0 left-2">
             <% if $PriceIsLowerThanMsr %>
@@ -24,7 +24,12 @@
         <% end_if %>
             </a>
         </div>
-        <div class="card-body pb-0 pl-0 pr-0 pt-1">
+        <div class="sc-product-title card-header pl-1 pr-1 pb-1">
+            <h2 class="card-title h6 mb-0 <% if $PriceIsLowerThanMsr || $isNewProduct %>pt-2<% end_if %>">
+                <a href="{$Link}" class="highlight" title="<%t SilverCart\Model\Pages\Page.SHOW_DETAILS_FOR 'Show details for {title}' title=$Title %>">{$Title.HTML}</a>
+            </h2>
+        </div>
+        <div class="card-body p-0">
             <div class="sc-product-price product-price">
                 <span class="price">
                 <% if $PriceIsLowerThanMsr %>
@@ -35,11 +40,6 @@
                 <% end_if %>
                 </span>
             </div>
-        </div>
-        <div class="card-footer">
-            <a class="btn btn-secondary btn-block" href="{$Link}" title="<%t SilverCart\Model\Pages\Page.SHOW_DETAILS_FOR 'Show details for {title}' title=$Title %>" data-title="<%t SilverCart\Model\Pages\Page.SHOW_DETAILS 'show details' %>" data-placement="top" data-toggle="tooltip">
-                <span class="fa fa-info-circle"></span> <%t SilverCart\Model\Pages\Page.SHOW_DETAILS 'show details' %></a>
-            <% if $PluggedInProductMetaData %><% loop $PluggedInProductMetaData %>{$MetaData}<% end_loop %><% end_if %>
         </div>
     </article>
 </li>

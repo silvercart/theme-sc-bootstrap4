@@ -56,6 +56,19 @@
                     <%t SilverCart\Model\Pages\Page.PLUS_SHIPPING 'plus shipping' %><br/>
                 </a>
             <% end_with %>
+            <% if $HasDeliveryTime  || $DeliveryForFreeIsPossible || $StockQuantityIsLow %>
+                <span class="d-block">
+                <% if $HasDeliveryTime %>
+                    {$fieldLabel('Delivery')} <span class="text-success font-weight-bold">{$FullDeliveryDate}</span>
+                <% end_if %>
+                <% if $DeliveryForFreeIsPossible %>
+                    <br/><span class=""><span class="fa fa-check"></span> {$DeliveryForFreeIsPossibleInfo}</span>
+                <% end_if %>
+                <% if $StockQuantityIsLow %>
+                    <br/><span class="text-danger"><span class="fa fa-exclamation-circle"></span> {$fieldLabel('StockIsLowOrderNow')}</span>
+                <% end_if %>
+                </span>
+            <% end_if %>
             </small>
         </div>
         <div class="clearfix mt-3">
