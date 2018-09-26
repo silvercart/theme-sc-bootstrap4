@@ -19,6 +19,9 @@
         </span>
     <% end_loop %>
     </div>
+<% if $Product.hasCartNotice %>
+    <div class="alert alert-warning mt-1"><span class="fa fa-exclamation-circle"></span> {$Product.getCartNotices}</div>
+<% end_if %>
 <% if $Product.isInCart %>
     <div class="alert alert-info mt-1 silvercart-add-cart-form-hint"><span class="fa fa-info-circle"></span> {$Product.QuantityInCartString}</div>
 <% end_if %>

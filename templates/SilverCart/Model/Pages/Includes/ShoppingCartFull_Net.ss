@@ -33,10 +33,7 @@
     <% end_loop %>
         </tbody>
     </table>
-</div>
-<% if $hasNotice %>
-<div class="alert alert-info">{$getShoppingCartPositionNotices}</div>
-<% end_if %>   
+</div>   
 <div class="row">
     <div class="col-lg-8 offset-lg-4 col-md-9 offset-md-3 col-sm-12 col-xs-12">
         <div class="cart-receipt">

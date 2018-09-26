@@ -81,6 +81,9 @@ ul.level-6 .nav-link { margin-left: 3.5rem; }
 ul.level-7 .nav-link { margin-left: 4.0rem; }
 ul.level-8 .nav-link { margin-left: 4.5rem; }
 
+tr.next-border-top-0 + tr,
+tr.next-border-top-0 + tr td { border-top-width: 0 !important; }
+
 .bg-primary,
 .bg-primary a {
     color: $bg-primary-color;
