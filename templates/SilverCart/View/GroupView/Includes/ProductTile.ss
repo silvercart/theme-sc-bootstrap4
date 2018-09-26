@@ -50,6 +50,9 @@
                             <% end_if %>
                         </span>
                         <% end_if %>
+                        <% if $PluggedInProductListAdditionalData %>
+                        <% loop $PluggedInProductListAdditionalData %><span class="d-block">{$AdditionalData}</span><% end_loop %>
+                        <% end_if %>
                     </small>
                 </div>
             </div>
