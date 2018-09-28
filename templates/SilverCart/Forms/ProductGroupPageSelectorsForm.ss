@@ -26,7 +26,7 @@
 <% end_if %>
     {$CustomFormSpecialFields}
     <% loop $Actions %>
-        <button class="btn btn-sm btn-primary" name="{$name}"><span class="fa fa-filter"></span> {$Title}</button>
+        <button class="btn btn-outline-primary ml-0 ml-sm-1" name="{$name}"><span class="fa fa-filter"></span> {$Title}</button>
     <% end_loop %>
     {$AfterFormContent}
 <% if $IncludeFormTag %>
