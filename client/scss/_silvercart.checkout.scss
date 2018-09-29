@@ -1,0 +1,5 @@
+
+@include media-breakpoint-down(sm) {
+    .checkout-steps td { padding: 0.3rem 0 0 0; }
+    .checkout-steps .nav-link { padding: 0.5rem 0.2rem; }
+}

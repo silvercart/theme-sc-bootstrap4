@@ -8707,6 +8707,9 @@ a.text-inverse:hover, a.text-inverse:focus {
 .cursor-progress {
   cursor: progress; }
 
+.table-auto {
+  table-layout: auto; }
+
 ul.level-1 .nav-link {
   margin-left: 1rem; }
 
@@ -8775,6 +8778,12 @@ tr.next-border-top-0 + tr td {
     font-weight: bold; }
   .responsive-table td:before {
     content: attr(data-title); } }
+
+@media (max-width: 767.98px) {
+  .checkout-steps td {
+    padding: 0.3rem 0 0 0; }
+  .checkout-steps .nav-link {
+    padding: 0.5rem 0.2rem; } }
 
 html {
   font-size: 0.82rem; }
