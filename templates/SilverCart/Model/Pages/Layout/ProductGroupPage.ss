@@ -1,6 +1,6 @@
 <div class="row row-offcanvas row-offcanvas-right">
 <% cached $CacheKey %>
-    <section id="content-main" class="col-12 col-md-9">
+    <section id="content-main" class="col-12 <%if $InsertWidgetArea('Sidebar') %>col-md-9<% end_if %>">
         <h2 class="sr-only">{$Title}</h2>
         <% include SilverCart/Model/Pages/BreadCrumbs %>
         <article aria-label="{$Title.XML}">
@@ -14,7 +14,17 @@
             {$RenderProductGroupHolderGroupView}
         </section>
     <% end_if %>
-        {$InsertWidgetArea(Content)}
+    <% if $ShowNewProducts && $isFirstPage %>
+        <% with $getNewProductsForTemplate(10) %>
+        <section class="widget mb-3 clearfix">
+            <h2 class="d-inline-block">{$Title}</h2>
+            <a href="{$NewProductsLink}" class="d-inline-block ml-2"><span class="fa fa-arrow-right"></span> {$NewProductsLinkTitle}</a>
+            <% include SilverCart\View\GroupView\WidgetProductBoxSlider %>
+        </section>
+        <% end_with %>
+    <% end_if %>
+        {$BeforeInsertWidgetAreaContent}
+        {$InsertWidgetArea('Content')}
     <% if $HasMoreProductsThan(0) %>
         <div class="silvercart-product-group-page-control-top clearfix" id="scpgpct">
             <% include SilverCart/Model/Pages/ProductGroupPageControlsTop %>
@@ -33,7 +43,9 @@
         </article>
     </section>
 <% end_cached %>
+<%if $InsertWidgetArea('Sidebar') %>
     <aside id="sidebar" class="col-12 col-md-3 sidebar-offcanvas">
-        {$InsertWidgetArea(Sidebar)}
+        {$InsertWidgetArea('Sidebar')}
     </aside>
+<% end_if %>
 </div>
