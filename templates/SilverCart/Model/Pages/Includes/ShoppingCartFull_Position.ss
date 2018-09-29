@@ -12,7 +12,7 @@
     </td>
     <td class="desc" data-title="<%t SilverCart\Model\Product\Product.TITLE 'Product' %>">
         <h5><a class="highlight" href="{$Product.Link}">{$getTitle}</a></h5>
-        <ul class="list-unstyled">
+        <ul class="list-unstyled p-0 m-0">
             <li><a class="highlight" href="{$Product.Link}"><%t SilverCart\Model\Product\Product.PRODUCTNUMBER_SHORT 'Item no.' %>: {$getProductNumberShop}</a></li>
             <% if $getCartDescription %><li><small>{$getCartDescription}</small></li><% end_if %>
             <% if $addToTitle %><li><small>{$addToTitle}</small></li><% end_if %>
@@ -48,6 +48,6 @@
 <% end_if %>
     <td class="total-price text-right" data-title="<%t SilverCart\Model\Product\Product.PRICE 'Price' %>">
         {$Price.Nice}
-        <p class="hidden-sm-down"><small>{$Product.TaxRate}% <%t SilverCart\Model\Product\Product.VAT 'VAT' %></small></p>
+        <small class="d-block">{$Product.TaxRate}% <%t SilverCart\Model\Product\Product.VAT 'VAT' %></small>
     </td>
 </tr>

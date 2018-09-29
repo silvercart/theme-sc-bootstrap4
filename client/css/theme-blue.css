@@ -8591,6 +8591,9 @@ a.text-inverse:hover, a.text-inverse:focus {
 .z50 {
   z-index: 50; }
 
+td.h1, td.h2, td.h3, td.h4, td.h5, td.h6 {
+  margin: 0; }
+
 .overflow-hidden {
   overflow: hidden; }
 
@@ -8759,7 +8762,15 @@ tr.next-border-top-0 + tr td {
     top: -9999px;
     left: -9999px; }
   .responsive-table tr {
-    border: 1px solid #ccc; }
+    border: 1px solid #ddd; }
+  .responsive-table tr + tr {
+    border-top: none; }
+  .silvercart-shopping-cart-full .responsive-table tr {
+    -webkit-box-shadow: 0 1px 3px #bbb;
+            box-shadow: 0 1px 3px #bbb;
+    border: none; }
+  .silvercart-shopping-cart-full .responsive-table tr + tr {
+    margin-top: 0.5rem; }
   .responsive-table td {
     border: none;
     border-bottom: 1px solid #eee;
@@ -8767,6 +8778,8 @@ tr.next-border-top-0 + tr td {
     padding-left: 30%;
     white-space: normal;
     text-align: left; }
+  .responsive-table td:last-child {
+    border-bottom: none; }
   .responsive-table td:before {
     position: absolute;
     top: 6px;

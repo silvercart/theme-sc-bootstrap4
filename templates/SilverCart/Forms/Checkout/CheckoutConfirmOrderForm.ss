@@ -100,25 +100,23 @@
             </div>
         </div>
         <div class="col-12 col-md-8">
-            <div id="silvercart-checkout-privacy-check" class="alert alert-light mb-2">
-                {$Fields.dataFieldByName(HasAcceptedTermsAndConditions).FieldHolder}
-                {$Fields.dataFieldByName(HasAcceptedRevocationInstruction).FieldHolder}
-                <% if $ShowNewsletterCheckbox %>
-                    {$Fields.dataFieldByName(SubscribedToNewsletter).FieldHolder}
-                <% end_if %>
-            </div>
-
             {$Controller.Checkout.CurrentStep.ShoppingCartFull}
-
-            <hr/>
             <% if $CurrentPage.SiteConfig.ShowTaxAndDutyHint %>
             <p class="tax-and-duty-hint"><%t SilverCart\Model\Pages\CheckoutStep.TaxAndDutyHint 'Caution: There are additional taxes and fees for delivery to non EU countries.' %></p>
             <hr/>
             <% end_if %>
-            <div class="margin-side clearfix">
-            <% loop $Actions %>
-                <button class="btn btn-primary btn-lg btn-block-xs float-right action" type="submit" title="{$Title}" name="{$Name}" id="{$ID}">{$Title} <span class="fa fa-caret-right"></span></button>
-            <% end_loop %>
+            <div class="row">
+                <div class="offset-2 col-10 offset-sm-5 col-sm-7 offset-lg-7 col-lg-5 text-justify">
+                <% if $ShowNewsletterCheckbox %>
+                    <div class="alert alert-light mb-2 py-1 px-2">
+                        {$Fields.dataFieldByName(SubscribedToNewsletter).addExtraClass('mb-0').FieldHolder}
+                    </div>
+                <% end_if %>
+                <% loop $Actions %>
+                    <button class="btn btn-primary btn-lg btn-block action" type="submit" title="{$Title}" name="{$Name}" id="{$ID}">{$Title} <span class="fa fa-caret-right"></span></button>
+                <% end_loop %>
+                    <p class="mt-3 mb-0">{$AcceptTermsAndConditionsText}</p>
+                </div>
             </div>
         </div>
     </div>
