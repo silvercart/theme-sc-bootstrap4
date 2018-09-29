@@ -1,10 +1,17 @@
 <header id="main-header" class="container-fluid clearfix border-bottom">
     <div class="row  justify-content-center">
         <div class="siteLogo col-12 col-sm-5 col-md-auto">
+        <% if $canCheckout %>
+            <a class="logo-link d-inline-block" href="{$PageByIdentifierCode('SilvercartCartPage').Link}" title="{$SiteConfig.Title} - {$SiteConfig.Tagline}">
+                <img src="<% if $SiteConfig.ShopLogo %>{$SiteConfig.ShopLogo.ScaleHeight(70).Link}<% else %>{$BaseHref}resources/vendor/silvercart/silvercart/client/img/logo.png<% end_if %>" class="img-fluid" alt="{$SiteConfig.Title}">
+                <span class="sr-only">{$SiteConfig.Title} - {$SiteConfig.Tagline}</span>
+            </a>
+        <% else %>
             <a class="logo-link d-inline-block" href="{$PageByIdentifierCode('SilvercartFrontPage').Link}" title="{$SiteConfig.Title} - {$SiteConfig.Tagline}">
                 <img src="<% if $SiteConfig.ShopLogo %>{$SiteConfig.ShopLogo.ScaleHeight(70).Link}<% else %>{$BaseHref}resources/vendor/silvercart/silvercart/client/img/logo.png<% end_if %>" class="img-fluid" alt="{$SiteConfig.Title}">
                 <span class="sr-only">{$SiteConfig.Title} - {$SiteConfig.Tagline}</span>
             </a>
+        <% end_if %>
         </div>
         <div class="smtb col-12 col-sm clearfix justify-content-sm-end p-0 my-auto d-none d-md-block">
             <div class="row no-gutters justify-content-sm-end" role="group" aria-label="First group">
