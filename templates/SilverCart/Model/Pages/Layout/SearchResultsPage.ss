@@ -1,5 +1,5 @@
 <div class="row">
-    <section id="content-main" class="col-12 col-md-9">
+    <section id="content-main" class="col-12 <%if $InsertWidgetArea('Sidebar') %>col-md-9<% end_if %>">
         <h2 class="sr-only"><%t SilverCart\Model\Pages\SearchResultsPage.TITLE 'Search Results' %></h2>
         <article>
             <header><h1><%t SilverCart\Model\Pages\SearchResultsPage.TITLE 'Search Results' %></h1></header>
@@ -13,6 +13,9 @@
             <section class="silvercart-product-group-page sc-products clearfix">
                 {$RenderProductGroupPageGroupView}
             </section>
+            <nav class="silvercart-product-group-page-control-bottom">
+                <% include SilverCart/Model/Pages/ProductGroupPageControlsBottom %>
+            </nav>
         <% else %>
             <div class="alert alert-info">
                 <%t SilverCart\Model\Pages\Page.THE_QUERY 'The query' %><strong>&rdquo;{$EncodedSearchQuery.RAW}&rdquo;</strong><%t SilverCart\Model\Pages\Page.DIDNOT_RETURN_RESULTS 'did not return any results in our shop.' %>
@@ -21,7 +24,9 @@
         </article>
         <% include SilverCart/Model/Pages/WidgetSetContent %>
     </section>
-    <aside class="col-12 col-md-3">
-        {$InsertWidgetArea(Sidebar)}
+<%if $InsertWidgetArea('Sidebar') %>
+    <aside id="sidebar" class="col-12 col-md-3">
+        {$InsertWidgetArea('Sidebar')}
     </aside>
+<% end_if %>
 </div>
