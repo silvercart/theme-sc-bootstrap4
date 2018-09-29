@@ -14,18 +14,25 @@
                     </div>
                     <nav class="col-12 col-sm-auto clearfix btn-toolbar pb-2 pl-2">
                         {$HeaderNavBeforeTranslationSelectContent}
-                    <% if $AllTranslations.Count > 1 %>
+                    <% if $AllTranslations.count > 1 %>
                         <div class="dropdown">
                         <% loop $AllTranslations %>
                             <% if $First %>
                             <a id="translation-select" class="btn btn-sm dropdown-toggle border-right" data-target="translation-select-dropdown" data-toggle="dropdown" hreflang="{$RFC1766}" title="<%t SilverCart\Model\Pages\Page.SHOWINPAGE 'set language to {language}' language=$Name %>">
-                                <span class="d-block mr-2 mt-1">{$Code.UpperCase}</span><span class="fa fa-2x fa-globe"></span> <span class="caret"></span>
-                                <%--<img alt="{$Name}" src="{$ThemeDir}/client/img/icons/flags/{$Code}.png" width="25" /> <span class="caret"></span>--%>
+                                <span class="d-block mr-2 mt-1">{$LangCode.UpperCase}</span><span class="fa fa-2x fa-globe"></span> <span class="caret"></span>
                             </a>
                             <div id="translation-select-dropdown" class="dropdown-menu" aria-labelledby="translation-select">
                             <% else %>
+                                <% if $IsCurrent %>
+                                <span class="dropdown-item {$RFC1766} cursor-default" title="<%t SilverCart\Model\Pages\Page.SHOWINPAGE 'set language to {language}' language=$Name %>">
+                                    <span class="fa fa-dot-circle-o"></span> {$NativeLanguage} - {$LangCode.UpperCase}</span>
+                                    <% if $Up.AllTranslations.count > 2 %>
+                                <div class="dropdown-divider"></div>
+                                    <% end_if %>
+                                <% else %>
                                 <a class="dropdown-item {$RFC1766}" href="{$Link}" hreflang="{$RFC1766}" title="<%t SilverCart\Model\Pages\Page.SHOWINPAGE 'set language to {language}' language=$Name %>">
-                                    <img alt="{$Name}" src="{$ThemeDir}/client/img/icons/flags/{$Code}.png" width="25" /> {$Name}</a>
+                                    <span class="fa fa-circle-o"></span> {$NativeLanguage} - {$LangCode.UpperCase}</a>
+                                <% end_if %>
                                 <% if $Last %>
                             </div>
                                 <% end_if %>

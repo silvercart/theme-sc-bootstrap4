@@ -8692,6 +8692,21 @@ a.text-inverse:hover, a.text-inverse:focus {
       -ms-hyphens: auto;
           hyphens: auto; }
 
+.cursor-pointer {
+  cursor: pointer; }
+
+.cursor-default {
+  cursor: default; }
+
+.cursor-help {
+  cursor: help; }
+
+.cursor-wait {
+  cursor: wait; }
+
+.cursor-progress {
+  cursor: progress; }
+
 ul.level-1 .nav-link {
   margin-left: 1rem; }
 
@@ -9293,6 +9308,9 @@ body[lang^="en-"] header #account-dropdown {
   left: -14px !important;
   top: -4px !important;
   z-index: 1; }
+
+#translation-select-dropdown a:hover .fa-circle-o:before {
+  content: "\f192"; }
 
 @media (max-width: 1199.98px) {
   body[lang="de-DE"] header #account-dropdown {

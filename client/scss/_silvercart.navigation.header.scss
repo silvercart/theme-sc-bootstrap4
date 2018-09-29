@@ -9,6 +9,7 @@ body[lang^="en-"] header #account-dropdown {
     top: -4px !important;
     z-index: 1;
 }
+#translation-select-dropdown a:hover .fa-circle-o:before{content:"\f192"}
 
 @include media-breakpoint-down(lg) {
     body[lang="de-DE"] header #account-dropdown {
