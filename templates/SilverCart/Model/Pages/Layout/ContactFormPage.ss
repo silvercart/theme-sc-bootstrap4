@@ -10,7 +10,7 @@
         <% include SilverCart/Model/Pages/WidgetSetContent %>
     </section>
     <aside class="col-12 col-md-3">
+        {$InsertWidgetArea('Sidebar')}
         {$SubNavigation}
-        {$InsertWidgetArea(Sidebar)}
     </aside>
 </div>
