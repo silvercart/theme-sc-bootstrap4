@@ -14,7 +14,7 @@
     <% loop $Actions %>
         <span class="input-group-append">
             <button title="{$Up.Product.Title} <%t SilverCart\Model\Product\Product.ADD_TO_CART 'add Cart' %>" class="btn btn-large btn-primary">
-                <span class="fa fa-shopping-cart"></span> <span class="full-shopping-cart-title hidden-md-down">{$Form.SubmitButtontitle}</span><span class="short-shopping-cart-title hidden-xs-down hidden-lg-up"><%t SilverCart\Model\Pages\Page.CART 'Cart' %></span>
+                <span class="fa fa-shopping-cart"></span> {$Up.SubmitButtontitle}
             </button>
         </span>
     <% end_loop %>
