@@ -11,6 +11,16 @@
         <% else %>
             <% include SilverCart/Model/Pages/ShoppingCartFull_Net %>
         <% end_if %>
+        <% if $HasProductsWithDifferentReleaseDates %>
+        <div class="row">
+            <div class="alert alert-warning col-xs-12 col-lg-6 offset-lg-6 col-xl-5 offset-xl-7 col-xxl-4 offset-xxl-8">
+                <span class="fa fa-exclamation-triangle"></span> <%t SilverCart\Model\Order\ShoppingCart.DifferentReleaseDateHint1 'Your shopping cart contains products with different release dates.' %><br/>
+                <%t SilverCart\Model\Order\ShoppingCart.DifferentReleaseDateHint2 'Please be aware that the shipping date for already available products will be deferred due to the release date of the not yet available products.' %><br/>
+                <%t SilverCart\Model\Order\ShoppingCart.DifferentReleaseDateHint3 'If you want to get all of your products as soon as they each is available for shipment, please place them into diferent orders.' %><br/>
+                <%t SilverCart\Model\Order\ShoppingCart.DifferentReleaseDateHint4 'Thank you for your understanding.' %>
+            </div>
+        </div>
+        <% end_if %>
         <% if $CurrentPage.EditableShoppingCart && $CheapestShippingMethod %>
             <% with $CheapestShippingMethod %>
         <div class="alert alert-info float-right">

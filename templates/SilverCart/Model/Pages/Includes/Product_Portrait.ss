@@ -86,16 +86,18 @@
                         <%t SilverCart\Model\Pages\Page.PLUS_SHIPPING 'plus shipping' %><br/>
                     </a>
                 <% end_with %>
-                <% if $HasDeliveryTime  || $DeliveryForFreeIsPossible || $StockQuantityIsLow %>
+                <% if $HasDeliveryTime || $HasReleaseDate || $DeliveryForFreeIsPossible || $StockQuantityIsLow %>
                     <span class="d-block">
                     <% if $HasDeliveryTime %>
-                        {$fieldLabel('Delivery')} <span class="text-success font-weight-bold">{$FullDeliveryDate}</span>
+                        {$fieldLabel('Delivery')} <span class="text-success font-weight-bold">{$FullDeliveryDate}</span><br/>
+                    <% else_if $HasReleaseDate %>
+                        <span class="text-success font-weight-bold"><span class="fa fa-info-circle"></span> <%t SilverCart\Model\Product\Product.ThisProductWillBeReleasedOn 'This product will be released on {releasedate}' releasedate=$FullReleaseDate %></span><br/>
                     <% end_if %>
                     <% if $DeliveryForFreeIsPossible %>
-                        <br/><span class=""><span class="fa fa-check"></span> {$DeliveryForFreeIsPossibleInfo}</span>
+                        <span class="fa fa-check"></span> {$DeliveryForFreeIsPossibleInfo}<br/>
                     <% end_if %>
                     <% if $StockQuantityIsLow %>
-                        <br/><span class="text-danger"><span class="fa fa-exclamation-circle"></span> {$fieldLabel('StockIsLowOrderNow')}</span>
+                        <span class="text-danger"><span class="fa fa-exclamation-circle"></span> {$fieldLabel('StockIsLowOrderNow')}</span><br/>
                     <% end_if %>
                     </span>
                 <% end_if %>
@@ -104,7 +106,7 @@
             <div class="clearfix mt-3">
                 <div class="float-right">
             <% if $isBuyableDueToStockManagementSettings %>
-                    {$AddToCartForm(Detail)}
+                    {$AddToCartForm('Detail')}
             <% else %>
                     <div class="alert alert-warning"><%t SilverCart\Model\Pages\ProductPage.OUT_OF_STOCK 'This product is out of stock.' %></div>
                     {$AfterOutOfStockNotificationContent}

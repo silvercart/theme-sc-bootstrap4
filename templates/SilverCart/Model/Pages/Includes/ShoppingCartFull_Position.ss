@@ -16,7 +16,8 @@
             <li><a class="highlight" href="{$Product.Link}"><%t SilverCart\Model\Product\Product.PRODUCTNUMBER_SHORT 'Item no.' %>: {$getProductNumberShop}</a></li>
             <% if $getCartDescription %><li><small>{$getCartDescription}</small></li><% end_if %>
             <% if $addToTitle %><li><small>{$addToTitle}</small></li><% end_if %>
-            <% if $Top.SiteConfig.enableStockManagement && $Product.StockQuantity < $Quantity %><li><small class="label label-info"><span class="fa fa-info-sign"></span> <%t SilverCart\Model\Order\ShoppingCart.OnlyXLeft 'Only {quantity} left in stock. Delivery time may increase.' quantity=$Product.StockQuantity %></small></li><% end_if %>
+            <% if $Top.SiteConfig.enableStockManagement && $Product.StockQuantity < $Quantity %><li><small class="badge badge-info"><span class="fa fa-info-circle"></span> <%t SilverCart\Model\Order\ShoppingCart.OnlyXLeft 'Only {quantity} left in stock. Delivery time may increase.' quantity=$Product.StockQuantity %></small></li><% end_if %>
+            <% if $Product.HasReleaseDate %><li><small class="badge badge-success"><span class="fa fa-info-circle"></span> <%t SilverCart\Model\Product\Product.PreorderInfo 'This product will be released on {releasedate}. Please be aware that this product can\'t be shipped before its release date.' releasedate=$Product.FullReleaseDate %></small></li><% end_if %>
             <% if $CurrentPage.EditableShoppingCart %><li class="padding-top">{$RemovePositionForm}</li><% end_if %>
         </ul>
     </td>

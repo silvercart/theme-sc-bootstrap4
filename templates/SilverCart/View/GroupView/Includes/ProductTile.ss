@@ -34,19 +34,21 @@
                 </span><br>
                 <div class="sc-product-price-info">
                     <small>
-                        <%t SilverCart\Model\Product\Product.PRODUCTNUMBER_SHORT 'Item no.' %>: <strong>{$ProductNumberShop}</strong>
-                        <% if $PackagingQuantity %> | <%t SilverCart\Model\Pages\ProductPage.PACKAGING_CONTENT 'Content' %>: <strong>{$PackagingQuantity} {$QuantityUnit.Title}</strong><% end_if %>
-                        <% if $Availability %> | {$AvailabilityStatus.singular_name}: <strong class="h6">{$Availability('badge', 'badge-availability')}</strong><% end_if %>
+                        <% if $Availability %>
+                        {$AvailabilityStatus.singular_name}: <strong class="h6">{$Availability('badge', 'badge-availability')}</strong>
+                        <% end_if %>
                         <% if $HasDeliveryTime  || $DeliveryForFreeIsPossible || $StockQuantityIsLow %>
                         <span class="d-block">
                             <% if $HasDeliveryTime %>
-                            {$fieldLabel('Delivery')} <span class="text-success font-weight-bold">{$EarliestDeliveryDate}</span>
+                            {$fieldLabel('Delivery')} <span class="text-success font-weight-bold">{$EarliestDeliveryDate}</span><br/>
+                            <% else_if $HasReleaseDate %>
+                                <span class="text-primary font-weight-bold"><span class="fa fa-info-circle"></span> <%t SilverCart\Model\Product\Product.Preorderable 'pre-orderable' %></span><br/>
                             <% end_if %>
                             <% if $DeliveryForFreeIsPossible %>
-                            <br/><span class=""><span class="fa fa-check"></span> {$fieldLabel('DeliveryForFreeIsPossible')}</span>
+                            <span class=""><span class="fa fa-check"></span> {$fieldLabel('DeliveryForFreeIsPossible')}</span><br/>
                             <% end_if %>
                             <% if $StockQuantityIsLow %>
-                            <br/><span class="text-danger"><span class="fa fa-exclamation-circle"></span> {$fieldLabel('StockIsLowOrderNow')}</span>
+                            <span class="text-danger"><span class="fa fa-exclamation-circle"></span> {$fieldLabel('StockIsLowOrderNow')}</span><br/>
                             <% end_if %>
                         </span>
                         <% end_if %>
