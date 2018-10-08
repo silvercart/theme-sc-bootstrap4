@@ -1,6 +1,5 @@
 /* unquote !important Bug */
 @import url(https://fonts.googleapis.com/css?family=Nunito:200,300,400,700);
-@import url(https://fonts.googleapis.com/css?family=Crete+Round:200,300,400,700);
 /* Optional */
 /* @import "bootstrap/root";*/
 *,
@@ -272,7 +271,7 @@ template {
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: 0.5rem;
-  font-family: Crete Round;
+  font-family: Nunito;
   font-weight: 500;
   line-height: 1.2;
   color: inherit; }
@@ -8636,8 +8635,35 @@ td.h1, td.h2, td.h3, td.h4, td.h5, td.h6 {
 .fa-groupview-list:before {
   content: "\f00b"; }
 
+.line-height-1 {
+  line-height: 1; }
+
+.line-height-2 {
+  line-height: 2; }
+
+.line-height-3 {
+  line-height: 3; }
+
+.line-height-4 {
+  line-height: 4; }
+
+.line-height-5 {
+  line-height: 5; }
+
 .text-line-through {
   text-decoration: line-through; }
+
+.text-xs {
+  font-size: 0.75rem !important; }
+
+.text-sm {
+  font-size: 0.825rem !important; }
+
+.text-md {
+  font-size: 1.125rem !important; }
+
+.text-lg {
+  font-size: 1.3rem !important; }
 
 .text-big {
   font-size: 1.4em; }
@@ -8737,6 +8763,9 @@ ul.level-7 .nav-link {
 ul.level-8 .nav-link {
   margin-left: 4.5rem; }
 
+.last-child-no-border .border-bottom:last-child {
+  border: none !important; }
+
 tr.next-border-top-0 + tr,
 tr.next-border-top-0 + tr td {
   border-top-width: 0 !important; }
@@ -8748,6 +8777,32 @@ tr.next-border-top-0 + tr td {
 .btn-wrap {
   word-wrap: break-word !important;
   white-space: inherit !important; }
+
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+.rotation {
+  -webkit-animation-name: rotate;
+          animation-name: rotate;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear; }
 
 @media (max-width: 575.98px) {
   .responsive-table table,
@@ -8797,6 +8852,12 @@ tr.next-border-top-0 + tr td {
     padding: 0.3rem 0 0 0; }
   .checkout-steps .nav-link {
     padding: 0.5rem 0.2rem; } }
+
+.fa-xs {
+  font-size: .75em !important; }
+
+.fa-sm {
+  font-size: .825em !important; }
 
 html {
   font-size: 0.82rem; }
@@ -9350,7 +9411,8 @@ body[lang^="en-"] header #account-dropdown {
   background: linear-gradient(to bottom, #0e5c9e 0%, #0a416f 100%);
   background-image: -webkit-gradient(linear, left top, left bottom, from(#0e5c9e), to(#0a416f));
   background-image: linear-gradient(to bottom, #0e5c9e, #0a416f);
-  border-color: #0a416f; }
+  border-color: #0a416f;
+  margin-left: 0; }
 
 .widget .sly-container {
   overflow: hidden;
