@@ -8799,6 +8799,36 @@ ul.level-7 .nav-link {
 ul.level-8 .nav-link {
   margin-left: 4.5rem; }
 
+.last-child-p-0 :last-child {
+  padding: 0px !important; }
+
+.last-child-pt-0 :last-child {
+  padding-top: 0px !important; }
+
+.last-child-pr-0 :last-child {
+  padding-right: 0px !important; }
+
+.last-child-pb-0 :last-child {
+  padding-bottom: 0px !important; }
+
+.last-child-pl-0 :last-child {
+  padding-left: 0px !important; }
+
+.last-child-m-0 :last-child {
+  margin: 0px !important; }
+
+.last-child-mt-0 :last-child {
+  margin-top: 0px !important; }
+
+.last-child-mr-0 :last-child {
+  margin-right: 0px !important; }
+
+.last-child-mb-0 :last-child {
+  margin-bottom: 0px !important; }
+
+.last-child-ml-0 :last-child {
+  margin-left: 0px !important; }
+
 .last-child-no-border .border-bottom:last-child {
   border: none !important; }
 
