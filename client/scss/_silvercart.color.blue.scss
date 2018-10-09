@@ -92,7 +92,10 @@ $theme-colors: map-merge((
   "primary-dark":     $primaryDark,
   "primary-darker":   $primaryDarker,
   "primary-darkest":  $primaryDarkest,
-  "inverse":          $dark
+  "inverse":          $dark,
+  "gray":             $gray-500,
+  "gray-dark":        $gray-700,
+  "gray-light":       $gray-300
 ), $theme-colors);
 
 $body-bg:                   $white;
