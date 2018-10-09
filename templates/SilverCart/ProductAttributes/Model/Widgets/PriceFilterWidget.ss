@@ -1,4 +1,4 @@
 <% if $FrontTitle %>
-<header><h3>{$FrontTitle}</h3></header>
+<header><h4>{$FrontTitle}</h4></header>
 <% end_if %>
 {$PriceRangeForm}

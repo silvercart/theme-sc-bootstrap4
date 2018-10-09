@@ -5,7 +5,7 @@
 </section>
 <section class="widget clearfix silvercart-widget {$Top.ExtraCssClasses}" id="widget-{$Top.ID}-{$Pos}">
             <% end_if %>
-    <header><h3 class="<% if $HasSelectedValues %>has-selected-values<% else %>has-no-selected-values<% end_if %>">{$Title}</h3></header>
+    <header><h4 class="<% if $HasSelectedValues %>has-selected-values<% else %>has-no-selected-values<% end_if %>">{$Title}</h4></header>
     <div class="widget-product-attribute-filter">
         <ul class="list-unstyled mb-0">
             <% if $AssignedValues %>

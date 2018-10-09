@@ -1,6 +1,6 @@
 <div class="row row-offcanvas row-offcanvas-right">
 <% cached $CacheKey %>
-    <section id="content-main" class="col-12 <%if $InsertWidgetArea('Sidebar') %>col-md-9<% end_if %>">
+    <section id="content-main" class="col-12 col-md-9 order-2">
         <h2 class="sr-only">{$Title}</h2>
         <% include SilverCart/Model/Pages/BreadCrumbs %>
         <article aria-label="{$Title.XML}">
@@ -13,6 +13,15 @@
             <h2 class="sr-only">{$Title}</h2>
             {$RenderProductGroupHolderGroupView}
         </section>
+    <% end_if %>
+    <% if $ShowPreorderableProducts && $isFirstPage %>
+        <% with $getPreorderableProductsForTemplate(10) %>
+        <section class="widget mb-3 clearfix">
+            <h2 class="d-inline-block">{$Title}</h2>
+            <a href="{$PreorderableProductsLink}" class="d-inline-block ml-2"><span class="fa fa-arrow-right"></span> {$PreorderableProductsLinkTitle}</a>
+            <% include SilverCart\View\GroupView\WidgetProductBoxSlider %>
+        </section>
+        <% end_with %>
     <% end_if %>
     <% if $ShowNewProducts && $isFirstPage %>
         <% with $getNewProductsForTemplate(10) %>
@@ -43,9 +52,8 @@
         </article>
     </section>
 <% end_cached %>
-<%if $InsertWidgetArea('Sidebar') %>
-    <aside id="sidebar" class="col-12 col-md-3 sidebar-offcanvas">
+    <aside id="sidebar" class="col-12 col-md-3 sidebar-offcanvas order-1 border-right">
+        <% include SilverCart\Model\Pages\ProductGroupSidebar %>
         {$InsertWidgetArea('Sidebar')}
     </aside>
-<% end_if %>
 </div>
