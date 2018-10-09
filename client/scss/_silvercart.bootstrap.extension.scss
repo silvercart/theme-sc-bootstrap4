@@ -130,6 +130,41 @@ tr.next-border-top-0 + tr td { border-top-width: 0 !important; }
     animation-timing-function: linear;
 }
 
+@include media-breakpoint-up(sm) {
+    @each $prop, $abbrev in (width: w, height: h) {
+      @each $size, $length in $sizes {
+        .#{$abbrev}-sm-#{$size} { #{$prop}: $length !important; }
+      }
+    }
+}
+@include media-breakpoint-up(md) {
+    @each $prop, $abbrev in (width: w, height: h) {
+      @each $size, $length in $sizes {
+        .#{$abbrev}-md-#{$size} { #{$prop}: $length !important; }
+      }
+    }
+}
+@include media-breakpoint-up(lg) {
+    @each $prop, $abbrev in (width: w, height: h) {
+      @each $size, $length in $sizes {
+        .#{$abbrev}-lg-#{$size} { #{$prop}: $length !important; }
+      }
+    }
+}
+@include media-breakpoint-up(xl) {
+    @each $prop, $abbrev in (width: w, height: h) {
+      @each $size, $length in $sizes {
+        .#{$abbrev}-xl-#{$size} { #{$prop}: $length !important; }
+      }
+    }
+}
+@include media-breakpoint-up(xxl) {
+    @each $prop, $abbrev in (width: w, height: h) {
+      @each $size, $length in $sizes {
+        .#{$abbrev}-xxl-#{$size} { #{$prop}: $length !important; }
+      }
+    }
+}
 @include media-breakpoint-down(xs) {
     .responsive-table table,
     .responsive-table thead,
