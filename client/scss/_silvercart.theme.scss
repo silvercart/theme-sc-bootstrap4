@@ -17,6 +17,9 @@
     color: $socialicon-hover-color;
 }
 
+/* product group page */
+.SilverCart-Model-Pages-ProductGroupPage .container-fluid,
+.SilverCart-Model-Pages-SearchResultsPage .container-fluid { max-width: 100% !important; }
 /* shopping cart table dimensions */
 th.img         { width: 80px; }
 th.desc        { width: auto; }

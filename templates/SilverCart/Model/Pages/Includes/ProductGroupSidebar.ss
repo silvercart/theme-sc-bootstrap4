@@ -13,3 +13,18 @@
 <% end_if %>
     </li>
 </ul>
+<% if $ShowPreorderableProducts || $ShowNewProducts || $ExtendedDynamicProductGroupNavigationItems %>
+<ul class="list-unstyled mb-3 pb-3 border-bottom">
+    <% if $ShowPreorderableProducts %>
+    <li class="ml-12"><a href="{$Link('preorders')}" title="{$fieldLabel('PreorderableProducts')}">{$fieldLabel('PreorderableProducts')}</a></li>
+    <% end_if %>
+    <% if $ShowNewProducts %>
+    <li class="ml-12"><a href="{$Link('new-products')}" title="{$fieldLabel('NewProducts')}">{$fieldLabel('NewProducts')}</a></li>
+    <% end_if %>
+    <% if $ExtendedDynamicProductGroupNavigationItems %>
+        <% loop $ExtendedDynamicProductGroupNavigationItems %>
+    <li class="ml-12"><a href="{$Link}" title="{$Title}">{$MenuTitle}</a></li>
+        <% end_loop %>
+    <% end_if %>
+</ul>
+<% end_if %>

@@ -1,5 +1,5 @@
 <div class="row">
-    <section id="content-main" class="col-12 <%if $InsertWidgetArea('Sidebar') %>col-md-9<% end_if %>">
+    <section id="content-main" class="col-12 <%if $InsertWidgetArea('Sidebar') %>col-md-9 col-lg-10<% end_if %> order-2">
         <h2 class="sr-only"><%t SilverCart\Model\Pages\SearchResultsPage.TITLE 'Search Results' %></h2>
         <article>
             <header><h1><%t SilverCart\Model\Pages\SearchResultsPage.TITLE 'Search Results' %></h1></header>
@@ -25,7 +25,7 @@
         <% include SilverCart/Model/Pages/WidgetSetContent %>
     </section>
 <%if $InsertWidgetArea('Sidebar') %>
-    <aside id="sidebar" class="col-12 col-md-3">
+    <aside id="sidebar" class="col-12 col-md-3 col-lg-2 border-right order-1">
         {$InsertWidgetArea('Sidebar')}
     </aside>
 <% end_if %>
