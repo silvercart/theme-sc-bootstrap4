@@ -154,6 +154,15 @@ tr.next-border-top-0 + tr td { border-top-width: 0 !important; }
     animation-timing-function: linear;
 }
 
+@include media-breakpoint-between(md, lg) {
+    .col-md-lg-20 { max-width: 20% !important; flex: 0 0 20%; }
+    .col-md-lg-80 { max-width: 80% !important; flex: 0 0 80%; }
+}
+@include media-breakpoint-up(xxl) {
+    .col-xxl-11 { max-width: 11% !important; flex: 0 0 11%; }
+    .col-xxl-89 { max-width: 89% !important; flex: 0 0 89%; }
+}
+
 @include media-breakpoint-up(sm) {
     @each $prop, $abbrev in (width: w, height: h) {
       @each $size, $length in $sizes {
