@@ -1,3 +1,4 @@
+<% cached $CacheKey,'SideBar' %>
 <h4><%t SilverCart\Model\Pages\ProductGroupPage.ShowOffersFor 'Show offers for' %></h4>
 <ul class="list-unstyled mb-3 pb-3 border-bottom">
 <% if $Parent.IsProductGroupPage %>
@@ -28,3 +29,4 @@
     <% end_if %>
 </ul>
 <% end_if %>
+<% end_cached %>
