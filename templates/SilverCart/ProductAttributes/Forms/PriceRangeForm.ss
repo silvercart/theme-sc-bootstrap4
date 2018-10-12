@@ -17,7 +17,7 @@
         </div>
     </div>
     <div class="col-9 col-xxl-12 order-4 order-xxl-5">
-        <a class="btn btn-sm btn-light mt-2" href="{$CurrentPage.Link}ClearProductAttributePriceFilter" title="<%t SilverCart\ProductAttributes\Model\Widgets\PriceFilterWidget.DISABLE_FILTER 'Reset price filter' %>"><span class="fa fa-times"></span> <%t SilverCart\ProductAttributes\Model\Widgets\PriceFilterWidget.DISABLE_FILTER 'Reset price filter' %></a>
+        <a class="btn btn-sm btn-light mt-2" href="{$CurrentPage.Link('ClearProductAttributePriceFilter')}" title="<%t SilverCart\ProductAttributes\Model\Widgets\PriceFilterWidget.DISABLE_FILTER 'Reset price filter' %>"><span class="fa fa-times"></span> <%t SilverCart\ProductAttributes\Model\Widgets\PriceFilterWidget.DISABLE_FILTER 'Reset price filter' %></a>
     </div>
 <% if $IncludeFormTag %>
 </form>

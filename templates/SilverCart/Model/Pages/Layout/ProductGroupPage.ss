@@ -5,7 +5,8 @@
         <% include SilverCart/Model/Pages/BreadCrumbs %>
         <article aria-label="{$Title.XML}">
             <header><h1 id="maintitle">{$Title}</h1></header>
-    <% if $ViewableChildren %>
+    <% if $isFirstPage && not $isFiltered %>
+        <% if $ViewableChildren %>
         <nav class="silvercart-product-group-page-control-top navbar pb-3 clearfix">
             <% include SilverCart/Model/Pages/ProductGroupHolderControls %>
         </nav>
@@ -13,27 +14,28 @@
             <h2 class="sr-only">{$Title}</h2>
             {$RenderProductGroupHolderGroupView}
         </section>
-    <% end_if %>
-    <% if $ShowPreorderableProducts && $isFirstPage %>
-        <% with $getPreorderableProductsForTemplate(10) %>
+        <% end_if %>
+        <% if $ShowPreorderableProducts %>
+            <% with $getPreorderableProductsForTemplate(10) %>
         <section class="widget mb-3 clearfix">
             <h2 class="d-inline-block">{$Title}</h2>
             <a href="{$PreorderableProductsLink}" class="d-inline-block ml-2"><span class="fa fa-arrow-right"></span> {$PreorderableProductsLinkTitle}</a>
             <% include SilverCart\View\GroupView\WidgetProductBoxSlider %>
         </section>
-        <% end_with %>
-    <% end_if %>
-    <% if $ShowNewProducts && $isFirstPage %>
-        <% with $getNewProductsForTemplate(10) %>
+            <% end_with %>
+        <% end_if %>
+        <% if $ShowNewProducts %>
+            <% with $getNewProductsForTemplate(10) %>
         <section class="widget mb-3 clearfix">
             <h2 class="d-inline-block">{$Title}</h2>
             <a href="{$NewProductsLink}" class="d-inline-block ml-2"><span class="fa fa-arrow-right"></span> {$NewProductsLinkTitle}</a>
             <% include SilverCart\View\GroupView\WidgetProductBoxSlider %>
         </section>
-        <% end_with %>
-    <% end_if %>
+            <% end_with %>
+        <% end_if %>
         {$BeforeInsertWidgetAreaContent}
         {$InsertWidgetArea('Content')}
+    <% end_if %>
     <% if $HasMoreProductsThan(0) %>
         <div class="silvercart-product-group-page-control-top clearfix" id="scpgpct">
             <% include SilverCart/Model/Pages/ProductGroupPageControlsTop %>
