@@ -1,10 +1,14 @@
 <div class="row">
-    <section id="content-main" class="col-12 <%if $InsertWidgetArea('Sidebar') %>col-md-9 col-lg-10 col-md-lg-80 col-xxl-89<% end_if %> order-md-2">
+    <section id="content-main" class="col-12 col-md-9 col-lg-10 col-md-lg-80 col-xxl-89 order-md-2">
         <h2 class="sr-only"><%t SilverCart\Model\Pages\SearchResultsPage.TITLE 'Search Results' %></h2>
         <article>
             <header><h1><%t SilverCart\Model\Pages\SearchResultsPage.TITLE 'Search Results' %></h1></header>
-        <% if $EncodedSearchQuery %>
-            <p><%t SilverCart\Model\Pages\SearchResultsPage.RESULTTEXT 'Search results for query <strong>&rdquo;{query}&rdquo;</strong>' query=$EncodedSearchQuery.RAW %> ({$TotalSearchResults} <%t SilverCart\Model\Pages\Page.SEARCH_RESULTS 'results' %>):</p>
+        <% if $EncodedSearchQuery && $SearchCategory %>
+            <p><%t SilverCart\Model\Pages\SearchResultsPage.ResultsTextQueryAndCategory 'Search results for query <strong>&rdquo;{query}&rdquo;</strong> within the category <strong>&rdquo;{category}&rdquo;</strong> ({results} results)' query=$EncodedSearchQuery.RAW category=$SearchCategory.Title results=$TotalSearchResults %>:</p>
+        <% else_if $EncodedSearchQuery %>
+            <p><%t SilverCart\Model\Pages\SearchResultsPage.ResultsTextQuery 'Search results for query <strong>&rdquo;{query}&rdquo;</strong> ({results} results)' query=$EncodedSearchQuery.RAW results=$TotalSearchResults %>:</p>
+        <% else_if $SearchCategory %>
+            <p><%t SilverCart\Model\Pages\SearchResultsPage.ResultsTextCategory 'Search results for the category <strong>&rdquo;{category}&rdquo;</strong> ({results} results)' category=$SearchCategory.Title results=$TotalSearchResults %>:</p>
         <% end_if %>
         <% if $getProducts %>
             <nav class="silvercart-product-group-page-control-top">
@@ -24,9 +28,8 @@
         </article>
         <% include SilverCart/Model/Pages/WidgetSetContent %>
     </section>
-<%if $InsertWidgetArea('Sidebar') %>
     <aside id="sidebar" class="col-12 col-md-3 col-lg-2 col-md-lg-20 col-xxl-11 sidebar-offcanvas order-md-1 border-right">
+        <% include SilverCart\Model\Pages\SearchResultsSidebar %>
         {$InsertWidgetArea('Sidebar')}
     </aside>
-<% end_if %>
 </div>
