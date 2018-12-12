@@ -12,11 +12,9 @@
                 </tr>
             <% loop $TaxableShoppingCartPositions %>
                 <tr>
-                    <td>{$Name}<% if $CurrentPage.EditableShoppingCart %>{$removeFromCartForm}<% end_if %></td>
-                    <td class="text-right">{$PriceNetFormatted}
-                        <small class="d-block">{$Tax.Title}% <%t SilverCart\Model\Product\Product.VAT 'VAT' %></small></td>
-                    <td class="text-right">{$getTypeSafeQuantity}x</td>
-                    <td class="text-right">{$PriceNetTotalFormatted}</td>
+                    <td colspan="3" class="text-right">{$Name}<% if $CurrentPage.EditableShoppingCart %>{$removeFromCartForm}<% end_if %></td>
+                    <td class="text-right">{$PriceNetTotalFormatted}
+                        <small class="d-block">{$Tax.Rate}% <%t SilverCart\Model\Product\Product.VAT 'VAT' %></small></td>
                 </tr>
             <% end_loop %>
         <% end_if %>
