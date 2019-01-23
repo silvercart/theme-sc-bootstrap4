@@ -1,5 +1,8 @@
 <% if $SubElements %>
 <nav class="widget">
+    <% if $SubElementsTitle %>
+    <h4>{$SubElementsTitle}</h4>
+    <% end_if %>
     <ul class="nav flex-column">
         <% loop $SubElements %>
         <li class="{$FirstLast}">
