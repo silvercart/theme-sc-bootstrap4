@@ -22,7 +22,7 @@
             </nav>
         <% else %>
             <div class="alert alert-info">
-                <%t SilverCart\Model\Pages\Page.THE_QUERY 'The query' %><strong>&rdquo;{$EncodedSearchQuery.RAW}&rdquo;</strong><%t SilverCart\Model\Pages\Page.DIDNOT_RETURN_RESULTS 'did not return any results in our shop.' %>
+                <%t SilverCart\Model\Pages\Page.THE_QUERY 'The query' %> <strong>&rdquo;{$EncodedSearchQuery.RAW}&rdquo;</strong> <%t SilverCart\Model\Pages\Page.DIDNOT_RETURN_RESULTS 'did not return any results in our shop.' %>
             </div>
         <% end_if %>
         </article>
