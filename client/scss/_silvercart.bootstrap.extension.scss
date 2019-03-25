@@ -4,34 +4,37 @@
     }
     .position-absolute.#{$positionText}-#{$positionPixel}, .position-relative.#{$positionText}-#{$positionPixel} {#{$positionPixelText}: #{$positionPixel}px;}
 }
-@for $i from -10 through 10 {
+@for $i from -20 through 20 {
     @include add-position("top",$i,"top");
-}
-@for $i from -10 through 10 {
     @include add-position("top-right",$i,"top: #{$i}px; right");
-}
-@for $i from -10 through 10 {
     @include add-position("top-left",$i,"top: #{$i}px; left");
-}
-@for $i from -10 through 10 {
     @include add-position("bottom",$i,"bottom");
-}
-@for $i from -10 through 10 {
     @include add-position("bottom-right",$i,"bottom: #{$i}px; right");
-}
-@for $i from -10 through 10 {
     @include add-position("bottom-left",$i,"bottom: #{$i}px; left");
-}
-@for $i from -10 through 10 {
     @include add-position("left",$i,"left");
-}
-@for $i from -10 through 10 {
     @include add-position("right",$i,"right");
 }
 
 @for $i from 0 through 50 {
     .z#{$i} { z-index: #{$i}; }
 }
+@for $i from 0 through 50 {
+    .t-#{$i} { top: #{$i}px; }
+}
+@for $i from 0 through 50 {
+    .r-#{$i} { right: #{$i}px; }
+}
+@for $i from 0 through 50 {
+    .b-#{$i} { bottom: #{$i}px; }
+}
+@for $i from 0 through 50 {
+    .l-#{$i} { left: #{$i}px; }
+}
+
+.p-absolute { position: absolute !important; }
+.p-relative { position: relative !important; }
+.p-static { position: static !important; }
+.p-fixed { position: fixed !important; }
 
 td.h1, td.h2, td.h3, td.h4, td.h5, td.h6 { margin: 0; }
 
@@ -56,6 +59,9 @@ td.h1, td.h2, td.h3, td.h4, td.h5, td.h6 { margin: 0; }
 .line-height-3 { line-height: 3; }
 .line-height-4 { line-height: 4; }
 .line-height-5 { line-height: 5; }
+@for $i from 12 through 50 {
+    .line-height-#{$i}px { line-height: #{$i}px; }
+}
 
 .text-line-through { text-decoration: line-through; }
 
@@ -84,6 +90,19 @@ td.h1, td.h2, td.h3, td.h4, td.h5, td.h6 { margin: 0; }
 
 .text-hyphens-auto { hyphens: auto; }
 
+[class^="column-count-"] { column-gap: 50px; column-rule: 1px solid $gray-200; };
+.column-count-2 { column-count: 2; }
+.column-count-3 { column-count: 3; }
+.column-count-4 { column-count: 4; }
+.column-count-5 { column-count: 5; }
+.column-count-6 { column-count: 6; }
+[class^="p-column-count-"] p { column-gap: 50px; column-rule: 1px solid $gray-200; };
+.p-column-count-2 p { column-count: 2; }
+.p-column-count-3 p { column-count: 3; }
+.p-column-count-4 p { column-count: 4; }
+.p-column-count-5 p { column-count: 5; }
+.p-column-count-6 p { column-count: 6; }
+
 .cursor-pointer { cursor: pointer; }
 .cursor-default { cursor: default; }
 .cursor-help { cursor: help; }
@@ -91,18 +110,43 @@ td.h1, td.h2, td.h3, td.h4, td.h5, td.h6 { margin: 0; }
 .cursor-progress { cursor: progress; }
 
 .table-auto { table-layout: auto; }
+.table-fixed { table-layout: fixed; }
 
-@for $i from 10 through 20 {
+@for $i from 1 through 5 {
+    .m-#{$i}px { margin: #{$i}px !important; }
+    .mt-#{$i}px,.my-#{$i}px { margin-top: #{$i}px !important; }
+    .mr-#{$i}px,.mx-#{$i}px { margin-right: #{$i}px !important; }
+    .mb-#{$i}px,.my-#{$i}px { margin-bottom: #{$i}px !important; }
+    .ml-#{$i}px,.mx-#{$i}px { margin-left: #{$i}px !important; }
+    .p-#{$i}px { padding: #{$i}px !important; }
+    .pt-#{$i}px,.py-#{$i}px { padding-top: #{$i}px !important; }
+    .pr-#{$i}px,.px-#{$i}px { padding-right: #{$i}px !important; }
+    .pb-#{$i}px,.py-#{$i}px { padding-bottom: #{$i}px !important; }
+    .pl-#{$i}px,.px-#{$i}px { padding-left: #{$i}px !important; }
+}
+@for $i from 6 through 60 {
     .m-#{$i} { margin: #{$i}px !important; }
-    .mt-#{$i} { margin-top: #{$i}px !important; }
-    .mr-#{$i} { margin-right: #{$i}px !important; }
-    .mb-#{$i} { margin-bottom: #{$i}px !important; }
-    .ml-#{$i} { margin-left: #{$i}px !important; }
+    .mt-#{$i},.my-#{$i} { margin-top: #{$i}px !important; }
+    .mr-#{$i},.mx-#{$i} { margin-right: #{$i}px !important; }
+    .mb-#{$i},.my-#{$i} { margin-bottom: #{$i}px !important; }
+    .ml-#{$i},.mx-#{$i} { margin-left: #{$i}px !important; }
     .p-#{$i} { padding: #{$i}px !important; }
-    .pt-#{$i} { padding-top: #{$i}px !important; }
-    .pr-#{$i} { padding-right: #{$i}px !important; }
-    .pb-#{$i} { padding-bottom: #{$i}px !important; }
-    .pl-#{$i} { padding-left: #{$i}px !important; }
+    .pt-#{$i},.py-#{$i} { padding-top: #{$i}px !important; }
+    .pr-#{$i},.px-#{$i} { padding-right: #{$i}px !important; }
+    .pb-#{$i},.py-#{$i} { padding-bottom: #{$i}px !important; }
+    .pl-#{$i},.px-#{$i} { padding-left: #{$i}px !important; }
+}
+@for $i from -60 through -1 {
+    .m-#{$i} { margin: #{$i}px !important; }
+    .mt-#{$i},.my-#{$i} { margin-top: #{$i}px !important; }
+    .mr-#{$i},.mx-#{$i} { margin-right: #{$i}px !important; }
+    .mb-#{$i},.my-#{$i} { margin-bottom: #{$i}px !important; }
+    .ml-#{$i},.mx-#{$i} { margin-left: #{$i}px !important; }
+    .p-#{$i} { padding: #{$i}px !important; }
+    .pt-#{$i},.py-#{$i} { padding-top: #{$i}px !important; }
+    .pr-#{$i},.px-#{$i} { padding-right: #{$i}px !important; }
+    .pb-#{$i},.py-#{$i} { padding-bottom: #{$i}px !important; }
+    .pl-#{$i},.px-#{$i} { padding-left: #{$i}px !important; }
 }
 
 ul.level-1 .nav-link { margin-left: 1rem; }
