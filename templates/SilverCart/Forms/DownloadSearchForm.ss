@@ -9,7 +9,7 @@
     {$CustomFormSpecialFields}
     <% with $Fields.dataFieldByName(SearchQuery) %>
     <div id="{$HolderID}" class="input-group <% if $extraClass %>{$extraClass}<% end_if %>">
-        <input id="{$ID}" class="text <% if $addErrorClass('is-invalid').extraClass %>{$extraClass}<% end_if %>" type="text" placeholder="{$Placeholder}" value="{$Value}" name="{$Name}">
+        <input id="{$ID}" class="text form-control <% if $addErrorClass('is-invalid').extraClass %>{$extraClass}<% end_if %>" type="text" placeholder="{$Placeholder}" value="{$Value}" name="{$Name}">
     <% end_with %>
     <% loop $Actions %>
         <div class="input-group-append">

@@ -3,8 +3,7 @@
         <% include SilverCart/Model/Pages/BreadCrumbs %>
     <% if $CurrentRegisteredCustomer %>
         <article>
-            <header><h1>{$Title}</h1></header>
-            {$Content}
+            <header><h1><%t SilverCart\Model\Pages\OrderHolder.OrderDetails 'Order details' %></h1></header>
             <% include SilverCart/Model/Pages/OrderDetails %>
         </article>
     <% else %>

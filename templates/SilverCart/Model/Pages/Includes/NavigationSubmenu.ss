@@ -1,7 +1,6 @@
 <ul class="dropdown-menu" data-dropdown-in="lightSpeedIn" data-dropdown-out="lightSpeedOut" id="navbarToggleExternalContent{$ID}">
     <li class="col nav-item">
         <a href="{$Link}" title="<%t SilverCart\Model\Pages\Page.GOTO 'Go to {title} page' title=$Title.XML %>" class="heading nav-link <% if $isCurrent %>active<% else_if $isSection %>section<% end_if %>">{$MenuTitle.XML}</a>
-        <% if $ActiveProducts.exists %><span class="badge badge-pill badge-primary">{$ActiveProducts.Count}</span><% end_if %>
 <% if $Children %>
         <ul class="dropdown-content row nav">
     <% loop $Children %>
@@ -9,7 +8,6 @@
             <li class="col-6 col-xs-2 col-md-3 {$Parent.MegaMenuColumnClass.colBreak} {$Parent.MegaMenuColumnClass.childCount} mt-3 nav-item">
             <% if $Children %>
                 <a href="{$Link}" title="<%t SilverCart\Model\Pages\Page.GOTO 'Go to {title} page' title=$Title.XML %>" class="nav-link <% if $isCurrent %>active<% else_if $isSection %>section<% end_if %>">{$MenuTitle.XML}</a>
-                <% if $ActiveProducts.exists %><span class="badge badge-pill badge-primary">{$ActiveProducts.Count}</span><% end_if %>
                 <% loop $Children %>
                     <% if $hasProductsAndChildren %>
                         <% if $First %>
@@ -26,7 +24,6 @@
                                 <span class="fa fa-chevron-right"></span>
                             <% end_if %>
                             </a>
-                            <% if $ActiveProducts.exists %><span class="badge badge-pill badge-primary">{$ActiveProducts.Count}</span><% end_if %>
                         </li>
                         <% else %>
                         <li>
@@ -37,7 +34,6 @@
                                 <span class="fa fa-chevron-right"></span>
                             <% end_if %>
                             </a>
-                            <% if $ActiveProducts.exists %><span class="badge badge-pill badge-primary">{$ActiveProducts.Count}</span><% end_if %>
                         </li>
                         <% end_if %>
                         <% if $Last %>
@@ -48,7 +44,6 @@
                 <% end_loop %>
             <% else %>
                 <a href="{$Link}" title="<%t SilverCart\Model\Pages\Page.GOTO 'Go to {title} page' title=$Title.XML %>" class="nav-link <% if $isCurrent %>active<% else_if $isSection %>section<% end_if %>">{$MenuTitle.XML}</a>
-                <% if $ActiveProducts.exists %><span class="badge badge-pill badge-primary">{$ActiveProducts.Count}</span><% end_if %>
             <% end_if %>
             </li>
         <% end_if %>

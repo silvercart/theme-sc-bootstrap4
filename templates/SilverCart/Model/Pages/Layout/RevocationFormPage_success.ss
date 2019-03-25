@@ -9,6 +9,6 @@
     </section>
     <aside class="col-12 col-md-3">
         {$SubNavigation}
-        {$InsertWidgetArea(Sidebar)}
+        {$InsertWidgetArea('Sidebar')}
     </aside>
 </div>

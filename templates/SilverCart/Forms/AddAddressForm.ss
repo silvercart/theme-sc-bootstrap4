@@ -9,48 +9,50 @@
     {$BeforeFormContent}
 <% if $EnablePackstation %>
     <div class="row">
-        <div class="col-md-8">{$Fields.dataFieldByName(IsPackstation).FieldHolder}</div>
+        <div class="col-md-8">{$Fields.dataFieldByName('IsPackstation').FieldHolder}</div>
     </div>
 <% end_if %>
 <% if $EnableBusinessCustomers %>
     <div class="row">
-        <div class="col-sm-4">{$Fields.dataFieldByName(IsBusinessAccount).FieldHolder}</div>
-        <div class="col-sm-4">{$Fields.dataFieldByName(TaxIdNumber).FieldHolder}</div>
-        <div class="col-sm-4">{$Fields.dataFieldByName(Company).FieldHolder}</div>
+    <% if $Fields.dataFieldByName('IsBusinessAccount').Type != 'hidden' %>
+        <div class="col-sm-4">{$Fields.dataFieldByName('IsBusinessAccount').FieldHolder}</div>
+    <% end_if %>
+        <div class="col-sm-4">{$Fields.dataFieldByName('TaxIdNumber').FieldHolder}</div>
+        <div class="col-sm-4">{$Fields.dataFieldByName('Company').FieldHolder}</div>
     </div>
     <hr/>
 <% end_if %>
     <div class="row">
-        <div class="col-sm-4">{$Fields.dataFieldByName(Salutation).FieldHolder}</div>
-        <div class="col-sm-4">{$Fields.dataFieldByName(Company).FieldHolder}</div>
+        <div class="col-sm-4">{$Fields.dataFieldByName('Salutation').FieldHolder}</div>
+        <div class="col-sm-4">{$Fields.dataFieldByName('AcademicTitle').FieldHolder}</div>
     </div>
     <div class="row">
-        <div class="col-sm-4">{$Fields.dataFieldByName(FirstName).FieldHolder}</div>
-        <div class="col-sm-4">{$Fields.dataFieldByName(Surname).FieldHolder}</div>
+        <div class="col-sm-4">{$Fields.dataFieldByName('FirstName').FieldHolder}</div>
+        <div class="col-sm-4">{$Fields.dataFieldByName('Surname').FieldHolder}</div>
     </div>
     <div class="absolute-address-data">
         <div class="row">
-            <div class="col-sm-4">{$Fields.dataFieldByName(Addition).FieldHolder}</div>
-            <div class="col-sm-4">{$Fields.dataFieldByName(Street).FieldHolder}</div>
-            <div class="col-sm-4">{$Fields.dataFieldByName(StreetNumber).FieldHolder}</div>
+            <div class="col-sm-4">{$Fields.dataFieldByName('Addition').FieldHolder}</div>
+            <div class="col-sm-4">{$Fields.dataFieldByName('Street').FieldHolder}</div>
+            <div class="col-sm-4">{$Fields.dataFieldByName('StreetNumber').FieldHolder}</div>
         </div>
     </div>
 <% if $EnablePackstation %>
     <div class="packstation-address-data">
         <div class="row">
-            <div class="col-sm-4">{$Fields.dataFieldByName(PostNumber).FieldHolder}</div>
-            <div class="col-sm-4">{$Fields.dataFieldByName(Packstation).FieldHolder}</div>
+            <div class="col-sm-4">{$Fields.dataFieldByName('PostNumber').FieldHolder}</div>
+            <div class="col-sm-4">{$Fields.dataFieldByName('Packstation').FieldHolder}</div>
         </div>
     </div>
 <% end_if %>
     <div class="row">
-        <div class="col-sm-4">{$Fields.dataFieldByName(Postcode).FieldHolder}</div>
-        <div class="col-sm-4">{$Fields.dataFieldByName(City).FieldHolder}</div>
-        <div class="col-sm-4">{$Fields.dataFieldByName(Country).FieldHolder}</div>
+        <div class="col-sm-4">{$Fields.dataFieldByName('Postcode').FieldHolder}</div>
+        <div class="col-sm-4">{$Fields.dataFieldByName('City').FieldHolder}</div>
+        <div class="col-sm-4">{$Fields.dataFieldByName('Country').FieldHolder}</div>
     </div>
     <div class="row">
-        <div class="col-sm-4">{$Fields.dataFieldByName(Phone).FieldHolder}</div>
-        <div class="col-sm-4">{$Fields.dataFieldByName(Fax).FieldHolder}</div>
+        <div class="col-sm-4">{$Fields.dataFieldByName('Phone').FieldHolder}</div>
+        <div class="col-sm-4">{$Fields.dataFieldByName('Fax').FieldHolder}</div>
     </div>
     {$CustomFormSpecialFields}
     <div class="clearfix">

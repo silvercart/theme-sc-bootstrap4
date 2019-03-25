@@ -7,6 +7,6 @@
         </article>
     </section>
     <aside class="col-12 col-md-3">
-        {$InsertWidgetArea(Sidebar)}
+        {$InsertWidgetArea('Sidebar')}
     </aside>
 </div>

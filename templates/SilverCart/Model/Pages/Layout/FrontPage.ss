@@ -6,7 +6,7 @@
         <% if $WidgetSetContent.exists %>
             <section class="frontpage-widgets">
                 <h4 class="sr-only"><%t SilverCart\Model\Pages\Page.WELCOME_TO 'Welcome to' %> {$SiteConfig.Title}</h4>
-                {$InsertWidgetArea(Content)}
+                {$InsertWidgetArea('Content')}
             </section>
         <% end_if %>
         <% if $Content %>
@@ -15,13 +15,13 @@
         <% end_if %>
         </div>
         <aside class="col-12 col-md-6 col-lg-4">
-            {$InsertWidgetArea(Sidebar)}
+            {$InsertWidgetArea('Sidebar')}
         </aside>
     </div>
     <% else %>
     <section class="frontpage-widgets">
         <h4 class="sr-only"><%t SilverCart\Model\Pages\Page.WELCOME_TO 'Welcome to' %> {$SiteConfig.Title}</h4>
-        {$InsertWidgetArea(Content)}
+        {$InsertWidgetArea('Content')}
     </section>
         <% if $Content %>
     <hr/>
