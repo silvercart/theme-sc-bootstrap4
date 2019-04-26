@@ -10,54 +10,54 @@
 <% if $EnableBusinessCustomers %>
     <h4><%t SilverCart\Model\Customer\Customer.BUSINESSCUSTOMER 'Business customer' %></h4>
     <div class="row">
-        <div class="col-sm-4">{$Fields.dataFieldByName(IsBusinessAccount).FieldHolder}</div>
-        <div class="col-sm-4">{$Fields.dataFieldByName(TaxIdNumber).FieldHolder}</div>
-        <div class="col-sm-4">{$Fields.dataFieldByName(Company).FieldHolder}</div>
+        <div class="col-sm-4">{$Fields.dataFieldByName('IsBusinessAccount').FieldHolder}</div>
+        <div class="col-sm-4">{$Fields.dataFieldByName('TaxIdNumber').FieldHolder}</div>
+        <div class="col-sm-4">{$Fields.dataFieldByName('Company').FieldHolder}</div>
     </div>
 <% end_if %>
     <h4><%t SilverCart\Model\Pages\Page.ADDRESS_DATA 'Address data' %></h4>
     <div class="row">
-        <div class="col-sm-4">{$Fields.dataFieldByName(Salutation).FieldHolder}</div>
-        <div class="col-sm-4">{$Fields.dataFieldByName(AcademicTitle).FieldHolder}</div>
+        <div class="col-sm-4">{$Fields.dataFieldByName('Salutation').FieldHolder}</div>
+        <div class="col-sm-4">{$Fields.dataFieldByName('AcademicTitle').FieldHolder}</div>
     </div>
     <div class="row">
-        <div class="col-sm-4">{$Fields.dataFieldByName(FirstName).FieldHolder}</div>
-        <div class="col-sm-4">{$Fields.dataFieldByName(Surname).FieldHolder}</div>
+        <div class="col-sm-4">{$Fields.dataFieldByName('FirstName').FieldHolder}</div>
+        <div class="col-sm-4">{$Fields.dataFieldByName('Surname').FieldHolder}</div>
     </div>
     <div class="row">
-        <div class="col-sm-4">{$Fields.dataFieldByName(Street).FieldHolder}</div>
-        <div class="col-sm-4">{$Fields.dataFieldByName(StreetNumber).FieldHolder}</div>
-        <div class="col-sm-4">{$Fields.dataFieldByName(Addition).FieldHolder}</div>
+        <div class="col-sm-4">{$Fields.dataFieldByName('Street').FieldHolder}</div>
+        <div class="col-sm-4">{$Fields.dataFieldByName('StreetNumber').FieldHolder}</div>
+        <div class="col-sm-4">{$Fields.dataFieldByName('Addition').FieldHolder}</div>
     </div>
     <div class="row">
-        <div class="col-sm-4">{$Fields.dataFieldByName(Postcode).FieldHolder}</div>
-        <div class="col-sm-4">{$Fields.dataFieldByName(City).FieldHolder}</div>
-        <div class="col-sm-4">{$Fields.dataFieldByName(Country).FieldHolder}</div>
+        <div class="col-sm-4">{$Fields.dataFieldByName('Postcode').FieldHolder}</div>
+        <div class="col-sm-4">{$Fields.dataFieldByName('City').FieldHolder}</div>
+        <div class="col-sm-4">{$Fields.dataFieldByName('Country').FieldHolder}</div>
     </div>
     <div class="row">
-        <div class="col-sm-4">{$Fields.dataFieldByName(Phone).FieldHolder}</div>
-        <div class="col-sm-4">{$Fields.dataFieldByName(Fax).FieldHolder}</div>
+        <div class="col-sm-4">{$Fields.dataFieldByName('Phone').FieldHolder}</div>
+        <div class="col-sm-4">{$Fields.dataFieldByName('Fax').FieldHolder}</div>
     </div>
 <% if $demandBirthdayDate %>
     <h4><%t SilverCart\Model\Pages\Page.BIRTHDAY 'Birthday' %></h4>
     <div class="row">
-        <div class="col-sm-4">{$Fields.dataFieldByName(BirthdayDay).FieldHolder}</div>
-        <div class="col-sm-4">{$Fields.dataFieldByName(BirthdayMonth).FieldHolder}</div>
-        <div class="col-sm-4">{$Fields.dataFieldByName(BirthdayYear).FieldHolder}</div>
+        <div class="col-sm-4">{$Fields.dataFieldByName('BirthdayDay').FieldHolder}</div>
+        <div class="col-sm-4">{$Fields.dataFieldByName('BirthdayMonth').FieldHolder}</div>
+        <div class="col-sm-4">{$Fields.dataFieldByName('BirthdayYear').FieldHolder}</div>
     </div>
 <% end_if %>
     <h4><%t SilverCart\Model\Pages\Page.ACCESS_CREDENTIALS 'Access Credentials' %></h4>
     <div class="row">
-        <div class="col-sm-4">{$Fields.dataFieldByName(Email).FieldHolder}</div>
-        <div class="col-sm-4">{$Fields.dataFieldByName(EmailCheck).FieldHolder}</div>
+        <div class="col-sm-4">{$Fields.dataFieldByName('Email').FieldHolder}</div>
+        <div class="col-sm-4">{$Fields.dataFieldByName('EmailCheck').FieldHolder}</div>
     </div>
     <div class="row">
-        <div class="col-sm-4">{$Fields.dataFieldByName(Password).FieldHolder}</div>
-        <div class="col-sm-4">{$Fields.dataFieldByName(PasswordCheck).FieldHolder}</div>
+        <div class="col-sm-4">{$Fields.dataFieldByName('Password').FieldHolder}</div>
+        <div class="col-sm-4">{$Fields.dataFieldByName('PasswordCheck').FieldHolder}</div>
     </div>
     <h4><%t SilverCart\Model\Pages\RegistrationPage.OTHERITEMS 'Miscellaneous' %></h4>
     <div class="row">
-        <div class="span12 col-md-12">{$Fields.dataFieldByName(SubscribedToNewsletter).FieldHolder}</div>
+        <div class="span12 col-md-12">{$Fields.dataFieldByName('SubscribedToNewsletter').FieldHolder}</div>
     </div>
     <div class="row">
         <div class="span12 col-md-12">{$CustomFormSpecialFields}</div>
