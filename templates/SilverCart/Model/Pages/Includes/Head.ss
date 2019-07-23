@@ -3,7 +3,6 @@
 <title><% if $ClassName == "SilverCart\Model\Pages\FrontPage" %>{$SiteConfig.Title} - {$SiteConfig.Tagline}<% else %><% if $MetaTitle %>{$MetaTitle}<% else %>{$Title}<% end_if %> <%t SilverCart\Model\Pages\Page.MetaTitleAt 'at {shopTitle}' shopTitle=$SiteConfig.Title %><% end_if %></title>
 {$MetaTags(false)}
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="index, follow">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <%--{$RequireColorSchemeCSS('theme-', 'default')}--%>
 <% require themedCSS("client/css/theme-default") %>
@@ -24,6 +23,7 @@
 <% require themedJavascript("client/js/silvercart.forms") %>
 <% require themedJavascript("client/js/silvercart.attributes") %>
 <% require themedJavascript("client/js/silvercart.sly") %>
+<% require themedJavascript("client/js/silvercart.modal.sidebar") %>
 <% require themedJavascript("client/js/jquery.slidorion.min") %>
 <% require themedJavascript("client/javascript/jquery.pixeltricks.tools") %>
 <% require themedJavascript("client/javascript/jquery.cookie") %>
