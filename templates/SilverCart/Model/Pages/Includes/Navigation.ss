@@ -31,18 +31,9 @@
             <% end_loop %>
             <% with $MainNavigationRootPage %>
                 <% loop $Children %>
-                    <% if $hasProductsOrChildren %>
-                        <% if $Children %>
-                <li id="navlist{$ID}" class="nav-item dropdown">
-                    <a href="{$Link}" title="{$MenuTitle.XML}" aria-controls="navbarToggleExternalContent{$ID}" aria-expanded="false" aria-label="Toggle navigation" class="nav-link dropdown-toggle <% if $isCurrent %>active<% else_if $isSection %>section<% end_if %>" data-toggle="dropdown" data-animation="1">{$MenuTitle.XML}</a>
-                    <% include SilverCart/Model/Pages/NavigationSubmenu %>
+                <li id="navlist{$ID}" class="nav-item" data-item-id="{$ID}">
+                    <a href="{$Link}" title="{$MenuTitle.XML}" class="nav-link <% if $isCurrent %>active<% else_if $isSection %>section<% end_if %>">{$MenuTitle.XML}</a>
                 </li>
-                        <% else %>
-                <li id="navlist{$ID}" class="nav-item">
-                    <a href="{$Link}" title="{$MenuTitle.XML}" class="nav-link rootlink <% if $isCurrent %>active<% else_if $isSection %>section<% end_if %>">{$MenuTitle.XML}</a>
-                </li>
-                        <% end_if %>
-                    <% end_if %>
                 <% end_loop %>
             <% end_with %>
             </ul>
