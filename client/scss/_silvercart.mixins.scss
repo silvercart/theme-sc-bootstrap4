@@ -1,0 +1,71 @@
+
+@mixin add-position($positionText, $positionPixel, $positionPixelText) {
+    @if $positionPixel == 0 {
+      .position-absolute.#{$positionText}, .position-relative.#{$positionText} {#{$positionPixelText}: #{$positionPixel}px;}
+    }
+    .position-absolute.#{$positionText}-#{$positionPixel}, .position-relative.#{$positionText}-#{$positionPixel} {#{$positionPixelText}: #{$positionPixel}px;}
+}
+@mixin add-coordinates($breakpoint: null) {
+    @if ($breakpoint) {
+        $breakpoint: "-#{$breakpoint}";
+    } @else {
+        $breakpoint: '';
+    }
+    @for $i from 0 through 60 {
+        .z#{$breakpoint}-#{$i} { z-index: #{$i} !important; }
+        .t#{$breakpoint}-#{$i} { top: #{$i}px !important; }
+        .r#{$breakpoint}-#{$i} { right: #{$i}px !important; }
+        .b#{$breakpoint}-#{$i} { bottom: #{$i}px !important; }
+        .l#{$breakpoint}-#{$i} { left: #{$i}px !important; }
+    }
+}
+@mixin add-spacing-classes-for-breakpoint($breakpoint) {
+    @for $i from 0 through 5 {
+        .m-#{$breakpoint}#{$i}px { margin: #{$i}px !important; }
+        .mt-#{$breakpoint}#{$i}px,.my-#{$breakpoint}#{$i}px { margin-top: #{$i}px !important; }
+        .mr-#{$breakpoint}#{$i}px,.mx-#{$breakpoint}#{$i}px { margin-right: #{$i}px !important; }
+        .mb-#{$breakpoint}#{$i}px,.my-#{$breakpoint}#{$i}px { margin-bottom: #{$i}px !important; }
+        .ml-#{$breakpoint}#{$i}px,.mx-#{$breakpoint}#{$i}px { margin-left: #{$i}px !important; }
+        .p-#{$breakpoint}#{$i}px { padding: #{$i}px !important; }
+        .pt-#{$breakpoint}#{$i}px,.py-#{$breakpoint}#{$i}px { padding-top: #{$i}px !important; }
+        .pr-#{$breakpoint}#{$i}px,.px-#{$breakpoint}#{$i}px { padding-right: #{$i}px !important; }
+        .pb-#{$breakpoint}#{$i}px,.py-#{$breakpoint}#{$i}px { padding-bottom: #{$i}px !important; }
+        .pl-#{$breakpoint}#{$i}px,.px-#{$breakpoint}#{$i}px { padding-left: #{$i}px !important; }
+    }
+    @for $i from 6 through 60 {
+        .m-#{$breakpoint}#{$i} { margin: #{$i}px !important; }
+        .mt-#{$breakpoint}#{$i},.my-#{$breakpoint}#{$i} { margin-top: #{$i}px !important; }
+        .mr-#{$breakpoint}#{$i},.mx-#{$breakpoint}#{$i} { margin-right: #{$i}px !important; }
+        .mb-#{$breakpoint}#{$i},.my-#{$breakpoint}#{$i} { margin-bottom: #{$i}px !important; }
+        .ml-#{$breakpoint}#{$i},.mx-#{$breakpoint}#{$i} { margin-left: #{$i}px !important; }
+        .p-#{$breakpoint}#{$i} { padding: #{$i}px !important; }
+        .pt-#{$breakpoint}#{$i},.py-#{$breakpoint}#{$i} { padding-top: #{$i}px !important; }
+        .pr-#{$breakpoint}#{$i},.px-#{$breakpoint}#{$i} { padding-right: #{$i}px !important; }
+        .pb-#{$breakpoint}#{$i},.py-#{$breakpoint}#{$i} { padding-bottom: #{$i}px !important; }
+        .pl-#{$breakpoint}#{$i},.px-#{$breakpoint}#{$i} { padding-left: #{$i}px !important; }
+    }
+    @for $i from -60 through -1 {
+        .m-#{$breakpoint}#{$i} { margin: #{$i}px !important; }
+        .mt-#{$breakpoint}#{$i},.my-#{$breakpoint}#{$i} { margin-top: #{$i}px !important; }
+        .mr-#{$breakpoint}#{$i},.mx-#{$breakpoint}#{$i} { margin-right: #{$i}px !important; }
+        .mb-#{$breakpoint}#{$i},.my-#{$breakpoint}#{$i} { margin-bottom: #{$i}px !important; }
+        .ml-#{$breakpoint}#{$i},.mx-#{$breakpoint}#{$i} { margin-left: #{$i}px !important; }
+        .p-#{$breakpoint}#{$i} { padding: #{$i}px !important; }
+        .pt-#{$breakpoint}#{$i},.py-#{$breakpoint}#{$i} { padding-top: #{$i}px !important; }
+        .pr-#{$breakpoint}#{$i},.px-#{$breakpoint}#{$i} { padding-right: #{$i}px !important; }
+        .pb-#{$breakpoint}#{$i},.py-#{$breakpoint}#{$i} { padding-bottom: #{$i}px !important; }
+        .pl-#{$breakpoint}#{$i},.px-#{$breakpoint}#{$i} { padding-left: #{$i}px !important; }
+    }
+}
+@mixin border-for-breakpoint($breakpoint) {
+    .border-#{$breakpoint}         { border: $border-width solid $border-color !important; }
+    .border-#{$breakpoint}-top     { border-top: $border-width solid $border-color !important; }
+    .border-#{$breakpoint}-right   { border-right: $border-width solid $border-color !important; }
+    .border-#{$breakpoint}-bottom  { border-bottom: $border-width solid $border-color !important; }
+    .border-#{$breakpoint}-left    { border-left: $border-width solid $border-color !important; }
+    .border-#{$breakpoint}-#{0}        { border: 0 !important; }
+    .border-#{$breakpoint}-top-#{0}    { border-top: 0 !important; }
+    .border-#{$breakpoint}-right-#{0}  { border-right: 0 !important; }
+    .border-#{$breakpoint}-bottom-#{0} { border-bottom: 0 !important; }
+    .border-#{$breakpoint}-left-#{0}   { border-left: 0 !important; }
+}
