@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-@import "silvercart.variables";
+@import "bootstrap/variables";
 
 @import "bootstrap/mixins";
 /* Optional */
@@ -30,7 +30,7 @@
 /* @import "bootstrap/media"; */
 /* @import "bootstrap/list-group"; */
 @import "bootstrap/close";
-/* @import "bootstrap/modal"; */
+@import "bootstrap/modal";
 @import "bootstrap/tooltip";
 /*@import "bootstrap/popover";*/
 @import "bootstrap/carousel";
@@ -50,5 +50,5 @@
 @import "silvercart.pagination";
 @import "silvercart.sly";
 @import "silvercart.spacing";
-/*@import "silvercart.modal.sidebar";*/
+@import "silvercart.modal.sidebar";
 @import "dev";

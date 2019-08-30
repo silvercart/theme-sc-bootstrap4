@@ -3,7 +3,7 @@
     <h1 class="float-left mb-3">{$CurrentPage.Title}</h1>
     <% if $CurrentMember.ShoppingCart.isFilled %>
     <div class="float-right silvercart-shopping-cart-toolbar-top mb-3">
-        <a class="btn btn-secondary" title="<%t SilverCart\Model\Pages\Page.CONTINUESHOPPING 'Continue shopping' %>" href="{$CurrentPage.PageByIdentifierCode('SilvercartFrontPage').Link}#1"><span class="fa fa-caret-left"></span> <%t SilverCart\Model\Pages\Page.CONTINUESHOPPING 'Continue shopping' %></a>
+        <a class="btn btn-outline-secondary" title="<%t SilverCart\Model\Pages\Page.CONTINUESHOPPING 'Continue shopping' %>" href="{$CurrentPage.PageByIdentifierCode('SilvercartFrontPage').Link}#1"><span class="fa fa-caret-left"></span> <%t SilverCart\Model\Pages\Page.CONTINUESHOPPING 'Continue shopping' %></a>
         <% if $CurrentMember.ShoppingCart.IsMinimumOrderValueReached %>
             <% with $CurrentPage.PageByIdentifierCode('SilvercartCheckoutStep') %>
         <a href="{$Link}" title="<%t SilverCart\Model\Pages\Page.GOTO 'go to {title}' title=$Title.XML %>" class="btn btn-primary"><%t SilverCart\Model\Pages\Page.CHECKOUT 'Checkout' %> <span class="fa fa-caret-right"></span></a>
@@ -86,7 +86,7 @@
 <% if $CurrentPage.EditableShoppingCart && $CurrentMember.ShoppingCart.isFilled %>
 <div class="clearfix">
     <div class="float-right mb-3 silvercart-shopping-cart-toolbar-bottom">
-        <a class="btn btn-secondary" title="<%t SilverCart\Model\Pages\Page.CONTINUESHOPPING 'Continue shopping' %>" href="{$CurrentPage.PageByIdentifierCode('SilvercartFrontPage').Link}#1"><span class="fa fa-caret-left"></span> <%t SilverCart\Model\Pages\Page.CONTINUESHOPPING 'Continue shopping' %></a>
+        <a class="btn btn-outline-secondary" title="<%t SilverCart\Model\Pages\Page.CONTINUESHOPPING 'Continue shopping' %>" href="{$CurrentPage.PageByIdentifierCode('SilvercartFrontPage').Link}#1"><span class="fa fa-caret-left"></span> <%t SilverCart\Model\Pages\Page.CONTINUESHOPPING 'Continue shopping' %></a>
     <% if $CurrentMember.ShoppingCart.IsMinimumOrderValueReached %>
         <% with $CurrentPage.PageByIdentifierCode('SilvercartCheckoutStep') %>
         <a href="{$Link}" title="<%t SilverCart\Model\Pages\Page.GOTO 'go to {title}' title=$Title.XML %>" class="btn btn-primary"><%t SilverCart\Model\Pages\Page.CHECKOUT 'Checkout' %> <span class="fa fa-caret-right"></span></a>
