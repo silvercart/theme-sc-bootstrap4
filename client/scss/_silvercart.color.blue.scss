@@ -52,14 +52,21 @@ $dark:      #072247;
 
 $colors: ();
 $colors: map-merge((
+  "black":      $black,
   "blue":       $blue,
+  "indigo":     $indigo,
+  "purple":     $purple,
+  "pink":       $pink,
   "red":        $red,
   "orange":     $orange,
   "yellow":     $yellow,
   "green":      $green,
+  "teal":       $teal,
+  "cyan":       $cyan,
   "white":      $white,
   "gray":       $gray-600,
-  "gray-dark":  $gray-800
+  "gray-dark":  $gray-800,
+  "gray-light": $gray-300
 ), $colors);
 
 $primaryLight: lighten( $primary, 5% );
@@ -78,71 +85,30 @@ $secondaryDarkest: darken( $secondary, 15% );
 
 $theme-colors: ();
 $theme-colors: map-merge((
-  "primary":    $primary,
-  "secondary":  $secondary,
-  "success":    $success,
-  "info":       $info,
-  "warning":    $warning,
-  "danger":     $danger,
-  "light":      $light,
-  "dark":       $dark,
-  "primary-light":    $primaryLight,
-  "primary-lighter":  $primaryLighter,
-  "primary-lightest": $primaryLightest,
-  "primary-dark":     $primaryDark,
-  "primary-darker":   $primaryDarker,
-  "primary-darkest":  $primaryDarkest,
-  "inverse":          $dark,
-  "gray":             $gray-500,
-  "gray-dark":        $gray-700,
-  "gray-light":       $gray-300
+  "primary":            $primary,
+  "secondary":          $secondary,
+  "success":            $success,
+  "info":               $info,
+  "warning":            $warning,
+  "danger":             $danger,
+  "light":              $light,
+  "dark":               $dark,
+  "primary-light":      $primaryLight,
+  "primary-lighter":    $primaryLighter,
+  "primary-lightest":   $primaryLightest,
+  "primary-dark":       $primaryDark,
+  "primary-darker":     $primaryDarker,
+  "primary-darkest":    $primaryDarkest,
+  "inverse":            $dark
 ), $theme-colors);
+$theme-colors: map-merge($theme-colors, $colors);
 
-$body-bg:                   $white;
 $body-color:                $gray-700;
 
 $link-color:                $gray-700;
 $link-hover-color:          darken($link-color, 3%);
 
-$component-active-color:    $white;
-$component-active-bg:       theme-color("primary");
-
-$footer-bg: $light $imp;
-$footer-bg-color: $light $imp;
-$footer-border-top: 1px solid $gray-400;
-
-@mixin primary-gradient() {
-    color: $component-active-color;
-    background-color: $primaryLight;
-    background: linear-gradient(to bottom, $primaryLightest 0%,$primaryLight 100%);
-    background-image: linear-gradient(to bottom, $primaryLightest, $primaryLight);
-}
-
 $pagination-color: $primaryLight;
 $pagination-border-color: $primaryLight;
-@mixin pagination-bg-color() {
-    @include primary-gradient();
-}
 
-$header-bg-color: $white;
-
-$bg-primary-color: $white;
-
-$section-link-color: $component-active-color;
-@mixin section-link-bg-color() {
-    background-color: $primaryLighter;
-    background: linear-gradient(to bottom, rgba($primaryLighter, 0.2) 0%,rgba($primaryLightest, 0.2) 100%);
-    background-image: linear-gradient(to bottom, rgba($primaryLighter, 0.2) 0%,rgba($primaryLightest, 0.2) 100%);
-}
-@mixin active-link-bg-color() {
-    @include primary-gradient();
-}
-$sidebar-link-border-bottom-color: #ddd;
-$sidebar-link-badge-bg-color: grey;
-
-$price-info-link-color: $primaryLighter;
-
-$socialicon-bg-color: $white;
-$socialicon-color: $primaryLight;
-$socialicon-hover-bg-color: $primaryLight;
-$socialicon-hover-color: $white;
+$component-active-bg:       theme-color("primary");
