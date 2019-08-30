@@ -13,7 +13,9 @@ silvercart.theme.initStickyElements = function() {
 };
 silvercart.theme.addStickyElements = function() {
     var sticky = silvercart.theme.initStickyElements();
-    sticky.addClass('sticky');
+    if ($('.aside-inner').length > 0) {
+        sticky.addClass('sticky');
+    }
 };
 silvercart.theme.removeStickyElements = function() {
     var sticky = silvercart.theme.initStickyElements();
