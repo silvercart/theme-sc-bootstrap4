@@ -9,7 +9,7 @@
                 <img src="<% if $SiteConfig.ShopLogo %>{$SiteConfig.ShopLogo.ScaleHeight(40).Link}<% else %>{$BaseHref}resources/vendor/silvercart/silvercart/client/img/logo.png" style="height:40px<% end_if %>" class="img-fluid" alt="{$SiteConfig.Title}">
                 <span class="sr-only">{$SiteConfig.Title} - {$SiteConfig.Tagline}</span>
             </a>
-                <h5 class="modal-title"><%t SilverStripe\Security\Security.LOGIN 'Log in' %></h5>
+            <h5 class="modal-title"><span class="fa fa-lock"></span> <%t SilverStripe\Security\Security.LOGIN 'Log in' %></h5>
             </div>
             <div class="modal-body">
                 <% if $Message %>
