@@ -18,6 +18,13 @@
         .b#{$breakpoint}-#{$i} { bottom: #{$i}px !important; }
         .l#{$breakpoint}-#{$i} { left: #{$i}px !important; }
     }
+    @for $i from -60 through -1 {
+        .zn#{$breakpoint}#{$i} { z-index: #{$i} !important; }
+        .tn#{$breakpoint}#{$i} { top: #{$i}px !important; }
+        .rn#{$breakpoint}#{$i} { right: #{$i}px !important; }
+        .bn#{$breakpoint}#{$i} { bottom: #{$i}px !important; }
+        .ln#{$breakpoint}#{$i} { left: #{$i}px !important; }
+    }
 }
 @mixin add-spacing-classes-for-breakpoint($breakpoint) {
     @for $i from 0 through 5 {
