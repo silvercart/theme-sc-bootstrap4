@@ -1,5 +1,5 @@
 <div class="row">
-    <section id="content-main" class="col-12 col-md-9">
+    <section id="content-main" class="col-12">
         <h2 class="sr-only"><%t SilverCart\Admin\Model\Config.ERROR_TITLE 'An error occured!' %></h2>
         <article>
             <div class="alert alert-error alert-block">
@@ -8,8 +8,4 @@
             </div>
         </article>
     </section>
-    <aside class="col-12 col-md-3">
-        {$SubNavigation}
-        {$InsertWidgetArea('Sidebar')}
-    </aside>
 </div>
