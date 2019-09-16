@@ -8,26 +8,29 @@
     <h3><%t SilverCart\Model\Pages\Page.CONTACT_FORM 'Contact form' %></h3>
     {$BeforeFormContent}
     <div class="clearfix">
-        {$Fields.dataFieldByName(Salutation).FieldHolder}
-        {$Fields.dataFieldByName(FirstName).FieldHolder}
-        {$Fields.dataFieldByName(Surname).FieldHolder}
-        {$Fields.dataFieldByName(Email).FieldHolder}
+        {$Fields.dataFieldByName('Salutation').FieldHolder}
+        {$Fields.dataFieldByName('FirstName').FieldHolder}
+        {$Fields.dataFieldByName('Surname').FieldHolder}
+        {$Fields.dataFieldByName('Email').FieldHolder}
     <% if $EnableStreetNumber %>
-        {$Fields.dataFieldByName(Street).FieldHolder}
-        {$Fields.dataFieldByName(StreetNumber).FieldHolder}
+        {$Fields.dataFieldByName('Street').FieldHolder}
+        {$Fields.dataFieldByName('StreetNumber').FieldHolder}
     <% end_if %>
     <% if $EnableCityNumber %>
-        {$Fields.dataFieldByName(Postcode).FieldHolder}
-        {$Fields.dataFieldByName(City).FieldHolder}
+        {$Fields.dataFieldByName('Postcode').FieldHolder}
+        {$Fields.dataFieldByName('City').FieldHolder}
     <% end_if %>
     <% if $EnableCountryNumber %>
-        {$Fields.dataFieldByName(CountryID).FieldHolder}
+        {$Fields.dataFieldByName('CountryID').FieldHolder}
     <% end_if %>
     <% if $EnablePhoneNumber %>
-        {$Fields.dataFieldByName(Phone).FieldHolder}
+        {$Fields.dataFieldByName('Phone').FieldHolder}
     <% end_if %>
-        {$Fields.dataFieldByName(Message).FieldHolder}
+        {$Fields.dataFieldByName('Message').FieldHolder}
         {$CustomFormSpecialFields}
+    <% if $EnableGoogleRecaptcha %>
+        {$Fields.dataFieldByName('GoogleRecaptcha').FieldHolder}
+    <% end_if %>
     <% loop $Actions %>
         <button class="btn btn-primary float-right" type="submit" id="{$ID}" title="{$Title}"><span class="fa fa-arrow-right"></span> {$Title}</button> 
     <% end_loop %> 
