@@ -7104,6 +7104,45 @@ a.close.disabled {
   width: 1rem;
   height: 1rem; }
 
+.toast {
+  max-width: 350px;
+  overflow: hidden;
+  font-size: 0.875rem;
+  background-color: rgba(255, 255, 255, 0.85);
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  opacity: 0;
+  border-radius: 0.25rem; }
+  .toast:not(:last-child) {
+    margin-bottom: 0.75rem; }
+  .toast.showing {
+    opacity: 1; }
+  .toast.show {
+    display: block;
+    opacity: 1; }
+  .toast.hide {
+    display: none; }
+
+.toast-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.25rem 0.75rem;
+  color: #6c757d;
+  background-color: rgba(255, 255, 255, 0.85);
+  background-clip: padding-box;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
+
+.toast-body {
+  padding: 0.75rem; }
+
 .align-baseline {
   vertical-align: baseline !important; }
 
@@ -40642,7 +40681,8 @@ table {
 
 /* product group page */
 .SilverCart-Model-Pages-ProductGroupPage .container-fluid,
-.SilverCart-Model-Pages-SearchResultsPage .container-fluid {
+.SilverCart-Model-Pages-SearchResultsPage .container-fluid,
+.BattleBear-SingleCardManager-Model-Pages-Page .container-fluid {
   max-width: 100% !important; }
 
 /* shopping cart table dimensions */
@@ -42577,7 +42617,8 @@ body.modal-sidebar-is-visible {
           box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
   -webkit-transition: right 500ms;
   transition: right 500ms;
-  overflow: auto; }
+  overflow: auto;
+  max-height: 100vh; }
   .modal-sidebar .modal-sidebar-header {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -42590,7 +42631,9 @@ body.modal-sidebar-is-visible {
             justify-content: space-between;
     padding: 1rem 1rem;
     border-bottom: 1px solid #dee2e6;
-    padding: 10px; }
+    padding: 1rem;
+    -ms-flex-negative: 0;
+        flex-shrink: 0; }
     .modal-sidebar .modal-sidebar-header .modal-sidebar-title {
       margin-bottom: 0;
       line-height: 1.5; }
@@ -42598,10 +42641,36 @@ body.modal-sidebar-is-visible {
       padding: 1rem 1rem;
       margin: -1rem -1rem -1rem auto; }
   .modal-sidebar .modal-sidebar-body {
-    padding: 10px; }
+    overflow-y: auto;
+    position: relative;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    padding: 1rem; }
+  .modal-sidebar .modal-sidebar-footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    padding: 1rem;
+    border-top: 1px solid #dee2e6;
+    -ms-flex-negative: 0;
+        flex-shrink: 0; }
 
 .modal-sidebar.is-visible {
-  right: 0px; }
+  right: 0px;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
 
 #modal-sidebar-mask {
   display: none;
@@ -42613,6 +42682,236 @@ body.modal-sidebar-is-visible {
   height: 100vh;
   background-color: #fff;
   opacity: 0.8; }
+
+.effect-color-highlight-danger {
+  animation: 2s color-highlight-danger;
+  -webkit-animation: 2s color-highlight-danger; }
+
+.effect-color-highlight-success {
+  animation: 2s color-highlight-success;
+  -webkit-animation: 2s color-highlight-success; }
+
+.effect-color-highlight-info {
+  animation: 2s color-highlight-info;
+  -webkit-animation: 2s color-highlight-info; }
+
+.effect-color-highlight-warning {
+  animation: 2s color-highlight-warning;
+  -webkit-animation: 2s color-highlight-warning; }
+
+.effect-color-highlight-primary {
+  animation: 2s color-highlight-primary;
+  -webkit-animation: 2s color-highlight-primary; }
+
+.effect-color-highlight-secondary {
+  animation: 2s color-highlight-secondary;
+  -webkit-animation: 2s color-highlight-secondary; }
+
+.effect-shake {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  -webkit-animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+          perspective: 1000px; }
+
+@keyframes color-highlight {
+  0% {
+    color: #495057; }
+  25% {
+    color: #FF4057; }
+  50% {
+    color: #495057; }
+  75% {
+    color: #FF4057; }
+  100% {
+    color: #495057; } }
+
+@-webkit-keyframes color-highlight {
+  0% {
+    color: #495057; }
+  25% {
+    color: #FF4057; }
+  50% {
+    color: #495057; }
+  75% {
+    color: #FF4057; }
+  100% {
+    color: #495057; } }
+
+@keyframes color-highlight-danger {
+  0% {
+    color: #495057; }
+  25% {
+    color: #FF4057; }
+  50% {
+    color: #495057; }
+  75% {
+    color: #FF4057; }
+  100% {
+    color: #495057; } }
+
+@-webkit-keyframes color-highlight-danger {
+  0% {
+    color: #495057; }
+  25% {
+    color: #FF4057; }
+  50% {
+    color: #495057; }
+  75% {
+    color: #FF4057; }
+  100% {
+    color: #495057; } }
+
+@keyframes color-highlight-success {
+  0% {
+    color: #495057; }
+  25% {
+    color: #28a745; }
+  50% {
+    color: #495057; }
+  75% {
+    color: #28a745; }
+  100% {
+    color: #495057; } }
+
+@-webkit-keyframes color-highlight-success {
+  0% {
+    color: #495057; }
+  25% {
+    color: #28a745; }
+  50% {
+    color: #495057; }
+  75% {
+    color: #28a745; }
+  100% {
+    color: #495057; } }
+
+@keyframes color-highlight-info {
+  0% {
+    color: #495057; }
+  25% {
+    color: #74DBEF; }
+  50% {
+    color: #495057; }
+  75% {
+    color: #74DBEF; }
+  100% {
+    color: #495057; } }
+
+@-webkit-keyframes color-highlight-info {
+  0% {
+    color: #495057; }
+  25% {
+    color: #74DBEF; }
+  50% {
+    color: #495057; }
+  75% {
+    color: #74DBEF; }
+  100% {
+    color: #495057; } }
+
+@keyframes color-highlight-warning {
+  0% {
+    color: #495057; }
+  25% {
+    color: #fd7e14; }
+  50% {
+    color: #495057; }
+  75% {
+    color: #fd7e14; }
+  100% {
+    color: #495057; } }
+
+@-webkit-keyframes color-highlight-warning {
+  0% {
+    color: #495057; }
+  25% {
+    color: #fd7e14; }
+  50% {
+    color: #495057; }
+  75% {
+    color: #fd7e14; }
+  100% {
+    color: #495057; } }
+
+@keyframes color-highlight-primary {
+  0% {
+    color: #495057; }
+  25% {
+    color: #083358; }
+  50% {
+    color: #495057; }
+  75% {
+    color: #083358; }
+  100% {
+    color: #495057; } }
+
+@-webkit-keyframes color-highlight-primary {
+  0% {
+    color: #495057; }
+  25% {
+    color: #083358; }
+  50% {
+    color: #495057; }
+  75% {
+    color: #083358; }
+  100% {
+    color: #495057; } }
+
+@keyframes color-highlight-secondary {
+  0% {
+    color: #495057; }
+  25% {
+    color: #FC3C3C; }
+  50% {
+    color: #495057; }
+  75% {
+    color: #FC3C3C; }
+  100% {
+    color: #495057; } }
+
+@-webkit-keyframes color-highlight-secondary {
+  0% {
+    color: #495057; }
+  25% {
+    color: #FC3C3C; }
+  50% {
+    color: #495057; }
+  75% {
+    color: #FC3C3C; }
+  100% {
+    color: #495057; } }
+
+@keyframes shake {
+  10%, 90% {
+    -webkit-transform: translate3d(-1px, 0, 0);
+            transform: translate3d(-1px, 0, 0); }
+  20%, 80% {
+    -webkit-transform: translate3d(2px, 0, 0);
+            transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% {
+    -webkit-transform: translate3d(-4px, 0, 0);
+            transform: translate3d(-4px, 0, 0); }
+  40%, 60% {
+    -webkit-transform: translate3d(4px, 0, 0);
+            transform: translate3d(4px, 0, 0); } }
+
+@-webkit-keyframes shake {
+  10%, 90% {
+    -webkit-transform: translate3d(-1px, 0, 0);
+            transform: translate3d(-1px, 0, 0); }
+  20%, 80% {
+    -webkit-transform: translate3d(2px, 0, 0);
+            transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% {
+    -webkit-transform: translate3d(-4px, 0, 0);
+            transform: translate3d(-4px, 0, 0); }
+  40%, 60% {
+    -webkit-transform: translate3d(4px, 0, 0);
+            transform: translate3d(4px, 0, 0); } }
 
 /*********************************************/
 /*********************************************/

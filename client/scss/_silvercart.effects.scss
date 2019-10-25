@@ -1,0 +1,141 @@
+.effect-color-highlight-danger {
+    animation: 2s color-highlight-danger;
+    -webkit-animation: 2s color-highlight-danger;
+}
+.effect-color-highlight-success {
+    animation: 2s color-highlight-success;
+    -webkit-animation: 2s color-highlight-success;
+}
+.effect-color-highlight-info {
+    animation: 2s color-highlight-info;
+    -webkit-animation: 2s color-highlight-info;
+}
+.effect-color-highlight-warning {
+    animation: 2s color-highlight-warning;
+    -webkit-animation: 2s color-highlight-warning;
+}
+.effect-color-highlight-primary {
+    animation: 2s color-highlight-primary;
+    -webkit-animation: 2s color-highlight-primary;
+}
+.effect-color-highlight-secondary {
+    animation: 2s color-highlight-secondary;
+    -webkit-animation: 2s color-highlight-secondary;
+}
+.effect-shake {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    -webkit-animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+@keyframes color-highlight {
+      0% {color: $body-color;}
+     25% {color: $danger;}
+     50% {color: $body-color;}
+     75% {color: $danger;}
+    100% {color: $body-color;}
+}
+@-webkit-keyframes color-highlight {
+      0% {color: $body-color;}
+     25% {color: $danger;}
+     50% {color: $body-color;}
+     75% {color: $danger;}
+    100% {color: $body-color;}
+}
+@keyframes color-highlight-danger {
+      0% {color: $body-color;}
+     25% {color: $danger;}
+     50% {color: $body-color;}
+     75% {color: $danger;}
+    100% {color: $body-color;}
+}
+@-webkit-keyframes color-highlight-danger {
+      0% {color: $body-color;}
+     25% {color: $danger;}
+     50% {color: $body-color;}
+     75% {color: $danger;}
+    100% {color: $body-color;}
+}
+@keyframes color-highlight-success {
+      0% {color: $body-color;}
+     25% {color: $success;}
+     50% {color: $body-color;}
+     75% {color: $success;}
+    100% {color: $body-color;}
+}
+@-webkit-keyframes color-highlight-success {
+      0% {color: $body-color;}
+     25% {color: $success;}
+     50% {color: $body-color;}
+     75% {color: $success;}
+    100% {color: $body-color;}
+}
+@keyframes color-highlight-info {
+      0% {color: $body-color;}
+     25% {color: $info;}
+     50% {color: $body-color;}
+     75% {color: $info;}
+    100% {color: $body-color;}
+}
+@-webkit-keyframes color-highlight-info {
+      0% {color: $body-color;}
+     25% {color: $info;}
+     50% {color: $body-color;}
+     75% {color: $info;}
+    100% {color: $body-color;}
+}
+@keyframes color-highlight-warning {
+      0% {color: $body-color;}
+     25% {color: $warning;}
+     50% {color: $body-color;}
+     75% {color: $warning;}
+    100% {color: $body-color;}
+}
+@-webkit-keyframes color-highlight-warning {
+      0% {color: $body-color;}
+     25% {color: $warning;}
+     50% {color: $body-color;}
+     75% {color: $warning;}
+    100% {color: $body-color;}
+}
+@keyframes color-highlight-primary {
+      0% {color: $body-color;}
+     25% {color: $primary;}
+     50% {color: $body-color;}
+     75% {color: $primary;}
+    100% {color: $body-color;}
+}
+@-webkit-keyframes color-highlight-primary {
+      0% {color: $body-color;}
+     25% {color: $primary;}
+     50% {color: $body-color;}
+     75% {color: $primary;}
+    100% {color: $body-color;}
+}
+@keyframes color-highlight-secondary {
+      0% {color: $body-color;}
+     25% {color: $secondary;}
+     50% {color: $body-color;}
+     75% {color: $secondary;}
+    100% {color: $body-color;}
+}
+@-webkit-keyframes color-highlight-secondary {
+      0% {color: $body-color;}
+     25% {color: $secondary;}
+     50% {color: $body-color;}
+     75% {color: $secondary;}
+    100% {color: $body-color;}
+}
+@keyframes shake {
+    10%, 90% {transform: translate3d(-1px, 0, 0);}
+    20%, 80% {transform: translate3d(2px, 0, 0);}
+    30%, 50%, 70% {transform: translate3d(-4px, 0, 0);}
+    40%, 60% {transform: translate3d(4px, 0, 0);}
+}
+@-webkit-keyframes shake {
+    10%, 90% {transform: translate3d(-1px, 0, 0);}
+    20%, 80% {transform: translate3d(2px, 0, 0);}
+    30%, 50%, 70% {transform: translate3d(-4px, 0, 0);}
+    40%, 60% {transform: translate3d(4px, 0, 0);}
+}
