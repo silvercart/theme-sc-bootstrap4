@@ -7,7 +7,9 @@
 <%--{$RequireColorSchemeCSS('theme-', 'default')}--%>
 <% require themedCSS("client/css/theme-default") %>
 <% require themedCSS("client/css/animate.min") %>
-<% require themedCSS("client/css/font-awesome.min") %>
+<%-- require themedCSS("client/css/font-awesome.min") --%>
+<% require themedCSS("client/css/fa-all") %>
+<% require themedCSS("client/css/fa-shims") %>
 <% require themedCSS("client/css/jquery.fancybox") %>
 <% require themedCSS("client/css/slidorion") %>
 <% require themedJavascript("client/js/jquery-3.2.1.min") %>
