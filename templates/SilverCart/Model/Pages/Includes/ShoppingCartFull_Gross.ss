@@ -24,6 +24,9 @@
 </div>
     <% end_if %>
 <% end_if %>
+<% if $hasNotice %>
+<div class="alert alert-warning mb-0"><span class="fa fa-exclamation-circle"></span> {$getShoppingCartPositionNotices}</div>
+<% end_if %>
 <div class="silvercart-shopping-cart-full mt-3">
     <table class="table responsive-table">
         <% include SilverCart/Model/Pages/ShoppingCartFull_TableHead %>
