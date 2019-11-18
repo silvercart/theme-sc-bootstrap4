@@ -50,7 +50,8 @@ td.h1, td.h2, td.h3, td.h4, td.h5, td.h6 { margin: 0; }
 .fa-checkoutstep2:before       { content: "\f007"; }
 .fa-checkoutstep3:before       { content: "\f0ac"; }
 .fa-checkoutstep4:before       { content: "\f0b1"; }
-.fa-checkoutstep5:before       { content: "\f046"; }
+.fa-checkoutstep5              { font-weight: 400!important; }
+.fa-checkoutstep5:before       { content: "\f14a"; }
 .fa-checkoutstep6:before       { content: "\f00c"; }
 .fa-groupview-tile:before      { content: "\f009"; }
 .fa-groupview-fourtile:before  { content: "\f0ce"; }

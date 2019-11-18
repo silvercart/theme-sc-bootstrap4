@@ -14049,8 +14049,11 @@ td.h1, td.h2, td.h3, td.h4, td.h5, td.h6 {
 .fa-checkoutstep4:before {
   content: "\f0b1"; }
 
+.fa-checkoutstep5 {
+  font-weight: 400 !important; }
+
 .fa-checkoutstep5:before {
-  content: "\f046"; }
+  content: "\f14a"; }
 
 .fa-checkoutstep6:before {
   content: "\f00c"; }
