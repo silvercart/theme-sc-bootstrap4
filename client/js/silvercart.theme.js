@@ -7,6 +7,9 @@ silvercart.theme.initTooltips = function() {
     }
 };
 silvercart.theme.initStickyElements = function() {
+    if ($('#content-main').hasClass('no-sticky')) {
+        return;
+    }
     $('aside').wrapInner('<div class="aside-inner"></div>');
     $('#content-main').wrapInner('<div class="main-inner"></div>');
     return $('.aside-inner').innerHeight() < $('.main-inner').innerHeight() ? $('.aside-inner') : $('.main-inner');
