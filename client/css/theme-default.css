@@ -42720,6 +42720,10 @@ body.modal-sidebar-is-visible {
   -webkit-perspective: 1000px;
           perspective: 1000px; }
 
+.effect-rotating {
+  -webkit-animation: rotating .75s linear infinite;
+          animation: rotating .75s linear infinite; }
+
 @keyframes color-highlight {
   0% {
     color: #495057; }
@@ -42915,6 +42919,22 @@ body.modal-sidebar-is-visible {
   40%, 60% {
     -webkit-transform: translate3d(4px, 0, 0);
             transform: translate3d(4px, 0, 0); } }
+
+@keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
+
+@-webkit-keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg); } }
 
 /*********************************************/
 /*********************************************/
