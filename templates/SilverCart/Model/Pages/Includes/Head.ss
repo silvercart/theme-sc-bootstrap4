@@ -12,6 +12,7 @@
 <% require themedCSS("client/css/fa-shims") %>
 <% require themedCSS("client/css/jquery.fancybox") %>
 <% require themedCSS("client/css/slidorion") %>
+<% require themedCSS("client/css/keyrune.min") %>
 <% require themedJavascript("client/js/jquery-3.2.1.min") %>
 {$RequireI18nJavaScript}
 {$RequireExtendedJavaScript}
