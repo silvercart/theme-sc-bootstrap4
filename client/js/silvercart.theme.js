@@ -6,6 +6,13 @@ silvercart.theme.initTooltips = function() {
         $('[data-toggle="tooltip"]').tooltip({animation: false});
     }
 };
+silvercart.theme.initCustomModals = function() {
+    if ($('.toggle-modal').length > 0) {
+        $(document).on('click', '.toggle-modal', function() {
+            $($(this).data('target')).modal();
+        });
+    }
+};
 silvercart.theme.initStickyElements = function() {
     if ($('#content-main').hasClass('no-sticky')) {
         return;
@@ -254,6 +261,7 @@ $(document).ready(function(){
         silvercart.theme.removeStickyElements();
     }
 
+    silvercart.theme.initCustomModals();
     silvercart.theme.initShoppingCartDropdown();
     silvercart.theme.initCarousels();
     silvercart.theme.initFancybox();
