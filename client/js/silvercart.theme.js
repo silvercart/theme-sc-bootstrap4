@@ -5,6 +5,9 @@ silvercart.theme.initTooltips = function() {
     if ($('[data-toggle="tooltip"]').length > 0) {
         $('[data-toggle="tooltip"]').tooltip({animation: false});
     }
+    if ($('.has-tooltip').length > 0) {
+        $('.has-tooltip').tooltip({animation: false});
+    }
 };
 silvercart.theme.initCustomModals = function() {
     if ($('.toggle-modal').length > 0) {
