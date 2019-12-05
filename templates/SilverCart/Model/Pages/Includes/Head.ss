@@ -22,6 +22,7 @@
 <% require themedJavascript("client/js/jquery.fancybox.min") %>
 <% require themedJavascript("client/js/lazyload") %>
 <% require themedJavascript("client/js/sly.min") %>
+<% require themedJavascript("client/js/silvercart.cookie") %>
 <% require themedJavascript("client/js/silvercart.theme") %>
 <% require themedJavascript("client/js/silvercart.forms") %>
 <% require themedJavascript("client/js/silvercart.attributes") %>

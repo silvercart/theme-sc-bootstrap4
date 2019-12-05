@@ -42686,6 +42686,9 @@ body.modal-sidebar-is-visible {
   background-color: #fff;
   opacity: 0.8; }
 
+main.modal-sidebar-pinned {
+  padding-right: calc(350px + 1.5rem) !important; }
+
 .effect-color-highlight-danger {
   animation: 2s color-highlight-danger;
   -webkit-animation: 2s color-highlight-danger; }
