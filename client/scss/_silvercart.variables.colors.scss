@@ -35,6 +35,7 @@ $yellow:  #ffc107 !default;
 $green:   #28a745 !default;
 $teal:    #20c997 !default;
 $cyan:    #17a2b8 !default;
+$gold:    #cdb591 !default;
 
 $primary:       $blue !default;
 $secondary:     $gray-600 !default;
@@ -58,6 +59,7 @@ $colors: map-merge((
   "green":      $green,
   "teal":       $teal,
   "cyan":       $cyan,
+  "gold":       $gold,
   "white":      $white,
   "gray":       $gray-600,
   "gray-dark":  $gray-800,
