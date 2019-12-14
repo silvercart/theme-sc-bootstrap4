@@ -5865,7 +5865,7 @@ input[type="button"].btn-block {
   line-height: 1.25;
   color: #0a416f;
   background-color: #fff;
-  border: 1px solid #0a416f; }
+  border: 1px solid #dee2e6; }
   .page-link:hover {
     z-index: 2;
     color: #0056b3;
@@ -5891,7 +5891,7 @@ input[type="button"].btn-block {
   z-index: 1;
   color: #fff;
   background-color: #007bff;
-  border-color: #007bff; }
+  border-color: #0a416f; }
 
 .page-item.disabled .page-link {
   color: #6c757d;
