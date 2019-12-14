@@ -104,6 +104,9 @@ silvercart.theme.toggleBackToTop = function(scrollPos) {
     }
 };
 silvercart.theme.toggleFixMainNavbar = function(scrollPos) {
+    if ($('#navbar').length === 0) {
+        return;
+    }
     var scrollTop = scrollPos;
     if (scrollTop >= $('header').height()) {
         $('#navbar').removeClass('static-top').addClass('fixed-top');
