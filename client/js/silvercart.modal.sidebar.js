@@ -101,12 +101,13 @@ silvercart.modal.sidebar = function() {
                 }
                 var pinnedSidebars = pinnedSidebarsCookie.split(',');
                 $(pinnedSidebars).each(function(index, value) {
-                    var htmlID = '#' + value.replace(/__/g, '-');
-                    if ($(htmlID).length === 0) {
+                    var htmlID       = '#' + value.replace(/__/g, '-'),
+                        htmlSelector = htmlID + '.modal-sidebar';
+                    if ($(htmlSelector).length === 0) {
                         return;
                     }
-                    private.toggleModal($(htmlID), false);
-                    private.toggleModalPinned($(htmlID), false);
+                    private.toggleModal($(htmlSelector), false);
+                    private.toggleModalPinned($(htmlSelector), false);
                 });
             }
         },
