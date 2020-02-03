@@ -18,7 +18,7 @@
         </div>
         <div id="mainnav" class="collapse navbar-collapse position-relative">
             <ul class="navbar-nav nav-fill w-100">
-            <% loop $PageByIdentifierCode('SilvercartFrontPage') %>
+            <% with $PageByIdentifierCode('SilvercartFrontPage') %>
                 <li class="nav-item d-none d-lg-block">
                     <a class="nav-link navlink-home <% if $isCurrent %>active<% end_if %>" href="{$Link}" title="{$SiteConfig.Title} - {$SiteConfig.Tagline}">
                     <% if $SiteConfig.ShopNavigationLogo %>
@@ -28,12 +28,21 @@
                     <% end_if %>
                     </a>
                 </li>
-            <% end_loop %>
+            <% end_with %>
             <% with $MainNavigationRootPage %>
                 <% loop $Children %>
+                    <% if $Children %>
+                <li id="navlist{$ID}" class="nav-item dropdown" data-item-id="{$ID}">
+                    <a href="{$Link}" title="{$MenuTitle.XML}" class="nav-link dropdown-toggle <% if $isCurrent %>active<% else_if $isSection %>section<% end_if %>" data-toggle="dropdown">{$MenuTitle.XML}</a>
+                    <ul class="dropdown-menu loading" data-dropdown-in="lightSpeedIn" data-dropdown-out="lightSpeedOut" id="navbarToggleExternalContent{$ID}">
+                        <li class="col nav-item text-gray py-4"><span class="spinner-border spinner-border-lg"></span></li>
+                    </ul>
+                </li>
+                    <% else %>
                 <li id="navlist{$ID}" class="nav-item" data-item-id="{$ID}">
                     <a href="{$Link}" title="{$MenuTitle.XML}" class="nav-link <% if $isCurrent %>active<% else_if $isSection %>section<% end_if %>">{$MenuTitle.XML}</a>
                 </li>
+                    <% end_if %>
                 <% end_loop %>
             <% end_with %>
             </ul>

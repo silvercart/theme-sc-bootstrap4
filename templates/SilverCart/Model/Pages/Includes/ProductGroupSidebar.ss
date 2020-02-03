@@ -4,15 +4,21 @@
 <% if $Parent.IsProductGroupPage %>
     <% include SilverCart\Model\Pages\ProductGroupSidebar_Parent %>
 <% end_if %>
+<% loop $Parent.Children %>
+    <% if $ID == $Up.Up.ID %>
     <li class="ml-12"><strong>{$MenuTitle}</strong>
-<% if $Children %>
+        <% if $Children %>
         <ul class="list-unstyled ml-3">
-    <% loop $Children %>
+            <% loop $Children %>
             <li><a href="{$Link}" title="{$Title}">{$MenuTitle}</a></li>
-    <% end_loop %>
+            <% end_loop %>
         </ul>
-<% end_if %>
+        <% end_if %>
     </li>
+    <% else %>
+    <li class="ml-12"><a href="{$Link}" title="{$Title}">{$MenuTitle}</a></li>
+    <% end_if %>
+<% end_loop %>
 </ul>
 <% if $ShowPreorderableProducts || $ShowNewProducts || $ExtendedDynamicProductGroupNavigationItems %>
 <ul class="list-unstyled mb-3 pb-3 border-bottom">

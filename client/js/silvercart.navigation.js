@@ -7,7 +7,8 @@ silvercart.navigation.main = function() {
         },
         selector = {
             navigation: '#mainnav',
-            navigationItem: '#mainnav > ul > .nav-item'
+            navigationItem: '#mainnav > ul > .nav-item',
+            navigationItemLink: '#mainnav > ul > .nav-item > a'
         },
         private = {
             initSubNavigation: function() {
@@ -36,6 +37,28 @@ silvercart.navigation.main = function() {
                         }
                     });
                 });
+            },
+            loadSubNavigation: function()
+            {
+                var item   = $(this).closest('li'),
+                    itemID = item.data('item-id'),
+                    sub    = $('ul.loading', item);
+                if (typeof itemID === 'undefined') {
+                    return;
+                }
+                if (sub.length === 0) {
+                    return;
+                }
+                $.ajax({
+                    url: property.baseURL + 'sc-action/loadSubNavigation/' + itemID,
+                    success: function(html) {
+                        if (html.length === 0) {
+                            return;
+                        }
+                        sub.removeClass('loading');
+                        sub.html($(html).html());
+                    }
+                });
             }
         },
         public = {
@@ -47,7 +70,8 @@ silvercart.navigation.main = function() {
                 if (property.baseURL.split("").reverse().join("").indexOf('/') !== 0) {
                     property.baseURL = property.baseURL + '/';
                 }
-                private.initSubNavigation();
+                $(document).on('click', selector.navigationItemLink, private.loadSubNavigation);
+                //private.initSubNavigation();
             }
         };
     return public;
