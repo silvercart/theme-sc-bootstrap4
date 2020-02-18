@@ -19,13 +19,18 @@ silvercart.cookie = function() {
         public = {
             getValue: function (key)
             {
-                var fValue = '';
+                var fValue = '',
+                    found  = false;
                 $(private.getPairs()).each(function(cIndex, cPair) {
+                    if (found) {
+                        return;
+                    }
                     var cKeyValue = private.getKeyValue(cPair),
                         cKey      = cKeyValue[0],
                         cValue    = cKeyValue[1];
                     if (key === cKey) {
                         fValue = cValue;
+                        found  = true;
                     }
                 });
                 return fValue;

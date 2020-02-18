@@ -155,6 +155,14 @@ tr.next-border-top-0 + tr td { border-top-width: 0 !important; }
     padding: 4px 23px 4px 8px;
     background-position-x: calc(100% - 8px);
 }
+input.no-arrows[type="number"]::-webkit-outer-spin-button,
+input.no-arrows[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input.no-arrows[type="number"] {
+    -moz-appearance: textfield;
+}
 
 @keyframes rotate {
   from {

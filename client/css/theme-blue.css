@@ -18132,6 +18132,14 @@ tr.next-border-top-0 + tr td {
   padding: 4px 23px 4px 8px;
   background-position-x: calc(100% - 8px); }
 
+input.no-arrows[type="number"]::-webkit-outer-spin-button,
+input.no-arrows[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+input.no-arrows[type="number"] {
+  -moz-appearance: textfield; }
+
 @-webkit-keyframes rotate {
   from {
     -webkit-transform: rotate(0deg);
@@ -42707,6 +42715,9 @@ aside .mx-aside-auto {
 
 body.modal-sidebar-is-visible {
   overflow: hidden; }
+
+body.modal-sidebar-is-visible.modal-sidebar-pinned {
+  overflow: auto; }
 
 .modal-sidebar {
   display: none;

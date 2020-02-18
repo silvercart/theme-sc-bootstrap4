@@ -28,6 +28,7 @@
 <% require themedJavascript("client/js/silvercart.attributes") %>
 <% require themedJavascript("client/js/silvercart.sly") %>
 <% require themedJavascript("client/js/silvercart.modal.sidebar") %>
+<% require themedJavascript("client/js/silvercart.modal.sidebar.cart") %>
 <% require themedJavascript("client/js/silvercart.navigation") %>
 <% require themedJavascript("client/js/jquery.slidorion.min") %>
 <% require themedJavascript("client/javascript/jquery.pixeltricks.tools") %>

@@ -1,6 +1,9 @@
 body.modal-sidebar-is-visible {
     overflow: hidden;
 }
+body.modal-sidebar-is-visible.modal-sidebar-pinned {
+    overflow: auto;
+}
 .modal-sidebar {
     display: none;
     position: fixed;
