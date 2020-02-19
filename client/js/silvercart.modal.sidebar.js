@@ -225,7 +225,10 @@ silvercart.modal.sidebar = function() {
                 {
                     var inputQuantity = $(selector.inputPositionQuantity, position),
                         max           = parseInt(inputQuantity.attr('max')),
-                        quantity      = parseInt(inputQuantity.val());
+                        quantity      = parseInt(inputQuantity.val()),
+                        targetURL     = inputQuantity.data('target'),
+                        sCallback     = inputQuantity.data('successCallback'),
+                        positionID    = inputQuantity.data('position-id');
                     if (property.timeout.positionQuantity !== false) {
                         clearTimeout(property.timeout.positionQuantity);
                         property.timeout.positionQuantity = false;
@@ -243,11 +246,29 @@ silvercart.modal.sidebar = function() {
                             inputQuantity.val(0);
                         }
                         property.DOM.appendLoadingMask($(selector.inputGroupPositionQuantity, position), 'gray', 'bg-white', false, 'sm');
-                        setTimeout(function() {
-                            $(selector.inputGroupPositionQuantity + ' .btn', position).attr('disabled', false);
-                            $(selector.inputGroupPositionQuantity + ' input', position).attr('disabled', false);
-                            property.DOM.removeLoadingMask($(selector.inputGroupPositionQuantity, position));
-                        }, 1000);
+                        $.ajax({
+                            url:      targetURL,
+                            dataType: 'json',
+                            type:     'POST',
+                            data: {
+                                PositionID: positionID,
+                                Quantity:   quantity
+                            },
+                            success: function(data) {
+                                $(selector.inputGroupPositionQuantity + ' .btn', position).attr('disabled', false);
+                                $(selector.inputGroupPositionQuantity + ' input', position).attr('disabled', false);
+                                property.DOM.removeLoadingMask($(selector.inputGroupPositionQuantity, position));
+                                if (typeof sCallback === 'string') {
+                                    eval(sCallback);
+                                }
+                            },
+                            error: function(data, textStatus, error) {
+                                $(selector.inputGroupPositionQuantity + ' .btn', position).attr('disabled', false);
+                                $(selector.inputGroupPositionQuantity + ' input', position).attr('disabled', false);
+                                property.DOM.removeLoadingMask($(selector.inputGroupPositionQuantity, position));
+                                private.theme.positionAppendAlert(position, property.DOM.fa('exclamation-triangle') + ' ' + ss.i18n._t('SingleCardManager.AnErrorOccurred', 'Oops! An error occurred. Please try again.'), 'danger');
+                            }
+                        });
                     }, 700);
                 },
             },

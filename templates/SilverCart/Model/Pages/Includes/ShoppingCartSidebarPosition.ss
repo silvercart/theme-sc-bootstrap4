@@ -11,7 +11,7 @@
                 <div class="input-group-prepend">
                     <button class="btn btn-light btn-position-decrease" type="button" data-position-id="{$ID}"><span class="fa fa-minus"></span></button>
                 </div>
-                <input class="form-control bg-light border-light text-center input-position-quantity no-arrows" type="number" aria-label="{$fieldLabel('Quantity')}" value="{$TypeSafeQuantity}" name="Quantity[{$ID}]" data-name="Quantity" data-position-id="{$ID}" min="0" max="<% if $Product.StockQuantity > 4 %>4<% else %>{$Product.StockQuantity}<% end_if %>">
+                <input class="form-control bg-light border-light text-center input-position-quantity no-arrows" type="number" aria-label="{$fieldLabel('Quantity')}" value="{$TypeSafeQuantity}" name="Quantity[{$ID}]" data-name="Quantity" data-position-id="{$ID}" data-target="{$CurrentPage.Link('updateQuantity')}" data-success-callback="silvercart.modal.sidebarShoppingCart().updateInfo(data);" min="0" max="<% if $Product.StockQuantity > 4 %>4<% else %>{$Product.StockQuantity}<% end_if %>">
                 <div class="input-group-append">
                     <button class="btn btn-light btn-position-increase" type="button" data-position-id="{$ID}"><span class="fa fa-plus"></span></button>
                 </div>

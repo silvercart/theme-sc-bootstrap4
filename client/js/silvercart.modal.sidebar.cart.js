@@ -18,10 +18,10 @@ silvercart.modal.sidebarShoppingCart = function() {
                         $(selector.badgeCart).addClass('d-none');
                     } else {
                         $(selector.quantityCart).html(quantity);
-                        $(selector.badgeCart).removeClass('d-none').addClass('effect-shake');
+                        $(selector.badgeCart).removeClass('d-none').addClass('effect-bounce-badge');
                         setTimeout(function() {
-                            $(selector.badgeCart).removeClass('effect-shake');
-                        }, 900);
+                            $(selector.badgeCart).removeClass('effect-bounce-badge');
+                        }, 3000);
                     }
                 }
             }
