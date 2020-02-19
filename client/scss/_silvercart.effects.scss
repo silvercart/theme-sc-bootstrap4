@@ -29,6 +29,10 @@
     backface-visibility: hidden;
     perspective: 1000px;
 }
+.effect-bounce-badge {
+    animation: bounce-badge 1.5s;
+    -webkit-animation: bounce-badge 1.5s;
+}
 .effect-rotating {
     animation: rotating .75s linear infinite;
 }
@@ -141,6 +145,14 @@
     20%, 80% {transform: translate3d(2px, 0, 0);}
     30%, 50%, 70% {transform: translate3d(-4px, 0, 0);}
     40%, 60% {transform: translate3d(4px, 0, 0);}
+}
+@keyframes bounce-badge {
+     0%, 32%, 64%, 96% {transform: translateY(0);}
+    16%, 48%, 80% {transform: translateY(-10px);}
+}
+@-webkit-keyframes bounce-badge {
+     0%, 32%, 64%, 96% {transform: translateY(0);}
+    16%, 48%, 80% {transform: translateY(-10px);}
 }
 @keyframes rotating {
     from {transform: rotate(0deg);}
