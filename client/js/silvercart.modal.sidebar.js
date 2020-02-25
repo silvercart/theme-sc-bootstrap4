@@ -4,7 +4,7 @@ var silvercart       = silvercart       ? silvercart       : [];
 silvercart.modal.sidebar = function() {
     var property = {
             cookie: silvercart.cookie(),
-            DOM:    BattleBear.DOM(),
+            DOM:    silvercart.DOM(),
             xhr:    false,
             timeout: {
                 positionQuantity: false,
