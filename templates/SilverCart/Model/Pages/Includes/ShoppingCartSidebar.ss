@@ -16,7 +16,7 @@
     </div>
     <div class="modal-sidebar-footer d-block text-right">
     <% if $CurrentMember.ShoppingCart.isFilled %>
-        <a class="btn btn-primary btn-checkout btn-continue" href="#"><%t SilverCart\Model\Pages\Page.CHECKOUT 'Checkout' %> <span class="fa fa-angle-double-right"></span></a>
+        <a class="btn btn-primary btn-checkout btn-continue" href="{$Link('checkout')}"><%t SilverCart\Model\Pages\Page.CHECKOUT 'Checkout' %> <span class="fa fa-angle-double-right"></span></a>
     <% else %>
         <a class="btn btn-primary btn-checkout btn-continue disabled" href="javascript;"><%t SilverCart\Model\Pages\Page.CHECKOUT 'Checkout' %> <span class="fa fa-angle-double-right"></span></a>
     <% end_if %>
