@@ -145,11 +145,11 @@ silvercart.DOM = (function () {
                     if (typeof type === 'undefined') {
                         type = 'primary';
                     }
-                    var cssPosition    = 'fixed',
+                    var cssPosition    = 'absolute',
                         spinnerSize    = '',
                         positionFactor = 26;
-                    if (fixed === false) {
-                        cssPosition = 'absolute';
+                    if (fixed === true) {
+                        cssPosition = 'fixed';
                     }
                     if (typeof size === 'string') {
                         spinnerSize = 'spinner-border-' + size;
