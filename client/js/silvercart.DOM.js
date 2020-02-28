@@ -157,7 +157,6 @@ silvercart.DOM = (function () {
                             positionFactor = 8;
                         }
                     }
-                    $(selector.itemLoadingMask, item).append('<div class="spinner-border ' + spinnerSize + ' text-' + type + ' ml-2" role="status"><span class="sr-only">...</span></div>');
                     $(selector.itemLoadingMask, item).addClass(bgColorClass);
                     $(selector.itemLoadingMask, item).css({
                         "display": 'none',
@@ -169,23 +168,26 @@ silvercart.DOM = (function () {
                         "z-index": '1040',
                         "opacity": '0.8'
                     });
-                    $(selector.itemLoadingMask + ' .spinner-border', item).css({
-                        "position": 'absolute',
-                        "top": 'calc(50% - ' + positionFactor + 'px)',
-                        "left": 'calc(50% - ' + positionFactor + 'px)'
-                    });
-                    var positionTop  = $(selector.itemLoadingMask, item).innerHeight() / 2 - positionFactor,
-                        positionLeft = $(selector.itemLoadingMask, item).innerWidth() / 2 - positionFactor * 2;
-                    if (positionTop > 0) {
+                    setTimeout(function() {
+                        $(selector.itemLoadingMask, item).append('<div class="spinner-border ' + spinnerSize + ' text-' + type + ' ml-2" role="status"><span class="sr-only">...</span></div>');
                         $(selector.itemLoadingMask + ' .spinner-border', item).css({
-                            "top": positionTop + 'px'
+                            "position": 'absolute',
+                            "top": 'calc(50% - ' + positionFactor + 'px)',
+                            "left": 'calc(50% - ' + positionFactor + 'px)'
                         });
-                    }
-                    if (positionLeft > 0) {
-                        $(selector.itemLoadingMask + ' .spinner-border', item).css({
-                            "left": positionLeft + 'px'
-                        });
-                    }
+                        var positionTop  = $(selector.itemLoadingMask, item).innerHeight() / 2 - positionFactor,
+                            positionLeft = $(selector.itemLoadingMask, item).innerWidth() / 2 - positionFactor * 2;
+                        if (positionTop > 0) {
+                            $(selector.itemLoadingMask + ' .spinner-border', item).css({
+                                "top": positionTop + 'px'
+                            });
+                        }
+                        if (positionLeft > 0) {
+                            $(selector.itemLoadingMask + ' .spinner-border', item).css({
+                                "left": positionLeft + 'px'
+                            });
+                        }
+                    }, 100);
                 }
                 $(selector.itemLoadingMask, item).fadeIn('fast');
             },
