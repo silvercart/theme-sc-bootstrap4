@@ -1,7 +1,7 @@
 <div class="landscape-orientation list-item card card-product text-center text-md-left mb-3 {$EvenOdd} {$FirstLast}">
     <header class="card-header row no-gutters">
         <h2 id="product{$ID}" class="col-lg-10 card-title h3">
-            <a href="{$Link}" class="highlight" title="<%t SilverCart\Model\Pages\Page.SHOW_DETAILS_FOR 'Show details for {title}' title=$Title %>">{$Title.HTML}</a>
+            <a href="{$Link}" class="highlight" title="<%t SilverCart\Model\Pages\Page.SHOW_DETAILS_FOR 'Show details for {title}' title=$Title %>">{$ListTitle.HTML}</a>
         </h2>
         <span class="col-lg-2 card-subtitle text-right"> <%t SilverCart\Model\Product\Product.PRODUCTNUMBER_SHORT 'Item no.' %>: {$ProductNumberShop}</span>
     </header>

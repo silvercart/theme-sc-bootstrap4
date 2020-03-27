@@ -24,7 +24,7 @@
         <div class="col-12 col-md-8">
             <header class="card-header no-gutters">
                 <h2 id="product{$ID}" class="card-title h4">
-                    <a href="{$Link}" class="highlight" title="<%t SilverCart\Model\Pages\Page.SHOW_DETAILS_FOR 'Show details for {title}' title=$Title %>">{$Title.HTML}</a>
+                    <a href="{$Link}" class="highlight" title="<%t SilverCart\Model\Pages\Page.SHOW_DETAILS_FOR 'Show details for {title}' title=$Title %>">{$ListTitle.HTML}</a>
                 </h2>
             </header>
             <div class="row">
