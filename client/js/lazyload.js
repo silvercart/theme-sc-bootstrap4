@@ -132,6 +132,7 @@
                             if (sizes) {
                                 entry.target.sizes = sizes;
                             }
+                            entry.target.setAttribute("class", entry.target.getAttribute("class") + " lazyloaded");
                         } else {
                             entry.target.style.backgroundImage = "url(" + src + ")";
                         }
@@ -178,6 +179,7 @@
                                 image.setAttribute("sizes", sizes);
                                 image.removeAttribute("data-sizes");
                             }
+                            image.setAttribute("class", image.getAttribute("class") + " lazyloaded");
                         }
                     } else {
                         image.style.backgroundImage = "url(" + src + ")";

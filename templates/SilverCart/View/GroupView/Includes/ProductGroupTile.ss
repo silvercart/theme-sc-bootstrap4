@@ -1,5 +1,5 @@
 <div class="d-flex col-xxl-2 col-xl-3 col-lg-3 col-md-4 col-sm-4 col-6 clearfix">
-    <figure class="effect-overlay" onclick="document.location.href='{$Link}';">
+    <figure class="effect-overlay w-100" onclick="document.location.href='{$Link}';">
         <a href="{$Link}" title="{$Title}">
         <% if $GroupPicture %>
             <img class="img-fluid lazyload" src="{$BaseHref}resources/vendor/silvercart/silvercart/client/img/loader-circle.gif" data-src="{$GroupPicture.Pad(375,250).URL}" alt="{$MenuTitle.HTML}" />

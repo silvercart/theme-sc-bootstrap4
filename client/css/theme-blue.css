@@ -40932,6 +40932,16 @@ figure.effect-overlay img.img-fluid {
   width: 100%;
   padding: 2%; }
 
+figure.effect-overlay > a {
+  display: inline-block; }
+
+figure.effect-overlay img.img-fluid.lazyload:not(.lazyloaded) {
+  width: auto;
+  min-width: auto;
+  min-height: auto;
+  margin-top: 70px;
+  margin-bottom: 70px; }
+
 figure.effect-overlay .manufacturerlogo {
   position: absolute;
   bottom: 10%;
