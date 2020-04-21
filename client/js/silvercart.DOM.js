@@ -25,7 +25,7 @@ silvercart.DOM = (function () {
                 if (typeof type === 'undefined') {
                     type = 'info';
                 }
-                return '<div class="alert alert-' + type + '">' + message + private.getAlertDismissalButton() + '</div>';
+                return '<div class="alert alert-' + type + '">' + private.getAlertDismissalButton() + message + '</div>';
             },
             getAlertDismissalButton: function()
             {
@@ -219,13 +219,20 @@ silvercart.DOM = (function () {
                     $('.alert.alert-' + type, item).remove();
                 }
             },
+            removeAlertAfter: function(item, type)
+            {
+                public.removeAlert(item.parent(), type);
+            },
             removeAlertBefore: function(item, type)
             {
-                public.removeAlert(item.parent());
+                public.removeAlert(item.parent(), type);
             },
-            fa: function(iconCode)
+            fa: function(iconCode, baseClass)
             {
-                return '<span class="fa fa-' + iconCode + '"></span>';
+                if (typeof baseClass === 'undefined') {
+                    baseClass = 'fas';
+                }
+                return '<span class="' + baseClass + ' fa-' + iconCode + '"></span>';
             }
         };
     return public;
