@@ -20,12 +20,18 @@ silvercart.DOM = (function () {
                     private.baseURL = private.baseURL + '/';
                 }
             },
-            getAlert: function(message, type)
+            getAlert: function(message, type, withDismissalButton)
             {
+                var dismissalButton = '';
                 if (typeof type === 'undefined') {
                     type = 'info';
                 }
-                return '<div class="alert alert-' + type + '">' + private.getAlertDismissalButton() + message + '</div>';
+                if (typeof withDismissalButton === 'undefined'
+                 || withDismissalButton === true
+                ) {
+                    dismissalButton = private.getAlertDismissalButton();
+                }
+                return '<div class="alert alert-' + type + '">' + dismissalButton + message + '</div>';
             },
             getAlertDismissalButton: function()
             {
@@ -182,6 +188,10 @@ silvercart.DOM = (function () {
             removeLoadingMask: function(item)
             {
                 $(selector.itemLoadingMask, item).remove();
+            },
+            alert: function(message, type, withDismissalButton)
+            {
+                return private.getAlert(message, type, withDismissalButton);
             },
             appendAlert: function(item, message, type)
             {
