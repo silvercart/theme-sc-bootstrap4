@@ -88,40 +88,28 @@ silvercart.DOM = (function () {
             },
             prependSpinner: function(item, type, css)
             {
-                if (typeof type === 'undefined') {
-                    type = 'primary';
-                }
-                item.prepend('<div class="spinner-border spinner-border-sm text-' + type + ' mr-2" role="status"><span class="sr-only">...</span></div>');
+                item.prepend(public.spinner(type, 'mr-2'));
                 if (typeof css !== 'undefined') {
                     $('.spinner-border', item).css(css);
                 }
             },
             appendSpinner: function(item, type, css)
             {
-                if (typeof type === 'undefined') {
-                    type = 'primary';
-                }
-                item.append('<div class="spinner-border spinner-border-sm text-' + type + ' ml-2" role="status"><span class="sr-only">...</span></div>');
+                item.append(public.spinner(type, 'ml-2'));
                 if (typeof css !== 'undefined') {
                     $('.spinner-border', item).css(css);
                 }
             },
             prependSpinnerGrow: function(item, type, css)
             {
-                if (typeof type === 'undefined') {
-                    type = 'primary';
-                }
-                item.prepend('<div class="spinner-grow spinner-grow-sm text-' + type + ' mr-2" role="status"><span class="sr-only">...</span></div>');
+                item.prepend(public.spinnerGrow(type, 'mr-2'));
                 if (typeof css !== 'undefined') {
                     $('.spinner-grow', item).css(css);
                 }
             },
             appendSpinnerGrow: function(item, type, css)
             {
-                if (typeof type === 'undefined') {
-                    type = 'primary';
-                }
-                item.append('<div class="spinner-grow spinner-grow-sm text-' + type + ' ml-2" role="status"><span class="sr-only">...</span></div>');
+                item.prepend(public.spinnerGrow(type, 'ml-2'));
                 if (typeof css !== 'undefined') {
                     $('.spinner-grow', item).css(css);
                 }
@@ -233,6 +221,26 @@ silvercart.DOM = (function () {
                     baseClass = 'fas';
                 }
                 return '<span class="' + baseClass + ' fa-' + iconCode + '"></span>';
+            },
+            spinner: function(type, cssClasses)
+            {
+                if (typeof type === 'undefined') {
+                    type = 'primary';
+                }
+                if (typeof cssClasses === 'undefined') {
+                    cssClasses = '';
+                }
+                return '<div class="spinner-border spinner-border-sm text-' + type + ' ' + cssClasses + '" role="status"><span class="sr-only">...</span></div>';
+            },
+            spinnerGrow: function(type, cssClasses)
+            {
+                if (typeof type === 'undefined') {
+                    type = 'primary';
+                }
+                if (typeof cssClasses === 'undefined') {
+                    cssClasses = '';
+                }
+                return '<div class="spinner-grow spinner-grow-sm text-' + type + ' ' + cssClasses + '" role="status"><span class="sr-only">...</span></div>';
             }
         };
     return public;
