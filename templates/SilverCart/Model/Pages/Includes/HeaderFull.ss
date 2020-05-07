@@ -18,9 +18,9 @@
                         <div class="dropdown">
                         <% loop $AllTranslations %>
                             <% if $First %>
-                            <a id="translation-select" class="btn btn-sm dropdown-toggle border-right" data-target="translation-select-dropdown" data-toggle="dropdown" hreflang="{$RFC1766}" title="<%t SilverCart\Model\Pages\Page.SHOWINPAGE 'set language to {language}' language=$Name %>">
+                            <span id="translation-select" class="btn btn-sm dropdown-toggle border-right" data-target="translation-select-dropdown" data-toggle="dropdown" title="<%t SilverCart\Model\Pages\Page.SHOWINPAGE 'set language to {language}' language=$Name %>">
                                 <span class="d-block mr-2 mt-1">{$LangCode.UpperCase}</span><span class="fa fa-2x fa-globe"></span> <span class="caret"></span>
-                            </a>
+                            </span>
                             <div id="translation-select-dropdown" class="dropdown-menu" aria-labelledby="translation-select">
                             <% else %>
                                 <% if $IsCurrent %>
@@ -59,11 +59,11 @@
                         </div>
                     <% else %>
                         <div class="dropdown">
-                            <a id="account-dropdown" class="btn dropdown-toggle text-left" data-toggle="dropdown" title="<%t SilverCart\Model\Pages\Page.MYACCOUNT 'my account' %>">
+                            <span id="account-dropdown" class="btn dropdown-toggle text-left" data-toggle="dropdown" title="<%t SilverCart\Model\Pages\Page.MYACCOUNT 'my account' %>">
                                 <span class="d-block text-truncate"><%t SilverCart\Model\Pages\Page.HELLO 'Welcome' %>, <%t SilverCart\Model\Pages\Page.LOGIN 'Login' %></span>
                                 <strong><span class="fa fa-user"></span> <%t SilverCart\Model\Pages\Page.MYACCOUNT 'my account' %></strong>
                                 <span class="caret"></span>
-                            </a>
+                            </span>
                             <div class="dropdown-menu" aria-labelledby="account-dropdown">
                         <% with $PageByIdentifierCode('SilvercartMyAccountHolder') %>
                                 <a class="dropdown-item" href="{$Link}" title="<%t SilverCart\Model\Pages\Page.LOGIN 'Login' %>"> <span class="btn btn-primary btn-block"><%t SilverCart\Model\Pages\Page.LOGIN 'Login' %></span></a>
@@ -84,9 +84,9 @@
                                 <% if $ShoppingCart.isFilled %><span class="position-relative"><span class="badge badge-success badge-cart position-absolute">{$CurrentMember.ShoppingCart.getQuantity}</span></span><% end_if %>
                                 <span class="fa fa-3x fa-shopping-cart float-left mr-1 position-relative bottom-2"></span> <%t SilverCart\Model\Pages\Page.CART 'Cart' %><br/><strong><% if $CurrentMember %>{$CurrentMember.ShoppingCart.getQuantity}<% else %>0<% end_if %> <%t SilverCart\Model\Product\Product.PLURALNAME 'Products' %></strong>
                             </a>
-                            <a id="cart-dropdown" class="btn dropdown-toggle text-left position-absolute bottom-7 right z1" data-toggle="dropdown" title="<% if $CurrentMember %>{$CurrentMember.ShoppingCart.getQuantity}<% else %>0<% end_if %> <%t SilverCart\Model\Product\Product.PLURALNAME 'Products' %>">
+                            <span id="cart-dropdown" class="btn dropdown-toggle text-left position-absolute bottom-7 right z1" data-toggle="dropdown" title="<% if $CurrentMember %>{$CurrentMember.ShoppingCart.getQuantity}<% else %>0<% end_if %> <%t SilverCart\Model\Product\Product.PLURALNAME 'Products' %>">
                                 <span class="caret"></span>
-                            </a>
+                            </span>
                             <section class="dropdown-menu cart-content" aria-labelledby="cart-dropdown">
                                 <h3 class="sr-only"><%t SilverCart\Model\Pages\Page.CART 'Cart' %></h3>
                                 <% include SilverCart/Model/Pages/ShoppingCartDropdown %>
