@@ -2,7 +2,7 @@
     <% if $getImages.count < 2 %>
     <div class="product-img thumbnail text-center">
         <% with $ListImage %>
-        <a class="fancybox" href="{$Link}" data-fancybox-group="silvercart-standard-product-image-group" title="{$Up.Title}"><img class="img-fluid" src="{$Fit(940,450).URL}" alt="{$Up.Title}" /></a>
+        <a class="fancybox" href="{$Link}" data-fancybox-group="silvercart-standard-product-image-group" title="{$Up.Title}"><img class="img-fluid" src="{$Fit(940,450).URL}" alt="{$Up.Title}" title="{$Up.Title}" /></a>
         <% end_with %>
     </div>
     <% else %>
@@ -10,14 +10,14 @@
         <div class="product-img thumbnail text-center col-lg-10 col-md-10 col-sm-9 col-xs-12">
         <% if $ListImage %>
             <% with $ListImage %>
-            <a class="fancybox" href="{$Link}" data-fancybox-group="silvercart-standard-product-image-group" title="{$Up.Title}"><img class="img-fluid" src="{$Fit(940,450).URL}" alt="{$Up.Title}" /></a>
+            <a class="fancybox" href="{$Link}" data-fancybox-group="silvercart-standard-product-image-group" title="{$Up.Title}"><img class="img-fluid" src="{$Fit(940,450).URL}" alt="{$Up.Title}" title="{$Up.Title}" /></a>
             <% end_with %>
         <% end_if %>
         </div>
         <div class="product-img-thumb col-lg-2 col-md-2 col-sm-3 col-xs-12">
         <% loop $getImages %>
             <% if not $First %>
-            <a class="fancybox float-right mb-1" href="{$Image.Link}" data-fancybox-group="silvercart-standard-product-image-group" title="{$Product.Title}"><img class="img-thumbnail" src="{$Image.Pad(100,80).URL}" alt="{$Product.Title}" /></a>
+            <a class="fancybox float-right mb-1" href="{$Image.Link}" data-fancybox-group="silvercart-standard-product-image-group" title="{$Product.Title}"><img class="img-thumbnail" src="{$Image.Pad(100,80).URL}" alt="{$Product.Title}" title="{$Product.Title}" /></a>
             <% end_if %>
         <% end_loop %>
         </div>
@@ -102,6 +102,10 @@
                 <dt class="col-5 col-sm-6 col-lg-5 col-xl-4 col-xxl-3">{$fieldLabel(StockQuantity)}:</dt>
                 <dd class="col-7 col-sm-6 col-lg-7 col-xl-8 col-xxl-9"><span>{$StockQuantity} {$QuantityUnit.Title}</span></dd>
             <% end_if --%>
+            <% if $EANCode %>
+                <dt class="col-5 col-sm-4 col-lg-5 col-xl-4 col-xxl-3">{$fieldLabel(EANCode)}:</dt>
+                <dd class="col-7 col-sm-8 col-lg-7 col-xl-8 col-xxl-9"><span>{$EANCode}</span></dd>
+            <% end_if %>
             <% if $PackagingQuantity %>
                 <dt class="col-5 col-sm-6 col-lg-5 col-xl-4 col-xxl-3"><%t SilverCart\Model\Pages\ProductPage.PACKAGING_CONTENT 'Content' %>:</dt>
                 <dd class="col-7 col-sm-6 col-lg-7 col-xl-8 col-xxl-9">{$PackagingQuantity} {$QuantityUnit.Title}</dd>

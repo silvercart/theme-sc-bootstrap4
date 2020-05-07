@@ -34,9 +34,9 @@
                 <span class="price">
                 <% if $PriceIsLowerThanMsr %>
                     <small class="text-line-through">{$MSRPrice.Nice}</small>
-                    <strong class="text-danger">{$PriceNice}</strong>
+                    <span class="text-danger font-weight-bold">{$PriceNice}</span>
                 <% else %>
-                    <strong>{$PriceNice}</strong>
+                    <span class="font-weight-bold">{$PriceNice}</span>
                 <% end_if %>
                 </span>
             </div>
