@@ -3,10 +3,14 @@ var silvercart = silvercart ? silvercart : [];
 silvercart.DOM = (function () {
     var property = {},
         selector = {
-            btnLoadingMask:  '.btn-loading-mask',
-            body:            'body',
-            shopLoadingMask: "#bb-shop-loading-mask",
-            itemLoadingMask: ".bb-shop-loading-mask"
+            btnLoadingMask:                 '.btn-loading-mask',
+            body:                           'body',
+            shopLoadingMask:                '#bb-shop-loading-mask',
+            itemLoadingMask:                '.bb-shop-loading-mask',
+            filterableDropdownMenu:         '.dropdown-menu-filterable',
+            filterableDropdownMenuFilter:   '.dropdown-item-filter input',
+            filterableDropdownMenuItems:    '.dropdown-filterable-items .dropdown-item',
+            filterableDropdownMenuMismatch: '.dropdown-item-filter-mismatch',
         },
         private = {
             baseURL: false,
@@ -42,12 +46,53 @@ silvercart.DOM = (function () {
                 public.prependSpinner($(this));
                 public.appendLoadingMask($(selector.body));
                 return true;
-            }
+            },
+            fixDropdownWidth: function()
+            {
+                var menu = $(this).closest(selector.filterableDropdownMenu);
+                menu.css('width', menu.outerWidth());
+            },
+            filterDropdown: function ()
+            {
+                var menu   = $(this).closest(selector.filterableDropdownMenu),
+                    filter = $(this).val().toUpperCase();
+                $(selector.filterableDropdownMenuItems, menu).each(function() {
+                    var title        = $(this).attr('title'),
+                        abbreviation = $(this).data('abbreviation'),
+                        match        = false;
+                    if (title.toUpperCase().indexOf(filter) > -1
+                     || (typeof abbreviation === 'string'
+                      && abbreviation.toUpperCase().indexOf(filter) > -1)
+                    ) {
+                        match = true;
+                    }
+                    if (match) {
+                        $(this).removeClass('d-none');
+                    } else {
+                        $(this).addClass('d-none');
+                    }
+                });
+                if ($(selector.filterableDropdownMenuItems, menu).length === $(selector.filterableDropdownMenuItems + '.d-none', menu).length) {
+                    $(selector.filterableDropdownMenuMismatch, menu).removeClass('d-none');
+                } else {
+                    $(selector.filterableDropdownMenuMismatch, menu).addClass('d-none');
+                }
+            },
+            filterDropdownFocus: function()
+            {
+                var dropdown = $(this);
+                setTimeout(function() {
+                    $(selector.filterableDropdownMenuFilter, dropdown).focus();
+                }, 300);
+            },
         },
         public = {
             init: function()
             {
                 $(document).on('click', selector.btnLoadingMask, private.showBodyLoadingMaskOnClick);
+                $(document).on('focus', selector.filterableDropdownMenuFilter, private.fixDropdownWidth);
+                $(document).on('keyup', selector.filterableDropdownMenuFilter, private.filterDropdown);
+                $(selector.filterableDropdownMenu).parent().on('show.bs.dropdown', private.filterDropdownFocus);
             },
             getBaseURL: function()
             {
