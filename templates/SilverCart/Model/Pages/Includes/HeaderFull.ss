@@ -87,10 +87,9 @@
                             <span id="cart-dropdown" class="btn dropdown-toggle text-left position-absolute bottom-7 right z1" data-toggle="dropdown" title="<% if $CurrentMember %>{$CurrentMember.ShoppingCart.getQuantity}<% else %>0<% end_if %> <%t SilverCart\Model\Product\Product.PLURALNAME 'Products' %>">
                                 <span class="caret"></span>
                             </span>
-                            <section class="dropdown-menu cart-content" aria-labelledby="cart-dropdown">
-                                <h3 class="sr-only"><%t SilverCart\Model\Pages\Page.CART 'Cart' %></h3>
+                            <div class="dropdown-menu cart-content" aria-labelledby="cart-dropdown">
                                 <% include SilverCart/Model/Pages/ShoppingCartDropdown %>
-                            </section>
+                            </div>
                         </div>
                     <% end_if %>
                     </nav>

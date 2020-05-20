@@ -1,24 +1,23 @@
 <div class="row row-offcanvas row-offcanvas-right">
 <% cached $CacheKey %>
-    <section id="content-main" class="col-12 col-md-9 col-lg-10 col-md-lg-80 col-xxl-89 order-md-2">
-        <h2 class="sr-only">{$Title}</h2>
+    <div id="content-main" class="col-12 col-md-9 col-lg-10 col-md-lg-80 col-xxl-89 order-md-2">
         <% include SilverCart/Model/Pages/BreadCrumbs %>
         <article aria-label="{$Title.XML}">
             <header><h1 id="maintitle">{$Title}</h1></header>
     <% if $isFirstPage && not $isFiltered %>
-        <% if $ViewableChildren %>
-        <nav class="silvercart-product-group-page-control-top navbar pb-3 clearfix">
-            <% include SilverCart/Model/Pages/ProductGroupHolderControls %>
-        </nav>
         <section class="silvercart-product-group-page sc-products mb-3 clearfix">
-            <h2 class="sr-only">{$Title}</h2>
+            <h2 class="sr-only">{$MetaTitle}</h2>
+        <% if $ViewableChildren %>
+            <div class="silvercart-product-group-page-control-top navbar pb-3 clearfix">
+            <% include SilverCart/Model/Pages/ProductGroupHolderControls %>
+            </div>
             {$RenderProductGroupHolderGroupView}
-        </section>
         <% end_if %>
+        </section>
         <% if $ShowPreorderableProducts %>
             <% with $getPreorderableProductsForTemplate(10) %>
         <section class="widget mb-3 clearfix">
-            <h2 class="d-inline-block">{$Title}</h2>
+            <h3 class="d-inline-block">{$Title}</h3>
             <a href="{$PreorderableProductsLink}" class="d-inline-block ml-2"><span class="fa fa-arrow-right"></span> {$PreorderableProductsLinkTitle}</a>
             <% include SilverCart\View\GroupView\WidgetProductBoxSlider %>
         </section>
@@ -27,7 +26,7 @@
         <% if $ShowNewProducts %>
             <% with $getNewProductsForTemplate(10) %>
         <section class="widget mb-3 clearfix">
-            <h2 class="d-inline-block">{$Title}</h2>
+            <h3 class="d-inline-block">{$Title}</h3>
             <a href="{$NewProductsLink}" class="d-inline-block ml-2"><span class="fa fa-arrow-right"></span> {$NewProductsLinkTitle}</a>
             <% include SilverCart\View\GroupView\WidgetProductBoxSlider %>
         </section>
@@ -42,7 +41,7 @@
         </div>
     <% end_if %>
         <section class="silvercart-product-group-page sc-products clearfix">
-            <h2 class="sr-only">{$Title}</h2>
+            <h2 class="sr-only"><% if $MetaTitleShort %>{$MetaTitleShort}<% else %>{$Title}<% end_if %></h2>
             {$RenderProductGroupPageGroupView}
         </section>
     <% if $HasMoreProductsThan(0) %>
@@ -52,7 +51,7 @@
         {$PageContent}
     <% end_if %>
         </article>
-    </section>
+    </div>
 <% end_cached %>
     <aside id="sidebar" class="col-12 col-md-3 col-lg-2 col-md-lg-20 col-xxl-11 sidebar-offcanvas order-md-1 border-right">
         <% include SilverCart\Model\Pages\ProductGroupSidebar %>

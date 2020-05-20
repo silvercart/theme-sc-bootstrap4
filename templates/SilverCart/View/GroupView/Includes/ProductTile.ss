@@ -1,6 +1,6 @@
 <div class="col-12 col-sm-6 col-lg-4 col-xl-3 col-xxl-2 mb-3 d-flex">
-    <div class="card card-product silvercart-product-group-page-tile-item {$EvenOdd} clearfix w-100">
-        <div class="thumbnail text-xs-center m-2">
+    <div class="card card-product silvercart-product-group-page-tile-item {$EvenOdd} clearfix w-100 text-center">
+        <div class="thumbnail m-2">
         <% if $PriceIsLowerThanMsr || $isNewProduct %>
             <span class="position-absolute top-0 left-2">
             <% if $PriceIsLowerThanMsr %>
@@ -13,17 +13,16 @@
         <% end_if %>
         <% if $ListImage %>
             <a class="d-inline-block" href="{$Link}" title="<%t SilverCart\Model\Pages\Page.SHOW_DETAILS_FOR 'Show details for {title}' title=$Title %>">
-                <img class="img-fluid lazyload" src="{$BaseHref}resources/vendor/silvercart/silvercart/client/img/loader-circle.gif" data-src="{$ListImage.Pad(400,240).URL}" alt="{$Title}" />
+           <img class="img-fluid lazyload" src="{$BaseHref}resources/vendor/silvercart/silvercart/client/img/loader-circle.gif" data-src="{$ListImage.Pad(400,240).URL}" alt="{$Title}" />
             </a>
         <% end_if %>
         </div>
         <div class="sc-product-title card-header py-2">
-            <h2 id="product{$ID}" class="card-title h5 mb-0 <% if $PriceIsLowerThanMsr || $isNewProduct %>pt-2<% end_if %>">
+            <h3 id="product{$ID}" class="card-title h5 mb-0 <% if $PriceIsLowerThanMsr || $isNewProduct %>pt-2<% end_if %>">
                 <a href="{$Link}" class="highlight" title="<%t SilverCart\Model\Pages\Page.SHOW_DETAILS_FOR 'Show details for {title}' title=$Title %>">{$ListTitle.HTML}</a>
-            </h2>
+            </h3>
         </div>
-        <div class="card-body pt-0 pb-2">
-            <div class="sc-product-price product-price text-center">
+        <div class="card-body pt-0 pb-2 sc-product-price product-price">
                 <span class="price">
                 <% if $PriceIsLowerThanMsr %>
                     <small class="text-line-through">{$MSRPrice.Nice}</small>
@@ -35,7 +34,7 @@
                 <div class="sc-product-price-info">
                     <small>
                         <% if $Availability %>
-                        {$AvailabilityStatus.singular_name}: <strong class="h6">{$Availability('badge', 'badge-availability')}</strong>
+                        {$AvailabilityStatus.singular_name}: <span class="h6 font-weight-bold">{$Availability('badge', 'badge-availability')}</span>
                         <% end_if %>
                         <% if $HasDeliveryTime  || $DeliveryForFreeIsPossible || $StockQuantityIsLow %>
                         <span class="d-block">
@@ -57,7 +56,6 @@
                         <% end_if %>
                     </small>
                 </div>
-            </div>
         </div>
     </div>
 </div>

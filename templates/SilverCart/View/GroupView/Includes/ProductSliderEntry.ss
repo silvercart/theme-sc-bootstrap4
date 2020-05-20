@@ -1,10 +1,5 @@
 <li class="slider-item">
     <article class="card card-product silvercart-product-group-page-tile-item {$EvenOdd} clearfix text-center w-100 h-100 d-flex">
-        <header class="sc-product-title card-header pl-1 pr-1 pb-1 sr-only">
-            <h2 class="card-title h6 mb-0 <% if $PriceIsLowerThanMsr || $isNewProduct %>pt-2<% end_if %>">
-                <a href="{$Link}" class="highlight" title="<%t SilverCart\Model\Pages\Page.SHOW_DETAILS_FOR 'Show details for {title}' title=$Title %>">{$Title.HTML}</a>
-            </h2>
-        </header>
         <div class="thumbnail pt-2">
         <% if $PriceIsLowerThanMsr || $isNewProduct %>
             <span class="position-absolute top-0 left-2">
@@ -16,19 +11,15 @@
             <% end_if %>
             </span>
         <% end_if %>
-            <a class="d-inline-block" href="{$Link}" title="<%t SilverCart\Model\Pages\Page.SHOW_DETAILS_FOR 'Show details for {title}' title=$Title %>">
         <% if $ListImage.Responsive %>
                 {$ListImage.setExtraClasses('d-inline-block').Responsive.Theme('ImageResponsiveLazyLoad').Ratio(2.5).Method('Pad').SrcSet('150w','300w').Sizes('(max-width: 544px) 50vw', '(min-width: 544.1px) 20vw')}
         <% else_if $ListImage %>
                 <img class="img-fluid lazyload" src="{$BaseHref}resources/vendor/silvercart/silvercart/client/img/loader-circle.gif" data-src="{$ListImage.Pad(275,165).URL}" alt="{$Title}" />
         <% end_if %>
-            </a>
-        </div>
-        <div class="sc-product-title card-header pl-1 pr-1 pb-1">
-            <h2 class="card-title h6 mb-0 <% if $PriceIsLowerThanMsr || $isNewProduct %>pt-2<% end_if %>">
-                <a href="{$Link}" class="highlight" title="<%t SilverCart\Model\Pages\Page.SHOW_DETAILS_FOR 'Show details for {title}' title=$Title %>">{$Title.HTML}</a>
-            </h2>
-        </div>
+        </div>  
+        <h4 class="card-title h6 mb-0 <% if $PriceIsLowerThanMsr || $isNewProduct %>pt-2<% end_if %>">
+            <a href="{$Link}" class="highlight stretched-link" title="<%t SilverCart\Model\Pages\Page.SHOW_DETAILS_FOR 'Show details for {title}' title=$Title %>">{$Title.HTML}</a>
+        </h4>
         <div class="card-body p-0">
             <div class="sc-product-price product-price">
                 <span class="price">

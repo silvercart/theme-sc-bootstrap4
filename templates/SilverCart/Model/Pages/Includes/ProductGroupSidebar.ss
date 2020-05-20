@@ -1,5 +1,5 @@
 <% cached $CacheKey,'SideBar' %>
-<h4><%t SilverCart\Model\Pages\ProductGroupPage.ShowOffersFor 'Show offers for' %></h4>
+<h3><%t SilverCart\Model\Pages\ProductGroupPage.ShowOffersFor 'Show offers for' %></h3>
 <ul class="list-unstyled mb-3 pb-3 border-bottom">
 <% if $Parent.IsProductGroupPage %>
     <% include SilverCart\Model\Pages\ProductGroupSidebar_Parent %>
