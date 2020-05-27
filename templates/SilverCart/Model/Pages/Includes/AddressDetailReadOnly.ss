@@ -12,6 +12,7 @@
 <% end_if %>
     <div class="card-body">
         <p class="card-text">
+            {$BeforeAddressContent}
         <% if $IsPackstation %>
             <em>{$fieldLabel('PackstationLabel')}</em><br/>
         <% else_if $TaxIdNumber || $Company %>
@@ -35,10 +36,12 @@
             {$Street} {$StreetNumber}<br/>
         <% end_if %>
             {$Postcode} {$City}<br/>
+            {$BeforeCountryContent}
             {$Country.Title}<br/>
         <% if $Phone %>
             {$fieldLabel('PhoneShort')}: {$Phone}
         <% end_if %>
+            {$AfterAddressContent}
     <% else %>
             <div class="alert alert-danger"><%t SilverCart\Model\Pages\AddressHolder.NOT_DEFINED 'Not defined yet' %></div>
     <% end_if %>

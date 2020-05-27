@@ -20,6 +20,7 @@
 <% else %>
     {$Street} {$StreetNumber}<br/>
 <% end_if %>
+    {$BeforeCountryContent}
     {$Country.ISO2}-{$Postcode} {$City}<br/>
 <% if $Phone %>
     {$fieldLabel('PhoneShort')}: {$Phone}<br/>

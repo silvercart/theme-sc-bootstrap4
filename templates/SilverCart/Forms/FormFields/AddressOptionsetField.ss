@@ -18,6 +18,7 @@
                     <input class="margin-top2x" type="radio" name="{$name}" value="{$value}" id="{$htmlId}" <% if $checked %>checked="checked"<% end_if %> />
                 </div>
                 <p class="card-text ml-4">
+                    {$address.BeforeAddressContent}
                 <% if $IsPackstation != 0 %>
                     <em>{$address.fieldLabel('PackstationLabel')}</em><br />
                 <% else_if $TaxIdNumber || $Company %>
@@ -40,10 +41,12 @@
                     {$Street} {$StreetNumber}<br/>
                 <% end_if %>
                     {$Postcode} {$City}<br/>
+                    {$address.BeforeCountryContent}
                     {$Country.Title}<br/>
                 <% if $Phone %>
                     {$address.fieldLabel('PhoneShort')}: {$Phone}
                 <% end_if %>
+                    {$address.AfterAddressContent}
                 </p>
             </div>
             <% if $address.canEdit || $address.canDelete %>
