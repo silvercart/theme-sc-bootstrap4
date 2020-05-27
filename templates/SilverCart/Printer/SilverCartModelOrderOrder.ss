@@ -146,7 +146,7 @@
                         </tr>
                         <tr>
                             <td>{$fieldLabel('Country')}</td>
-                            <td>{$FormattedNote}</td>
+                            <td>{$Country.Title}</td>
                         </tr>
                     </table>
                     <% end_with %>
