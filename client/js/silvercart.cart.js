@@ -26,10 +26,8 @@ silvercart.cart.Dropdown = (function () {
                 $(selector.badgeQuantity).html(quantity);
                 if (quantity === 0) {
                     $(selector.badgeQuantity).addClass('d-none');
-                    //$(cgm.cart.dropdown.selector).addClass('d-none');
                 } else {
                     $(selector.badgeQuantity).removeClass('d-none');
-                    //$(cgm.cart.dropdown.selector).removeClass('d-none');
                 }
             }
         };
@@ -44,6 +42,7 @@ silvercart.cart.Form = (function () {
             },
         },
         selector = {
+            containerQuantity:    '.cart-quantity',
             containerHint:        '.silvercart-add-cart-form-hint',
             formAddToCart:        'form[id^=AddToCartForm_AddToCartForm]',
             inputProductID:       'input[name="productID"]',
@@ -95,6 +94,7 @@ silvercart.cart.Form = (function () {
                             hint.removeClass('d-none');
                             hint.html('<span class="fa fa-info-circle"></span> ' + response.QuantityInCartString);
                         }
+                        $(selector.containerQuantity).html(response.TotalCartQuantity);
                         silvercart.cart.Dropdown().updateBadgeWith(response.TotalCartQuantity);
                         silvercart.cart.Dropdown().reloadWith(response.HTMLDropdown);
                         btn.removeClass('disabled');

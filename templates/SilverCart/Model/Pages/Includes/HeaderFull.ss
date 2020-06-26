@@ -81,10 +81,10 @@
                     <% if not $EditableShoppingCart %>
                         <div class="dropdown-cart">
                             <a class="btn text-left" href="{$PageByIdentifierCode('SilvercartCartPage').Link}" title="<% if $CurrentMember %>{$CurrentMember.ShoppingCart.getQuantity}<% else %>0<% end_if %> <%t SilverCart\Model\Product\Product.PLURALNAME 'Products' %>">
-                                <% if $ShoppingCart.isFilled %><span class="position-relative"><span class="badge badge-success badge-cart position-absolute">{$CurrentMember.ShoppingCart.getQuantity}</span></span><% end_if %>
-                                <span class="fa fa-3x fa-shopping-cart float-left mr-1 position-relative bottom-2"></span> <%t SilverCart\Model\Pages\Page.CART 'Cart' %><br/><strong><% if $CurrentMember %>{$CurrentMember.ShoppingCart.getQuantity}<% else %>0<% end_if %> <%t SilverCart\Model\Product\Product.PLURALNAME 'Products' %></strong>
+                                <span class="position-relative"><span class="badge badge-success badge-cart position-absolute <% if not $ShoppingCart.isFilled %>d-none<% end_if %>">{$CurrentMember.ShoppingCart.getQuantity}</span></span>
+                                <span class="fa fa-3x fa-shopping-cart float-left mr-1 position-relative bottom-2"></span> <%t SilverCart\Model\Pages\Page.CART 'Cart' %><br/><strong><span class="cart-quantity"><% if $CurrentMember %>{$CurrentMember.ShoppingCart.getQuantity}<% else %>0<% end_if %></span> <%t SilverCart\Model\Product\Product.PLURALNAME 'Products' %></strong>
                             </a>
-                            <span id="cart-dropdown" class="btn dropdown-toggle text-left position-absolute bottom-7 right z1" data-toggle="dropdown" title="<% if $CurrentMember %>{$CurrentMember.ShoppingCart.getQuantity}<% else %>0<% end_if %> <%t SilverCart\Model\Product\Product.PLURALNAME 'Products' %>">
+                            <span id="cart-dropdown" class="btn dropdown-toggle text-left position-absolute bottom-7 right z1" data-toggle="dropdown">
                                 <span class="caret"></span>
                             </span>
                             <div class="dropdown-menu cart-content" aria-labelledby="cart-dropdown">
