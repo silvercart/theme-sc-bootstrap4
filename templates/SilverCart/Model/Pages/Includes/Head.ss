@@ -25,6 +25,7 @@
 <% require themedJavascript("client/js/silvercart.cookie") %>
 <% require themedJavascript("client/js/silvercart.theme") %>
 <% require themedJavascript("client/js/silvercart.forms") %>
+<% require themedJavascript("client/js/silvercart.cart") %>
 <% require themedJavascript("client/js/silvercart.attributes") %>
 <% require themedJavascript("client/js/silvercart.sly") %>
 <% require themedJavascript("client/js/silvercart.DOM") %>
