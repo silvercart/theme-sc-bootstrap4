@@ -160,7 +160,7 @@ silvercart.DOM = (function () {
             },
             appendSpinnerGrow: function(item, type, css)
             {
-                item.prepend(public.spinnerGrow(type, 'ml-2'));
+                item.append(public.spinnerGrow(type, 'ml-2'));
                 if (typeof css !== 'undefined') {
                     $('.spinner-grow', item).css(css);
                 }
