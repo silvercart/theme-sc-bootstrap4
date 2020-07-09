@@ -76,3 +76,12 @@
     .border-#{$breakpoint}-bottom-#{0} { border-bottom: 0 !important; }
     .border-#{$breakpoint}-left-#{0}   { border-left: 0 !important; }
 }
+
+@mixin hover-emphasis-variant($parent, $color) {
+  .hover-text-#{$parent}:hover {
+    color: $color !important;
+  }
+  .hover-bg-#{$parent}:hover {
+    background-color: $color !important;
+  }
+}

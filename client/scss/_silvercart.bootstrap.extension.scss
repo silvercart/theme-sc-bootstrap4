@@ -95,6 +95,16 @@ td.h1, td.h2, td.h3, td.h4, td.h5, td.h6 { margin: 0; }
 
 .text-hyphens-auto { hyphens: auto; }
 
+@each $color, $value in $theme-colors {
+  @include hover-emphasis-variant($color, $value);
+}
+.hover-shadow-sm:hover { box-shadow: $box-shadow-sm !important; }
+.hover-shadow:hover { box-shadow: $box-shadow !important; }
+.hover-shadow-lg:hover { box-shadow: $box-shadow-lg !important; }
+.hover-shadow-none:hover { box-shadow: none !important; }
+
+.transition-all { transition: all .35s }
+
 [class^="p-column-count-"] p,
 [class^="column-count-"] { column-gap: 50px; column-rule: 1px solid $gray-200; };
 .column-count-2, .p-column-count-2 p { column-count: 2; }
