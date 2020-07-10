@@ -3,6 +3,7 @@ var silvercart = silvercart ? silvercart : [];
 silvercart.DOM = (function () {
     var property = {},
         selector = {
+            btnConfirm:                     '.btn-confirm',
             btnLoadingMask:                 '.btn-loading-mask',
             body:                           'body',
             shopLoadingMask:                '#bb-shop-loading-mask',
@@ -40,6 +41,15 @@ silvercart.DOM = (function () {
             getAlertDismissalButton: function()
             {
                 return '<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>';
+            },
+            btnConfirmClick: function(event)
+            {
+                event.preventDefault();
+                if (confirm($(this).data('confirm-text'))) {
+                    public.ShowLoadingMask();
+                    document.location.href = $(this).data('target');
+                }
+                return false;
             },
             showBodyLoadingMaskOnClick: function(event)
             {
@@ -90,6 +100,7 @@ silvercart.DOM = (function () {
             init: function()
             {
                 $(document).on('click', selector.btnLoadingMask, private.showBodyLoadingMaskOnClick);
+                $(document).on('click', selector.btnConfirm, private.btnConfirmClick);
                 $(document).on('focus', selector.filterableDropdownMenuFilter, private.fixDropdownWidth);
                 $(document).on('keyup', selector.filterableDropdownMenuFilter, private.filterDropdown);
                 $(selector.filterableDropdownMenu).parent().on('show.bs.dropdown', private.filterDropdownFocus);
