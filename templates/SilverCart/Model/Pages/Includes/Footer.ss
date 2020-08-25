@@ -121,6 +121,3 @@
 <% if $CurrentPage.isProductDetailView %>
     {$Product.Microdata}
 <% end_if %>
-<% if $CurrentUser %>
-<script>silvercart.cart.customerExists = true;</script>
-<% end_if %>

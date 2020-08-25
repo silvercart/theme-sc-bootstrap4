@@ -1,6 +1,5 @@
 var silvercart = silvercart ? silvercart : [];
 silvercart.cart      = [];
-silvercart.cart.customerExists = false;
 silvercart.cart.Dropdown = (function () {
     var property = {
             DOM: silvercart.DOM(),
@@ -52,9 +51,6 @@ silvercart.cart.Form = (function () {
         private = {
             formAddToCartSubmit: function(event)
             {
-                if (!silvercart.cart.customerExists) {
-                    return;
-                }
                 event.preventDefault();
                 if (property.submitInProgress) {
                     return;
