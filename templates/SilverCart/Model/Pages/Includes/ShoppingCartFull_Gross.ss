@@ -25,7 +25,9 @@
     <% end_if %>
 <% end_if %>
 <% if $hasNotice %>
-<div class="alert alert-warning mb-0"><span class="fa fa-exclamation-circle"></span> {$getShoppingCartPositionNotices}</div>
+    <% loop $getShoppingCartPositionNoticesList %>
+        <div class="alert alert-{$Type} mb-2"><span class="fa fa-{$Icon}"></span> {$Notice}</div>
+    <% end_loop %>
 <% end_if %>
 <div class="silvercart-shopping-cart-full mt-3">
     <table class="table responsive-table">

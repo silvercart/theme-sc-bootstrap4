@@ -1,7 +1,11 @@
 <% if $hasNotice %>
 <tr class="next-border-top-0 border-bottom-0">
-    <td colspan="2" class="border-bottom-0 pb-0 d-none d-sm-table-cell">&nbsp;</td>
-    <td colspan="3" class="border-bottom-0 pb-0"><div class="alert alert-warning mb-0"><span class="fa fa-exclamation-circle"></span> {$getShoppingCartPositionNotices}</div></td>
+    <td class="border-bottom-0 pb-0 d-none d-sm-table-cell">&nbsp;</td>
+    <td class="border-bottom-0 pb-0" colspan="4">
+        <% loop $getShoppingCartPositionNoticesList %>
+            <div class="alert alert-{$Type} mb-2"><span class="fa fa-{$Icon}"></span> {$Notice}</div>
+        <% end_loop %>
+    </td>
 </tr>
 <% end_if %>
 <tr>
