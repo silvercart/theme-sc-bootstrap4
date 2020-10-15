@@ -76,6 +76,55 @@ silvercart.navigation.main = function() {
         };
     return public;
 };
+silvercart.navigation.admin = function() {
+    var property = {},
+        selector = {
+            btnToggleNav: '#nav-admin .btn-toggle-nav',
+            navigation:   '#nav-admin'
+        },
+        private = {
+            toggleNav: function() {
+                var btn     = $(this),
+                    nav     = $(selector.navigation),
+                    posLeft = parseInt(nav.css('left')) === 0 ? -300 : 0,
+                    fas     = $('.fas', btn),
+                    angle   = typeof fas.data('angle') === 'undefined' ? 0 : fas.data('angle');
+                btn.toggleClass('nav-active');
+                $({deg: angle}).animate({deg: angle + 180}, {
+                    duration: 500,
+                    step: function (now) {
+                        fas.css({
+                            transform: 'rotate(' + now + 'deg)'
+                        });
+                        fas.data('angle', now);
+                    }
+                });
+                nav.animate({left: posLeft + "px"}, 500);
+            },
+            btnHover: function() {
+                var btn = $(this);
+                if (btn.hasClass('nav-active')) {
+                    return;
+                }
+                btn.toggleClass('op-50');
+            },
+        },
+        public = {
+            init: function() {
+                if ($(selector.navigation).length === 0) {
+                    return;
+                }
+                $(document).on('click', selector.btnToggleNav, private.toggleNav);
+                $(document).on('mouseenter', selector.btnToggleNav, private.btnHover);
+                $(document).on('mouseleave', selector.btnToggleNav, private.btnHover);
+                setTimeout(function() {
+                    $(selector.navigation).effect("bounce", { direction: 'right', distance: 20, times: 2 }, 900);
+                }, 1000);
+            }
+        };
+    return public;
+};
 $(document).ready(function() {
     silvercart.navigation.main().init();
+    silvercart.navigation.admin().init();
 });
