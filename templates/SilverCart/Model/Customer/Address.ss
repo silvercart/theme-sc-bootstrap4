@@ -1,5 +1,5 @@
 <% if not $isEmpty %>
-<address class="">
+<address class="{$CSSClasses}">
 <% if $HeadLine %>
     <strong>{$HeadLine}</strong><br/>
 <% end_if %>
