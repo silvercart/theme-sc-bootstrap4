@@ -46,7 +46,7 @@ $primary:   #083358;
 $secondary: #FC3C3C;
 $success:   $green;
 $danger:    #FF4057;
-$info:      #74DBEF;
+$info:      $cyan;
 $warning:   #fd7e14;
 $light:     $gray-100;
 $dark:      #072247;
@@ -68,7 +68,16 @@ $colors: map-merge((
   "white":      $white,
   "gray":       $gray-600,
   "gray-dark":  $gray-800,
-  "gray-light": $gray-300
+  "gray-light": $gray-300,
+  "gray-100":   $gray-100,
+  "gray-200":   $gray-200,
+  "gray-300":   $gray-300,
+  "gray-400":   $gray-400,
+  "gray-500":   $gray-500,
+  "gray-600":   $gray-600,
+  "gray-700":   $gray-700,
+  "gray-800":   $gray-800,
+  "gray-900":   $gray-900
 ), $colors);
 
 $primaryLight: lighten( $primary, 5% );
