@@ -130,7 +130,7 @@
             <% end_loop %>
         <% end_if %>
         <% if $isCardPurchaser %>
-        <h6 class="d-flex justify-content-between align-items-center px-3 mt-3 mb-2 text-muted text-uppercase"><span>Kartenverwaltung</span><a class="d-flex align-items-center text-muted" href="{$Top.SellCardsPage.Link('orders')}"><span class="fas fa-clipboard"></span></a></h6>
+        <h6 class="d-flex justify-content-between align-items-center px-3 pt-3 mb-2 text-muted text-uppercase"><span>Kartenverwaltung</span><a class="d-flex align-items-center text-muted" href="{$Top.SellCardsPage.Link('orders')}"><span class="fas fa-clipboard"></span></a></h6>
         <ul class="nav flex-column">
             <li class="nav-item"><a class="nav-link" href="{$Top.PurchaseCardsPage.Link}"><span class="fas fa-id-badge"></span> {$Top.PurchaseCardsPage.Title}</a></li>
             <li class="nav-item"><a class="nav-link" href="{$Top.PurchaseCardsPage.Link('orders')}"><span class="fas fa-file-invoice-dollar"></span> Ankauf: <%t BattleBear\SingleCardManager\Model\Order\Order.OpenOrders 'Open Orders' %></a></li>
@@ -139,7 +139,7 @@
         </ul>
         <% end_if %>
         <% if $isAdmin %>
-        <h6 class="d-flex justify-content-between align-items-center px-3 mt-3 mb-2 text-muted text-uppercase"><span>Admin</span><a class="d-flex align-items-center text-muted" href="{$baseHref}admin"><span class="fas fa-lock"></span></a></h6>
+        <h6 class="d-flex justify-content-between align-items-center px-3 pt-3 mb-2 text-muted text-uppercase"><span>Admin</span><a class="d-flex align-items-center text-muted" href="{$baseHref}admin"><span class="fas fa-lock"></span></a></h6>
         <ul class="nav flex-column">
             <li class="nav-item"><a class="nav-link " href="{$baseHref}admin"><span class="fas fa-lock"></span> <%t SilverCart\Model\Pages\Page.ADMIN_AREA 'Admin Access' %></a></li>
             <li class="nav-item"><a class="nav-link" href="{$Link}?flushi18n=1"><span class="fas fa-sync"></span> <%t SilverCart\Model\Pages\Page.FlushI18n 'Flush I18N' %></a></li>
