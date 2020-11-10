@@ -307,7 +307,57 @@ silvercart.DOM = (function () {
                     cssClasses = '';
                 }
                 return '<div class="spinner-grow spinner-grow-sm text-' + type + ' ' + cssClasses + '" role="status"><span class="sr-only">...</span></div>';
-            }
+            },
+            modal: {
+                create: function(identifier, title, body, footer, size)
+                {
+                    var modalHtml, btnClose, modalSize = typeof size === 'undefined' ? '' : 'modal-' + size;
+                    btnClose  = '<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+                    modalHtml = '<div class="modal fade" tabindex="-1" role="dialog" aria-hidden="true" id="' + identifier + '">';
+                        modalHtml += '<div class="modal-dialog ' + modalSize + '">';
+                            modalHtml += '<div class="modal-content">';
+                                modalHtml += '<div class="modal-header"><h5 class="modal-title">' + title + '</h5>' + btnClose + '</div>';
+                                modalHtml += '<div class="modal-body">' + body + '</div>';
+                    if (typeof footer !== 'undefined'
+                     && footer.length > 0
+                    ) {
+                        modalHtml += '<div class="modal-footer">' + footer + '</div>';
+                    }
+                            modalHtml += '</div>';
+                        modalHtml += '</div>';
+                    modalHtml += '</div>';
+                    $('body').append(modalHtml);
+                },
+                dispose: function(identifier)
+                {
+                    if ($('#' + identifier).length === 0) {
+                        return;
+                    }
+                    $('#' + identifier).modal('dispose');
+                },
+                destroy: function(identifier)
+                {
+                    if ($('#' + identifier).length === 0) {
+                        return;
+                    }
+                    $('#' + identifier).modal('dispose');
+                    $('#' + identifier).remove();
+                },
+                hide: function(identifier)
+                {
+                    if ($('#' + identifier).length === 0) {
+                        return;
+                    }
+                    $('#' + identifier).modal('hide');
+                },
+                show: function(identifier, title, body, footer, size)
+                {
+                    if ($('#' + identifier).length === 0) {
+                        public.modal.create(identifier, title, body, footer, size);
+                    }
+                    $('#' + identifier).modal('show');
+                },
+            },
         };
     return public;
 });
