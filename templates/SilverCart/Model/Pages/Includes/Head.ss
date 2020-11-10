@@ -1,5 +1,5 @@
 <% base_tag %>
-{$SiteConfig.GoogleWebmasterCode.RAW}
+{$RequireExternalResourcesForHead}
 <title><% if $ClassName == "SilverCart\Model\Pages\FrontPage" %>{$SiteConfig.Title} - {$SiteConfig.Tagline}<% else %><% if $MetaTitle %>{$MetaTitle}<% else %>{$Title}<% end_if %> <%t SilverCart\Model\Pages\Page.MetaTitleAt 'at {shopTitle}' shopTitle=$SiteConfig.Title %><% end_if %> {$AfterMetaTitle}</title>
 {$MetaTags(false)}
 <meta name="viewport" content="width=device-width, initial-scale=1.0">

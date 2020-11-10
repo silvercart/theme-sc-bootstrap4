@@ -27,4 +27,3 @@
         <% include SilverCart/Model/Pages/WidgetSetContent %>
     </section>
 </div>
-{$SiteConfig.GoogleConversionTrackingCode.RAW}

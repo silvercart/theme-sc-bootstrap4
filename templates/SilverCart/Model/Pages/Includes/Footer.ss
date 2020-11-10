@@ -111,6 +111,9 @@
     </div>
 </footer>
 <% end_cached %>
+<% if $SiteConfig.CookiePolicyConfigIsActive %>
+    <% include CookieConsent %>
+<% end_if %>
 <% with $CurrentRegisteredCustomer %>
     <% if $isAdmin || $isCardPurchaser || $isSalesPartner %>
 <div id="nav-admin" class="p-fixed m-0 h-100" style="width: 300px; top: 0px; left: -300px; z-index: 1100;">

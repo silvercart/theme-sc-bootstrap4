@@ -9,12 +9,7 @@
             <main id="main" class="main container-fluid clearfix">{$Layout}</main>
         </div>
         {$ModuleHtmlInjections}
-        <% if $isLive %>
-            <% with $SiteConfig %>
-                {$GoogleAnalyticsTrackingCode.RAW}
-                {$MatomoTrackingCode.RAW}
-            <% end_with %>
-        <% end_if %>
+        {$RequireExternalResourcesForBody}
         <% include SilverCart/Model/Pages/FooterCustomHtml %>
     </body>
 </html>
