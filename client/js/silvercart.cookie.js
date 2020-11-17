@@ -54,7 +54,7 @@ silvercart.cookieConsent = function() {
             cookieConsent:           '#cookie-consent',
             cookieConsentBackground: '.cookie-consent-background',
             cookieConsentBody:       '#cookie-consent .cookie-consent-body',
-            cookieConsentBodyLink:   '#cookie-consent .cookie-consent-body a',
+            cookieConsentBodyLink:   '#cookie-consent .cookie-consent-body a, #cookie-consent #cookie-consent-manage a',
             cookieConsentMain:       '#cookie-consent-main',
             cookieConsentManage:     '#cookie-consent-manage',
             formCookieConsent:       '#CookieConsentForm_Form',
