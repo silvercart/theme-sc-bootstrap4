@@ -1,4 +1,4 @@
-<div class="cookie-consent-field {$Class} mb-3">
+<div class="cookie-consent-field {$Class}">
     <div class="float-right">
         <div class="custom-control custom-switch">
             {$addExtraClass('custom-control-input').Field}
@@ -6,8 +6,7 @@
         </div>
     </div>
     <div class="mr-5">
-        <label for="{$ID}" class="font-weight-bold text-uppercase d-inline-block m-0">{$Title}</label>
-        {$Content.Plain} <a class="btn-cookie-details ml-2" data-target="#cookie-details-{$CookieGroup.ID}" href="javascript:;"><span class="fas fa-info-circle"></span> <%t SilverCart\Model\Pages\Page.SHOW_DETAILS 'Show details' %></a>
+        <a class="btn-cookie-details ml-2" data-target="#cookie-details-{$CookieGroup.ID}" href="javascript:;"><span class="fas fa-chevron-down"></span></a> <label for="{$ID}" class="font-weight-bold text-uppercase d-inline-block m-0">{$Title}</label>
     </div>
 </div>
 <% if $Message %>

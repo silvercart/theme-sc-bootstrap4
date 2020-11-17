@@ -5,12 +5,14 @@
     <fieldset>
         <% if $Legend %><legend>{$Legend}</legend><% end_if %>
         <% loop $Fields %>
+        <div class="mb-3">
             {$FieldHolder}
             <% if $CookieGroup.exists %>
             <div id="cookie-details-{$CookieGroup.ID}" style="display:none;">
                 {$CookieGroup.renderWith('Broarm\\CookieConsent\\Shortcode\\CookieGroupTable_table')}
             </div>
             <% end_if %>
+        </div>
         <% end_loop %>
     </fieldset>
 <% if $Actions %>

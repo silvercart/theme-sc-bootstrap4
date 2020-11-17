@@ -94,9 +94,17 @@ silvercart.cookieConsent = function() {
             btnCookieDetailsClick: function(event)
             {
                 event.preventDefault();
-                var btn    = $(this),
-                    target = btn.data('target');
+                var btn     = $(this),
+                    target  = btn.data('target'),
+                    chevron = $('.fas', btn);
                 if ($(target).length !== 0) {
+                    if (chevron.hasClass('fa-chevron-down')) {
+                        chevron.removeClass('fa-chevron-down')
+                               .addClass('fa-chevron-up');
+                    } else if (chevron.hasClass('fa-chevron-up')) {
+                        chevron.removeClass('fa-chevron-up')
+                               .addClass('fa-chevron-down');
+                    }
                     $(target).slideToggle();
                 }
                 return false;

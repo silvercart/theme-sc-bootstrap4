@@ -1,3 +1,5 @@
+<div>{$Content.Plain}</div>
+<%-- 
 <div class="table-responsive">
     <table class="table table-auto table-striped table-sm table-bordered cookie-group-table">
         <thead class="cookie-group-table__header">
@@ -20,3 +22,4 @@
         </tbody>
     </table>
 </div>
+--%>
