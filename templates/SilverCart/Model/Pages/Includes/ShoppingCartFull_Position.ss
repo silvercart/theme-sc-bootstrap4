@@ -11,13 +11,25 @@
 <tr>
     <td class="img text-center" data-title="<%t SilverCart\Model\Product\Product.IMAGE 'Image' %>">
     <% if $Product.ListImage %>
+        <% if $SiteConfig.DisableProductLinkInCart %>
+        <span class="d-inline-block" title="<%t SilverCart\Model\Pages\Page.SHOW_DETAILS_FOR 'Show details for {title}' title=$Product.ListImage.Title %>"><img class="img-fluid" src="{$Product.ListImage.Pad(110,110).URL}" alt="{$Product.Title}" /></span>
+        <% else %>
         <a class="d-inline-block" href="{$Product.Link}" title="<%t SilverCart\Model\Pages\Page.SHOW_DETAILS_FOR 'Show details for {title}' title=$Product.ListImage.Title %>"><img class="img-fluid" src="{$Product.ListImage.Pad(110,110).URL}" alt="{$Product.Title}" /></a>
+        <% end_if %>
     <% end_if %>
     </td>
     <td class="desc" data-title="<%t SilverCart\Model\Product\Product.TITLE 'Product' %>">
+        <% if $SiteConfig.DisableProductLinkInCart %>
+        <h5><span class="highlight" href="{$Product.Link}">{$getTitle}</span></h5>
+        <% else %>
         <h5><a class="highlight" href="{$Product.Link}">{$getTitle}</a></h5>
+        <% end_if %>
         <ul class="list-unstyled p-0 m-0">
+        <% if $SiteConfig.DisableProductLinkInCart %>
+            <li><span class="highlight"><%t SilverCart\Model\Product\Product.PRODUCTNUMBER_SHORT 'Item no.' %>: {$getProductNumberShop}</span></li>
+        <% else %>
             <li><a class="highlight" href="{$Product.Link}"><%t SilverCart\Model\Product\Product.PRODUCTNUMBER_SHORT 'Item no.' %>: {$getProductNumberShop}</a></li>
+        <% end_if %>
             <% if $getCartDescription %><li><small>{$getCartDescription}</small></li><% end_if %>
             <% if $addToTitle %><li><small>{$addToTitle}</small></li><% end_if %>
             <% if $Top.SiteConfig.enableStockManagement && $Product.StockQuantity < $Quantity %><li><small class="badge badge-info"><span class="fa fa-info-circle"></span> <%t SilverCart\Model\Order\ShoppingCart.OnlyXLeft 'Only {quantity} left in stock. Delivery time may increase.' quantity=$Product.StockQuantity %></small></li><% end_if %>
