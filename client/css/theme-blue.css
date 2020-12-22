@@ -1,6 +1,69 @@
 /* unquote !important Bug */
 /* unquote !important Bug */
-@import url(https://fonts.googleapis.com/css?family=Nunito:200,300,400,700);
+/* latin-ext */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 200;
+  src: url(/resources/themes/sc-bootstrap4/client/fonts/Nunito-ext-200.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 200;
+  src: url(/resources/themes/sc-bootstrap4/client/fonts/Nunito-200.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+/* latin-ext */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  src: url(/resources/themes/sc-bootstrap4/client/fonts/Nunito-ext-300.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 300;
+  src: url(/resources/themes/sc-bootstrap4/client/fonts/Nunito-300.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+/* latin-ext */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/resources/themes/sc-bootstrap4/client/fonts/Nunito-ext-400.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/resources/themes/sc-bootstrap4/client/fonts/Nunito-400.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+/* latin-ext */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  src: url(/resources/themes/sc-bootstrap4/client/fonts/Nunito-ext-700.woff2) format("woff2");
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+
+/* latin */
+@font-face {
+  font-family: 'Nunito';
+  font-style: normal;
+  font-weight: 700;
+  src: url(/resources/themes/sc-bootstrap4/client/fonts/Nunito-700.woff2) format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
 /* Optional */
 /* @import "bootstrap/root";*/
 *,
@@ -2447,7 +2510,7 @@ mark,
   .form-control::-webkit-input-placeholder {
     color: #6c757d;
     opacity: 1; }
-  .form-control:-ms-input-placeholder {
+  .form-control::-moz-placeholder {
     color: #6c757d;
     opacity: 1; }
   .form-control::-ms-input-placeholder {
@@ -6379,8 +6442,10 @@ input[type="button"].btn-block {
 @media (min-width: 576px) {
   .card-columns {
     -webkit-column-count: 3;
+       -moz-column-count: 3;
             column-count: 3;
     -webkit-column-gap: 1.25rem;
+       -moz-column-gap: 1.25rem;
             column-gap: 1.25rem;
     orphans: 1;
     widows: 1; }
@@ -15559,28 +15624,35 @@ td.h1, td.h2, td.h3, td.h4, td.h5, td.h6 {
 [class^="p-column-count-"] p,
 [class^="column-count-"] {
   -webkit-column-gap: 50px;
+     -moz-column-gap: 50px;
           column-gap: 50px;
   -webkit-column-rule: 1px solid #e9ecef;
+     -moz-column-rule: 1px solid #e9ecef;
           column-rule: 1px solid #e9ecef; }
 
 .column-count-2, .p-column-count-2 p {
   -webkit-column-count: 2;
+     -moz-column-count: 2;
           column-count: 2; }
 
 .column-count-3, .p-column-count-3 p {
   -webkit-column-count: 3;
+     -moz-column-count: 3;
           column-count: 3; }
 
 .column-count-4, .p-column-count-4 p {
   -webkit-column-count: 4;
+     -moz-column-count: 4;
           column-count: 4; }
 
 .column-count-5, .p-column-count-5 p {
   -webkit-column-count: 5;
+     -moz-column-count: 5;
           column-count: 5; }
 
 .column-count-6, .p-column-count-6 p {
   -webkit-column-count: 6;
+     -moz-column-count: 6;
           column-count: 6; }
 
 .cursor-pointer {
@@ -41617,52 +41689,67 @@ input.no-arrows[type="number"] {
 @media (max-width: 991.98px) {
   .column-count-2, .p-column-count-2 p {
     -webkit-column-count: 2;
+       -moz-column-count: 2;
             column-count: 2; }
   .column-count-3, .p-column-count-3 p {
     -webkit-column-count: 3;
+       -moz-column-count: 3;
             column-count: 3; }
   .column-count-4, .p-column-count-4 p {
     -webkit-column-count: 3;
+       -moz-column-count: 3;
             column-count: 3; }
   .column-count-5, .p-column-count-5 p {
     -webkit-column-count: 4;
+       -moz-column-count: 4;
             column-count: 4; }
   .column-count-6, .p-column-count-6 p {
     -webkit-column-count: 5;
+       -moz-column-count: 5;
             column-count: 5; } }
 
 @media (max-width: 767.98px) {
   .column-count-2, .p-column-count-2 p {
     -webkit-column-count: 2;
+       -moz-column-count: 2;
             column-count: 2; }
   .column-count-3, .p-column-count-3 p {
     -webkit-column-count: 2;
+       -moz-column-count: 2;
             column-count: 2; }
   .column-count-4, .p-column-count-4 p {
     -webkit-column-count: 2;
+       -moz-column-count: 2;
             column-count: 2; }
   .column-count-5, .p-column-count-5 p {
     -webkit-column-count: 3;
+       -moz-column-count: 3;
             column-count: 3; }
   .column-count-6, .p-column-count-6 p {
     -webkit-column-count: 4;
+       -moz-column-count: 4;
             column-count: 4; } }
 
 @media (max-width: 575.98px) {
   .column-count-2, .p-column-count-2 p {
     -webkit-column-count: 1;
+       -moz-column-count: 1;
             column-count: 1; }
   .column-count-3, .p-column-count-3 p {
     -webkit-column-count: 1;
+       -moz-column-count: 1;
             column-count: 1; }
   .column-count-4, .p-column-count-4 p {
     -webkit-column-count: 2;
+       -moz-column-count: 2;
             column-count: 2; }
   .column-count-5, .p-column-count-5 p {
     -webkit-column-count: 3;
+       -moz-column-count: 3;
             column-count: 3; }
   .column-count-6, .p-column-count-6 p {
     -webkit-column-count: 4;
+       -moz-column-count: 4;
             column-count: 4; }
   .responsive-table table,
   .responsive-table thead,
