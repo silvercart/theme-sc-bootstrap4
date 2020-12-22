@@ -12,7 +12,7 @@
     <td class="img text-center" data-title="<%t SilverCart\Model\Product\Product.IMAGE 'Image' %>">
     <% if $Product.ListImage %>
         <% if $SiteConfig.DisableProductLinkInCart %>
-        <span class="d-inline-block" title="<%t SilverCart\Model\Pages\Page.SHOW_DETAILS_FOR 'Show details for {title}' title=$Product.ListImage.Title %>"><img class="img-fluid" src="{$Product.ListImage.Pad(110,110).URL}" alt="{$Product.Title}" /></span>
+        <span class="d-inline-block"><img class="img-fluid" src="{$Product.ListImage.Pad(110,110).URL}" alt="{$Product.Title}" /></span>
         <% else %>
         <a class="d-inline-block" href="{$Product.Link}" title="<%t SilverCart\Model\Pages\Page.SHOW_DETAILS_FOR 'Show details for {title}' title=$Product.ListImage.Title %>"><img class="img-fluid" src="{$Product.ListImage.Pad(110,110).URL}" alt="{$Product.Title}" /></a>
         <% end_if %>

@@ -4,12 +4,20 @@
         <tr>
             <td class="sc-product-cart pl-2 pr-2" style="min-width: 40px;">
         <% if $Product.ListImage %>
+            <% if $SiteConfig.DisableProductLinkInCart %>
+                <img class="img-fluid img-responsive" src="{$Product.ListImage.Pad(62,62).URL}" alt="{$Product.Title}" />
+            <% else %>
                 <a href="{$Product.Link}" title="<%t SilverCart\Model\Pages\Page.SHOW_DETAILS_FOR 'Show details for {title}' title=$Product.Title %>"><img class="img-fluid img-responsive" src="{$Product.ListImage.Pad(62,62).URL}" alt="{$Product.Title}" /></a>
+            <% end_if %>
         <% end_if %>
             </td>
             <td class="sc-product-cart">
                 <div class="sc-product-cart-description">
+                <% if $SiteConfig.DisableProductLinkInCart %>
+                    <span class="highlight"><strong>{$getTitle}</strong></span>
+                <% else %>
                     <a class="highlight" href="{$Product.Link}"><strong>{$getTitle}</strong></a>
+                <% end_if %>
                     <ul class="list-unstyled">
                         <li><small><%t SilverCart\Model\Product\Product.PRODUCTNUMBER_SHORT 'Item no.' %>: {$getProductNumberShop}</small></li>
                         <% if $getCartDescription %><li><small>{$getCartDescription}</small></li><% end_if %>
