@@ -68,6 +68,24 @@
                     <td class="text-left text-nowrap"><%t SilverCart\Model\Pages\RevocationFormPage.TITLE 'Revocation' %></td>
                     <td class="text-right"><a class="btn btn-sm btn-warning" href="{$CurrentPage.PageByIdentifierCodeLink('SilvercartRevocationFormPage')}?o={$ID}"><%t SilverCart\Forms\RevocationForm.GoTo 'Go to revocation form' %> <span class="fa fa-caret-right"></span></a></td>
                 </tr>
+            <% with $CurrentPage %>
+                <% if $AllowReorder %>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <a class="btn btn-sm btn-outline-primary" href="{$ReoderLink}">{$fieldLabel('ButtonReorder')} <span class="fa fa-caret-right"></span></a><br/>
+                        <small class="alert alert-dark mt-1 p-1 d-inline-block"><span class="fa fa-info-circle"></span> {$fieldLabel('ButtonReorderDesc')}</small>
+                    </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <a class="btn btn-sm btn-outline-primary" href="{$ReoderFullLink}">{$fieldLabel('ButtonReorderFull')} <span class="fa fa-caret-right"></span></a><br/>
+                        <small class="alert alert-dark mt-1 p-1 d-inline-block"><span class="fa fa-info-circle"></span> {$fieldLabel('ButtonReorderFullDesc')}</small>
+                    </td>
+                </tr>
+                <% end_if %>
+            <% end_with %>
                 {$OrderDetailInformation}
             </tbody>
         </table>
