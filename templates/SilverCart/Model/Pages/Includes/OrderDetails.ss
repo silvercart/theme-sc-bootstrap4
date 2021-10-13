@@ -71,17 +71,15 @@
             <% with $CurrentPage %>
                 <% if $AllowReorder %>
                 <tr>
-                    <td>&nbsp;</td>
-                    <td>
+                    <td colspan="2" class="text-right">
                         <a class="btn btn-sm btn-outline-primary" href="{$ReoderLink}">{$fieldLabel('ButtonReorder')} <span class="fa fa-caret-right"></span></a><br/>
-                        <small class="alert alert-dark mt-1 p-1 d-inline-block"><span class="fa fa-info-circle"></span> {$fieldLabel('ButtonReorderDesc')}</small>
+                        <small class="alert alert-dark mt-1 mb-0 p-1 d-inline-block text-left"><span class="fa fa-info-circle"></span> {$fieldLabel('ButtonReorderDesc')}</small>
                     </td>
                 </tr>
                 <tr>
-                    <td>&nbsp;</td>
-                    <td>
+                    <td colspan="2" class="text-right">
                         <a class="btn btn-sm btn-outline-primary" href="{$ReoderFullLink}">{$fieldLabel('ButtonReorderFull')} <span class="fa fa-caret-right"></span></a><br/>
-                        <small class="alert alert-dark mt-1 p-1 d-inline-block"><span class="fa fa-info-circle"></span> {$fieldLabel('ButtonReorderFullDesc')}</small>
+                        <small class="alert alert-dark mt-1 mb-0 p-1 d-inline-block text-left"><span class="fa fa-info-circle"></span> {$fieldLabel('ButtonReorderFullDesc')}</small>
                     </td>
                 </tr>
                 <% end_if %>

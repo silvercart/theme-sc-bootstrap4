@@ -15,7 +15,7 @@
                 <td class="text-left" data-title="<%t SilverCart\Model\Product\Product.PRODUCTNUMBER_SHORT 'Item no.' %>">{$ProductNumber}</td>
                 <td class="text-left" data-title="<%t SilverCart\Model\Product\Product.COLUMN_TITLE 'Title' %>">
                     <span class="title">{$Title.RAW}</span>
-                    <% if $Product.exists %><a href="{$Product.Link}"><span class="fa fa-external-link"></span></a><% end_if %>
+                    <% if $Product.isPublished %><a href="{$Product.Link}"><span class="fa fa-external-link"></span></a><% end_if %>
                     <% if $ShortDescription %><br/><span class="title-desc">{$ShortDescription.RAW}</span><% end_if %>
                     <% if $addToTitle %><br/><span class="title-add">{$addToTitle}</span><% end_if %></td>
                 <td class="text-right" data-title="<%t SilverCart\Model\Product\Product.PRICE_SINGLE 'Price single' %>">{$Price.Nice}</td>

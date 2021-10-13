@@ -12,24 +12,21 @@
         {$Fields.dataFieldByName('FirstName').FieldHolder}
         {$Fields.dataFieldByName('Surname').FieldHolder}
         {$Fields.dataFieldByName('Email').FieldHolder}
-    <% if $EnableStreetNumber %>
-        {$Fields.dataFieldByName('Street').FieldHolder}
-        {$Fields.dataFieldByName('StreetNumber').FieldHolder}
+    <% if $ContactPage.FormFields %>
+        <% loop $ContactPage.FormFields %>
+            {$Up.Up.Fields.dataFieldByName($FormField.Name).FieldHolder}
+        <% end_loop %>
     <% end_if %>
-    <% if $EnableCityNumber %>
-        {$Fields.dataFieldByName('Postcode').FieldHolder}
-        {$Fields.dataFieldByName('City').FieldHolder}
-    <% end_if %>
-    <% if $EnableCountryNumber %>
-        {$Fields.dataFieldByName('CountryID').FieldHolder}
-    <% end_if %>
-    <% if $EnablePhoneNumber %>
-        {$Fields.dataFieldByName('Phone').FieldHolder}
+    <% if $HasSubjects %>
+        {$Fields.dataFieldByName('ContactMessageSubjectID').FieldHolder}
     <% end_if %>
         {$Fields.dataFieldByName('Message').FieldHolder}
         {$CustomFormSpecialFields}
     <% if $EnableGoogleRecaptcha %>
         {$Fields.dataFieldByName('GoogleRecaptcha').FieldHolder}
+    <% end_if %>
+    <% if $EnableHoneyPot %>
+        {$HoneyPotField.FieldHolder}
     <% end_if %>
     <% loop $Actions %>
         <button class="btn btn-primary float-right" type="submit" id="{$ID}" title="{$Title}"><span class="fa fa-arrow-right"></span> {$Title}</button> 

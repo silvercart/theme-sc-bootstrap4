@@ -19,8 +19,8 @@
     <% end_if %>
     </td>
     <td class="desc" data-title="<%t SilverCart\Model\Product\Product.TITLE 'Product' %>">
-        <% if $SiteConfig.DisableProductLinkInCart %>
-        <h5><span class="highlight" href="{$Product.Link}">{$getTitle}</span></h5>
+        <% if $SiteConfig.DisableProductLinkInCart || not $Product.isPublished %>
+        <h5><span class="highlight">{$getTitle}</span></h5>
         <% else %>
         <h5><a class="highlight" href="{$Product.Link}">{$getTitle}</a></h5>
         <% end_if %>
