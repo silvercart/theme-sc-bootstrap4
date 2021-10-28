@@ -1,23 +1,18 @@
 {
-    "name": "silverstripe-themes/sc-bootstrap4",
+    "name": "silvercart/theme-sc-bootstrap4",
     "type": "silverstripe-theme",
     "description": "The SilverCart theme based on Twitter Bootstrap 4",
-    "homepage": "http://www.silvercart.org",
+    "homepage": "http://www.silvercart.de",
     "license": "LGPL-3.0",
     "keywords": ["silverstripe", "silvercart", "ecommerce", "shop", "webshop", "online shop", "theme"],
     "authors": [
         {
             "name": "SilverCart",
-            "homepage": "http://www.silvercart.org"
-        },
-        {
-            "name": "pixeltricks",
-            "homepage": "http://www.pixeltricks.de"
+            "homepage": "https://www.silvercart.de"
         }
     ],
     "require": {
-        "composer/installers": "*",
-        "silvercart/silvercart": "~4.1"
+        "silvercart/silvercart": "^4.2"
     },
     "extra": {
         "expose": [
