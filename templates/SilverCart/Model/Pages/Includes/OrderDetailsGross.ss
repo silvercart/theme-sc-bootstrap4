@@ -16,6 +16,7 @@
                 <td class="text-left" data-title="<%t SilverCart\Model\Product\Product.COLUMN_TITLE 'Title' %>">
                     <span class="title">{$Title.RAW}</span>
                     <% if $Product.isPublished %><a href="{$Product.Link}"><span class="fa fa-external-link"></span></a><% end_if %>
+                    <% with $CurrentPage %><% if $AllowReorder %><br/><a class="btn btn-sm btn-link" href="{$ReoderPositionLink($Up.ID)}">{$fieldLabel('ButtonReorder')} <span class="fa fa-caret-right"></span></a><% end_if %><% end_with %>
                     <% if $ShortDescription %><br/><span class="title-desc">{$ShortDescription.RAW}</span><% end_if %>
                     <% if $addToTitle %><br/><span class="title-add">{$addToTitle}</span><% end_if %></td>
                 <td class="text-right" data-title="<%t SilverCart\Model\Product\Product.PRICE_SINGLE 'Price single' %>">{$Price.Nice}</td>
