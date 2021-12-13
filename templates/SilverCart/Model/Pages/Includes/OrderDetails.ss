@@ -98,4 +98,9 @@
 <div class="mt-3">
     {$OrderDetailTable}
 </div>
+    <% if $OrderDetailActions %>
+<div class="d-flex justify-content-between">
+    {$OrderDetailActions}
+</div>
+    <% end_if %>
 <% end_with %>
