@@ -18,6 +18,11 @@
             <% end_if %>
             </div>
             {$PaymentConfirmationText}
+            <% if $CustomersOrder.HasPositionsWithOrderConfirmationPageText %>
+                <% loop $CustomersOrder.PositionsWithOrderConfirmationPageText %>
+                    {$Product.OrderEmailText}
+                <% end_loop %>
+            <% end_if %>
             {$AfterContent}
         </article>
     <% if $CustomersOrder %>
