@@ -1,3 +1,4 @@
+{$BeforeHeaderContent}
 <header class="container-fluid">
     <div id="main-header" class="clearfix">
         <div class="row">
@@ -98,3 +99,4 @@
         </div>
     </div>
 </header>
+{$AfterHeaderContent}
