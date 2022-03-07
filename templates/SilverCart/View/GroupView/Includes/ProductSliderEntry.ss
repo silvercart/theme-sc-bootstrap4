@@ -1,16 +1,7 @@
 <li class="slider-item">
     <article class="card card-product silvercart-product-group-page-tile-item {$EvenOdd} clearfix text-center w-100 h-100 d-flex">
         <div class="thumbnail pt-2">
-        <% if $PriceIsLowerThanMsr || $isNewProduct %>
-            <span class="position-absolute top-0 left-2">
-            <% if $PriceIsLowerThanMsr %>
-                <span class="badge badge-secondary" title="<%t SilverCart\Model\Product\Product.Sale 'Sale' %>"><i><%t SilverCart\Model\Product\Product.Sale 'Sale' %>!</i></span>
-            <% end_if %>
-            <% if $isNewProduct %>
-                <span class="badge badge-primary" title="<%t SilverCart\Model\Product\Product.New 'New' %>"><i><%t SilverCart\Model\Product\Product.New 'New' %>!</i></span>
-            <% end_if %>
-            </span>
-        <% end_if %>
+        <% include SilverCart/Model/Pages/ProductBadges %>
         <% if $ListImage.Responsive %>
                 {$ListImage.setExtraClasses('d-inline-block').Responsive.Theme('ImageResponsiveLazyLoad').Ratio(2.5).Method('Pad').SrcSet('150w','300w').Sizes('(max-width: 544px) 50vw', '(min-width: 544.1px) 20vw')}
         <% else_if $ListImage %>

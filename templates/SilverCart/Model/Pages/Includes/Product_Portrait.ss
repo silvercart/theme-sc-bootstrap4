@@ -60,16 +60,12 @@
         </div>
 
         <div class="bordered padding">
-        <% if $PriceIsLowerThanMsr || $isNewProduct %>
-            <span class="position-absolute top-right">
-            <% if $PriceIsLowerThanMsr %>
-                <span class="badge badge-secondary" title="<%t SilverCart\Model\Product\Product.Sale 'Sale' %>"><i><%t SilverCart\Model\Product\Product.Sale 'Sale' %>!</i></span>
-            <% end_if %>
-            <% if $isNewProduct %>
-                <span class="badge badge-primary" title="<%t SilverCart\Model\Product\Product.New 'New' %>"><i><%t SilverCart\Model\Product\Product.New 'New' %>!</i></span>
-            <% end_if %>
-            </span>
+    <% if $HidePrices %>
+        <% if $HidePricesInfo %>
+            {$HidePricesInfo}
         <% end_if %>
+    <% else %>
+            <% include SilverCart/Model/Pages/ProductBadges %>
             <div class="product-price text-right">
                 <span>
                 <% if $PriceIsLowerThanMsr %>
@@ -107,9 +103,12 @@
                 <% end_if %>
                 </small>
             </div>
+    <% end_if %>
             <div class="clearfix mt-3">
                 <div class="float-right">
-            <% if $isBuyableDueToStockManagementSettings %>
+            <% if $IsNotBuyable == 1 %>
+                <a class="btn btn-primary btn-block" href="{$ProductQuestionLink}"><span class="fas fa-envelope"></span> <%t SilverCart.ContactUs 'Contact us' %></a>
+            <% else_if $isBuyableDueToStockManagementSettings %>
                     {$AddToCartForm('Detail')}
             <% else %>
                     <div class="alert alert-warning"><%t SilverCart\Model\Pages\ProductPage.OUT_OF_STOCK 'This product is out of stock.' %></div>
