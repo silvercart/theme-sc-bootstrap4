@@ -13,7 +13,7 @@
             </a>
             <% else_if $ListImage %>
             <a class="d-inline-block" href="{$Link}" title="<%t SilverCart\Model\Pages\Page.SHOW_DETAILS_FOR 'Show details for {title}' title=$Title %>">
-                <img class="img-fluid lazyload" src="{$BaseHref}resources/vendor/silvercart/silvercart/client/img/loader-circle.gif" data-src="{$ListImage.Pad(600,300).URL}" alt="{$Title}" />
+                <img class="img-fluid lazyload" src="{$BaseHref}_resources/vendor/silvercart/silvercart/client/img/loader-circle.gif" data-src="{$ListImage.Pad(600,300).URL}" alt="{$Title}" />
             </a>
             <% end_if %>
             <% include SilverCart/Model/Pages/ProductBadges %>

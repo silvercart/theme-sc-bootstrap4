@@ -7,9 +7,9 @@
                 <div class="thumbnail">
                     <a href="{$Link}" title="{$Title}">
                     <% if $GroupPicture %>
-                        <img class="img-fluid lazyload" src="{$BaseHref}resources/vendor/silvercart/silvercart/client/img/loader-circle.gif" data-src="{$GroupPicture.Pad(250,150).URL}" alt="{$MenuTitle.HTML}" />
+                        <img class="img-fluid lazyload" src="{$BaseHref}_resources/vendor/silvercart/silvercart/client/img/loader-circle.gif" data-src="{$GroupPicture.Pad(250,150).URL}" alt="{$MenuTitle.HTML}" />
                     <% else_if $getProductsToDisplay.first.ListImage %>
-                        <img class="img-fluid lazyload" src="{$BaseHref}resources/vendor/silvercart/silvercart/client/img/loader-circle.gif" data-src="{$getProductsToDisplay.first.ListImage.Pad(350,230).URL}" alt="{$MenuTitle.HTML}" />
+                        <img class="img-fluid lazyload" src="{$BaseHref}_resources/vendor/silvercart/silvercart/client/img/loader-circle.gif" data-src="{$getProductsToDisplay.first.ListImage.Pad(350,230).URL}" alt="{$MenuTitle.HTML}" />
                     <% end_if %>
                     </a>
                 </div>

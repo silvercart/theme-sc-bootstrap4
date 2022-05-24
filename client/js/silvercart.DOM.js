@@ -119,7 +119,7 @@ silvercart.DOM = (function () {
                     $(selector.shopLoadingMask).css({
                         "display": 'none',
                         "background-color": '#ffffff',
-                        "background-image": 'url("' + document.location.origin + '/resources/themes/sc-bootstrap4/client/img/loader.gif")',
+                        "background-image": 'url("' + document.location.origin + '/_resources/themes/sc-bootstrap4/client/img/loader.gif")',
                         "background-repeat": 'no-repeat',
                         "background-position": 'center',
                         "position": 'fixed',

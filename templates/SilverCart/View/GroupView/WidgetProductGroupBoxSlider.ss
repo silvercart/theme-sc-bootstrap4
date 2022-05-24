@@ -9,10 +9,10 @@
                         <a class="d-inline-block" href="{$Link}" title="<%t SilverCart\Model\Pages\Page.SHOW_DETAILS_FOR 'Show details for {title}' title=$Title %>">
                     <% if $GroupPicture %>
                             <img class="img-fluid" src="{$GroupPicture.Pad(275,165).URL}" alt="{$MenuTitle.HTML}" />
-                            <%--img class="img-fluid lazyload" src="{$BaseHref}resources/vendor/silvercart/silvercart/client/img/loader-circle.gif" data-src="{$GroupPicture.Pad(275,165).URL}" alt="{$MenuTitle.HTML}" /--%>
+                            <%--img class="img-fluid lazyload" src="{$BaseHref}_resources/vendor/silvercart/silvercart/client/img/loader-circle.gif" data-src="{$GroupPicture.Pad(275,165).URL}" alt="{$MenuTitle.HTML}" /--%>
                     <% else_if $getProductsToDisplay.first.ListImage %> 
                             <img class="img-fluid" src="{$getProductsToDisplay.first.ListImage.Pad(275,165).URL}" alt="{$MenuTitle.HTML}" />
-                            <%--img class="img-fluid lazyload" src="{$BaseHref}resources/vendor/silvercart/silvercart/client/img/loader-circle.gif" data-src="{$getProductsToDisplay.first.ListImage.Pad(275,165).URL}" alt="{$MenuTitle.HTML}" /--%>
+                            <%--img class="img-fluid lazyload" src="{$BaseHref}_resources/vendor/silvercart/silvercart/client/img/loader-circle.gif" data-src="{$getProductsToDisplay.first.ListImage.Pad(275,165).URL}" alt="{$MenuTitle.HTML}" /--%>
                     <% end_if %>
                         </a>
                     </div>

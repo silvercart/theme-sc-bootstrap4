@@ -6,7 +6,7 @@
         <div class="modal-content">
             <div class="modal-header">
             <a class="logo-link d-inline-block" href="{$PageByIdentifierCode('SilvercartFrontPage').Link}" title="{$SiteConfig.Title} - {$SiteConfig.Tagline}">
-                <img src="<% if $SiteConfig.ShopLogo %>{$SiteConfig.ShopLogo.ScaleHeight(40).Link}<% else %>{$BaseHref}resources/vendor/silvercart/silvercart/client/img/logo.png" style="height:40px<% end_if %>" class="img-fluid" alt="{$SiteConfig.Title}">
+                <img src="<% if $SiteConfig.ShopLogo %>{$SiteConfig.ShopLogo.ScaleHeight(40).Link}<% else %>{$BaseHref}_resources/vendor/silvercart/silvercart/client/img/logo.png" style="height:40px<% end_if %>" class="img-fluid" alt="{$SiteConfig.Title}">
                 <span class="sr-only">{$SiteConfig.Title} - {$SiteConfig.Tagline}</span>
             </a>
             <h5 class="modal-title"><span class="fa fa-lock"></span> <%t SilverStripe\Security\Security.LOGIN 'Log in' %></h5>

@@ -9,7 +9,7 @@
             <% include SilverCart/Model/Pages/ProductBadges %>
             <a class="d-inline-block" href="{$Link}" title="<%t SilverCart\Model\Pages\Page.SHOW_DETAILS_FOR 'Show details for {title}' title=$Title %>">
         <% if $ListImage %>
-                <img class="img-fluid lazyload" src="{$BaseHref}resources/vendor/silvercart/silvercart/client/img/loader-circle.gif" data-src="{$ListImage.Pad(140,80).URL}" alt="{$Title}" />
+                <img class="img-fluid lazyload" src="{$BaseHref}_resources/vendor/silvercart/silvercart/client/img/loader-circle.gif" data-src="{$ListImage.Pad(140,80).URL}" alt="{$Title}" />
         <% end_if %>
             </a>
         </div>

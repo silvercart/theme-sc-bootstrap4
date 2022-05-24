@@ -2,9 +2,9 @@
     <figure class="effect-overlay w-100 bg-white card">
         <a href="{$Link}" title="{$Title}" class="stretched-link">
         <% if $GroupPicture %>
-            <img class="img-fluid lazyload" src="{$BaseHref}resources/vendor/silvercart/silvercart/client/img/loader-circle.gif" data-src="{$GroupPicture.Pad(375,250).URL}" alt="{$MenuTitle.HTML}" />
+            <img class="img-fluid lazyload" src="{$BaseHref}_resources/vendor/silvercart/silvercart/client/img/loader-circle.gif" data-src="{$GroupPicture.Pad(375,250).URL}" alt="{$MenuTitle.HTML}" />
         <% else_if $getProductsToDisplay.first.ListImage %> 
-            <img class="img-fluid lazyload" src="{$BaseHref}resources/vendor/silvercart/silvercart/client/img/loader-circle.gif" data-src="{$getProductsToDisplay.first.ListImage.Pad(375,250).URL}" alt="{$MenuTitle.HTML}" />
+            <img class="img-fluid lazyload" src="{$BaseHref}_resources/vendor/silvercart/silvercart/client/img/loader-circle.gif" data-src="{$getProductsToDisplay.first.ListImage.Pad(375,250).URL}" alt="{$MenuTitle.HTML}" />
         <% end_if %>
         </a>
         <figcaption>

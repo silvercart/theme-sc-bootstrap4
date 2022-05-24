@@ -60,7 +60,8 @@ gulp.task('serve', ['sync','sass'], function () {
             // Patterns for static files to watch. 
             // We're watching js and php files within mysite
             // and SilverStripe template files within themes
-            "resources/**/*.js"
+            "resources/**/*.js",
+            "_resources/**/*.js"
         ]
     });
     // watch changes to sass (these will also be piped to browser-sync)

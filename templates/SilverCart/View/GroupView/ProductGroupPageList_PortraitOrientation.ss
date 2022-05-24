@@ -6,7 +6,7 @@
                 <% if $ListImage.Responsive %>
                     {$ListImage.Responsive.Theme('ImageResponsiveLazyLoad').Ratio(1.8).Method('Pad').SrcSet('200w','300w','550w').Sizes('(max-width: 544px) 80vw', '(min-width: 544.1px) and (max-width: 992px) 25vw','(min-width: 992.1px) 20vw')}
                 <% else_if $ListImage %>
-                    <img class="img-fluid lazyload" src="{$BaseHref}resources/vendor/silvercart/silvercart/client/img/loader-circle.gif" data-src="{$ListImage.Pad(400,300).URL}" alt="{$Title}" />
+                    <img class="img-fluid lazyload" src="{$BaseHref}_resources/vendor/silvercart/silvercart/client/img/loader-circle.gif" data-src="{$ListImage.Pad(400,300).URL}" alt="{$Title}" />
                 <% end_if %>
                 </a>
             </div>
