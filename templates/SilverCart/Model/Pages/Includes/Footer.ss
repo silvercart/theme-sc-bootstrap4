@@ -21,22 +21,14 @@
     <% end_loop %>
 <% end_if %>
 <% with $SiteConfig %>
-    <% if $FacebookLink || $TwitterLink || $XingLink || $GoogleplusLink || $InstagramLink || $BloglovinLink || $PinterestLink || $YouTubeLink || $TumblrLink || $RSSLink || $EmailLink %>
+    <% if $ExternalLinksWithIcon %>
             <section class="card bg-light border-0 p-3">
                 <h4><%t SilverCart\Admin\Model\Config.SOCIALMEDIA 'Social Media' %></h4>
                 <div id="socialicons" itemscope itemtype="http://schema.org/Organization">
                     <link itemprop="url" href="{$BaseHref}" />
-        <% if $FacebookLink   %><a itemprop="sameAs" class="icon btn mb-1" href="{$FacebookLink}" title="Follow with Facebook" target="_blank"><span class="fa fa-2x fa-facebook"></span></a><% end_if %>
-        <% if $TwitterLink    %><a itemprop="sameAs" class="icon btn mb-1" href="{$TwitterLink}" title="Follow with Twitter" target="_blank"><span class="fa fa-2x fa-twitter"></span></a><% end_if %>
-        <% if $XingLink       %><a itemprop="sameAs" class="icon btn mb-1" href="{$XingLink}" title="Follow with Xing" target="_blank"><span class="fa fa-2x fa-xing"></span></a><% end_if %>
-        <% if $GoogleplusLink %><a itemprop="sameAs" class="icon btn mb-1" href="{$GoogleplusLink}" title="Follow with Google Plus" target="_blank"><span class="fa fa-2x fa-google-plus"></span></a> <% end_if %>
-        <% if $InstagramLink  %><a itemprop="sameAs" class="icon btn mb-1" href="{$InstagramLink}" title="Follow with Instagram" target="_blank"><span class="fa fa-2x fa-instagram"></span></a><% end_if %>
-        <% if $BloglovinLink  %><a itemprop="sameAs" class="icon btn mb-1" href="{$BloglovinLink}" title="Follow with Bloglovin" target="_blank"><span class="fa fa-2x fa-heart"></span></a><% end_if %>
-        <% if $PinterestLink  %><a itemprop="sameAs" class="icon btn mb-1" href="{$PinterestLink}" title="Follow with Pinterest" target="_blank"><span class="fa fa-2x fa-pinterest"></span></a><% end_if %>
-        <% if $YouTubeLink    %><a itemprop="sameAs" class="icon btn mb-1" href="{$YouTubeLink}" title="Follow with YouTube" target="_blank"><span class="fa fa-2x fa-youtube"></span></a><% end_if %>
-        <% if $TumblrLink     %><a itemprop="sameAs" class="icon btn mb-1" href="{$TumblrLink}" title="Follow with Tumblr" target="_blank"><span class="fa fa-2x fa-tumblr"></span></a><% end_if %>
-        <% if $RSSLink        %><a itemprop="sameAs" class="icon btn mb-1" href="{$RSSLink}" title="Follow with RSS" target="_blank"><span class="fa fa-2x fa-rss"></span></a><% end_if %>
-        <% if $EmailLink      %><a itemprop="sameAs" class="icon btn mb-1" href="mailto:{$EmailLink}" title="Email Me" target="_blank"><span class="fa fa-2x fa-envelope"></span></a><% end_if %>
+                    <% loop $ExternalLinksWithIcon %>
+                        <a itemprop="sameAs" class="icon btn mb-1" href="{$Link.LinkURL}" title="{$Title}" {$Link.TargetAttr}>{$Icon('fa-2x')}</a>
+                    <% end_loop %>
                 </div>
             </section>
     <% end_if %>
