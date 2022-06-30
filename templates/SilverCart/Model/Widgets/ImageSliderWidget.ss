@@ -39,11 +39,11 @@
             </div>
         <% end_loop %>
         </div>
-        <a class="carousel-control-prev" href="#carousel-widget-{$ID}" role="button" data-slide="prev">
+        <a class="carousel-control-prev" href="#" data-target="#carousel-widget-{$ID}" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only"><%t SilverCart\Model\Pages\Page.PREV 'Previous' %></span>
         </a>
-        <a class="carousel-control-next" href="#carousel-widget-{$ID}" role="button" data-slide="next">
+        <a class="carousel-control-next" href="#" data-target="#carousel-widget-{$ID}" role="button" data-slide="next">
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="sr-only"><%t SilverCart\Model\Pages\Page.NEXT 'Next' %></span>
         </a>
