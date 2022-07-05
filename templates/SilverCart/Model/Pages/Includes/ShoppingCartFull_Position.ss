@@ -45,6 +45,7 @@
     <td class="quantity text-center" data-title="<%t SilverCart\Model\Pages\ProductPage.QUANTITY 'Quantity' %>">
         <form class="form-inline d-inline-block" action="/sc-action/addToCart" method="post">
             <input type="hidden" name="productID" value="{$ProductID}">
+            <input type="hidden" name="Increment" value="0">
             <div class="input-group input-group-sm">
                 <div class="input-group-prepend">
                     <a href="{$baseHref}sc-action/decrementPositionQuantity/{$ID}/{$CurrentPage.ID}" class="btn btn-outline-secondary" role="button"><span class="fa fa-minus"></span></a>
