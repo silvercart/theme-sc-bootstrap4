@@ -1,4 +1,4 @@
-<% if $slideImages %>
+<% if $getSlideImages %>
     <% if $FrontTitle %>
 <header><h3>{$FrontTitle}</h3></header>
     <% else %>
@@ -10,12 +10,12 @@
     <% if $useSlider %>
     <div id="carousel-widget-{$ID}" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
-        <% loop $slideImages %>
+        <% loop $getSlideImages %>
             <li class="border border-light <% if $First %>active<% end_if %>" data-target="#carousel-widget-{$Up.ID}" data-slide-to="{$Pos(0)}"></li>
         <% end_loop %>
         </ol>
         <div class="carousel-inner">
-        <% loop $slideImages %>
+        <% loop $getSlideImages %>
             <div class="carousel-item <% if $First %>active<% end_if %>">
             <% if $LinkedSite %><a href="{$LinkedSite.Link}" title="{$Title.XML}"><% end_if %>
             <% if $Image.Responsive %>
