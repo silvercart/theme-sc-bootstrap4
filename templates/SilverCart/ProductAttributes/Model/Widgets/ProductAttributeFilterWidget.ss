@@ -7,6 +7,9 @@
             <% end_if %>
     <header><h4 class="<% if $HasSelectedValues %>has-selected-values<% else %>has-no-selected-values<% end_if %>">{$Title}</h4></header>
     <div class="widget-product-attribute-filter">
+            <% if not $DisableFilterReset && $HasSelectedValues %>
+        <a href="#" data-id="{$ID}" class="remove-filter btn btn-sm btn-light mb-2"><span class="fa fa-chevron-left"></span> <%t SilverCart\ProductAttributes\Model\Widgets\ProductAttributeFilterWidget.Clear 'Clear' %></a>
+            <% end_if %>
         <ul class="list-unstyled mb-0">
             <% if $AssignedValues %>
                 <% loop $AssignedValues %>
@@ -14,9 +17,6 @@
                 <% end_loop %>
             <% end_if %>
         </ul>
-            <% if $HasSelectedValues %>
-        <a href="#" data-id="{$ID}" class="remove-filter btn btn-sm btn-light"><span class="fa fa-times"></span> <%t SilverCart\ProductAttributes\Model\Widgets\ProductAttributeFilterWidget.DISABLE_FILTER_FOR 'Reset all filters for &quot;{title}&quot;' title=$Title %></a>
-            <% end_if %>
     </div>
         <% end_loop %>
 <form name="silvercart-product-attribute-filter-form" method="post" action="{$FormAction}" class="invisible"
