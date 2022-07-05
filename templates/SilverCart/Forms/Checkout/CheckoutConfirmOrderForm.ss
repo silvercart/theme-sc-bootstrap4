@@ -115,7 +115,14 @@
                 <% loop $Actions %>
                     <button class="btn btn-primary btn-lg btn-block action" type="submit" title="{$Title}" name="{$Name}" id="{$ID}">{$Title} <span class="fa fa-caret-right"></span></button>
                 <% end_loop %>
-                    <p class="mt-3 mb-0">{$AcceptTermsAndConditionsText}</p>
+                <% if $CurrentPage.EnableTermsAndConditionsCheckbox %>
+                    <div class="form-group form-check mb-t mb-0">
+                        <input class="form-check-input" type="checkbox" id="checkbox-atac" name="AcceptTermsAndConditions" required="required" />
+                        <label class="form-check-label" for="checkbox-atac">{$AcceptTermsAndConditionsText}</label>
+                    </div>
+                <% else %>
+                    <div class="mt-3 mb-0">{$AcceptTermsAndConditionsText}</div>
+                <% end_if %>
                 </div>
             </div>
         </div>
