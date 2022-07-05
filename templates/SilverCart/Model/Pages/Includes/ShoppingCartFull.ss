@@ -6,6 +6,13 @@
 <% end_if %>
 <% if $CurrentMember.ShoppingCart.isFilled %>
     <% with $CurrentMember.ShoppingCart %>
+        <% if $ProductCartDescriptions %>
+            <div class="alert alert-info last-child-m-0" role="alert">
+            <% loop $ProductCartDescriptions %>
+                {$CartDescription}
+            <% end_loop %>
+            </div>
+        <% end_if %>
         <% if $CurrentPage.showPricesGross %>
             <% include SilverCart/Model/Pages/ShoppingCartFull_Gross %>
         <% else %>
