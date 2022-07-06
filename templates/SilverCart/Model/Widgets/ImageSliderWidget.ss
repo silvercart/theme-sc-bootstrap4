@@ -16,7 +16,7 @@
         </ol>
         <div class="carousel-inner">
         <% loop $getSlideImages %>
-            <div class="carousel-item <% if $First %>active<% end_if %>">
+            <div class="carousel-item <% if $First %>active<% end_if %>" <% if $Up.Autoplay && $Up.slideDelay > 0 %>data-interval="{$Up.slideDelay}"<% end_if %>>
             <% if $LinkedSite %><a href="{$LinkedSite.Link}" title="{$Title.XML}"><% end_if %>
             <% if $Image.Responsive %>
                 {$Image.setExtraClasses('img-fluid').Responsive.SrcSet('300w','576w','1280w').Sizes('(max-width: 1279.99px) 100vw','(min-width: 1280px) 1280px')}
