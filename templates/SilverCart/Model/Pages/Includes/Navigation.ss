@@ -1,4 +1,13 @@
 <% cached $MainNavigationCacheKey %>
+<% with $SiteConfig %>
+    <% if $BrandNavigation %>
+        <div class="container-fluid d-flex my-3 justify-content-between">
+            <% loop $BrandNavigation.Filter('IsActive', 1).Sort('Sort', 'ASC') %>
+                <a href="{$Link.LinkURL}"><img src="$Image.ScaleHeight(40).Link" /></a>
+            <% end_loop %>
+        </div>
+    <% end_if %>
+<% end_with %>
 <nav id="navbar" class="navbar navbar-expand-md static-top">
     <div class="container-fluid">
         <div class="icon-bar row w-100 mx-0 d-md-none" role="group">
