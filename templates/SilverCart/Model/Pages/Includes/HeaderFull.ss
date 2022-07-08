@@ -45,7 +45,11 @@
                     <% if $CurrentRegisteredCustomer %>
                         <div class="dropdown">
                             <a id="account-dropdown" class="btn dropdown-toggle text-left" data-toggle="dropdown" title="<%t SilverCart\Model\Pages\Page.MYACCOUNT 'my account' %>">
+                            <% if $CurrentRegisteredCustomer.FirstName %>
                                 <span class="d-block text-truncate"><%t SilverCart\Model\Pages\Page.HELLO 'Welcome' %>, {$CurrentRegisteredCustomer.FirstName}</span>
+                            <% else %>
+                                <%t SilverCart\Model\Pages\Page.WELCOME_PAGE_TITLE 'Welcome' %><br/>
+                            <% end_if %>
                                 <strong><span class="fa fa-user"></span> <%t SilverCart\Model\Pages\Page.MYACCOUNT 'my account' %></strong>
                                 <span class="caret"></span>
                             </a>
