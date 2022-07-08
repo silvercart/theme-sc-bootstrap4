@@ -15,28 +15,28 @@
     <% with $Controller.Checkout.CurrentStep %>
         <% if $InvoiceAddressIsShippingAddress %>
             <div class="checkout-change-area mb-2 position-relative">
-            {$BeforeInvoiceAddressContent}
+            {$Top.BeforeInvoiceAddressContent}
             <% with $InvoiceAddress %>
                 <% include SilverCart/Model/Pages/AddressDetailReadOnly %>
             <% end_with %>
-            {$AfterInvoiceAddressContent}
+            {$Top.AfterInvoiceAddressContent}
                 <a class="btn btn-sm btn-link position-absolute top-2 right checkout-change-button" href="{$Controller.AddressStepLink}"><span class="fa fa-edit"></span> <%t SilverCart\Model\Pages\CheckoutStep.Change 'Change' %></a>
             </div>
         <% else %>
             <div class="checkout-change-area mb-2 position-relative">
-                {$BeforeInvoiceAddressContent}
+                {$Top.BeforeInvoiceAddressContent}
                 <% with $InvoiceAddress %>
                     <% include SilverCart/Model/Pages/AddressDetailReadOnly %>
                 <% end_with %>
-                {$AfterInvoiceAddressContent}
+                {$Top.AfterInvoiceAddressContent}
                 <a class="btn btn-sm btn-link position-absolute top-2 right checkout-change-button" href="{$Controller.AddressStepLink}"><span class="fa fa-edit"></span> <%t SilverCart\Model\Pages\CheckoutStep.Change 'Change' %></a>
             </div>
             <div class="checkout-change-area mb-2 position-relative">
-                {$BeforeShippingAddressContent}
+                {$Top.BeforeShippingAddressContent}
                 <% with $ShippingAddress %>
                     <% include SilverCart/Model/Pages/AddressDetailReadOnly %>
                 <% end_with %>
-                {$AfterShippingAddressContent}
+                {$Top.AfterShippingAddressContent}
                 <a class="btn btn-sm btn-link position-absolute top-2 right checkout-change-button" href="{$Controller.AddressStepLink}"><span class="fa fa-edit"></span> <%t SilverCart\Model\Pages\CheckoutStep.Change 'Change' %></a>
             </div>
         <% end_if %>
@@ -58,9 +58,9 @@
                     <% end_with %>
                     <% if $ShoppingCart.getDeliveryTime($ShippingMethod.ID) %>
                         <% if $ShippingMethod.isPickup %>
-                        <br/><small class="delivery-time-hint">{$ShippingMethod.fieldLabel(ReadyForPickup)}:<br/>{$ShoppingCart.getDeliveryTime($ShippingMethod.ID)}</small>
+                        <br/><small class="delivery-time-hint">{$ShippingMethod.fieldLabel('ReadyForPickup')}:<br/>{$ShoppingCart.getDeliveryTime($ShippingMethod.ID)}</small>
                         <% else %>
-                        <br/><small class="delivery-time-hint">{$ShippingMethod.fieldLabel(ExpectedDelivery)}:<br/>{$ShoppingCart.getDeliveryTime($ShippingMethod.ID)}</small>
+                        <br/><small class="delivery-time-hint">{$ShippingMethod.fieldLabel('ExpectedDelivery')}:<br/>{$ShoppingCart.getDeliveryTime($ShippingMethod.ID)}</small>
                         <% end_if %>
                     <% end_if %>
                     {$AfterShippingMethodContent}
@@ -111,7 +111,7 @@
                 <div class="offset-2 col-10 offset-sm-5 col-sm-7 offset-lg-7 col-lg-5 text-justify">
                 <% if $ShowNewsletterCheckbox %>
                     <div class="alert alert-light mb-2 py-1 px-2">
-                        {$Fields.dataFieldByName(SubscribedToNewsletter).addExtraClass('mb-0').FieldHolder}
+                        {$Fields.dataFieldByName('SubscribedToNewsletter').addExtraClass('mb-0').FieldHolder}
                     </div>
                 <% end_if %>
                 <% loop $Actions %>
