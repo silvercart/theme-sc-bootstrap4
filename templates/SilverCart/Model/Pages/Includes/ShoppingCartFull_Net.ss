@@ -46,19 +46,15 @@
                 <% include SilverCart/Model/Pages/ShoppingCartFull_RegisteredModulesNet %>
                 <% include SilverCart/Model/Pages/ShoppingCartFull_FeesOrChargesOrModulesNet %>
 <% if $TaxTotal %>
-                <tr>
-                    <td colspan="6" class="text-right font-weight-bold"><%t SilverCart\Model\Pages\Page.SUBTOTAL 'subtotal' %></td>
-                    <td class="text-right font-weight-bold">{$AmountTotalNetWithoutVat.Nice}</td>
-                </tr>
     <% loop $TaxTotal %>
                 <tr>
-                    <td colspan="6" class="text-right"><%t SilverCart\Model\Pages\Page.ADDITIONAL_VAT 'Additional VAT' %> ({$Rate}%)</td>
+                    <td colspan="3" class="text-right"><%t SilverCart\Model\Pages\Page.ADDITIONAL_VAT 'Additional VAT' %> ({$Rate}%)</td>
                     <td class="text-right">{$Amount.Nice}<% if $ShippingMethod.ShippingFee.PostPricing %>*<% end_if %></td>
                 </tr>
     <% end_loop %>
 <% end_if %>
                 <tr>
-                    <td colspan="6" class="text-right"><h2><%t SilverCart\Model\Pages\Page.TOTAL 'total' %></h2></td>
+                    <td colspan="3" class="text-right"><h2><%t SilverCart\Model\Pages\Page.TOTAL 'total' %></h2></td>
                     <td class="text-right"><h2>{$AmountTotalNet.Nice}</h2></td>
                 </tr>
 <% if $registeredModules %>
@@ -66,7 +62,7 @@
         <% if $IncludedInTotalShoppingCartPositions %>
             <% loop $IncludedInTotalShoppingCartPositions %>
                 <tr>
-                    <td colspan="6" class="text-right">{$Name}</td>
+                    <td colspan="3" class="text-right">{$Name}</td>
                     <td class="text-right">{$PriceTotalFormatted}</td>
                 </tr>
             <% end_loop %>
