@@ -1,7 +1,11 @@
 <% if $SubElements %>
 <nav class="widget">
     <% if $SubElementsTitle %>
+        <% if $SubElementsTitleLink %>
+    <a class="h4 d-block <% if $LinkingMode == current %>active<% end_if %>" href="{$SubElementsTitleLink}">{$SubElementsTitle}</a>
+        <% else %>
     <h4>{$SubElementsTitle}</h4>
+        <% end_if %>
     <% end_if %>
     <ul class="nav flex-column">
         <% loop $SubElements %>
