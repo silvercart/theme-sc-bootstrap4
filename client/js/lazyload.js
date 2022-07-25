@@ -16,7 +16,7 @@
  * @author Jiri Ripa 
  * @since 12.04.2018
  */
-
+;
 (function (root, factory) {
     if (typeof exports === "object") {
         module.exports = factory(root);
