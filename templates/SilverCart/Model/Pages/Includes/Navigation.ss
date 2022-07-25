@@ -47,6 +47,15 @@
                         <li class="col nav-item text-gray py-4"><span class="spinner-border spinner-border-lg"></span></li>
                     </ul>
                 </li>
+                    <% else_if $LinkTo.exists && $LinkTo.Children %>
+                        <% with $LinkTo %>
+                <li id="navlist{$ID}" class="nav-item dropdown" data-item-id="{$ID}">
+                    <a href="{$Link}" title="{$MenuTitle.XML}" class="nav-link dropdown-toggle <% if $isCurrent %>active<% else_if $isSection %>section<% end_if %>" data-toggle="dropdown">{$MenuTitle.XML}</a>
+                    <ul class="dropdown-menu loading" data-dropdown-in="lightSpeedIn" data-dropdown-out="lightSpeedOut" id="navbarToggleExternalContent{$ID}">
+                        <li class="col nav-item text-gray py-4"><span class="spinner-border spinner-border-lg"></span></li>
+                    </ul>
+                </li>
+                        <% end_with %>
                     <% else %>
                 <li id="navlist{$ID}" class="nav-item" data-item-id="{$ID}">
                     <a href="{$Link}" title="{$MenuTitle.XML}" class="nav-link <% if $isCurrent %>active<% else_if $isSection %>section<% end_if %>">{$MenuTitle.XML}</a>

@@ -124,3 +124,6 @@ $pagination-color: $primaryLight;
 $pagination-active-border-color: $primaryLight;
 
 $component-active-bg:       theme-color("primary");
+@mixin section-link-bg-color() {
+    background-color: $primary;
+}
