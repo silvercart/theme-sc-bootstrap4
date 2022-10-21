@@ -21,13 +21,13 @@
         </td>
     <% end_if %>
     <% loop $VisibleCheckoutSteps %>
-        <td<% if $IsAccessible %> class="nav-item"<% end_if %>>
+        <td <% if $IsAccessible %>class="nav-item"<% end_if %>>
         <% if $IsCurrentStep && not $Up.CurrentPageIsCartPage %>
             <span class="nav-link active step-{$StepNumber}"><strong><span class="fa fa-checkoutstep{$StepNumber}"></span> {$VisibleStepNumber}. <span class="step-title d-none d-sm-inline">{$StepTitle}</span></strong></span>
         <% else_if $IsCompleted %>
-            <a class="nav-link" href="{$Top.Link(step)}/{$StepNumber}"><span class="fa fa-ok"></span> <span class="fa fa-checkoutstep{$StepNumber}"></span> {$VisibleStepNumber}. <span class="step-title d-none d-sm-inline">{$StepTitle}</span></a>
+            <a class="nav-link" href="{$Top.PageByIdentifierCode('SilvercartCheckoutStep').Link(step)}/{$StepNumber}"><span class="fa fa-ok"></span> <span class="fa fa-checkoutstep{$StepNumber}"></span> {$VisibleStepNumber}. <span class="step-title d-none d-sm-inline">{$StepTitle}</span></a>
         <% else_if $IsPreviousStepCompleted %>
-            <a class="nav-link" href="{$Top.Link(step)}/{$StepNumber}"><span class="fa fa-ok"></span> <span class="fa fa-checkoutstep{$StepNumber}"></span> {$VisibleStepNumber}. <span class="step-title d-none d-sm-inline">{$StepTitle}</span></a>
+            <a class="nav-link" href="{$Top.PageByIdentifierCode('SilvercartCheckoutStep').Link(step)}/{$StepNumber}"><span class="fa fa-ok"></span> <span class="fa fa-checkoutstep{$StepNumber}"></span> {$VisibleStepNumber}. <span class="step-title d-none d-sm-inline">{$StepTitle}</span></a>
         <% else %>
             <span class="nav-link disabled"><span class="fa fa-checkoutstep{$StepNumber}"></span> {$VisibleStepNumber}. <span class="step-title d-none d-sm-inline">{$StepTitle}</span></span>
         <% end_if %>
