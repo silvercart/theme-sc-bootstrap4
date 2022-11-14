@@ -29,7 +29,7 @@
         <div class="alert alert-{$Type} mb-2"><span class="fa fa-{$Icon}"></span> {$Notice}</div>
     <% end_loop %>
 <% end_if %>
-<div class="silvercart-shopping-cart-full mt-3">
+<div class="silvercart-shopping-cart-full mt-2">
     <table class="table responsive-table">
         <% include SilverCart/Model/Pages/ShoppingCartFull_TableHead %>
         <tbody>

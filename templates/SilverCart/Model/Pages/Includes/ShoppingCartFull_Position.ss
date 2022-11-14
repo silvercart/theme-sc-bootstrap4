@@ -26,9 +26,9 @@
         <% end_if %>
         <ul class="list-unstyled p-0 m-0">
         <% if $SiteConfig.DisableProductLinkInCart %>
-            <li><span class="highlight"><%t SilverCart\Model\Product\Product.PRODUCTNUMBER_SHORT 'Item no.' %>: {$getProductNumberShop}</span></li>
+            <li><span class="highlight small text-muted"><%t SilverCart\Model\Product\Product.PRODUCTNUMBER_SHORT 'Item no.' %>: {$getProductNumberShop}</span></li>
         <% else %>
-            <li><a class="highlight" href="{$Product.Link}"><%t SilverCart\Model\Product\Product.PRODUCTNUMBER_SHORT 'Item no.' %>: {$getProductNumberShop}</a></li>
+            <li><a class="highlight small text-muted" href="{$Product.Link}"><%t SilverCart\Model\Product\Product.PRODUCTNUMBER_SHORT 'Item no.' %>: {$getProductNumberShop}</a></li>
         <% end_if %>
             <% if $getCartDescription %><li><small>{$getCartDescription}</small></li><% end_if %>
             <% if $addToTitle %><li><small>{$addToTitle}</small></li><% end_if %>
