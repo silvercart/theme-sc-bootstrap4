@@ -23,6 +23,7 @@
                 <% end_if %>
             </div>
             <div class="col-12 col-md-4 col-lg-3">
+                <div style="position: sticky; top: 0">
                 <% if $CurrentMember.ShoppingCart.isFilled %>
                     <% if $CurrentPage.BeforeCheckoutCartFull %>
                 <h4><%t SilverCart\Model\Pages\Page.EXPRESS_CHECKOUT 'Express Checkout' %></h4>
@@ -51,28 +52,29 @@
                 <%-- Shipping --%>
                 <% if $CurrentPage.EditableShoppingCart && $CheapestShippingMethod %>
                     <% with $CheapestShippingMethod %>
-            <div class="mt-4">
-                <h4><%t SilverCart\Model\Pages\Page.SHIPPINGRATE 'Shipping' %></h4>
-                <div class="alert alert-light border">
-                    <p><%t SilverCart\Model\Order\ShoppingCart.ShippingTo 'Shipping to {country} for <strong>{price}</strong> by {shippingmethod}.' country=$ShippingCountry.Title price=$ShippingFee.PriceFormatted shippingmethod=$TitleWithCarrier %></p>
-                <% with $ShippingFee %>
-                    <% if $PriceAmount > 0 && $FreeOfShippingCostsFrom.Amount > 0 %>
-                    <p class="font-weight-bold"><span class="fa fa-check"></span> <%t SilverCart\Model\Shipment\ShippingMethod.NoShippingCostFrom 'No shipping cost for orders with a minimum order value of {amount}.' amount=$FreeOfShippingCostsFrom.Nice %></p>
-                    <% end_if %>
-                <% end_with %>
-                    <form action="{$Up.Link}" method="POST">
-                        <div class="input-group mb-3">
-                            {$Up.ShippingCountryDropdown.addExtraClass('custom-select')}
-                            <div class="input-group-append">
-                                <button class="btn btn-outline-dark" type="submit"><%t SilverCart\Model\Shipment\ShippingMethod.ChooseAnotherCountry 'Choose another country' %></button>
+                <div class="mt-4">
+                    <h4><%t SilverCart\Model\Pages\Page.SHIPPINGRATE 'Shipping' %></h4>
+                    <div class="alert alert-light border">
+                        <p><%t SilverCart\Model\Order\ShoppingCart.ShippingTo 'Shipping to {country} for <strong>{price}</strong> by {shippingmethod}.' country=$ShippingCountry.Title price=$ShippingFee.PriceFormatted shippingmethod=$TitleWithCarrier %></p>
+                    <% with $ShippingFee %>
+                        <% if $PriceAmount > 0 && $FreeOfShippingCostsFrom.Amount > 0 %>
+                        <p class="font-weight-bold"><span class="fa fa-check"></span> <%t SilverCart\Model\Shipment\ShippingMethod.NoShippingCostFrom 'No shipping cost for orders with a minimum order value of {amount}.' amount=$FreeOfShippingCostsFrom.Nice %></p>
+                        <% end_if %>
+                    <% end_with %>
+                        <form action="{$Up.Link}" method="POST">
+                            <div class="input-group mb-3">
+                                {$Up.ShippingCountryDropdown.addExtraClass('custom-select')}
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-dark" type="submit"><%t SilverCart\Model\Shipment\ShippingMethod.ChooseAnotherCountry 'Choose another country' %></button>
+                                </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
-            </div>
                     <% end_with %>
                 <% end_if %>
             <% end_if %>
+            </div>
             </div>
         </div>
     <% end_with %>
