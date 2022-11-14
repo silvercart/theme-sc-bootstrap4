@@ -23,7 +23,7 @@
                 <% end_if %>
             </div>
             <div class="col-12 col-md-4 col-lg-3">
-                <div style="position: sticky; top: 0">
+                <div style="position: sticky; top: 16px">
                 <% if $CurrentMember.ShoppingCart.isFilled %>
                     <% if $CurrentPage.BeforeCheckoutCartFull %>
                 <h4><%t SilverCart\Model\Pages\Page.EXPRESS_CHECKOUT 'Express Checkout' %></h4>
