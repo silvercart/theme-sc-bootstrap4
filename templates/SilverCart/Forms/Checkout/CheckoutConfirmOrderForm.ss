@@ -14,7 +14,7 @@
 <%-- ------------------------------------------------------------------------------------------ --%>
     <% with $Controller.Checkout.CurrentStep %>
         <% if $InvoiceAddressIsShippingAddress %>
-            <div class="checkout-change-area mb-2 position-relative">
+            <div class="checkout-change-area mb-2 position-relative border">
             {$Top.BeforeInvoiceAddressContent}
             <% with $InvoiceAddress %>
                 <% include SilverCart/Model/Pages/AddressDetailReadOnly %>
@@ -23,7 +23,7 @@
                 <a class="btn btn-sm btn-link position-absolute top-2 right checkout-change-button" href="{$Controller.AddressStepLink}"><span class="fa fa-edit"></span> <%t SilverCart\Model\Pages\CheckoutStep.Change 'Change' %></a>
             </div>
         <% else %>
-            <div class="checkout-change-area mb-2 position-relative">
+            <div class="checkout-change-area mb-2 position-relative border">
                 {$Top.BeforeInvoiceAddressContent}
                 <% with $InvoiceAddress %>
                     <% include SilverCart/Model/Pages/AddressDetailReadOnly %>
@@ -31,7 +31,7 @@
                 {$Top.AfterInvoiceAddressContent}
                 <a class="btn btn-sm btn-link position-absolute top-2 right checkout-change-button" href="{$Controller.AddressStepLink}"><span class="fa fa-edit"></span> <%t SilverCart\Model\Pages\CheckoutStep.Change 'Change' %></a>
             </div>
-            <div class="checkout-change-area mb-2 position-relative">
+            <div class="checkout-change-area mb-2 position-relative border">
                 {$Top.BeforeShippingAddressContent}
                 <% with $ShippingAddress %>
                     <% include SilverCart/Model/Pages/AddressDetailReadOnly %>
@@ -47,7 +47,7 @@
 <%-- ------------------------------------------------------------------------------------------ --%>
 <%-- ------------------------------------------------------------------------------------------ --%>
     <% with $Controller.Checkout.CurrentStep %>
-            <div class="checkout-change-area mb-2 position-relative">
+            <div class="checkout-change-area mb-2 position-relative border">
                 <div class="card">
                     <div class="card-header border-0 pb-0"><%t SilverCart\Model\Pages\CheckoutStep.CHOSEN_SHIPPING 'Chosen shipping method' %>:</div>
                     <div class="card-body">
@@ -70,7 +70,7 @@
                 <a class="btn btn-sm btn-link position-absolute top-2 right checkout-change-button" href="{$Controller.ShipmentStepLink}"><span class="fa fa-edit"></span> <%t SilverCart\Model\Pages\CheckoutStep.Change 'Change' %></a>
                 <% end_if %>
             </div>
-            <div class="checkout-change-area mb-2 position-relative">
+            <div class="checkout-change-area mb-2 position-relative border">
                 <div class="card">
                     <div class="card-header border-0 pb-0"><%t SilverCart\Model\Pages\CheckoutStep.CHOSEN_PAYMENT 'Chosen payment method' %></div>
                     <div class="card-body">
