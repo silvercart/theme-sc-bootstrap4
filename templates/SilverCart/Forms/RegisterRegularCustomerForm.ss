@@ -62,6 +62,9 @@
     <div class="row">
         <div class="span12 col-md-12">{$CustomFormSpecialFields}</div>
     </div>
+    <% if $EnableHoneyPot %>
+        {$HoneyPotField.FieldHolder}
+    <% end_if %>
     <div class="clearfix">
     <% loop $Actions %>
         <button class="btn btn-primary float-right" type="submit" id="{$ID}" title="{$Title}" value="{$Value}" name="{$Name}">{$Title} <span class="fa fa-caret-right"></span></button>
