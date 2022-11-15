@@ -2,12 +2,6 @@
     <section id="content-main" class="col-12 col-md-9">
         <h2 class="sr-only">{$Title}</h2>
         <% include SilverCart/Model/Pages/BreadCrumbs %>
-    <% if $ErrorMessage %>
-        <div class="alert alert-danger" role="alert">{$ErrorMessage}</div>
-    <% end_if %>
-    <% if SuccessMessage %>
-        <div class="alert alert-success" role="alert">{$SuccessMessage}</div>
-    <% end_if %>
     <% if $CurrentRegisteredCustomer %>
         <article>
             <header><h1><%t SilverCart\Model\Pages\AddressHolder.CURRENT_DEFAULT_ADDRESSES 'Your default invoice and shipping addresses' %></h1></header>

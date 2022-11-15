@@ -8,7 +8,10 @@
         <div id="main-container" class="clearfix">
             <% include SilverCart/Model/Pages/HeaderFull %>
             <% include SilverCart/Model/Pages/Navigation %>
-            <main id="main" class="main container-fluid clearfix">{$Layout}</main>
+            <main id="main" class="main container-fluid clearfix">
+                <% include SilverCart/Model/Pages/Messages %>
+                {$Layout}
+            </main>
             <% include SilverCart/Model/Pages/Footer %>
         </div>
         {$ModuleHtmlInjections}
