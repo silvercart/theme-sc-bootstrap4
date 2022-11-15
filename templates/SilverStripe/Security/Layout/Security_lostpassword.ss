@@ -4,7 +4,14 @@
         <% include SilverCart/Model/Pages/BreadCrumbs %>
         <article>
             <header><h1>{$Title}</h1></header>
-            {$Content}
+            <% if $CurrentPage.IsLostPasswordView && $CurrentPage.PageByIdentifierCode('SilvercartMyAccountHolder').ChangePasswordContent %>
+                {$CurrentPage.PageByIdentifierCode('SilvercartMyAccountHolder').ChangePasswordContent}
+            <% else %>
+                {$Content}
+            <% end_if %>
+            <% if $CurrentPage.IsPasswordSentView %>
+                {$CurrentPage.PageByIdentifierCode('SilvercartMyAccountHolder').ChangePasswordInfo}
+            <% end_if %>
         <% if $Form %>
             {$Form}
         <% end_if %>
