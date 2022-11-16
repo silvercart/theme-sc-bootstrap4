@@ -3,7 +3,7 @@ var silvercart = silvercart ? silvercart : [];
 silvercart.DOM = (function () {
     var property = {},
         selector = {
-            btnConfirm:                     '.btn-confirm',
+            btnConfirm:                     '.btn-confirm[data-confirm-text!=""][data-confirm-text][data-target!=""][data-target]',
             btnLoadingMask:                 '.btn-loading-mask',
             body:                           'body',
             shopLoadingMask:                '#bb-shop-loading-mask',
