@@ -36,6 +36,7 @@
 <% require themedJavascript("client/javascript/jquery.pixeltricks.tools") %>
 <% require themedJavascript("client/javascript/jquery.cookie") %>
 <% require themedJavascript("client/javascript/silvercart.js") %>
+<% require themedJavascript("client/js/PaypalButton") %>
 <% if $SiteConfig.MobileTouchIcon %>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
