@@ -96,7 +96,7 @@
             <div class="checkout-change-area mb-2" id="silvercart-checkout-note">
                 <div class="card">
                     <div class="card-header pb-0"><label for="{$Fields.dataFieldByName('Note').ID}"><%t SilverCart\Model\Pages\Page.REMARKS 'Remarks' %></label></div>
-                    {$Fields.dataFieldByName('Note').addExtraClass('border-0').Field}
+                    {$Fields.dataFieldByName('Note').setValue($Controller.Checkout.CurrentStep.ShoppingCart.Note).addExtraClass('border-0').Field}
                 </div>
             </div>
         <% end_if %>
