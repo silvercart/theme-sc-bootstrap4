@@ -58,13 +58,15 @@
                     <% end_if %>
                     <% if $CurrentPage.PageByIdentifierCode('SilvercartCheckoutStep').EnableNote %>
                         <% with $CurrentMember.ShoppingCart %>
-                            <div class="mt-4">
-                                <h4><%t SilverCart\Model\Pages\Page.REMARKS 'Remarks' %></h4>
-                                <form action="{$baseHref}sc-action/updateNote/" method="POST">
-                                    {$NoteTextarea}
-                                    <button class="btn btn-outline-dark mt-1" type="submit"><%t SilverCart\Model\Pages\Page.SAVE 'save' %></button>
-                                </form>
-                            </div>
+                            <% if $NoteTextarea.exists %>
+                                <div class="mt-4">
+                                    <h4><%t SilverCart\Model\Pages\Page.REMARKS 'Remarks' %></h4>
+                                    <form action="{$baseHref}paypal-action/updateNote/" method="POST">
+                                        {$NoteTextarea}
+                                        <button class="btn btn-outline-dark mt-1" type="submit"><%t SilverCart\Model\Pages\Page.SAVE 'save' %></button>
+                                    </form>
+                                </div>
+                            <% end_if %>
                         <% end_with %>
                     <% end_if %>
                     <%-- Shipping --%>
