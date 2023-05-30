@@ -114,9 +114,13 @@
                         {$Fields.dataFieldByName('SubscribedToNewsletter').addExtraClass('mb-0').FieldHolder}
                     </div>
                 <% end_if %>
-                <% loop $Actions %>
-                    <button class="btn btn-primary btn-lg btn-block action" type="submit" title="{$Title}" name="{$Name}" id="{$ID}">{$Title} <span class="fa fa-caret-right"></span></button>
-                <% end_loop %>
+                <% if $Controller.Checkout.CurrentStep.PaymentMethod.AdyenPayment %>
+                    {$Controller.Checkout.CurrentStep.PaymentMethod.AdyenPayment}
+                    <% else %>
+                        <% loop $Actions %>
+                        <button class="btn btn-primary btn-lg btn-block action" type="submit" title="{$Title}" name="{$Name}" id="{$ID}">{$Title} <span class="fa fa-caret-right"></span></button>
+                    <% end_loop %>
+                <% end_if %>
                 <% if $CurrentPage.EnableTermsAndConditionsCheckbox %>
                     <div class="form-group form-check mb-t mb-0">
                         <input class="form-check-input" type="checkbox" id="checkbox-atac" name="AcceptTermsAndConditions" required="required" />
@@ -132,3 +136,4 @@
 <% if $IncludeFormTag %>
 </form>
 <% end_if %>
+
